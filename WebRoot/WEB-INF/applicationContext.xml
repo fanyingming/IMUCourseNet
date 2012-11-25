@@ -33,7 +33,7 @@
 		<!-- mappingResouces属性用来列出全部映射文件 -->
 		<property name="mappingResources">
 			<list>
-				
+				<value>com/imu/coursenet/domain/Admin.hbm.xml</value>
 			</list>
 		</property>
 		<!-- 定义Hibernate的SessionFactory的属性 -->
