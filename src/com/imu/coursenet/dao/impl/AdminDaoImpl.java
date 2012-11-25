@@ -1,5 +1,6 @@
 package com.imu.coursenet.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.imu.coursenet.dao.AdminDao;
@@ -52,10 +53,15 @@ public class AdminDaoImpl
 	
 	@Override
 	public List<Admin> findByAccountAndPass(String userAccount,String userPass)
-	{
+	{/*
 		return (List<Admin>)getHibernateTemplate()
 			.find("from Admin a where a.userAccount = ? and a.userPass=?"
 			,userAccount , userPass); 
+			*/
+		List admin=new ArrayList();
+		Admin ad=new Admin();
+		admin.add(ad);
+		return admin;
 	}
 
 }
