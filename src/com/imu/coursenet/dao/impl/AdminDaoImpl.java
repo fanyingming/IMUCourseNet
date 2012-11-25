@@ -57,13 +57,6 @@ public class AdminDaoImpl
 		return (List<Admin>)getHibernateTemplate()
 			.find("from Admin a where a.userAccount = ? and a.userPass=?"
 			,userAccount , userPass); 
-			
-		/*
-		List admin=new ArrayList();
-		Admin ad=new Admin();
-		admin.add(ad);
-		return admin;
-		*/
 	}
 
 }

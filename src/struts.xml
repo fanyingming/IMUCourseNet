@@ -15,8 +15,9 @@
 		<action name="login" class="com.imu.coursenet.action.LoginAction">
 			<!-- 定义三个逻辑视图和物理资源之间的映射 -->		
 			<result name="input">/login.jsp</result>
-			<result name="error">/error.jsp</result>
-			<result name="success">/main.html</result>
+			<result name="admin">/admin-main.html</result>
+			<result name="teacher">/teacher-main.html</result>
+			<result name="student">/student-main.html</result>
 		</action>
 		<action name="uploadPro" class="com.imu.coursenet.action.UploadAction">
 			<!-- 动态设置Action的属性值 -->

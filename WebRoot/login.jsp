@@ -22,13 +22,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  <body>
-   <s:form action="login">
-   		<s:textfield name="userAccount" label="用户名"/>
-   		<s:textfield name="userPass" label="密码"/>
-   		<s:submit value="登陆"/>
-   </s:form>
-   
+  <body> 
+  <br><br><br>
   
-</body>
+  <hr>
+  <form name="form1" method="post" action="login">
+    <table width="445" border="0" align="right">
+      <tr>
+        <td width="117"><div align="right">用户名</div></td>
+        <td width="312"><label>
+          <input type="text" name="userAccount">
+        </label></td>
+      </tr>
+      <tr>
+        <td><div align="right">密 码</div></td>
+        <td><label>
+          <input type="text" name="userPass">
+        </label></td>
+      </tr>
+      <tr>
+        <td><div align="right"></div></td>
+        <td><label>
+          <input type="submit" name="Submit" value="登陆">
+        </label>
+          <label>
+          <input type="reset" name="Submit2" value="重置">
+        </label></td>
+      </tr>
+    </table>
+  </form>
+  
+  </body>
 </html>

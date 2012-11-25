@@ -6,7 +6,7 @@ import com.imu.coursenet.domain.Admin;
 
 public interface AdminDao {
 	
-	Admin get(Integer id);
+	Admin get(Integer userId);
 
 	Integer save(Admin admin);
 
@@ -14,7 +14,7 @@ public interface AdminDao {
 
 	void delete(Admin admin);
 
-	void delete(Integer id);
+	void delete(Integer userId);
 
 	List<Admin> findAll();
 	

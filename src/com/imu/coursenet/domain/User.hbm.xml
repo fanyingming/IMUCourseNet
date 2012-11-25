@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Hibernate映射文件的根元素 -->
+<hibernate-mapping package="com.imu.coursenet.domain">
+	<class name="User" table="tb_user" discriminator-value="0">
+		<!-- 使用只读缓存 -->
+		<cache usage="read-only"/>
+		<!-- 映射标识属性 -->
+		<id	name="userId" type="integer" column="userId">
+			<!-- 指定使用identity主键生成策略 -->
+			<generator class="identity"/>
+		</id>
+		<discriminator column="userType" type="int"/>
+		<!-- 映射普通属性 -->
+		<property name="userAccount" column="userAccount"	type="string"
+			not-null="true" length="20" unique="true"/>
+		<property name="userPass" column="userPass"	type="string"
+			not-null="true" length="20"/>
+		<property name="userName" column="userName"	type="string"
+			not-null="true" length="20" />
+		<property name="userMail" column="userMail" type="string"
+			 length="50" />
+		<!-- 映射和Department的关联关系 -->
+		<many-to-one name="department" column="departmentId"
+			class="Department" lazy="false"/>
+			
+		<subclass name="Admin" discriminator-value="1">
+			
+		</subclass>
+		
+		<subclass name="Teacher" discriminator-value="2">
+			
+		</subclass>
+		
+		<subclass name="Student" discriminator-value="3">
+			
+		</subclass>
+	</class>
+</hibernate-mapping>

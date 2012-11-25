@@ -12,6 +12,11 @@
 	<bean id="adminDao"
 		class="com.imu.coursenet.dao.impl.AdminDaoImpl"
 		parent="daoTemplate"/>
-
+	<bean id="teacherDao"
+		class="com.imu.coursenet.dao.impl.TeacherDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="studentDao"
+		class="com.imu.coursenet.dao.impl.StudentDaoImpl"
+		parent="daoTemplate"/>
 
 </beans>

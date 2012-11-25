@@ -4,24 +4,24 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Hibernate映射文件的根元素 -->
 <hibernate-mapping package="com.imu.coursenet.domain">
-	<class name="Admin" table="tb_user">
+	<class name="Department" table="tb_department" discriminator-value="0">
 		<!-- 使用只读缓存 -->
 		<cache usage="read-only"/>
 		<!-- 映射标识属性 -->
-		<id	name="userId" type="integer" column="userId">
+		<id	name="departmentId" type="integer" column="departmentId">
 			<!-- 指定使用identity主键生成策略 -->
 			<generator class="identity"/>
 		</id>
-		
 		<!-- 映射普通属性 -->
-		<property name="userAccount" column="userAccount"	type="string"
-			not-null="true" length="20" unique="true"/>
-		<property name="userPass" column="userPass"	type="string"
-			not-null="true" length="20"/>
-		<property name="userName" column="userName"	type="string"
-			not-null="true" length="20" />
-		<property name="userMail" column="userMail" type="string"
-			 length="50" />
-	
+		<property name="departmentName" column="departmentName"	type="string"
+			not-null="true" length="50" unique="true"/>
+		<property name="departmentDescription" column="departmentDescription"	
+		type="string"/>
+		<set name="users" inverse="true">
+			<key column="departmentId" />
+			<one-to-many class="User"/>
+		</set>
+		
+		
 	</class>
 </hibernate-mapping>

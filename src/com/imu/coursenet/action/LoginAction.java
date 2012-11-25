@@ -45,15 +45,22 @@ public class LoginAction extends UserManagerBaseAction
 	//定义处理用户请求的execute方法
 	public String execute() throws Exception
 	{
-		
-		if (userManager.validLogin(userAccount,userPass)>0) 
-		{
+		int result = userManager.validLogin(userAccount,userPass); 
+		if (result == userManager.LOGIN_ADMIN) {
 			
-			return SUCCESS;
+			return "admin";
+		}
+		else if(result == userManager.LOGIN_TEACHER) {
+			
+			return "teacher";
+		}
+		else if(result == userManager.LOGIN_STUDENT){
+			
+			return "student";
 		}
 		else
 		{
-			return ERROR;
+			return INPUT;
 		}
 	}
 }
