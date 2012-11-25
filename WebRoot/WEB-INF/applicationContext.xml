@@ -34,7 +34,7 @@
 		<!-- mappingResouces属性用来列出全部映射文件 -->
 		<property name="mappingResources">
 			<list>
-				<value>com/imu/coursenet/domain/Admin.hbm.xml</value>
+				
 			</list>
 		</property>
 		<!-- 定义Hibernate的SessionFactory的属性 -->
@@ -56,7 +56,7 @@
 	<!-- 定义业务逻辑组件模板 -->
 	<!-- 为之注入DAO组件 -->
 	<bean id="managerTemplate" abstract="true" lazy-init="true"
-		p:adminDao-ref="adminDao"
+		
 		/>
 
 	<!-- 定义业务逻辑组件，继承业务逻辑组件的模板 -->

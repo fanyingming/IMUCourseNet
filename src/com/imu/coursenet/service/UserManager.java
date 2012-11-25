@@ -1,6 +1,6 @@
 package com.imu.coursenet.service;
 
-import com.imu.coursenet.domain.Admin;
+
 
 public interface UserManager {
 	//µÇÂ¼Ê§°Ü

@@ -5,20 +5,11 @@ import com.imu.coursenet.service.*;
 
 public class UserManagerImpl implements UserManager{
 
-	private AdminDao adminDao;
 	
-	public AdminDao getAdminDao() {
-		return adminDao;
-	}
-
 	@Override
 	public int validLogin(String userAccount,String userPass) {
-		if (adminDao.findByAccountAndPass(userAccount,userPass).size()==1)
-			{
-				return LOGIN_ADMIN ;
-			}
-		else
-			return LOGIN_FAIL;
+		
+		return LOGIN_ADMIN ;
 	}
 
 }
