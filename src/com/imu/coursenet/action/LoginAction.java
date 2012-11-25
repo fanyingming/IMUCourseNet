@@ -1,13 +1,11 @@
 package com.imu.coursenet.action;
 
 import com.imu.coursenet.action.base.UserManagerBaseAction;
-import com.imu.coursenet.domain.*;
-import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;
+
 
 public class LoginAction extends UserManagerBaseAction
 {
-	//定义封装请求参数的username和password属性
+	
 	private String userAccount;
 	private String userPass;
 	
@@ -42,7 +40,7 @@ public class LoginAction extends UserManagerBaseAction
 
 
 
-	//定义处理用户请求的execute方法
+	
 	public String execute() throws Exception
 	{
 		int result = userManager.validLogin(userAccount,userPass); 

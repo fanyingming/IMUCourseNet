@@ -59,15 +59,18 @@
 		p:adminDao-ref="adminDao"
 		p:teacherDao-ref="teacherDao"
 		p:studentDao-ref="studentDao"
+		p:departmentDao-ref="departmentDao"
 		/>
 
 	<!-- 定义业务逻辑组件，继承业务逻辑组件的模板 -->
 	<bean id="userManager" class="com.imu.coursenet.service.impl.UserManagerImpl"
     		parent="managerTemplate"/>
-	
+	<bean id="departmentManager" class="com.imu.coursenet.service.impl.DepartmentManagerImpl"
+    		parent="managerTemplate"/>
 	<!-- Action -->
 	<bean id="userManagerBaseAction" class="com.imu.coursenet.action.base.UserManagerBaseAction"
-    	p:userManager-ref="userManager"/>
+    	p:userManager-ref="userManager"
+    	p:departmentManager-ref="departmentManager"/>
     
 
 

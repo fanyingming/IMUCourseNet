@@ -48,7 +48,7 @@ public class AdminDaoImpl
 	@Override
 	public List<Admin> findAll() {
 		return (List<Admin>)getHibernateTemplate()
-				.find("from Admin");
+				.find("from Admin ");
 	}
 	
 	@Override

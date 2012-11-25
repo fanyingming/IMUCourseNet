@@ -11,13 +11,17 @@
 	<constant name="struts.i18n.encoding" value="UTF-8"/>
 	<constant name="struts.devMode" value="true"/>
 	<!-- 所有的Action定义都应该放在package下 -->
-	<package name="default" extends="struts-default">
+	<package name="fan" extends="struts-default">
+		<!-- 登陆 -->
 		<action name="login" class="com.imu.coursenet.action.LoginAction">
-			<!-- 定义三个逻辑视图和物理资源之间的映射 -->		
 			<result name="input">/login.jsp</result>
 			<result name="admin">/admin-main.html</result>
 			<result name="teacher">/teacher-main.html</result>
 			<result name="student">/student-main.html</result>
+		</action>
+		<!-- 罗列管理员 -->
+		<action name="listAdmin" class="com.imu.coursenet.action.listAdminAction">
+				<result name="success">/userManage.jsp</result>	
 		</action>
 		<action name="uploadPro" class="com.imu.coursenet.action.UploadAction">
 			<!-- 动态设置Action的属性值 -->

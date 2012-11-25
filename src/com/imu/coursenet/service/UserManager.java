@@ -1,9 +1,13 @@
 package com.imu.coursenet.service;
 
+import java.util.List;
+
+import com.imu.coursenet.domain.*;
+
 
 
 public interface UserManager {
-	//µÇÂ¼Ê§°Ü
+	
 		public static final int LOGIN_FAIL = 0;
 		
 		public static final int LOGIN_ADMIN = 1;
@@ -15,4 +19,7 @@ public interface UserManager {
 		
 		
 		int validLogin(String userAccount,String userPass);
+		List<Admin> listAllAdmin();
+		List<Teacher> listAllTeacher();
+		List<Student> listAllStudent();
 }

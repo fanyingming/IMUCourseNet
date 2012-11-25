@@ -18,5 +18,8 @@
 	<bean id="studentDao"
 		class="com.imu.coursenet.dao.impl.StudentDaoImpl"
 		parent="daoTemplate"/>
+	<bean id="departmentDao"
+		class="com.imu.coursenet.dao.impl.DepartmentDaoImpl"
+		parent="daoTemplate"/>
 
 </beans>

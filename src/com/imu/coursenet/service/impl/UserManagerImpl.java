@@ -1,4 +1,6 @@
 package com.imu.coursenet.service.impl;
+import java.util.List;
+
 import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
@@ -7,6 +9,7 @@ public class UserManagerImpl implements UserManager{
 	private AdminDao adminDao;
 	private TeacherDao teacherDao;
 	private StudentDao studentDao;
+	private DepartmentDao departmentDao;
 	
 	public void setAdminDao(AdminDao adminDao) {
 		this.adminDao = adminDao;
@@ -23,9 +26,15 @@ public class UserManagerImpl implements UserManager{
 	}
 
 
+	
+	public void setDepartmentDao(DepartmentDao departmentDao) {
+		this.departmentDao = departmentDao;
+	}
+
+
 	@Override
 	public int validLogin(String userAccount,String userPass) {
-		//ÂËµôÕËºÅ»òÃÜÂëÎª¿ÕµÄÊäÈë
+		
 		if(userAccount.length()==0 || userPass.length()==0) 
 			return this.LOGIN_FAIL;
 		else if(adminDao.findByAccountAndPass(userAccount, userPass).size()==1)
@@ -37,5 +46,25 @@ public class UserManagerImpl implements UserManager{
 		else
 			return this.LOGIN_FAIL;
 	}
+
+
+	@Override
+	public List<Admin> listAllAdmin() {
+		return adminDao.findAll();
+		
+	}
+
+
+	@Override
+	public List<Teacher> listAllTeacher() {
+		return teacherDao.findAll();
+	}
+
+
+	@Override
+	public List<Student> listAllStudent() {
+		return studentDao.findAll();
+	}
+	
 
 }
