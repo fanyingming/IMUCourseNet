@@ -4,8 +4,7 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Hibernate映射文件的根元素 -->
 <hibernate-mapping package="com.imu.coursenet.domain">
-	<class name="Admin" table="tb_user"
-		>
+	<class name="Admin" table="tb_user">
 		<!-- 使用只读缓存 -->
 		<cache usage="read-only"/>
 		<!-- 映射标识属性 -->
@@ -22,7 +21,7 @@
 		<property name="userName" column="userName"	type="string"
 			not-null="true" length="20" />
 		<property name="userMail" column="userMail" type="string"
-			not-null="true" length="50" />
+			 length="50" />
 	
 	</class>
 </hibernate-mapping>

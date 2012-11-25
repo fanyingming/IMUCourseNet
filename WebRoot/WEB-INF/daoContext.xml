@@ -10,7 +10,7 @@
 		p:sessionFactory-ref="sessionFactory"/>
 
 	<bean id="adminDao"
-		class="com.imu.coursenet.dao.impl.EmployeeDaoHibernate"
+		class="com.imu.coursenet.dao.impl.AdminDaoImpl"
 		parent="daoTemplate"/>
 
 
