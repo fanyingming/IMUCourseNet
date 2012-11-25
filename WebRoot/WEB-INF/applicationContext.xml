@@ -55,7 +55,7 @@
 	<!-- 定义业务逻辑组件模板 -->
 	<!-- 为之注入DAO组件 -->
 	<bean id="managerTemplate" abstract="true" lazy-init="true"
-		
+		p:adminDao-ref="adminDao"
 		/>
 
 	<!-- 定义业务逻辑组件，继承业务逻辑组件的模板 -->
