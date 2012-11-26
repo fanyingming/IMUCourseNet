@@ -65,6 +65,55 @@ public class UserManagerImpl implements UserManager{
 	public List<Student> listAllStudent() {
 		return studentDao.findAll();
 	}
+
+
+	@Override
+	public int deleteUser(int userId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int addAdmin(Admin admin) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int updateAdmin(Admin admin) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int addTeacher(Teacher teacher) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int updateTeacher(Teacher teacher) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int addStudent(Student student) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int updateStudent(Student student) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 
 }

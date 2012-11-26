@@ -32,4 +32,22 @@ public class DepartmentManagerImpl implements DepartmentManager{
 		return departmentDao.findAll();
 	}
 
+	@Override
+	public int addDepartment(Department department) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteDepartment(int departmentId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int updateDepartment(Department department) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
 }
