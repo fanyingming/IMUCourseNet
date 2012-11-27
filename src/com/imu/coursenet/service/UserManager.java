@@ -30,7 +30,7 @@ public interface UserManager {
 		int deleteUser(int userId);
 		/*------------Admin------------------*/
 		List<Admin> listAllAdmin();
-		int addAdmin(Admin admin);
+		int addAdmin(Admin admin,int departmentId);
 		int updateAdmin(Admin admin);
 		/*-----------Teacher-----------------*/
 		List<Teacher> listAllTeacher();

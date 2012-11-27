@@ -15,13 +15,29 @@
 		<!-- 登陆 -->
 		<action name="login" class="com.imu.coursenet.action.LoginAction">
 			<result name="input">/login.jsp</result>
-			<result name="admin">/admin-main.html</result>
+			<result name="admin">/admin/admin-main.html</result>
 			<result name="teacher">/teacher-main.html</result>
 			<result name="student">/student-main.html</result>
 		</action>
 		<!-- 罗列管理员 -->
 		<action name="listAdmin" class="com.imu.coursenet.action.listAdminAction">
-				<result name="success">/userManage.jsp</result>	
+				<result name="success">/admin/adminManage.jsp</result>	
+		</action>
+		<action name="listTeacher" class="com.imu.coursenet.action.listTeacherAction">
+				<result name="success">/admin/teacherManage.jsp</result>	
+		</action>
+		<action name="listStudent" class="com.imu.coursenet.action.listStudentAction">
+				<result name="success">/admin/studentManage.jsp</result>	
+		</action>
+		<!-- 用来列出所有部门，以便添加管理员 -->
+		<action name="addAdmin" class="com.imu.coursenet.action.AddAdminAction">
+				<result name="success">/admin/addAdmin.jsp</result>	
+		</action>
+		<!-- 点击保存后，保存管理员信息 -->
+		<action name="saveAdmin" class="com.imu.coursenet.action.SaveAdminAction">
+				<result type="redirectAction">
+					<param name="actionName">listAdmin</param>
+				</result>	
 		</action>
 		<action name="uploadPro" class="com.imu.coursenet.action.UploadAction">
 			<!-- 动态设置Action的属性值 -->

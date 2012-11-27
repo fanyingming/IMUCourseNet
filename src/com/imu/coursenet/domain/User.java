@@ -5,22 +5,30 @@ import java.io.Serializable;
 public class User implements Serializable{
 	private static final long serialVersionUID = 48L;
 	
-	private Integer userId;
+	protected Integer userId;
 	
-	private String userAccount;
+	protected String userAccount;
 	
-	private String userName;
+	protected String userName;
 	
-	private String userPass;
+	protected String userPass;
 	
-	private String userMail;
+	protected String userMail;
 	
-	private Department department;
+	protected Department department;
 
 	public User(){
 		
 	}
 	
+	public User(String userAccount,String userName,String userPass,String userMail,Department departments){
+		this.userAccount=userAccount;
+		this.userPass=userPass;
+		this.userName=userName;
+		this.userMail=userMail;
+		this.department=department;
+	}
+
 	public Department getDepartment() {
 		return department;
 	}

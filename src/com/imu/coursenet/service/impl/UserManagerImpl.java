@@ -69,51 +69,61 @@ public class UserManagerImpl implements UserManager{
 
 	@Override
 	public int deleteUser(int userId) {
-		// TODO Auto-generated method stub
-		return 0;
+		if(studentDao.get(userId)!=null)
+			studentDao.delete(userId);
+		else if(teacherDao.get(userId)!=null)
+			teacherDao.delete(userId);
+		else if(adminDao.get(userId)!=null)
+			adminDao.delete(userId);
+		return this.OP_SUCC;
 	}
 
 
 	@Override
-	public int addAdmin(Admin admin) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int addAdmin(Admin admin,int departmentId) {
+		Department department = departmentDao.get(departmentId);
+		if(department == null)
+			return this.OP_FAIL;
+		admin.setDepartment(department);
+		adminDao.save(admin);
+		return this.OP_SUCC;
 	}
 
 
 	@Override
 	public int updateAdmin(Admin admin) {
-		// TODO Auto-generated method stub
-		return 0;
+		adminDao.update(admin);
+		return this.OP_SUCC;
 	}
 
 
 	@Override
 	public int addTeacher(Teacher teacher) {
-		// TODO Auto-generated method stub
-		return 0;
+		teacherDao.save(teacher);
+		return this.OP_SUCC;
 	}
 
 
 	@Override
 	public int updateTeacher(Teacher teacher) {
-		// TODO Auto-generated method stub
-		return 0;
+		teacherDao.update(teacher);
+		return this.OP_SUCC;
 	}
 
 
 	@Override
 	public int addStudent(Student student) {
-		// TODO Auto-generated method stub
-		return 0;
+		studentDao.save(student);
+		return this.OP_SUCC;
 	}
 
 
 	@Override
 	public int updateStudent(Student student) {
-		// TODO Auto-generated method stub
-		return 0;
+		studentDao.update(student);
+		return this.OP_SUCC;
 	}
+	
 	
 
 }

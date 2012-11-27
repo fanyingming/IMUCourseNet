@@ -13,7 +13,7 @@ id="WebApp_ID" version="3.0">
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/applicationContext.xml,
-					 /WEB-INF/daoContext.xmls
+					 /WEB-INF/daoContext.xml
 			</param-value>
 	</context-param>
 	<!-- 使用ContextLoaderListener初始化Spring容器 -->

@@ -11,5 +11,12 @@ public class Admin
 	public Admin(){
 		
 	}
+	public Admin(String userAccount,String userPass,String userName,String userMail){
+		this.userAccount=userAccount;
+		this.userPass=userPass;
+		this.userName=userName;
+		this.userMail=userMail;
+		
+	}
 	
 }

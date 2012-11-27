@@ -6,7 +6,7 @@
 <hibernate-mapping package="com.imu.coursenet.domain">
 	<class name="User" table="tb_user" discriminator-value="0">
 		<!-- 使用只读缓存 -->
-		<cache usage="read-only"/>
+		<cache usage="read-write"/>
 		<!-- 映射标识属性 -->
 		<id	name="userId" type="integer" column="userId">
 			<!-- 指定使用identity主键生成策略 -->

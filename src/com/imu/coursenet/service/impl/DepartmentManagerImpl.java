@@ -49,5 +49,11 @@ public class DepartmentManagerImpl implements DepartmentManager{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	@Override
+	public Department getDepartment(int departmentId) {
+		return departmentDao.get(departmentId);
+	}
+	
 	
 }

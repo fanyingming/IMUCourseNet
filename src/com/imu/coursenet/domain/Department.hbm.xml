@@ -4,9 +4,9 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Hibernate映射文件的根元素 -->
 <hibernate-mapping package="com.imu.coursenet.domain">
-	<class name="Department" table="tb_department" discriminator-value="0">
+	<class name="Department" table="tb_department" >
 		<!-- 使用只读缓存 -->
-		<cache usage="read-only"/>
+		<cache usage="read-write"/>
 		<!-- 映射标识属性 -->
 		<id	name="departmentId" type="integer" column="departmentId">
 			<!-- 指定使用identity主键生成策略 -->

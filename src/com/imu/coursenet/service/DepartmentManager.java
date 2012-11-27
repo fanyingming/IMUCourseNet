@@ -12,4 +12,5 @@ public interface DepartmentManager {
 	int addDepartment(Department department);
 	int deleteDepartment(int departmentId);
 	int updateDepartment(Department department);
+	Department getDepartment(int departmentId);
 }
