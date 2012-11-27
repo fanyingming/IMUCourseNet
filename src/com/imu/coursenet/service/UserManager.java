@@ -31,14 +31,17 @@ public interface UserManager {
 		int deleteUser(int userId);
 		int getUserType(int userId);
 		/*------------Admin------------------*/
+		Admin getAdminById(int userId);
 		List<Admin> listAllAdmin();
 		int addAdmin(Admin admin,int departmentId);
 		int updateAdmin(Admin admin);
 		/*-----------Teacher-----------------*/
+		Teacher getTeacherById(int userId);
 		List<Teacher> listAllTeacher();
 		int addTeacher(Teacher teacher);
 		int updateTeacher(Teacher teacher);
 		/*-----------Student-----------------*/
+		Student getStudentById(int userId);
 		List<Student> listAllStudent();
 		int addStudent(Student student);
 		int updateStudent(Student student);

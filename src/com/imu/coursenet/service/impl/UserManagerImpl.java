@@ -75,6 +75,24 @@ public class UserManagerImpl implements UserManager{
 
 
 	@Override
+	public Admin getAdminById(int userId) {
+		return adminDao.get(userId);
+	}
+
+
+	@Override
+	public Teacher getTeacherById(int userId) {
+		return teacherDao.get(userId);
+	}
+
+
+	@Override
+	public Student getStudentById(int userId) {
+		return studentDao.get(userId);
+	}
+
+
+	@Override
 	public int deleteUser(int userId) {
 		if(this.getUserType(userId)==this.STUDENT){
 			studentDao.delete(userId);

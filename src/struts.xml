@@ -55,6 +55,14 @@
 					<param name="actionName">listStudent</param>
 				</result>
 		</action>
+		<!-- 在显示修改管理员页面前,用来找到管理员信息 -->
+		<action name="beforeUpdateAdmin" class="com.imu.coursenet.action.BeforeUpdateAdminAction">
+				<result name="success">/admin/updateAdmin.jsp</result>	
+		</action>
+		
+		
+		
+		
 		<action name="uploadPro" class="com.imu.coursenet.action.UploadAction">
 			<!-- 动态设置Action的属性值 -->
 			<param name="savePath">/uploadFiles</param>

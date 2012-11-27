@@ -3,13 +3,13 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'MyJsp.jsp' starting page</title>
+    <title>My JSP 'addAdmin.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,13 +23,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-       <form name="form1" method="post" action="saveAdmin">
+  <br>
+  <form name="form1" method="post" action="updateAdmin">
     <table width="830" border="1" align="center">
       <tr>
         <td width="225"><div align="right">账号：</div></td>
         <td width="589"><div align="left">
           <label>
-          <input type="text" name="userAccount">
+          <input type="text" name="userAccount" value="<s:property value="#admin.userAccount" />">
           </label>
         </div></td>
       </tr>
@@ -37,19 +38,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <td><div align="right">密码：
         </div></td>
         <td><div align="left">
-          <input type="text" name="userPass">
+          <input type="password" name="userPass" value="<s:property value="#admin.userPass" />" >
         </div></td>
       </tr>
       <tr>
         <td><div align="right">姓名：</div></td>
         <td><div align="left">
-          <input type="text" name="userName">
+          <input type="text" name="userName" value="<s:property value="#admin.userName" />">
         </div></td>
       </tr>
       <tr>
         <td><div align="right">邮箱地址：</div></td>
         <td><div align="left">
-          <input type="text" name="userMail">
+          <input type="text" name="userMail" value="<s:property value="#admin.userMail" />">
         </div></td>
       </tr>
       <tr>
@@ -58,7 +59,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <label>
           <select name="departmentId">
           <s:iterator value="departments" id="department">
-          	<option value="<s:property value="#department.departmentId"/>">
+          	<option value="<s:property value="#department.departmentId"/>"      
+          		<s:if test="#department.departmentId==#admin.department.departmentId">
+          			selected="selected"
+          		</s:if>
+          	
+          	>
           		<s:property value="#department.departmentName"/>
           	</option>
           </s:iterator>
@@ -70,7 +76,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <td><div align="right"></div></td>
         <td><div align="left">
           <label>
-          <input type="submit" name="Submit" value="添加">
+          <input type="submit" name="Submit" value="修改">
           </label>
           <label>
           <input type="reset" name="Submit2" value="重置">
@@ -79,5 +85,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </tr>
     </table>
   </form>
+  <s:debug/>
   </body>
 </html>
