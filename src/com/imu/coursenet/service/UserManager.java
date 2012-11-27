@@ -19,6 +19,7 @@ public interface UserManager {
 		public static final int ADMIN=1;
 		public static final int TEACHER=2;
 		public static final int STUDENT=3;
+		
 		public static final int OP_SUCC=1;
 		public static final int OP_FAIL=-1;
 		/*
@@ -28,6 +29,7 @@ public interface UserManager {
 		/*-------------User------------------*/
 		int validLogin(String userAccount,String userPass);
 		int deleteUser(int userId);
+		int getUserType(int userId);
 		/*------------Admin------------------*/
 		List<Admin> listAllAdmin();
 		int addAdmin(Admin admin,int departmentId);

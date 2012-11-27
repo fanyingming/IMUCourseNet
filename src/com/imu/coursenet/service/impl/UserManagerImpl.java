@@ -35,16 +35,23 @@ public class UserManagerImpl implements UserManager{
 	@Override
 	public int validLogin(String userAccount,String userPass) {
 		
-		if(userAccount.length()==0 || userPass.length()==0) 
+		if(userAccount.length()==0 || userPass.length()==0) {
 			return this.LOGIN_FAIL;
-		else if(adminDao.findByAccountAndPass(userAccount, userPass).size()==1)
-				return LOGIN_ADMIN ;
-		else if(teacherDao.findByAccountAndPass(userAccount, userPass).size()==1)
+		}
+		else if(adminDao.findByAccountAndPass(userAccount, userPass).size()==1){
+			System.out.println("登陆，查找管理员表，找到");
+			return LOGIN_ADMIN ;
+				
+		}
+		else if(teacherDao.findByAccountAndPass(userAccount, userPass).size()==1){
 			return LOGIN_TEACHER ;
-		else if(studentDao.findByAccountAndPass(userAccount, userPass).size()==1)
+		}
+		else if(studentDao.findByAccountAndPass(userAccount, userPass).size()==1){
 			return LOGIN_STUDENT ;
-		else
+		}
+		else{
 			return this.LOGIN_FAIL;
+		}
 	}
 
 
@@ -69,13 +76,19 @@ public class UserManagerImpl implements UserManager{
 
 	@Override
 	public int deleteUser(int userId) {
-		if(studentDao.get(userId)!=null)
+		if(this.getUserType(userId)==this.STUDENT){
 			studentDao.delete(userId);
-		else if(teacherDao.get(userId)!=null)
+			return this.STUDENT;
+		}
+		else if(this.getUserType(userId)==this.TEACHER){
 			teacherDao.delete(userId);
-		else if(adminDao.get(userId)!=null)
+			return this.TEACHER;
+		}
+		else if(this.getUserType(userId)==this.ADMIN){
 			adminDao.delete(userId);
-		return this.OP_SUCC;
+			return this.ADMIN;
+		}
+		return this.OP_FAIL;
 	}
 
 
@@ -123,6 +136,20 @@ public class UserManagerImpl implements UserManager{
 		studentDao.update(student);
 		return this.OP_SUCC;
 	}
+
+
+	@Override
+	public int getUserType(int userId) {
+		if(adminDao.getAdmin(userId).size()==1){
+			return this.ADMIN;
+		}else if(teacherDao.getTeacher(userId).size()==1){
+			return this.TEACHER;
+		}else if(studentDao.getStudent(userId).size()==1){
+			return this.STUDENT;
+		}
+		return this.OP_FAIL;
+	}
+	
 	
 	
 

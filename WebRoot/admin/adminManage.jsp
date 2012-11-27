@@ -32,7 +32,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <td width="117">姓名</td>
       <td width="154">邮箱</td>
       <td width="155">部门</td>
-      <td width="123">专业</td>
       <td width="216">操作</td>
     </tr>
     <s:iterator value="admins" id="admin">
@@ -43,8 +42,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <td><s:property value="#admin.userName"/></td>
       <td><s:property value="#admin.userMail"/></td>
       <td><s:property value="#admin.department.departmentName"/></td>
-      <td>&nbsp;</td>
-      <td><a href="#">删除</a>&nbsp;&nbsp;<a href="#">修改</a></td>
+      <td>
+      	<a href="deleteUser.action?userId=<s:property value="#admin.userId"/>">删除 </a>
+      &nbsp;&nbsp;<a href="#">修改</a></td>
     </tr>
     </s:iterator>
   </table>

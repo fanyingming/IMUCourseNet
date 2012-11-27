@@ -59,4 +59,11 @@ public class StudentDaoImpl
 				,userAccount , userPass); 
 	}
 
+	@Override
+	public List<Student> getStudent(int userId) {
+		return (List<Student>)getHibernateTemplate()
+				.find("from Student a where a.userId = ?"
+				,userId); 
+	}
+	
 }

@@ -17,6 +17,6 @@ public interface StudentDao {
 	void delete(Integer userId);
 
 	List<Student> findAll();
-	
+	List<Student> getStudent(int userId);
 	List<Student> findByAccountAndPass(String userAccount,String userPass);
 }

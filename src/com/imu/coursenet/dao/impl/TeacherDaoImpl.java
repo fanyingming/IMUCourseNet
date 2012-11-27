@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.Admin;
+import com.imu.coursenet.domain.Student;
 import com.imu.coursenet.domain.Teacher;
 import com.imu.coursenet.support.YeekuHibernateDaoSupport;
 
@@ -58,5 +59,14 @@ public class TeacherDaoImpl
 				.find("from Teacher t where t.userAccount = ? and t.userPass=?"
 				,userAccount , userPass); 
 	}
+
+	@Override
+	public List<Teacher> getTeacher(int userId) {
+		return (List<Teacher>)getHibernateTemplate()
+				.find("from Teacher a where a.userId = ?"
+				,userId); 
+	}
+	
+	
 	
 }

@@ -12,6 +12,10 @@
 	<constant name="struts.devMode" value="true"/>
 	<!-- 所有的Action定义都应该放在package下 -->
 	<package name="fan" extends="struts-default">
+		<!-- 定义全局Result映射 -->
+		<global-results>
+			<result name="error">/error.jsp</result>
+		</global-results>
 		<!-- 登陆 -->
 		<action name="login" class="com.imu.coursenet.action.LoginAction">
 			<result name="input">/login.jsp</result>
@@ -29,7 +33,7 @@
 		<action name="listStudent" class="com.imu.coursenet.action.listStudentAction">
 				<result name="success">/admin/studentManage.jsp</result>	
 		</action>
-		<!-- 用来列出所有部门，以便添加管理员 -->
+		<!-- 在显示添加管理员页面前,用来列出所有部门，以便添加管理员 -->
 		<action name="addAdmin" class="com.imu.coursenet.action.AddAdminAction">
 				<result name="success">/admin/addAdmin.jsp</result>	
 		</action>
@@ -39,11 +43,27 @@
 					<param name="actionName">listAdmin</param>
 				</result>	
 		</action>
+		<!-- 点击删除后，删除人员并返回显示人员界面 -->
+		<action name="deleteUser" class="com.imu.coursenet.action.DeleteUserAction">
+				<result name="admin_succ" type="redirectAction">
+					<param name="actionName">listAdmin</param>
+				</result>	
+				<result name="teacher_succ" type="redirectAction">
+					<param name="actionName">listTeacher</param>
+				</result>
+				<result name="student_succ" type="redirectAction">
+					<param name="actionName">listStudent</param>
+				</result>
+		</action>
 		<action name="uploadPro" class="com.imu.coursenet.action.UploadAction">
 			<!-- 动态设置Action的属性值 -->
 			<param name="savePath">/uploadFiles</param>
 			<!-- 配置Struts 2默认的视图页面 -->
 			<result name="success">/upload-succ.jsp</result>	
+		</action>
+		
+		<action name="*">
+			<result>/{1}.jsp</result>
 		</action>
 	</package>
 </struts>

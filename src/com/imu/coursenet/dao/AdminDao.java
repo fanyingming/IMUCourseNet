@@ -17,6 +17,6 @@ public interface AdminDao {
 	void delete(Integer userId);
 
 	List<Admin> findAll();
-	
+	List<Admin> getAdmin(int userId);
 	List<Admin> findByAccountAndPass(String userAccount,String userPass);
 }
