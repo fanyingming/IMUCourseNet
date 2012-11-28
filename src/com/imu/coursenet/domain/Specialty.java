@@ -1,6 +1,8 @@
 package com.imu.coursenet.domain;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Specialty implements Serializable{
 	private static final long serialVersionUID = 48L;
@@ -8,13 +10,21 @@ public class Specialty implements Serializable{
 	private String specialtyName;
 	private String specialtyDescription;
 	private Department department;
-	public Specialty(String specialtyName,String specialtyDescription,Department department){
+	private Set<Student> students = new HashSet<Student>();
+	public Specialty(String specialtyName,String specialtyDescription){
 		this.specialtyName=specialtyName;
 		this.specialtyDescription=specialtyDescription;
-		this.department=department;
+		
 	}
 	public Specialty(){
 		
+	}
+	
+	public Set<Student> getStudents() {
+		return students;
+	}
+	public void setStudents(Set<Student> students) {
+		this.students = students;
 	}
 	public Integer getSpecialtyId() {
 		return specialtyId;

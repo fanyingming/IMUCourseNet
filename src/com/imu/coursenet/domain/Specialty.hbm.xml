@@ -8,7 +8,7 @@
 		<!-- 使用读写缓存 -->
 		<cache usage="read-write"/>
 		<!-- 映射标识属性 -->
-		<id	name="specialtyId" type="integer" column="specialty">
+		<id	name="specialtyId" type="integer" column="specialtyId">
 			<!-- 指定使用identity主键生成策略 -->
 			<generator class="identity"/>
 		</id>
@@ -20,7 +20,10 @@
 		<!-- 映射和Department的关联关系 -->
 		<many-to-one name="department" column="departmentId" 
 			class="Department" lazy="false"/>
-		
+		<set name="students" inverse="true">
+			<key column="specialtyId" />
+			<one-to-many class="Student"/>
+		</set>
 		
 	</class>
 </hibernate-mapping>

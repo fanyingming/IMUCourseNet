@@ -16,6 +16,8 @@ public class User implements Serializable{
 	protected String userMail;
 	
 	protected Department department;
+	
+	
 
 	public User(){
 		
@@ -28,6 +30,8 @@ public class User implements Serializable{
 		this.userMail=userMail;
 		this.department=department;
 	}
+
+	
 
 	public Department getDepartment() {
 		return department;
@@ -76,4 +80,5 @@ public class User implements Serializable{
 	public void setUserMail(String userMail) {
 		this.userMail = userMail;
 	}
+	
 }
