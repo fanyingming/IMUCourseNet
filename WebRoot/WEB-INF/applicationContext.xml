@@ -69,7 +69,7 @@
 	<bean id="departmentManager" class="com.imu.coursenet.service.impl.DepartmentManagerImpl"
     		parent="managerTemplate"/>
 	<!-- Action -->
-	<bean id="userManagerBaseAction" class="com.imu.coursenet.action.base.UserManagerBaseAction"
+	<bean id="ManagerBaseAction" class="com.imu.coursenet.action.base.ManagerBaseAction"
     	p:userManager-ref="userManager"
     	p:departmentManager-ref="departmentManager"/>
     
