@@ -1,9 +1,9 @@
 package com.imu.coursenet.action;
 
-import com.imu.coursenet.action.base.UserManagerBaseAction;
+import com.imu.coursenet.action.base.ManagerBaseAction;
 
 
-public class LoginAction extends UserManagerBaseAction
+public class LoginAction extends ManagerBaseAction
 {
 	
 	private String userAccount;

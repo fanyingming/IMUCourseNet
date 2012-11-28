@@ -1,11 +1,11 @@
-package com.imu.coursenet.action;
+package com.imu.coursenet.action.admin;
 
 import java.util.List;
 
-import com.imu.coursenet.action.base.UserManagerBaseAction;
+import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class listTeacherAction extends UserManagerBaseAction{
+public class listTeacherAction extends ManagerBaseAction{
 	private List<Teacher> teachers;
 	private int counts;
 	public List<Teacher> getTeachers() {

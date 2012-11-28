@@ -42,7 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </s:iterator>
   </table>
   <s:debug/>
-  <div align="right"><a href="addDepartment.action">增加</a>
+  <div align="right"><a href="admin/addDepartment.jsp">增加</a>
   </div>
   </body>
 </html>

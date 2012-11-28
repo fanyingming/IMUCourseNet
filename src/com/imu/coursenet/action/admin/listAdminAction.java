@@ -1,11 +1,11 @@
-package com.imu.coursenet.action;
+package com.imu.coursenet.action.admin;
 
 import java.util.List;
 
-import com.imu.coursenet.action.base.UserManagerBaseAction;
+import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class listAdminAction extends UserManagerBaseAction{
+public class listAdminAction extends ManagerBaseAction{
 	private List<Admin> admins;
 	private int counts;
 	public List<Admin> getAdmins() {

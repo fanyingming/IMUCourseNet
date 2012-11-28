@@ -1,11 +1,11 @@
-package com.imu.coursenet.action;
+package com.imu.coursenet.action.admin;
 
 import java.util.List;
 
-import com.imu.coursenet.action.base.UserManagerBaseAction;
+import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class BeforeUpdateAdminAction extends UserManagerBaseAction{
+public class BeforeUpdateAdminAction extends ManagerBaseAction{
 	private Admin admin;
 	private int userId;
 	private int department_Id;

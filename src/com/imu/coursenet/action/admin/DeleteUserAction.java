@@ -1,8 +1,8 @@
-package com.imu.coursenet.action;
+package com.imu.coursenet.action.admin;
 
-import com.imu.coursenet.action.base.UserManagerBaseAction;
+import com.imu.coursenet.action.base.ManagerBaseAction;
 
-public class DeleteUserAction extends UserManagerBaseAction{
+public class DeleteUserAction extends ManagerBaseAction{
 	private int userId;
 
 	public int getUserId() {

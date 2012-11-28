@@ -24,60 +24,57 @@
 			<result name="student">/student-main.html</result>
 		</action>
 		<!-- 罗列人员 -->
-		<action name="listAdmin" class="com.imu.coursenet.action.listAdminAction">
+		<action name="listAdmin" class="com.imu.coursenet.action.admin.listAdminAction">
 				<result name="success">/admin/adminManage.jsp</result>	
 		</action>
-		<action name="listTeacher" class="com.imu.coursenet.action.listTeacherAction">
+		<action name="listTeacher" class="com.imu.coursenet.action.admin.listTeacherAction">
 				<result name="success">/admin/teacherManage.jsp</result>	
 		</action>
-		<action name="listStudent" class="com.imu.coursenet.action.listStudentAction">
+		<action name="listStudent" class="com.imu.coursenet.action.admin.listStudentAction">
 				<result name="success">/admin/studentManage.jsp</result>	
 		</action>
-		<action name="listDepartment" class="com.imu.coursenet.action.listDepartmentAction">
+		<action name="listDepartment" class="com.imu.coursenet.action.admin.listDepartmentAction">
 				<result name="success">/admin/departmentManage.jsp</result>	
 		</action>
 		<!-- 用来列出所有部门，以便添加管理员 -->
-		<action name="addAdmin" class="com.imu.coursenet.action.AddAdminAction">
+		<action name="addAdmin" class="com.imu.coursenet.action.admin.AddAdminAction">
 				<result name="success">/admin/addAdmin.jsp</result>	
 		</action>
 			<!-- 用来列出所有部门，以便添加教师 -->
-		<action name="addTeacher" class="com.imu.coursenet.action.AddTeacherAction">
+		<action name="addTeacher" class="com.imu.coursenet.action.admin.AddTeacherAction">
 				<result name="success">/admin/addTeacher.jsp</result>	
 		</action>
 			<!-- 用来列出所有部门，以便添加学生-->
-		<action name="addStudent" class="com.imu.coursenet.action.AddStudentAction">
+		<action name="addStudent" class="com.imu.coursenet.action.admin.AddStudentAction">
 				<result name="success">/admin/addStudent.jsp</result>	
 		</action>
-		<!-- 添加部门-->
-		<action name="addDepartment" class="com.imu.coursenet.action.AddDepartmentAction">
-				<result name="success">/admin/addDepartment.jsp</result>	
-		</action>
+		
 		<!-- 点击保存后，保存管理员信息 -->
-		<action name="saveAdmin" class="com.imu.coursenet.action.SaveAdminAction">
+		<action name="saveAdmin" class="com.imu.coursenet.action.admin.SaveAdminAction">
 				<result type="redirectAction">
 					<param name="actionName">listAdmin</param>
 				</result>	
 		</action>
 		<!-- 点击保存后，保存教师信息 -->
-		<action name="saveTeacher" class="com.imu.coursenet.action.SaveTeacherAction">
+		<action name="saveTeacher" class="com.imu.coursenet.action.admin.SaveTeacherAction">
 				<result type="redirectAction">
 					<param name="actionName">listTeacher</param>
 				</result>	
 		</action>
 		<!-- 点击保存后，保存学生信息 -->
-		<action name="saveStudent" class="com.imu.coursenet.action.SaveStudentAction">
+		<action name="saveStudent" class="com.imu.coursenet.action.admin.SaveStudentAction">
 				<result type="redirectAction">
 					<param name="actionName">listStudent</param>
 				</result>	
 		</action>
 			<!-- 点击保存后，保存部门信息 -->
-		<action name="saveDepartment" class="com.imu.coursenet.action.SaveDepartmentAction">
+		<action name="saveDepartment" class="com.imu.coursenet.action.admin.SaveDepartmentAction">
 				<result type="redirectAction">
 					<param name="actionName">listDepartment</param>
 				</result>	
 		</action>
 		<!-- 点击删除后，删除人员并返回显示人员界面 -->
-		<action name="deleteUser" class="com.imu.coursenet.action.DeleteUserAction">
+		<action name="deleteUser" class="com.imu.coursenet.action.admin.DeleteUserAction">
 				<result name="admin_succ" type="redirectAction">
 					<param name="actionName">listAdmin</param>
 				</result>	
@@ -89,11 +86,11 @@
 				</result>
 		</action>
 		<!-- 在显示修改管理员页面前,用来找到管理员信息 -->
-		<action name="beforeUpdateAdmin" class="com.imu.coursenet.action.BeforeUpdateAdminAction">
+		<action name="beforeUpdateAdmin" class="com.imu.coursenet.action.admin.BeforeUpdateAdminAction">
 				<result name="success">/admin/updateAdmin.jsp</result>	
 		</action>
 		<!-- 在更新管理员 -->
-		<action name="updateAdmin" class="com.imu.coursenet.action.UpdateAdminAction">
+		<action name="updateAdmin" class="com.imu.coursenet.action.admin.UpdateAdminAction">
 				<result name="success" type="redirectAction">
 					<param name="actionName">listAdmin</param>
 				</result>	

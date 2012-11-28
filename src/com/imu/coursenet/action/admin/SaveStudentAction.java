@@ -1,9 +1,9 @@
-package com.imu.coursenet.action;
+package com.imu.coursenet.action.admin;
 
-import com.imu.coursenet.action.base.UserManagerBaseAction;
+import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class SaveStudentAction extends UserManagerBaseAction{
+public class SaveStudentAction extends ManagerBaseAction{
 	private String userAccount;
 	private String userPass;
 	private String userName;

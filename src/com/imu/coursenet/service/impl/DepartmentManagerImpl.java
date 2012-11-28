@@ -35,7 +35,10 @@ public class DepartmentManagerImpl implements DepartmentManager{
 	@Override
 	public int addDepartment(Department department) {
 		// TODO Auto-generated method stub
-		return 0;
+	//	Department.setDepartment(department);
+		departmentDao.save(department);
+		return this.OP_SUCC;
+		//return 0;
 	}
 
 	@Override

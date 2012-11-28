@@ -1,4 +1,4 @@
-package com.imu.coursenet.action;
+package com.imu.coursenet.action.admin;
 
 import java.io.InputStream;
 import org.apache.struts2.ServletActionContext;
