@@ -8,6 +8,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=GBK">
 </head>
 <body>
-	<s:text name="failTip"/>
+	<h1 align="center">出错啦~!~</h1>
 </body>
 </html>
