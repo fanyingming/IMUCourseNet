@@ -35,6 +35,7 @@
 			<list>
 				<value>com/imu/coursenet/domain/User.hbm.xml</value>
 				<value>com/imu/coursenet/domain/Department.hbm.xml</value>
+				<value>com/imu/coursenet/domain/Specialty.hbm.xml</value>
 			</list>
 		</property>
 		<!-- 定义Hibernate的SessionFactory的属性 -->
@@ -61,6 +62,7 @@
 		p:teacherDao-ref="teacherDao"
 		p:studentDao-ref="studentDao"
 		p:departmentDao-ref="departmentDao"
+		p:specialtyDao-ref="specialtyDao"
 		/>
 
 	<!-- 定义业务逻辑组件，继承业务逻辑组件的模板 -->
@@ -68,10 +70,14 @@
     		parent="managerTemplate"/>
 	<bean id="departmentManager" class="com.imu.coursenet.service.impl.DepartmentManagerImpl"
     		parent="managerTemplate"/>
+    <bean id="specialtyManager" class="com.imu.coursenet.service.impl.SpecialtyManagerImpl"
+    		parent="managerTemplate"/>
 	<!-- Action -->
 	<bean id="ManagerBaseAction" class="com.imu.coursenet.action.base.ManagerBaseAction"
     	p:userManager-ref="userManager"
-    	p:departmentManager-ref="departmentManager"/>
+    	p:departmentManager-ref="departmentManager"
+    	p:specialtyManager-ref="specialtyManager"
+    	/>
     
 
 

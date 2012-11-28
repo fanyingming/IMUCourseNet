@@ -9,6 +9,7 @@ public class Department implements Serializable{
 	private String  departmentName;
 	private String  departmentDescription;
 	private Set<User> users = new HashSet<User>();
+	private Set<Specialty> specialtys = new HashSet<Specialty>();
 	public Department(){
 		
 	}
@@ -40,6 +41,12 @@ public class Department implements Serializable{
 	}
 	public void setUsers(Set<User> users) {
 		this.users = users;
+	}
+	public Set<Specialty> getSpecialtys() {
+		return specialtys;
+	}
+	public void setSpecialtys(Set<Specialty> specialtys) {
+		this.specialtys = specialtys;
 	}
 	
 }

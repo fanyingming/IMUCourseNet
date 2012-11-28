@@ -10,6 +10,7 @@ public class UserManagerImpl implements UserManager{
 	private TeacherDao teacherDao;
 	private StudentDao studentDao;
 	private DepartmentDao departmentDao;
+	private SpecialtyDao specialtyDao;
 	
 	public void setAdminDao(AdminDao adminDao) {
 		this.adminDao = adminDao;
@@ -29,6 +30,11 @@ public class UserManagerImpl implements UserManager{
 	
 	public void setDepartmentDao(DepartmentDao departmentDao) {
 		this.departmentDao = departmentDao;
+	}
+
+
+	public void setSpecialtyDao(SpecialtyDao specialtyDao) {
+		this.specialtyDao = specialtyDao;
 	}
 
 

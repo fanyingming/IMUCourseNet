@@ -5,7 +5,7 @@
 <!-- Hibernate映射文件的根元素 -->
 <hibernate-mapping package="com.imu.coursenet.domain">
 	<class name="Department" table="tb_department" >
-		<!-- 使用只读缓存 -->
+		<!-- 使用读写缓存 -->
 		<cache usage="read-write"/>
 		<!-- 映射标识属性 -->
 		<id	name="departmentId" type="integer" column="departmentId">
@@ -21,7 +21,10 @@
 			<key column="departmentId" />
 			<one-to-many class="User"/>
 		</set>
-		
+		<set name="specialtys" inverse="true">
+			<key column="departmentId" />
+			<one-to-many class="Specialty"/>
+		</set>
 		
 	</class>
 </hibernate-mapping>

@@ -21,5 +21,8 @@
 	<bean id="departmentDao"
 		class="com.imu.coursenet.dao.impl.DepartmentDaoImpl"
 		parent="daoTemplate"/>
+	<bean id="specialtyDao"
+		class="com.imu.coursenet.dao.impl.SpecialtyDaoImpl"
+		parent="daoTemplate"/>
 
 </beans>
