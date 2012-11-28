@@ -23,7 +23,7 @@
 		<property name="userMail" column="userMail" type="string"
 			 length="50" />
 		<!-- 映射和Department的关联关系 -->
-		<many-to-one name="department" column="departmentId" 
+		<many-to-one name="department" column="departmentId" cascade="all"
 			class="Department" lazy="false"/>
 			
 		<subclass name="Admin" discriminator-value="1">

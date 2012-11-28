@@ -38,12 +38,12 @@ public interface UserManager {
 		/*-----------Teacher-----------------*/
 		Teacher getTeacherById(int userId);
 		List<Teacher> listAllTeacher();
-		int addTeacher(Teacher teacher);
+		int addTeacher(Teacher teacher,int departmentId);
 		int updateTeacher(Teacher teacher);
 		/*-----------Student-----------------*/
 		Student getStudentById(int userId);
 		List<Student> listAllStudent();
-		int addStudent(Student student);
+		int addStudent(Student student,int departmentId);
 		int updateStudent(Student student);
 		
 		

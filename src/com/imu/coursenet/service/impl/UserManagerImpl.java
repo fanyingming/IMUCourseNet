@@ -129,7 +129,11 @@ public class UserManagerImpl implements UserManager{
 
 
 	@Override
-	public int addTeacher(Teacher teacher) {
+	public int addTeacher(Teacher teacher,int departmentId) {
+		Department department = departmentDao.get(departmentId);
+		if(department == null)
+			return this.OP_FAIL;
+		teacher.setDepartment(department);
 		teacherDao.save(teacher);
 		return this.OP_SUCC;
 	}
@@ -143,7 +147,11 @@ public class UserManagerImpl implements UserManager{
 
 
 	@Override
-	public int addStudent(Student student) {
+	public int addStudent(Student student,int departmentId) {
+		Department department = departmentDao.get(departmentId);
+		if(department == null)
+			return this.OP_FAIL;
+		student.setDepartment(department);
 		studentDao.save(student);
 		return this.OP_SUCC;
 	}

@@ -10,4 +10,11 @@ public class Student
 	public Student(){
 		
 	}
+	public Student(String userAccount,String userPass,String userName,String userMail){
+		this.userAccount=userAccount;
+		this.userPass=userPass;
+		this.userName=userName;
+		this.userMail=userMail;
+		
+	}
 }

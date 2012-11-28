@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'studentManage.jsp' starting page</title>
+    <title>My JSP 'userManage.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -26,30 +26,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <br>
   <table width="1114" border="1" align="center">
     <tr bgcolor="#CCCCCC">
-      <td width="71" height="24">编号</td>
-      <td width="109">用户名</td>
-      <td width="117">密码</td>
-      <td width="117">姓名</td>
-      <td width="154">邮箱</td>
-      <td width="155">部门</td>
-      <td width="123">专业</td>
-      <td width="216">操作</td>
+      <td width="171" height="24">编号</td>
+      <td width="255">部门</td>
+      <td width="316">简介</td>
+      <td width="316">操作</td>
     </tr>
-    <s:iterator value="students" id="student">
-    <tr>
-      <td><s:property value="#student.userId"/></td>
-      <td><s:property value="#student.userAccount"/></td>
-      <td><s:property value="#student.userPass"/></td>
-      <td><s:property value="#student.userName"/></td>
-      <td><s:property value="#student.userMail"/></td>
-      <td><s:property value="#student.department.departmentName"/></td>
-      <td>&nbsp;</td>
+   <s:iterator value="departments" id="department">
+   <tr>
+      <td><s:property value="#department.departmentId"/></td>
+      <td><s:property value="#department.departmentName"/></td>
+      <td><s:property value="#department.departmentDescription"/></td>
+    
       <td><a href="#">删除</a>&nbsp;&nbsp;<a href="#">修改</a></td>
     </tr>
     </s:iterator>
   </table>
   <s:debug/>
-  <div align="right"><a href="addStudent.action">增加</a>
+  <div align="right"><a href="addDepartment.action">增加</a>
   </div>
   </body>
 </html>
