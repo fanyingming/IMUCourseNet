@@ -59,7 +59,12 @@
 		<action name="beforeUpdateAdmin" class="com.imu.coursenet.action.BeforeUpdateAdminAction">
 				<result name="success">/admin/updateAdmin.jsp</result>	
 		</action>
-		
+		<!-- 在更新管理员 -->
+		<action name="updateAdmin" class="com.imu.coursenet.action.UpdateAdminAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">listAdmin</param>
+				</result>	
+		</action>
 		
 		
 		

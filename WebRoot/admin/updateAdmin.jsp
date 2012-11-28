@@ -25,12 +25,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   <br>
   <form name="form1" method="post" action="updateAdmin">
+  <input type="hidden" name="userId" value="<s:property value="userId"/>"/>
     <table width="830" border="1" align="center">
       <tr>
         <td width="225"><div align="right">账号：</div></td>
         <td width="589"><div align="left">
           <label>
-          <input type="text" name="userAccount" value="<s:property value="#admin.userAccount" />">
+          <input type="text" name="userAccount" value="<s:property value="admin.userAccount" />">
           </label>
         </div></td>
       </tr>
@@ -38,19 +39,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <td><div align="right">密码：
         </div></td>
         <td><div align="left">
-          <input type="password" name="userPass" value="<s:property value="#admin.userPass" />" >
+          <input type="password" name="userPass" value="<s:property value="admin.userPass" />" >
         </div></td>
       </tr>
       <tr>
         <td><div align="right">姓名：</div></td>
         <td><div align="left">
-          <input type="text" name="userName" value="<s:property value="#admin.userName" />">
+          <input type="text" name="userName" value="<s:property value="admin.userName" />">
         </div></td>
       </tr>
       <tr>
         <td><div align="right">邮箱地址：</div></td>
         <td><div align="left">
-          <input type="text" name="userMail" value="<s:property value="#admin.userMail" />">
+          <input type="text" name="userMail" value="<s:property value="admin.userMail" />">
         </div></td>
       </tr>
       <tr>
@@ -60,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <select name="departmentId">
           <s:iterator value="departments" id="department">
           	<option value="<s:property value="#department.departmentId"/>"      
-          		<s:if test="#department.departmentId==#admin.department.departmentId">
+          		<s:if test=" #department.departmentId == department_Id">
           			selected="selected"
           		</s:if>
           	
@@ -85,6 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </tr>
     </table>
   </form>
+  
   <s:debug/>
   </body>
 </html>

@@ -8,6 +8,7 @@ import com.imu.coursenet.domain.*;
 public class BeforeUpdateAdminAction extends UserManagerBaseAction{
 	private Admin admin;
 	private int userId;
+	private int department_Id;
 	private List<Department> departments;
 	public Admin getAdmin() {
 		return admin;
@@ -33,9 +34,21 @@ public class BeforeUpdateAdminAction extends UserManagerBaseAction{
 		this.departments = departments;
 	}
 
+
+
+	public int getDepartment_Id() {
+		return department_Id;
+	}
+
+	public void setDepartment_Id(int department_Id) {
+		this.department_Id = department_Id;
+	}
+
+
 	@Override
 	public String execute() throws Exception {
 		admin=userManager.getAdminById(userId);
+		department_Id=admin.getDepartment().getDepartmentId();
 		departments=departmentManager.listAllDepartment();
 		return SUCCESS;
 	}
