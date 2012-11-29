@@ -25,6 +25,10 @@
 			<key column="departmentId" />
 			<one-to-many class="Specialty"/>
 		</set>
+		<set name="courses" inverse="true">
+			<key column="departmentId" />
+			<one-to-many class="Course"/>
+		</set>
 		
 	</class>
 </hibernate-mapping>

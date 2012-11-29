@@ -37,6 +37,7 @@
 				<value>com/imu/coursenet/domain/Department.hbm.xml</value>
 				<value>com/imu/coursenet/domain/Specialty.hbm.xml</value>
 				<value>com/imu/coursenet/domain/CourseType.hbm.xml</value>
+				<value>com/imu/coursenet/domain/Course.hbm.xml</value>
 			</list>
 		</property>
 		<!-- 定义Hibernate的SessionFactory的属性 -->

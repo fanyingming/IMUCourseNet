@@ -4,23 +4,24 @@
 	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Hibernate映射文件的根元素 -->
 <hibernate-mapping package="com.imu.coursenet.domain">
-	<class name="CourseType" table="tb_courseType" >
+	<class name="Course" table="tb_course" >
 		<!-- 使用读写缓存 -->
 		<cache usage="read-write"/>
 		<!-- 映射标识属性 -->
-		<id	name="courseTypeId" type="integer" column="courseTypeId">
+		<id	name="courseId" type="integer" column="courseId">
 			<!-- 指定使用identity主键生成策略 -->
 			<generator class="identity"/>
 		</id>
 		<!-- 映射普通属性 -->
-		<property name="courseTypeName" column="courseTypeName"	type="string"
+		<property name="courseName" column="courseName"	type="string"
 			not-null="true" length="50" unique="true"/>
-		<property name="courseTypeDescription" column="courseTypeDescription"	
+		<property name="courseDescription" column="courseDescription"	
 		type="string" length="100"/>
-		<set name="courses" inverse="true">
-			<key column="courseTypeId" />
-			<one-to-many class="Course"/>
-		</set>
+		<!-- 映射和Department的关联关系 -->
+		<many-to-one name="department" column="departmentId" 
+			class="Department" lazy="false"/>
+		<many-to-one name="courseType" column="courseTypeId" 
+			class="CourseType" lazy="false"/>
 		
 	</class>
 </hibernate-mapping>

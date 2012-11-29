@@ -10,6 +10,7 @@ public class Department implements Serializable{
 	private String  departmentDescription;
 	private Set<User> users = new HashSet<User>();
 	private Set<Specialty> specialtys = new HashSet<Specialty>();
+	private Set<Course> courses = new HashSet<Course>();
 	public Department(){
 		
 	}
@@ -17,6 +18,13 @@ public class Department implements Serializable{
 	
 		this.departmentName=departmentName;
 		this.departmentDescription=departmentDescription;
+	}
+	
+	public Set<Course> getCourses() {
+		return courses;
+	}
+	public void setCourses(Set<Course> courses) {
+		this.courses = courses;
 	}
 	public Integer getDepartmentId() {
 		return departmentId;
