@@ -23,6 +23,10 @@
 			class="Teacher" lazy="false"/>
 		<many-to-one name="course" column="courseId" 
 			class="Course" lazy="false"/>
-		
+		<!-- 映射和Courseware的关联关系 -->
+		<set name="coursewares" inverse="true">
+			<key column="courseDetailId" />
+			<one-to-many class="Courseware"/>
+		</set>
 	</class>
 </hibernate-mapping>

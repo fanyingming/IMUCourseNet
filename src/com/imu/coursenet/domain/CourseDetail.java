@@ -2,6 +2,9 @@ package com.imu.coursenet.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 import com.imu.coursenet.domain.*;
 public class CourseDetail implements Serializable{
 	private static final long serialVersionUID = 48L;
@@ -13,7 +16,7 @@ public class CourseDetail implements Serializable{
 	private Integer state;//-1代表开始，1代表未开始。
 	private Course course;
 	private Teacher teacher;
-	
+	private Set<Courseware> coursewares = new HashSet<Courseware>();
 	public CourseDetail(){
 		
 	}
@@ -21,6 +24,15 @@ public class CourseDetail implements Serializable{
 	public CourseDetail(String teachPlane,String referenceBook,
 			String courseIntroduce,Date establishDate,Integer state){
 		
+	}
+
+	
+	public Set<Courseware> getCoursewares() {
+		return coursewares;
+	}
+
+	public void setCoursewares(Set<Courseware> coursewares) {
+		this.coursewares = coursewares;
 	}
 
 	public Integer getCourseDetailId() {

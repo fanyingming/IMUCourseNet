@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Hibernate映射文件的根元素 -->
+<hibernate-mapping package="com.imu.coursenet.domain">
+	<class name="Courseware" table="tb_courseware" >
+		<!-- 使用读写缓存 -->
+		<cache usage="read-write"/>
+		<!-- 映射标识属性 -->
+		<id	name="coursewareId" type="integer" column="coursewareId">
+			<!-- 指定使用identity主键生成策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="saveLocation" column="saveLocation"	type="string"
+			not-null="true" length="200" />
+		<property name="title" column="title"	 not-null="true" 
+		type="string" length="50"/>
+		<property name="uploadDate" column="uploadDate"	type="date"
+			not-null="true" />
+		<property name="downloadCounts" column="downloadCounts"	 not-null="true" 
+		type="integer" />
+		<!-- 映射和CourseDetail的关联关系 -->
+		<many-to-one name="courseDetail" column="courseDetailId" 
+			class="CourseDetail" lazy="false"/>
+	</class>
+</hibernate-mapping>
