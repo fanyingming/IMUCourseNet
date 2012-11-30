@@ -20,8 +20,13 @@
 		<!-- 映射和Department的关联关系 -->
 		<many-to-one name="department" column="departmentId" 
 			class="Department" lazy="false"/>
+		<!-- 映射和CourseType的关联关系 -->
 		<many-to-one name="courseType" column="courseTypeId" 
 			class="CourseType" lazy="false"/>
-		
+		<!-- 映射和CourseDetail的关联关系 -->
+		<set name="courseDetails" inverse="true">
+			<key column="courseId" />
+			<one-to-many class="CourseDetail"/>
+		</set>
 	</class>
 </hibernate-mapping>

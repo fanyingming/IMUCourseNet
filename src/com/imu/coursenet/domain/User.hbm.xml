@@ -31,7 +31,10 @@
 		</subclass>
 		
 		<subclass name="Teacher" discriminator-value="2">
-			
+			<set name="courseDetails" inverse="true">
+				<key column="userId" />
+				<one-to-many class="CourseDetail"/>
+			</set>
 		</subclass>
 		
 		<subclass name="Student" discriminator-value="3">
