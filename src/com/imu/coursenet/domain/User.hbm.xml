@@ -40,6 +40,11 @@
 		<subclass name="Student" discriminator-value="3">
 			<many-to-one name="specialty" column="specialtyId" 
 			class="Specialty" lazy="false"/>
+			<!-- 映射和courseWork的关联关系 -->
+			<set name="courseWorks" inverse="true">
+				<key column="userId" />
+				<one-to-many class="CourseWork"/>
+			</set>
 		</subclass>
 	</class>
 </hibernate-mapping>

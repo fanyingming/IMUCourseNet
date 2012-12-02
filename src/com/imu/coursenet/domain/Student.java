@@ -1,13 +1,16 @@
 package com.imu.coursenet.domain;
 
 import java.io.Serializable;
+import java.util.Set;
+import java.util.HashSet;
 
 public class Student 
 	extends User
 	implements Serializable 
 {
 	private static final long serialVersionUID = 48L;
-	protected Specialty specialty;
+	private Specialty specialty;
+	private Set<CourseWork> courseWorks=new HashSet<CourseWork>();
 	public Student(){
 		
 	}
@@ -19,6 +22,12 @@ public class Student
 	
 	}
 	
+	public Set<CourseWork> getCourseWorks() {
+		return courseWorks;
+	}
+	public void setCourseWorks(Set<CourseWork> courseWorks) {
+		this.courseWorks = courseWorks;
+	}
 	public Specialty getSpecialty() {
 		return specialty;
 	}

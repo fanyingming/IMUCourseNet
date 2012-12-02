@@ -33,5 +33,10 @@
 			<key column="courseDetailId" />
 			<one-to-many class="CourseNotification"/>
 		</set>
+		<!-- 映射和courseWork的关联关系 -->
+		<set name="courseWorks" inverse="true">
+			<key column="courseDetailId" />
+			<one-to-many class="CourseWork"/>
+		</set>
 	</class>
 </hibernate-mapping>
