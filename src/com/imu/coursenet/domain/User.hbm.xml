@@ -30,6 +30,11 @@
 			<key column="userId" />
 			<one-to-many class="Post"/>
 		</set>
+		<!-- 映射和PostReply的关联关系 -->
+		<set name="postReplys" inverse="true">
+			<key column="userId" />
+			<one-to-many class="PostReply"/>
+		</set>
 		<subclass name="Admin" discriminator-value="1">
 			
 		</subclass>

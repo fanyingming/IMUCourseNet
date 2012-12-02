@@ -21,6 +21,7 @@ public class CourseDetail implements Serializable{
 	private Set<CourseWork> courseWorks = new HashSet<CourseWork>();
 	private Set<CourseTaking> courseTakings = new HashSet<CourseTaking>();
 	private Set<Post> posts=new HashSet<Post>();
+	private Set<PostReply> postReplys=new HashSet<PostReply>();
 	public CourseDetail(){
 		
 	}
@@ -32,6 +33,14 @@ public class CourseDetail implements Serializable{
 
 	
 	
+	public Set<PostReply> getPostReplys() {
+		return postReplys;
+	}
+
+	public void setPostReplys(Set<PostReply> postReplys) {
+		this.postReplys = postReplys;
+	}
+
 	public Set<Post> getPosts() {
 		return posts;
 	}

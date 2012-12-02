@@ -20,6 +20,8 @@ public class User implements Serializable{
 	protected Department department;
 	
 	protected Set<Post> posts=new HashSet<Post>();
+	
+	protected Set<PostReply> postReplys=new HashSet<PostReply>();
 
 	public User(){
 		
@@ -34,6 +36,14 @@ public class User implements Serializable{
 	}
 
 	
+
+	public Set<PostReply> getPostReplys() {
+		return postReplys;
+	}
+
+	public void setPostReplys(Set<PostReply> postReplys) {
+		this.postReplys = postReplys;
+	}
 
 	public Set<Post> getPosts() {
 		return posts;
