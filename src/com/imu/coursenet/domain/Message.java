@@ -6,9 +6,8 @@ import java.util.Date;
 public class Message implements Serializable {
 	private static final long serialVersionUID = 48L;
 	private Integer messageId;
-	private String title;
 	private String content;
-	private Date date;
+	private Date editDate;
 	private User user;
 	public Message(){
 		
@@ -19,23 +18,19 @@ public class Message implements Serializable {
 	public void setMessageId(Integer messageId) {
 		this.messageId = messageId;
 	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
+	
 	public String getContent() {
 		return content;
 	}
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getDate() {
-		return date;
+	
+	public Date getEditDate() {
+		return editDate;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setEditDate(Date editDate) {
+		this.editDate = editDate;
 	}
 	public User getUser() {
 		return user;

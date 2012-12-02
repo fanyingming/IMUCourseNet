@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -23,16 +23,53 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <table width=790 border="0" align="center">
+  <tr>
+  	<td>共&nbsp;<s:property value="messageNum"/>&nbsp;条留言</td>
+  </tr>
+  <tr>
+  <td>
+  <s:iterator value="messages" id="message">
   <table width="783"  border="0" align="center">
     
     <tr>
-      <td width="773" height="54">内容</td>
+      <td  >
+      <div align="center">
+      	<s:property value="#message.content"/>
+      	</div>      </td>
     </tr>
     <tr>
-      <td height="40">时间、作者</td>
+      <td >
+      		
+      		<div align="right">
+      			<s:property value="#message.editDate"/>
+      			&nbsp;  &nbsp;
+      			by &nbsp;&nbsp;
+      		  	<s:property value="#message.user.userName"/>
+            </div>       </td>
     </tr>
   </table>
+  
   <hr>
-  <br>
+  </s:iterator>   </td>
+  </tr>
+  <tr>
+  	<td>
+	  <form name="form1" method="post" action="addMessage">
+	    <label></label>
+            <p>
+              <textarea name="content" cols="105" rows="5"></textarea>
+        </p>
+            <p>
+              <label>
+              <input type="submit" name="Submit" value="提交">
+              </label>
+              <label></label>
+            </p>
+	  </form>	</td>
+  </tr>
+  </table>
+  <s:debug/>
+ 
   </body>
 </html>

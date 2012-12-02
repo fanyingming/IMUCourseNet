@@ -13,11 +13,9 @@
 			<generator class="identity"/>
 		</id>
 		<!-- 映射普通属性 -->
-		<property name="title" column="title"	type="string"
-			not-null="true" length="50" />
 		<property name="content" column="content"	 
 		type="string" />
-		<property name="date" column="date"	type="date"
+		<property name="editDate" column="editDate"	type="date"
 			not-null="true" />
 		
 		<!-- 映射和User的关联关系 -->

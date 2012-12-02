@@ -247,6 +247,43 @@ public class UserManagerImpl implements UserManager{
 		}
 		return this.OP_FAIL;
 	}
+
+
+	@Override
+	public Admin getAdminByAccountAndPass(String userAccount, String userPass) {
+		return adminDao.findByAccountAndPass(userAccount, userPass).get(0);
+	}
+
+
+	@Override
+	public Teacher getTeacherByAccountAndPass(String userAccount,
+			String userPass) {
+		return teacherDao.findByAccountAndPass(userAccount, userPass).get(0);
+	}
+
+
+	@Override
+	public Student getStudentByAccountAndPass(String userAccount,
+			String userPass) {
+		return studentDao.findByAccountAndPass(userAccount, userPass).get(0);
+	}
+
+
+	@Override
+	public User getUserByAccountAndPass(String userAccount, String userPass) {
+		User user;
+		if(adminDao.findByAccountAndPass(userAccount, userPass).size()==1){
+			user=(User) adminDao.findByAccountAndPass(userAccount, userPass).get(0);
+		}else if(teacherDao.findByAccountAndPass(userAccount, userPass).size()==1){
+			user=(User) teacherDao.findByAccountAndPass(userAccount, userPass).get(0);
+		}else if(studentDao.findByAccountAndPass(userAccount, userPass).size()==1){
+			user=(User) studentDao.findByAccountAndPass(userAccount, userPass).get(0);
+		}else{
+			return null;
+		}
+		
+		return user;
+	}
 	
 	
 	

@@ -1,5 +1,6 @@
 package com.imu.coursenet.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import com.imu.coursenet.dao.*;
@@ -32,13 +33,17 @@ public class MessageManagerImpl implements MessageManager{
 	
 	
 	@Override
-	public List<Message> listAllCourse() {
+	public List<Message> listAllMessage() {
 		return messageDao.findAll();
 	}
 	@Override
-	public int addMessage(Message message, int userId) {
+	public int addMessage(String content, int userId) {
 		Student student;
 		Teacher teacher;
+		Date date=new Date();
+		Message message=new Message();
+		message.setContent(content);
+		message.setEditDate(date);
 		if(studentDao.getStudent(userId).size()!=0){
 			student=studentDao.get(userId);
 			message.setUser(student);
