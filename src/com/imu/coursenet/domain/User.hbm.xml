@@ -25,7 +25,11 @@
 		<!-- 映射和Department的关联关系 -->
 		<many-to-one name="department" column="departmentId" 
 			class="Department" lazy="false"/>
-		
+		<!-- 映射和Post的关联关系 -->
+		<set name="posts" inverse="true">
+			<key column="userId" />
+			<one-to-many class="Post"/>
+		</set>
 		<subclass name="Admin" discriminator-value="1">
 			
 		</subclass>
