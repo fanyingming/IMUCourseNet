@@ -11,7 +11,6 @@ public class Teacher
 {
 	private static final long serialVersionUID = 48L;
 	private Set<CourseDetail> courseDetails = new HashSet<CourseDetail>();
-	private Set<Letter> letters = new HashSet<Letter>();
 	public Teacher(){
 		
 	}
@@ -21,14 +20,6 @@ public class Teacher
 		this.userName=userName;
 		this.userMail=userMail;
 		
-	}
-	
-	
-	public Set<Letter> getLetters() {
-		return letters;
-	}
-	public void setLetters(Set<Letter> letters) {
-		this.letters = letters;
 	}
 	public Set<CourseDetail> getCourseDetails() {
 		return courseDetails;

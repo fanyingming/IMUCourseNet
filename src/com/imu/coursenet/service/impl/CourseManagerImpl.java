@@ -14,7 +14,13 @@ public class CourseManagerImpl implements CourseManager{
 	private SpecialtyDao specialtyDao;
 	private CourseDao courseDao;
 	private CourseTypeDao courseTypeDao;
+	private Specialty specialty;
 	
+	public void setSpecialty(Specialty specialty) {
+		this.specialty = specialty;
+	}
+
+
 	public void setCourseDao(CourseDao courseDao) {
 		this.courseDao = courseDao;
 	}

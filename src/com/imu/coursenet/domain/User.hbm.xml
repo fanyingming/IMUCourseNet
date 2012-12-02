@@ -25,21 +25,7 @@
 		<!-- 映射和Department的关联关系 -->
 		<many-to-one name="department" column="departmentId" 
 			class="Department" lazy="false"/>
-		<!-- 映射和Post的关联关系 -->
-		<set name="posts" inverse="true">
-			<key column="userId" />
-			<one-to-many class="Post"/>
-		</set>
-		<!-- 映射和PostReply的关联关系 -->
-		<set name="postReplys" inverse="true">
-			<key column="userId" />
-			<one-to-many class="PostReply"/>
-		</set>
-		<!-- 映射和Message的关联关系 -->
-		<set name="messages" inverse="true">
-			<key column="userId" />
-			<one-to-many class="Message"/>
-		</set>
+		
 		<subclass name="Admin" discriminator-value="1">
 			
 		</subclass>
@@ -49,29 +35,11 @@
 				<key column="userId" />
 				<one-to-many class="CourseDetail"/>
 			</set>
-			<set name="letters" inverse="true">
-				<key column="userId" />
-				<one-to-many class="Letter"/>
-			</set>
 		</subclass>
 		
 		<subclass name="Student" discriminator-value="3">
 			<many-to-one name="specialty" column="specialtyId" 
 			class="Specialty" lazy="false"/>
-			<!-- 映射和courseWork的关联关系 -->
-			<set name="courseWorks" inverse="true">
-				<key column="userId" />
-				<one-to-many class="CourseWork"/>
-			</set>
-			<!-- 映射和courseTaking的关联关系 -->
-			<set name="courseTakings" inverse="true">
-				<key column="userId" />
-				<one-to-many class="CourseTaking"/>
-			</set>
-			<set name="letters" inverse="true">
-				<key column="userId" />
-				<one-to-many class="Letter"/>
-			</set>
 		</subclass>
 	</class>
 </hibernate-mapping>

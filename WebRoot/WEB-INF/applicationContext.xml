@@ -40,12 +40,6 @@
 				<value>com/imu/coursenet/domain/CourseDetail.hbm.xml</value>
 				<value>com/imu/coursenet/domain/Courseware.hbm.xml</value>
 				<value>com/imu/coursenet/domain/CourseNotification.hbm.xml</value>
-				<value>com/imu/coursenet/domain/CourseWork.hbm.xml</value>
-				<value>com/imu/coursenet/domain/CourseTaking.hbm.xml</value>
-				<value>com/imu/coursenet/domain/Post.hbm.xml</value>
-				<value>com/imu/coursenet/domain/PostReply.hbm.xml</value>
-				<value>com/imu/coursenet/domain/Letter.hbm.xml</value>
-				<value>com/imu/coursenet/domain/Message.hbm.xml</value>
 			</list>
 		</property>
 		<!-- 定义Hibernate的SessionFactory的属性 -->

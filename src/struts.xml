@@ -43,6 +43,10 @@
 		<action name="listCourseType" class="com.imu.coursenet.action.admin.listCourseTypeAction">
 				<result name="success">/admin/courseTypeManage.jsp</result>	
 		</action>
+		
+		<action name="listSpecialty" class="com.imu.coursenet.action.admin.listSpecialtyAction">
+				<result name="success">/admin/specialtyManage.jsp</result>	
+		</action>
 		<!-- 用来列出所有部门，以便添加管理员 -->
 		<action name="addAdmin" class="com.imu.coursenet.action.admin.AddAdminAction">
 				<result name="success">/admin/addAdmin.jsp</result>	
@@ -67,7 +71,10 @@
 		<action name="addCourseType" class="com.imu.coursenet.action.admin.AddCourseTypeAction">
 				<result name="success">/admin/addCourseType.jsp</result>	
 		</action>
-		
+		<!-- 用来列出所有部门，以便添加专业-->
+		<action name="addSpecialty" class="com.imu.coursenet.action.admin.AddSpecialtyAction">
+				<result name="success">/admin/addSpecialty.jsp</result>	
+		</action>
 		<!-- 点击保存后，保存管理员信息 -->
 		<action name="saveAdmin" class="com.imu.coursenet.action.admin.SaveAdminAction">
 				<result type="redirectAction">
@@ -104,6 +111,12 @@
 					<param name="actionName">listCourseType</param>
 				</result>	
 		</action>
+		<!-- 点击保存后，保存专业信息 -->
+		<action name="saveSpecialty" class="com.imu.coursenet.action.admin.SaveSpecialtyAction">
+				<result type="redirectAction">
+					<param name="actionName">listSpecialty</param>
+				</result>	
+		</action>
 		<!-- 点击删除后，删除人员并返回显示人员界面 -->
 		<action name="deleteUser" class="com.imu.coursenet.action.admin.DeleteUserAction">
 				<result name="admin_succ" type="redirectAction">
@@ -134,6 +147,12 @@
 					<param name="actionName">listCourseType</param>
 				</result>					
 		</action>
+		<!-- 点击删除后，删除专业并返回显示专业界面 -->
+		<action name="deleteSpecialty" class="com.imu.coursenet.action.admin.DeleteSpecialtyAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">listSpecialty</param>
+				</result>					
+		</action>
 		<!-- 在显示修改管理员页面前,用来找到管理员信息 -->
 		<action name="beforeUpdateAdmin" class="com.imu.coursenet.action.admin.BeforeUpdateAdminAction">
 				<result name="success">/admin/updateAdmin.jsp</result>	
@@ -157,6 +176,11 @@
 		<!-- 在显示修改课程类型页面前,用来找到类型信息 -->
 		<action name="beforeUpdateCourseType" class="com.imu.coursenet.action.admin.BeforeUpdateCourseTypeAction">
 				<result name="success">/admin/updateCourseType.jsp</result>	
+		</action>
+		<!-- 在更新管理员 -->
+		<!-- 在显示修改专业页面前,用来找到专业信息 -->
+		<action name="beforeUpdateSpecialty" class="com.imu.coursenet.action.admin.BeforeUpdateSpecialtyAction">
+				<result name="success">/admin/updateSpecialty.jsp</result>	
 		</action>
 		<!-- 在更新管理员 -->
 		<action name="updateAdmin" class="com.imu.coursenet.action.admin.UpdateAdminAction">
@@ -195,7 +219,12 @@
 					<param name="actionName">listCourseType</param>
 				</result>	
 		</action>
-		
+		<!-- 在更新专业课程类型 -->
+		<action name="updateSpecialty" class="com.imu.coursenet.action.admin.UpdateSpecialtyAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">listSpecialty</param>
+				</result>	
+		</action>
 		
 		
 		<action name="uploadPro" class="com.imu.coursenet.action.UploadAction">

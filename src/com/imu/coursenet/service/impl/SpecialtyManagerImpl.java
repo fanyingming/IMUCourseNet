@@ -15,7 +15,11 @@ public class SpecialtyManagerImpl implements SpecialtyManager{
 	private SpecialtyDao specialtyDao;
 	private CourseDao courseDao;
 	private CourseTypeDao courseTypeDao;
+	private Specialty specialty;
 	
+	public void setSpecialty(Specialty specialty) {
+		this.specialty = specialty;
+	}
 	public void setCourseDao(CourseDao courseDao) {
 		this.courseDao = courseDao;
 	}
@@ -27,8 +31,11 @@ public class SpecialtyManagerImpl implements SpecialtyManager{
 		return specialtyDao.findAll();
 	}
 	@Override
-	public int addSpecialty(Specialty specialty) {
-		return specialtyDao.save(specialty);
+	public int addSpecialty(Specialty specialty,int departmentId) {
+		Department department=departmentDao.get(departmentId);
+		specialty.setDepartment(department);		
+		specialtyDao.save(specialty);
+		return this.OP_SUCC;
 	}
 	@Override
 	public int deleteSpecialty(int specialtyId) {

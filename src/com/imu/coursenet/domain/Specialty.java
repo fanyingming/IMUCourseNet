@@ -19,7 +19,7 @@ public class Specialty implements Serializable{
 	public Specialty(){
 		
 	}
-	
+
 	public Set<Student> getStudents() {
 		return students;
 	}

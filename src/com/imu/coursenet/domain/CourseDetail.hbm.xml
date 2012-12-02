@@ -33,25 +33,5 @@
 			<key column="courseDetailId" />
 			<one-to-many class="CourseNotification"/>
 		</set>
-		<!-- 映射和courseWork的关联关系 -->
-		<set name="courseWorks" inverse="true">
-			<key column="courseDetailId" />
-			<one-to-many class="CourseWork"/>
-		</set>
-		<!-- 映射和courseTaking的关联关系 -->
-		<set name="courseTakings" inverse="true">
-			<key column="courseDetailId" />
-			<one-to-many class="CourseTaking"/>
-		</set>
-		<!-- 映射和Post的关联关系 -->
-		<set name="posts" inverse="true">
-			<key column="courseDetailId" />
-			<one-to-many class="Post"/>
-		</set>
-		<!-- 映射和PostReply的关联关系 -->
-		<set name="postReplys" inverse="true">
-			<key column="courseDetailId" />
-			<one-to-many class="PostReply"/>
-		</set>
 	</class>
 </hibernate-mapping>

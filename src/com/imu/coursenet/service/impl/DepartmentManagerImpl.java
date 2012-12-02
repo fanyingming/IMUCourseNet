@@ -14,7 +14,11 @@ public class DepartmentManagerImpl implements DepartmentManager{
 	private SpecialtyDao specialtyDao;
 	private CourseTypeDao courseTypeDao;
 	private CourseDao courseDao;
+	private Specialty specialty;
 	
+	public void setSpecialty(Specialty specialty) {
+		this.specialty = specialty;
+	}
 	public void setCourseDao(CourseDao courseDao) {
 		this.courseDao = courseDao;
 	}
