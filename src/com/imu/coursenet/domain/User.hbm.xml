@@ -44,6 +44,10 @@
 				<key column="userId" />
 				<one-to-many class="CourseDetail"/>
 			</set>
+			<set name="letters" inverse="true">
+				<key column="userId" />
+				<one-to-many class="Letter"/>
+			</set>
 		</subclass>
 		
 		<subclass name="Student" discriminator-value="3">
@@ -58,6 +62,10 @@
 			<set name="courseTakings" inverse="true">
 				<key column="userId" />
 				<one-to-many class="CourseTaking"/>
+			</set>
+			<set name="letters" inverse="true">
+				<key column="userId" />
+				<one-to-many class="Letter"/>
 			</set>
 		</subclass>
 	</class>

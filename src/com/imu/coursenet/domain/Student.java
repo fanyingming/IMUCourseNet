@@ -12,6 +12,7 @@ public class Student
 	private Specialty specialty;
 	private Set<CourseWork> courseWorks=new HashSet<CourseWork>();
 	private Set<CourseTaking> courseTakings=new HashSet<CourseTaking>();
+	private Set<Letter> letters = new HashSet<Letter>();
 	
 	public Student(){
 		
@@ -24,6 +25,13 @@ public class Student
 	
 	}
 	
+	
+	public Set<Letter> getLetters() {
+		return letters;
+	}
+	public void setLetters(Set<Letter> letters) {
+		this.letters = letters;
+	}
 	public Set<CourseTaking> getCourseTakings() {
 		return courseTakings;
 	}
