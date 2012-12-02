@@ -75,7 +75,15 @@
 		p:specialtyDao-ref="specialtyDao"
 		p:courseTypeDao-ref="courseTypeDao"
 		p:courseDao-ref="courseDao"
-	
+		p:courseDetailDao-ref="courseDetailDao"
+		p:coursewareDao-ref="coursewareDao"
+		p:courseWorkDao-ref="courseWorkDao"
+		p:courseNotificationDao-ref="courseNotificationDao"
+		p:courseTakingDao-ref="courseTakingDao"
+		p:postDao-ref="postDao"
+		p:postReplyDao-ref="postReplyDao"
+		p:letterDao-ref="letterDao"
+		p:messageDao-ref="messageDao"
 		/>
 
 	<!-- 定义业务逻辑组件，继承业务逻辑组件的模板 -->
@@ -85,11 +93,28 @@
     		parent="managerTemplate"/>
     <bean id="specialtyManager" class="com.imu.coursenet.service.impl.SpecialtyManagerImpl"
     		parent="managerTemplate"/>
-   	  <bean id="courseManager" class="com.imu.coursenet.service.impl.CourseManagerImpl"
+   	<bean id="courseManager" class="com.imu.coursenet.service.impl.CourseManagerImpl"
     		parent="managerTemplate"/>
     <bean id="courseTypeManager" class="com.imu.coursenet.service.impl.CourseTypeManagerImpl"
     		parent="managerTemplate"/>
-   	
+    <bean id="courseDetailManager" class="com.imu.coursenet.service.impl.CourseDetailManagerImpl"
+    		parent="managerTemplate"/>
+    <bean id="courseNotificationManager" class="com.imu.coursenet.service.impl.CourseNotificationManagerImpl"
+    		parent="managerTemplate"/>
+    <bean id="coursewareManager" class="com.imu.coursenet.service.impl.CoursewareManagerImpl"
+    		parent="managerTemplate"/>
+    <bean id="courseWorkManager" class="com.imu.coursenet.service.impl.CourseWorkManagerImpl"
+    		parent="managerTemplate"/>
+    <bean id="courseTakingManager" class="com.imu.coursenet.service.impl.CourseTakingManagerImpl"
+    		parent="managerTemplate"/>
+   	<bean id="postManager" class="com.imu.coursenet.service.impl.PostManagerImpl"
+    		parent="managerTemplate"/>
+    <bean id="postReplyManager" class="com.imu.coursenet.service.impl.PostReplyManagerImpl"
+    		parent="managerTemplate"/>
+    <bean id="letterManager" class="com.imu.coursenet.service.impl.LetterManagerImpl"
+    		parent="managerTemplate"/>
+    <bean id="messageManager" class="com.imu.coursenet.service.impl.MessageManagerImpl"
+    		parent="managerTemplate"/>
    	<!-- Action -->
 	<bean id="ManagerBaseAction" class="com.imu.coursenet.action.base.ManagerBaseAction"
     	p:userManager-ref="userManager"
@@ -97,7 +122,16 @@
     	p:specialtyManager-ref="specialtyManager"
     	p:courseManager-ref="courseManager"
     	p:courseTypeManager-ref="courseTypeManager"
-    
+    	p:courseDetailManager-ref="courseDetailManager"
+    	p:courseNotificationManager-ref="courseNotificationManager"
+    	p:coursewareManager-ref="coursewareManager"
+    	p:courseWorkManager-ref="courseWorkManager"
+    	p:courseTakingManager-ref="courseTakingManager"
+    	p:postManager-ref="postManager"
+    	p:postReplyManager-ref="postReplyManager"
+    	p:letterManager-ref="letterManager"
+    	p:messageManager-ref="messageManager"
+    	
     	/>
     
 

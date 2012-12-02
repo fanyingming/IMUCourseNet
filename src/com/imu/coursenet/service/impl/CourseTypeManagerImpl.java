@@ -12,13 +12,55 @@ public class CourseTypeManagerImpl implements CourseTypeManager{
 	private StudentDao studentDao;
 	private DepartmentDao departmentDao;
 	private SpecialtyDao specialtyDao;
-	private CourseTypeDao courseTypeDao;
 	private CourseDao courseDao;
-	private Specialty specialty;
+	private CourseTypeDao courseTypeDao;
+	private CourseDetailDao courseDetailDao;
+	private CoursewareDao coursewareDao;
+	private CourseWorkDao courseWorkDao;
+	private CourseTakingDao courseTakingDao;
+	private CourseNotificationDao courseNotificationDao;
+	private LetterDao letterDao;
+	private MessageDao messageDao;
+	private PostDao postDao;
+	private PostReplyDao postReplyDao;
 	
-	public void setSpecialty(Specialty specialty) {
-		this.specialty = specialty;
+	
+	public void setCourseDetailDao(CourseDetailDao courseDetailDao) {
+		this.courseDetailDao = courseDetailDao;
 	}
+
+	public void setCoursewareDao(CoursewareDao coursewareDao) {
+		this.coursewareDao = coursewareDao;
+	}
+
+	public void setCourseWorkDao(CourseWorkDao courseWorkDao) {
+		this.courseWorkDao = courseWorkDao;
+	}
+
+	public void setCourseTakingDao(CourseTakingDao courseTakingDao) {
+		this.courseTakingDao = courseTakingDao;
+	}
+
+	public void setCourseNotificationDao(CourseNotificationDao courseNotificationDao) {
+		this.courseNotificationDao = courseNotificationDao;
+	}
+
+	public void setLetterDao(LetterDao letterDao) {
+		this.letterDao = letterDao;
+	}
+
+	public void setMessageDao(MessageDao messageDao) {
+		this.messageDao = messageDao;
+	}
+
+	public void setPostDao(PostDao postDao) {
+		this.postDao = postDao;
+	}
+
+	public void setPostReplyDao(PostReplyDao postReplyDao) {
+		this.postReplyDao = postReplyDao;
+	}
+
 	public void setCourseDao(CourseDao courseDao) {
 		this.courseDao = courseDao;
 	}
