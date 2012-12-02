@@ -5,6 +5,9 @@ public class ManagerBaseAction extends ActionSupport {
 		protected UserManager userManager;
 		protected DepartmentManager departmentManager;
 		protected SpecialtyManager specialtyManager;
+		protected CourseTypeManager courseTypeManager;
+		protected CourseManager courseManager;
+		
 		public void setUserManager(UserManager userManager) {
 			this.userManager = userManager;
 		}
@@ -13,6 +16,12 @@ public class ManagerBaseAction extends ActionSupport {
 		}
 		public void setSpecialtyManager(SpecialtyManager specialtyManager) {
 			this.specialtyManager = specialtyManager;
+		}
+		public void setCourseTypeManager(CourseTypeManager courseTypeManager) {
+			this.courseTypeManager = courseTypeManager;
+		}
+		public void setCourseManager(CourseManager courseManager) {
+			this.courseManager = courseManager;
 		}
 		
 		

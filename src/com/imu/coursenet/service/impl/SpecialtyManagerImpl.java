@@ -13,6 +13,15 @@ public class SpecialtyManagerImpl implements SpecialtyManager{
 	private StudentDao studentDao;
 	private DepartmentDao departmentDao;
 	private SpecialtyDao specialtyDao;
+	private CourseDao courseDao;
+	private CourseTypeDao courseTypeDao;
+	
+	public void setCourseDao(CourseDao courseDao) {
+		this.courseDao = courseDao;
+	}
+	public void setCourseTypeDao(CourseTypeDao courseTypeDao) {
+		this.courseTypeDao = courseTypeDao;
+	}
 	@Override
 	public List<Specialty> listAllSpecialty() {
 		return specialtyDao.findAll();

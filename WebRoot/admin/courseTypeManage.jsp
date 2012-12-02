@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'departmentManage.jsp' starting page</title>
+    <title>My JSP 'courseTypeManage.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -31,20 +31,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <td width="316">简介</td>
       <td width="316">操作</td>
     </tr>
-   <s:iterator value="departments" id="department">
+   <s:iterator value="courseTypes" id="courseType">
    <tr>
-      <td><s:property value="#department.departmentId"/></td>
-      <td><s:property value="#department.departmentName"/></td>
-      <td><s:property value="#department.departmentDescription"/></td>
-    
-      <td> 	<a href="deleteDepartment.action?departmentId=<s:property value="#department.departmentId"/>">删除 </a>
+      <td><s:property value="#courseType.courseTypeId"/></td>
+      <td><s:property value="#courseType.courseTypeName"/></td>
+      <td><s:property value="#courseType.courseTypeDescription"/></td>
+       <td> 	
+       <a href="deleteCourseType.action?courseTypeId=<s:property value="#courseType.courseTypeId"/>">删除 </a>
 			&nbsp;&nbsp;
-		<a href="beforeUpdateDepartment.action?departmentId=<s:property value="#department.departmentId"/>">修改</a></td>
+		<a href="beforeUpdateCourseType.action?courseTypeId=<s:property value="#courseType.courseTypeId"/>">修改</a></td>
   </tr>
     </s:iterator>
   </table>
   <s:debug/>
-  <div align="right"><a href="admin/addDepartment.jsp">增加</a>
+  <div align="right"><a href="admin/addCourseType.jsp">增加</a>
   </div>
   </body>
 </html>

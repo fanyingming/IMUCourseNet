@@ -44,7 +44,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <td><s:property value="#teacher.userMail"/></td>
       <td><s:property value="#teacher.department.departmentName"/></td>
       <td>&nbsp;</td>
-      <td><a href="#">删除</a>&nbsp;&nbsp;<a href="updateTeacher.jsp">修改</a></td>
+      <td><a href="deleteUser.action?userId=<s:property value="#teacher.userId"/>">删除</a>&nbsp;&nbsp;<a href="beforeUpdateTeacher.action?userId=<s:property value="#teacher.userId"/>">修改</a></td>
     </tr>
     </s:iterator>
   </table>

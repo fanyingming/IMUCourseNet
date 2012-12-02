@@ -6,23 +6,20 @@ import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
 
-public class DepartmentManagerImpl implements DepartmentManager{
+public class CourseManagerImpl implements CourseManager{
 	private AdminDao adminDao;
 	private TeacherDao teacherDao;
 	private StudentDao studentDao;
 	private DepartmentDao departmentDao;
 	private SpecialtyDao specialtyDao;
-	private CourseTypeDao courseTypeDao;
 	private CourseDao courseDao;
+	private CourseTypeDao courseTypeDao;
 	
 	public void setCourseDao(CourseDao courseDao) {
 		this.courseDao = courseDao;
 	}
 
-	public void setCourseTypeDao(CourseTypeDao courseTypeDao) {
-		this.courseTypeDao = courseTypeDao;
-	}
-
+	
 	public void setAdminDao(AdminDao adminDao) {
 		this.adminDao = adminDao;
 	}
@@ -44,36 +41,42 @@ public class DepartmentManagerImpl implements DepartmentManager{
 		this.specialtyDao = specialtyDao;
 	}
 
-	@Override
-	public List<Department> listAllDepartment() {
-		return departmentDao.findAll();
+	public void setCourseTypeDao(CourseTypeDao courseTypeDao) {
+		this.courseTypeDao = courseTypeDao;
 	}
 
 	@Override
-	public int addDepartment(Department department) {
-		// TODO Auto-generated method stub
-	//	Department.setDepartment(department);
-		departmentDao.save(department);
+	public List<Course> listAllCourse() {
+		return courseDao.findAll();
+	}
+
+	@Override
+	public int addCourse(Course course,int departmentId,int courseTypeId) {
+		Department department=departmentDao.get(departmentId);
+		CourseType courseType=courseTypeDao.get(courseTypeId);
+		course.setCourseType(courseType);
+		course.setDepartment(department);
+		courseDao.save(course);
 		return this.OP_SUCC;
 		//return 0;
 	}
 
 	@Override
-	public int deleteDepartment(int departmentId) {
-		departmentDao.delete(departmentId);
+	public int deleteCourse(int courseId) {
+		courseDao.delete(courseId);
 		return this.OP_SUCC;
 	}
 
 	@Override
-	public int updateDepartment(Department department) {
+	public int updateCourse(Course course) {
 		// TODO Auto-generated method stub
-		departmentDao.update(department);
+		courseDao.update(course);
 		return this.OP_SUCC;
 	}
 
 	@Override
-	public Department getDepartment(int departmentId) {
-		return departmentDao.get(departmentId);
+	public Course getCourse(int courseId) {
+		return courseDao.get(courseId);
 	}
 	
 	

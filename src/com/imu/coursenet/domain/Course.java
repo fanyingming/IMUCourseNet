@@ -12,6 +12,15 @@ public class Course implements Serializable{
 	private Department department;
 	private CourseType courseType;
 	private Set<CourseDetail> courseDetails=new HashSet<CourseDetail>();
+	
+	public Course(){
+		
+	}
+	public Course(String courseName,String courseDescription){
+		this.courseName=courseName;
+		this.courseDescription=courseDescription;
+	}
+	
 	public Integer getCourseId() {
 		return courseId;
 	}
@@ -44,7 +53,7 @@ public class Course implements Serializable{
 	public void setCourseType(CourseType courseType) {
 		this.courseType = courseType;
 	}
-
+	
 
 	public Set<CourseDetail> getCourseDetails() {
 		return courseDetails;

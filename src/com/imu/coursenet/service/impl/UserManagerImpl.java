@@ -11,7 +11,19 @@ public class UserManagerImpl implements UserManager{
 	private StudentDao studentDao;
 	private DepartmentDao departmentDao;
 	private SpecialtyDao specialtyDao;
+	private CourseDao courseDao;
+	private CourseTypeDao courseTypeDao;
 	
+	public void setCourseDao(CourseDao courseDao) {
+		this.courseDao = courseDao;
+	}
+
+
+	public void setCourseTypeDao(CourseTypeDao courseTypeDao) {
+		this.courseTypeDao = courseTypeDao;
+	}
+
+
 	public void setAdminDao(AdminDao adminDao) {
 		this.adminDao = adminDao;
 	}

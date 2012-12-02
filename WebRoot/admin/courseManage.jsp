@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'departmentManage.jsp' starting page</title>
+    <title>My JSP 'courseManage.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -27,24 +27,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <table width="1114" border="1" align="center">
     <tr bgcolor="#CCCCCC">
       <td width="171" height="24">编号</td>
-      <td width="255">部门</td>
-      <td width="316">简介</td>
+      <td width="155">课程名</td>
+      <td width="116">简介</td>
+       <td width="116">部门号</td>
+      <td width="116">课程类型</td>
       <td width="316">操作</td>
     </tr>
-   <s:iterator value="departments" id="department">
+   <s:iterator value="courses" id="course">
    <tr>
-      <td><s:property value="#department.departmentId"/></td>
-      <td><s:property value="#department.departmentName"/></td>
-      <td><s:property value="#department.departmentDescription"/></td>
-    
-      <td> 	<a href="deleteDepartment.action?departmentId=<s:property value="#department.departmentId"/>">删除 </a>
+      <td><s:property value="#course.courseId"/></td>
+      <td><s:property value="#course.courseName"/></td>
+      <td><s:property value="#course.courseDescription"/></td>
+      <td><s:property value="#course.department.departmentId"/></td>
+      <td><s:property value="#course.courseType.courseTypeId"/></td>
+             <td> 	
+       <a href="deleteCourse.action?courseId=<s:property value="#course.courseId"/>">删除 </a>
 			&nbsp;&nbsp;
-		<a href="beforeUpdateDepartment.action?departmentId=<s:property value="#department.departmentId"/>">修改</a></td>
+		<a href="beforeUpdateCourse.action?courseId=<s:property value="#course.courseId"/>">修改</a></td>
   </tr>
     </s:iterator>
   </table>
   <s:debug/>
-  <div align="right"><a href="admin/addDepartment.jsp">增加</a>
+  <div align="right"><a href="addCourse.action">增加</a>
   </div>
   </body>
 </html>

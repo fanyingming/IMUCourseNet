@@ -24,5 +24,11 @@
 	<bean id="specialtyDao"
 		class="com.imu.coursenet.dao.impl.SpecialtyDaoImpl"
 		parent="daoTemplate"/>
+<bean id="courseDao"
+		class="com.imu.coursenet.dao.impl.CourseDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="courseTypeDao"
+		class="com.imu.coursenet.dao.impl.CourseTypeDaoImpl"
+		parent="daoTemplate"/>
 
 </beans>

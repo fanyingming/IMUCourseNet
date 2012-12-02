@@ -67,6 +67,9 @@
 		p:studentDao-ref="studentDao"
 		p:departmentDao-ref="departmentDao"
 		p:specialtyDao-ref="specialtyDao"
+		p:courseTypeDao-ref="courseTypeDao"
+		p:courseDao-ref="courseDao"
+	
 		/>
 
 	<!-- 定义业务逻辑组件，继承业务逻辑组件的模板 -->
@@ -76,11 +79,19 @@
     		parent="managerTemplate"/>
     <bean id="specialtyManager" class="com.imu.coursenet.service.impl.SpecialtyManagerImpl"
     		parent="managerTemplate"/>
-	<!-- Action -->
+   	  <bean id="courseManager" class="com.imu.coursenet.service.impl.CourseManagerImpl"
+    		parent="managerTemplate"/>
+    <bean id="courseTypeManager" class="com.imu.coursenet.service.impl.CourseTypeManagerImpl"
+    		parent="managerTemplate"/>
+   	
+   	<!-- Action -->
 	<bean id="ManagerBaseAction" class="com.imu.coursenet.action.base.ManagerBaseAction"
     	p:userManager-ref="userManager"
     	p:departmentManager-ref="departmentManager"
     	p:specialtyManager-ref="specialtyManager"
+    	p:courseManager-ref="courseManager"
+    	p:courseTypeManager-ref="courseTypeManager"
+    
     	/>
     
 

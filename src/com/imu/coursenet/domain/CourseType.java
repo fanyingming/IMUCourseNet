@@ -15,7 +15,8 @@ public class CourseType implements Serializable{
 		
 	}
 	public CourseType(String courseTypeName,String courseTypeDescription){
-		
+		this.courseTypeName=courseTypeName;
+		this.courseTypeDescription=courseTypeDescription;
 	}
 	
 	public Set<Course> getCourses() {

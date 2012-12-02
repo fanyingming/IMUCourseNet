@@ -6,7 +6,7 @@ import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
 
-public class DepartmentManagerImpl implements DepartmentManager{
+public class CourseTypeManagerImpl implements CourseTypeManager{
 	private AdminDao adminDao;
 	private TeacherDao teacherDao;
 	private StudentDao studentDao;
@@ -17,10 +17,6 @@ public class DepartmentManagerImpl implements DepartmentManager{
 	
 	public void setCourseDao(CourseDao courseDao) {
 		this.courseDao = courseDao;
-	}
-
-	public void setCourseTypeDao(CourseTypeDao courseTypeDao) {
-		this.courseTypeDao = courseTypeDao;
 	}
 
 	public void setAdminDao(AdminDao adminDao) {
@@ -44,36 +40,40 @@ public class DepartmentManagerImpl implements DepartmentManager{
 		this.specialtyDao = specialtyDao;
 	}
 
-	@Override
-	public List<Department> listAllDepartment() {
-		return departmentDao.findAll();
+	public void setCourseTypeDao(CourseTypeDao courseTypeDao) {
+		this.courseTypeDao = courseTypeDao;
 	}
 
 	@Override
-	public int addDepartment(Department department) {
+	public List<CourseType> listAllCourseType() {
+		return courseTypeDao.findAll();
+	}
+
+	@Override
+	public int addCourseType(CourseType courseType) {
 		// TODO Auto-generated method stub
 	//	Department.setDepartment(department);
-		departmentDao.save(department);
+		courseTypeDao.save(courseType);
 		return this.OP_SUCC;
 		//return 0;
 	}
 
 	@Override
-	public int deleteDepartment(int departmentId) {
-		departmentDao.delete(departmentId);
+	public int deleteCourseType(int courseTypeId) {
+		courseTypeDao.delete(courseTypeId);
 		return this.OP_SUCC;
 	}
 
 	@Override
-	public int updateDepartment(Department department) {
+	public int updateCourseType(CourseType courseType) {
 		// TODO Auto-generated method stub
-		departmentDao.update(department);
+		courseTypeDao.update(courseType);
 		return this.OP_SUCC;
 	}
 
 	@Override
-	public Department getDepartment(int departmentId) {
-		return departmentDao.get(departmentId);
+	public CourseType getCourseType(int courseTypeId) {
+		return courseTypeDao.get(courseTypeId);
 	}
 	
 	
