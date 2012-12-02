@@ -11,6 +11,8 @@ public class Student
 	private static final long serialVersionUID = 48L;
 	private Specialty specialty;
 	private Set<CourseWork> courseWorks=new HashSet<CourseWork>();
+	private Set<CourseTaking> courseTakings=new HashSet<CourseTaking>();
+	
 	public Student(){
 		
 	}
@@ -22,6 +24,12 @@ public class Student
 	
 	}
 	
+	public Set<CourseTaking> getCourseTakings() {
+		return courseTakings;
+	}
+	public void setCourseTakings(Set<CourseTaking> courseTakings) {
+		this.courseTakings = courseTakings;
+	}
 	public Set<CourseWork> getCourseWorks() {
 		return courseWorks;
 	}

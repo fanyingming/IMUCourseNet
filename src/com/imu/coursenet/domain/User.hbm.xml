@@ -45,6 +45,11 @@
 				<key column="userId" />
 				<one-to-many class="CourseWork"/>
 			</set>
+			<!-- 映射和courseTaking的关联关系 -->
+			<set name="courseTakings" inverse="true">
+				<key column="userId" />
+				<one-to-many class="CourseTaking"/>
+			</set>
 		</subclass>
 	</class>
 </hibernate-mapping>
