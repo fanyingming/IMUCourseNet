@@ -22,6 +22,8 @@ public class User implements Serializable{
 	protected Set<Post> posts=new HashSet<Post>();
 	
 	protected Set<PostReply> postReplys=new HashSet<PostReply>();
+	
+	protected Set<Message> messages=new HashSet<Message>();
 
 	public User(){
 		
@@ -36,6 +38,14 @@ public class User implements Serializable{
 	}
 
 	
+
+	public Set<Message> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(Set<Message> messages) {
+		this.messages = messages;
+	}
 
 	public Set<PostReply> getPostReplys() {
 		return postReplys;
