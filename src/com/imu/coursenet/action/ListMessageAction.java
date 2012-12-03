@@ -4,9 +4,10 @@ import java.util.List;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
-public class ListMessageAction extends ManagerBaseAction{
+
+public class ListMessageAction extends ManagerBaseAction {
 	private List<Message> messages;
-	private int messageNum=0;
+	private int messageNum = 0;
 
 	public List<Message> getMessages() {
 		return messages;
@@ -26,10 +27,9 @@ public class ListMessageAction extends ManagerBaseAction{
 
 	@Override
 	public String execute() throws Exception {
-		messageNum=messageManager.listAllMessage().size();
-		messages=messageManager.listAllMessage();
+		messageNum = messageManager.listAllMessage().size();
+		messages = messageManager.listAllMessage();
 		return SUCCESS;
 	}
-	
-	
+
 }

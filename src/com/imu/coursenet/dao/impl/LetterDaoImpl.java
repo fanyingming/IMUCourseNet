@@ -7,48 +7,40 @@ import com.imu.coursenet.domain.CourseDetail;
 import com.imu.coursenet.domain.Letter;
 import com.imu.coursenet.support.YeekuHibernateDaoSupport;
 
-public class LetterDaoImpl 
-	extends YeekuHibernateDaoSupport 
-	implements LetterDao
-{
+public class LetterDaoImpl extends YeekuHibernateDaoSupport implements
+		LetterDao {
 
 	@Override
 	public Letter get(Integer letterId) {
-		return getHibernateTemplate()
-				.get(Letter.class , letterId);
+		return getHibernateTemplate().get(Letter.class, letterId);
 	}
 
 	@Override
 	public Integer save(Letter letter) {
-		return (Integer)getHibernateTemplate()
-				.save(letter);
+		return (Integer) getHibernateTemplate().save(letter);
 	}
 
 	@Override
 	public void update(Letter letter) {
-		getHibernateTemplate()
-		.update(letter);
-		
+		getHibernateTemplate().update(letter);
+
 	}
 
 	@Override
 	public void delete(Letter letter) {
-		getHibernateTemplate()
-		.delete(letter);
-		
+		getHibernateTemplate().delete(letter);
+
 	}
 
 	@Override
 	public void delete(Integer letterId) {
-		getHibernateTemplate()
-		.delete(get(letterId));
-		
+		getHibernateTemplate().delete(get(letterId));
+
 	}
 
 	@Override
 	public List<Letter> findAll() {
-		return (List<Letter>)getHibernateTemplate()
-				.find("from Letter ");
+		return (List<Letter>) getHibernateTemplate().find("from Letter ");
 	}
 
 }

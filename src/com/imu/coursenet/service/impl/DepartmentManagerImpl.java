@@ -6,7 +6,7 @@ import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
 
-public class DepartmentManagerImpl implements DepartmentManager{
+public class DepartmentManagerImpl implements DepartmentManager {
 	private AdminDao adminDao;
 	private TeacherDao teacherDao;
 	private StudentDao studentDao;
@@ -23,8 +23,7 @@ public class DepartmentManagerImpl implements DepartmentManager{
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
-	
-	
+
 	public void setCourseDetailDao(CourseDetailDao courseDetailDao) {
 		this.courseDetailDao = courseDetailDao;
 	}
@@ -41,7 +40,8 @@ public class DepartmentManagerImpl implements DepartmentManager{
 		this.courseTakingDao = courseTakingDao;
 	}
 
-	public void setCourseNotificationDao(CourseNotificationDao courseNotificationDao) {
+	public void setCourseNotificationDao(
+			CourseNotificationDao courseNotificationDao) {
 		this.courseNotificationDao = courseNotificationDao;
 	}
 
@@ -85,7 +85,6 @@ public class DepartmentManagerImpl implements DepartmentManager{
 		this.departmentDao = departmentDao;
 	}
 
-	
 	public void setSpecialtyDao(SpecialtyDao specialtyDao) {
 		this.specialtyDao = specialtyDao;
 	}
@@ -98,10 +97,10 @@ public class DepartmentManagerImpl implements DepartmentManager{
 	@Override
 	public int addDepartment(Department department) {
 		// TODO Auto-generated method stub
-	//	Department.setDepartment(department);
+		// Department.setDepartment(department);
 		departmentDao.save(department);
 		return this.OP_SUCC;
-		//return 0;
+		// return 0;
 	}
 
 	@Override
@@ -121,6 +120,5 @@ public class DepartmentManagerImpl implements DepartmentManager{
 	public Department getDepartment(int departmentId) {
 		return departmentDao.get(departmentId);
 	}
-	
-	
+
 }

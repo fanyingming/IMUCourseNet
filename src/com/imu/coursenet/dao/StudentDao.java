@@ -5,7 +5,7 @@ import java.util.List;
 import com.imu.coursenet.domain.*;
 
 public interface StudentDao {
-	
+
 	Student get(Integer userId);
 
 	Integer save(Student student);
@@ -17,6 +17,8 @@ public interface StudentDao {
 	void delete(Integer userId);
 
 	List<Student> findAll();
+
 	List<Student> getStudent(int userId);
-	List<Student> findByAccountAndPass(String userAccount,String userPass);
+
+	List<Student> findByAccountAndPass(String userAccount, String userPass);
 }

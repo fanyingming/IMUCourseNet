@@ -3,13 +3,12 @@ package com.imu.coursenet.service.impl;
 import java.util.Date;
 import java.util.List;
 
-
 import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.*;
 
 import com.imu.coursenet.service.*;
 
-public class CourseDetailManagerImpl implements CourseDetailManager{
+public class CourseDetailManagerImpl implements CourseDetailManager {
 
 	private AdminDao adminDao;
 	private TeacherDao teacherDao;
@@ -27,32 +26,31 @@ public class CourseDetailManagerImpl implements CourseDetailManager{
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
-	
+
 	@Override
 	public List<CourseDetail> listAllCourseDetail() {
 		return courseDetailDao.findAll();
 	}
 
 	@Override
-	public int addCourseDetail( int teacherId,
-			int courseId) {
-		CourseDetail courseDetail=new CourseDetail();
-		Teacher teacher=teacherDao.get(teacherId);
-		Course course=courseDao.get(courseId);
+	public int addCourseDetail(int teacherId, int courseId) {
+		CourseDetail courseDetail = new CourseDetail();
+		Teacher teacher = teacherDao.get(teacherId);
+		Course course = courseDao.get(courseId);
 		courseDetail.setTeacher(teacher);
 		courseDetail.setCourse(course);
-		Date date=new Date();
+		Date date = new Date();
 		courseDetail.setEstablishDate(date);
 		courseDetail.setState(1);
 		courseDetailDao.save(courseDetail);
 		return this.OP_SUCC;
 	}
 
-	
 	@Override
-	public List<CourseDetail> listCourseDetailByTeacherId(int teacherId,final int offset, final int pageSize) {
-		return courseDetailDao.findByTeacherId(teacherId,offset,pageSize);
-		
+	public List<CourseDetail> listCourseDetailByTeacherId(int teacherId,
+			final int offset, final int pageSize) {
+		return courseDetailDao.findByTeacherId(teacherId, offset, pageSize);
+
 	}
 
 	@Override
@@ -70,7 +68,7 @@ public class CourseDetailManagerImpl implements CourseDetailManager{
 	@Override
 	public CourseDetail getCourseDetail(int courseDetailId) {
 		return courseDetailDao.get(courseDetailId);
-		
+
 	}
 
 	public void setAdminDao(AdminDao adminDao) {
@@ -117,7 +115,8 @@ public class CourseDetailManagerImpl implements CourseDetailManager{
 		this.courseTakingDao = courseTakingDao;
 	}
 
-	public void setCourseNotificationDao(CourseNotificationDao courseNotificationDao) {
+	public void setCourseNotificationDao(
+			CourseNotificationDao courseNotificationDao) {
 		this.courseNotificationDao = courseNotificationDao;
 	}
 

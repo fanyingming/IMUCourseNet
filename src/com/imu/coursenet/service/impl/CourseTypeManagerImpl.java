@@ -6,7 +6,7 @@ import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
 
-public class CourseTypeManagerImpl implements CourseTypeManager{
+public class CourseTypeManagerImpl implements CourseTypeManager {
 	private AdminDao adminDao;
 	private TeacherDao teacherDao;
 	private StudentDao studentDao;
@@ -23,8 +23,7 @@ public class CourseTypeManagerImpl implements CourseTypeManager{
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
-	
-	
+
 	public void setCourseDetailDao(CourseDetailDao courseDetailDao) {
 		this.courseDetailDao = courseDetailDao;
 	}
@@ -41,7 +40,8 @@ public class CourseTypeManagerImpl implements CourseTypeManager{
 		this.courseTakingDao = courseTakingDao;
 	}
 
-	public void setCourseNotificationDao(CourseNotificationDao courseNotificationDao) {
+	public void setCourseNotificationDao(
+			CourseNotificationDao courseNotificationDao) {
 		this.courseNotificationDao = courseNotificationDao;
 	}
 
@@ -81,7 +81,6 @@ public class CourseTypeManagerImpl implements CourseTypeManager{
 		this.departmentDao = departmentDao;
 	}
 
-	
 	public void setSpecialtyDao(SpecialtyDao specialtyDao) {
 		this.specialtyDao = specialtyDao;
 	}
@@ -98,10 +97,10 @@ public class CourseTypeManagerImpl implements CourseTypeManager{
 	@Override
 	public int addCourseType(CourseType courseType) {
 		// TODO Auto-generated method stub
-	//	Department.setDepartment(department);
+		// Department.setDepartment(department);
 		courseTypeDao.save(courseType);
 		return this.OP_SUCC;
-		//return 0;
+		// return 0;
 	}
 
 	@Override
@@ -121,6 +120,5 @@ public class CourseTypeManagerImpl implements CourseTypeManager{
 	public CourseType getCourseType(int courseTypeId) {
 		return courseTypeDao.get(courseTypeId);
 	}
-	
-	
+
 }

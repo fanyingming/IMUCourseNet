@@ -2,15 +2,12 @@ package com.imu.coursenet.action.admin;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
 
-public class DeleteDepartmentAction extends ManagerBaseAction{
+public class DeleteDepartmentAction extends ManagerBaseAction {
 	private int departmentId;
-
 
 	public int getDepartmentId() {
 		return departmentId;
 	}
-
-
 
 	public void setDepartmentId(int departmentId) {
 		this.departmentId = departmentId;
@@ -18,15 +15,11 @@ public class DeleteDepartmentAction extends ManagerBaseAction{
 
 	@Override
 	public String execute() throws Exception {
-		int result=departmentManager.deleteDepartment(departmentId);
-		if(result == userManager.OP_SUCC){
+		int result = departmentManager.deleteDepartment(departmentId);
+		if (result == userManager.OP_SUCC) {
 			return SUCCESS;
-		}
-		else
+		} else
 			return ERROR;
 	}
 
-
-
-	
 }

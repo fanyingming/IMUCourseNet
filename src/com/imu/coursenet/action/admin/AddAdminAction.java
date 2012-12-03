@@ -5,7 +5,7 @@ import java.util.List;
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class AddAdminAction extends ManagerBaseAction{
+public class AddAdminAction extends ManagerBaseAction {
 	private List<Department> departments;
 
 	public List<Department> getDepartments() {
@@ -18,9 +18,8 @@ public class AddAdminAction extends ManagerBaseAction{
 
 	@Override
 	public String execute() throws Exception {
-		departments=departmentManager.listAllDepartment();
+		departments = departmentManager.listAllDepartment();
 		return SUCCESS;
 	}
-	
-	
+
 }

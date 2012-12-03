@@ -7,48 +7,41 @@ import com.imu.coursenet.domain.CourseDetail;
 import com.imu.coursenet.domain.Courseware;
 import com.imu.coursenet.support.YeekuHibernateDaoSupport;
 
-public class CoursewareDaoImpl 
-extends YeekuHibernateDaoSupport 
-implements CoursewareDao
-{
+public class CoursewareDaoImpl extends YeekuHibernateDaoSupport implements
+		CoursewareDao {
 
 	@Override
 	public Courseware get(Integer coursewareId) {
-		return getHibernateTemplate()
-				.get(Courseware.class , coursewareId);
+		return getHibernateTemplate().get(Courseware.class, coursewareId);
 	}
 
 	@Override
 	public Integer save(Courseware courseware) {
-		return (Integer)getHibernateTemplate()
-				.save(courseware);
+		return (Integer) getHibernateTemplate().save(courseware);
 	}
 
 	@Override
 	public void update(Courseware courseware) {
-		getHibernateTemplate()
-		.update(courseware);
-		
+		getHibernateTemplate().update(courseware);
+
 	}
 
 	@Override
 	public void delete(Courseware courseware) {
-		getHibernateTemplate()
-		.delete(courseware);
-		
+		getHibernateTemplate().delete(courseware);
+
 	}
 
 	@Override
 	public void delete(Integer coursewareId) {
-		getHibernateTemplate()
-		.delete(get(coursewareId));
-		
+		getHibernateTemplate().delete(get(coursewareId));
+
 	}
 
 	@Override
 	public List<Courseware> findAll() {
-		return (List<Courseware>)getHibernateTemplate()
-				.find("from Courseware ");
+		return (List<Courseware>) getHibernateTemplate().find(
+				"from Courseware ");
 	}
 
 }

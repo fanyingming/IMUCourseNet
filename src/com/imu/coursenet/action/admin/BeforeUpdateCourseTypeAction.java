@@ -5,10 +5,10 @@ import java.util.List;
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class BeforeUpdateCourseTypeAction extends ManagerBaseAction{
+public class BeforeUpdateCourseTypeAction extends ManagerBaseAction {
 	private CourseType courseType;
 	private int courseTypeId;
-	
+
 	public CourseType getCourseType() {
 		return courseType;
 	}
@@ -26,11 +26,10 @@ public class BeforeUpdateCourseTypeAction extends ManagerBaseAction{
 	}
 
 	@Override
-	//Department getDepartment(int departmentId);
+	// Department getDepartment(int departmentId);
 	public String execute() throws Exception {
-		courseType=courseTypeManager.getCourseType(courseTypeId);
+		courseType = courseTypeManager.getCourseType(courseTypeId);
 		return SUCCESS;
 	}
-
 
 }

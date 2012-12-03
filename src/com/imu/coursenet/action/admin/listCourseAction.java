@@ -1,18 +1,17 @@
 package com.imu.coursenet.action.admin;
 
-
 import java.util.List;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class listCourseAction extends ManagerBaseAction{
+public class listCourseAction extends ManagerBaseAction {
 	private List<Course> courses;
 
-	public String execute() throws Exception{
-		courses=courseManager.listAllCourse();
+	public String execute() throws Exception {
+		courses = courseManager.listAllCourse();
 		return SUCCESS;
-		
+
 	}
 
 	public List<Course> getCourses() {

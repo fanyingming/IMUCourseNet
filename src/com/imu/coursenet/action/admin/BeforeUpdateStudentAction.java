@@ -5,11 +5,12 @@ import java.util.List;
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class BeforeUpdateStudentAction extends ManagerBaseAction{
+public class BeforeUpdateStudentAction extends ManagerBaseAction {
 	private Student student;
 	private int userId;
 	private int department_Id;
 	private List<Department> departments;
+
 	public Student getStudent() {
 		return student;
 	}
@@ -34,8 +35,6 @@ public class BeforeUpdateStudentAction extends ManagerBaseAction{
 		this.departments = departments;
 	}
 
-
-
 	public int getDepartment_Id() {
 		return department_Id;
 	}
@@ -44,13 +43,12 @@ public class BeforeUpdateStudentAction extends ManagerBaseAction{
 		this.department_Id = department_Id;
 	}
 
-
 	@Override
 	public String execute() throws Exception {
-		student=userManager.getStudentById(userId);
-		department_Id=student.getDepartment().getDepartmentId();
-		departments=departmentManager.listAllDepartment();
+		student = userManager.getStudentById(userId);
+		department_Id = student.getDepartment().getDepartmentId();
+		departments = departmentManager.listAllDepartment();
 		return SUCCESS;
 	}
-	
+
 }

@@ -6,7 +6,7 @@ import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
 
-public class CourseManagerImpl implements CourseManager{
+public class CourseManagerImpl implements CourseManager {
 	private AdminDao adminDao;
 	private TeacherDao teacherDao;
 	private StudentDao studentDao;
@@ -23,61 +23,48 @@ public class CourseManagerImpl implements CourseManager{
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
-	
-	
-	
-
 
 	public void setCourseDetailDao(CourseDetailDao courseDetailDao) {
 		this.courseDetailDao = courseDetailDao;
 	}
 
-
 	public void setCoursewareDao(CoursewareDao coursewareDao) {
 		this.coursewareDao = coursewareDao;
 	}
-
 
 	public void setCourseWorkDao(CourseWorkDao courseWorkDao) {
 		this.courseWorkDao = courseWorkDao;
 	}
 
-
 	public void setCourseTakingDao(CourseTakingDao courseTakingDao) {
 		this.courseTakingDao = courseTakingDao;
 	}
 
-
-	public void setCourseNotificationDao(CourseNotificationDao courseNotificationDao) {
+	public void setCourseNotificationDao(
+			CourseNotificationDao courseNotificationDao) {
 		this.courseNotificationDao = courseNotificationDao;
 	}
-
 
 	public void setLetterDao(LetterDao letterDao) {
 		this.letterDao = letterDao;
 	}
 
-
 	public void setMessageDao(MessageDao messageDao) {
 		this.messageDao = messageDao;
 	}
-
 
 	public void setPostDao(PostDao postDao) {
 		this.postDao = postDao;
 	}
 
-
 	public void setPostReplyDao(PostReplyDao postReplyDao) {
 		this.postReplyDao = postReplyDao;
 	}
-
 
 	public void setCourseDao(CourseDao courseDao) {
 		this.courseDao = courseDao;
 	}
 
-	
 	public void setAdminDao(AdminDao adminDao) {
 		this.adminDao = adminDao;
 	}
@@ -94,7 +81,6 @@ public class CourseManagerImpl implements CourseManager{
 		this.departmentDao = departmentDao;
 	}
 
-	
 	public void setSpecialtyDao(SpecialtyDao specialtyDao) {
 		this.specialtyDao = specialtyDao;
 	}
@@ -109,14 +95,14 @@ public class CourseManagerImpl implements CourseManager{
 	}
 
 	@Override
-	public int addCourse(Course course,int departmentId,int courseTypeId) {
-		Department department=departmentDao.get(departmentId);
-		CourseType courseType=courseTypeDao.get(courseTypeId);
+	public int addCourse(Course course, int departmentId, int courseTypeId) {
+		Department department = departmentDao.get(departmentId);
+		CourseType courseType = courseTypeDao.get(courseTypeId);
 		course.setCourseType(courseType);
 		course.setDepartment(department);
 		courseDao.save(course);
 		return this.OP_SUCC;
-		//return 0;
+		// return 0;
 	}
 
 	@Override
@@ -136,6 +122,5 @@ public class CourseManagerImpl implements CourseManager{
 	public Course getCourse(int courseId) {
 		return courseDao.get(courseId);
 	}
-	
-	
+
 }

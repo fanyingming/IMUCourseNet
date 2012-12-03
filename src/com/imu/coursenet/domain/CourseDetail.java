@@ -6,33 +6,35 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.imu.coursenet.domain.*;
-public class CourseDetail implements Serializable{
+
+public class CourseDetail implements Serializable {
 	private static final long serialVersionUID = 48L;
 	private Integer courseDetailId;
 	private String teachPlane;
 	private String referenceBook;
 	private String courseIntroduce;
 	private Date establishDate;
-	private Integer state;//-1代表开始，1代表未开始。
+	private Integer state;// -1代表开始，1代表未开始。
 	private Course course;
 	private Teacher teacher;
 	private Set<Courseware> coursewares = new HashSet<Courseware>();
-	private Set<CourseNotification> courseNotifications=new HashSet<CourseNotification>();
-	public CourseDetail(){
-		
-	}
-	
-	public CourseDetail(String teachPlane,String referenceBook,
-			String courseIntroduce,Date establishDate,Integer state){
-		
+	private Set<CourseNotification> courseNotifications = new HashSet<CourseNotification>();
+
+	public CourseDetail() {
+
 	}
 
-	
+	public CourseDetail(String teachPlane, String referenceBook,
+			String courseIntroduce, Date establishDate, Integer state) {
+
+	}
+
 	public Set<CourseNotification> getCourseNotifications() {
 		return courseNotifications;
 	}
 
-	public void setCourseNotifications(Set<CourseNotification> courseNotifications) {
+	public void setCourseNotifications(
+			Set<CourseNotification> courseNotifications) {
 		this.courseNotifications = courseNotifications;
 	}
 
@@ -107,6 +109,5 @@ public class CourseDetail implements Serializable{
 	public void setTeacher(Teacher teacher) {
 		this.teacher = teacher;
 	}
-	
-	
+
 }

@@ -3,7 +3,7 @@ package com.imu.coursenet.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-public class CourseNotification implements Serializable{
+public class CourseNotification implements Serializable {
 	private static final long serialVersionUID = 48L;
 	private Integer courseNotificationId;
 	private String title;
@@ -11,9 +11,9 @@ public class CourseNotification implements Serializable{
 	private Date editDate;
 	private Integer checkCounts;
 	private CourseDetail courseDetail;
-	
-	public CourseNotification(){
-		
+
+	public CourseNotification() {
+
 	}
 
 	public Integer getCourseNotificationId() {
@@ -64,5 +64,4 @@ public class CourseNotification implements Serializable{
 		this.courseDetail = courseDetail;
 	}
 
-	
 }

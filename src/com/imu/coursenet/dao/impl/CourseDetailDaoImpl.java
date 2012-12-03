@@ -6,59 +6,50 @@ import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.*;
 import com.imu.coursenet.support.YeekuHibernateDaoSupport;
 
-public class CourseDetailDaoImpl 
-	extends YeekuHibernateDaoSupport 
-	implements CourseDetailDao
-{
-	
-	
+public class CourseDetailDaoImpl extends YeekuHibernateDaoSupport implements
+		CourseDetailDao {
 
 	@Override
 	public CourseDetail get(Integer courseDetailId) {
-		return getHibernateTemplate()
-				.get(CourseDetail.class , courseDetailId);
+		return getHibernateTemplate().get(CourseDetail.class, courseDetailId);
 	}
 
 	@Override
 	public Integer save(CourseDetail courseDetail) {
-		return (Integer)getHibernateTemplate()
-				.save(courseDetail);
+		return (Integer) getHibernateTemplate().save(courseDetail);
 	}
 
 	@Override
 	public void update(CourseDetail courseDetail) {
-		getHibernateTemplate()
-		.update(courseDetail);
-		
+		getHibernateTemplate().update(courseDetail);
+
 	}
 
 	@Override
 	public void delete(CourseDetail courseDetail) {
-		getHibernateTemplate()
-		.delete(courseDetail);
-		
+		getHibernateTemplate().delete(courseDetail);
+
 	}
 
 	@Override
 	public void delete(Integer courseDetailId) {
-		getHibernateTemplate()
-		.delete(get(courseDetailId));
-		
+		getHibernateTemplate().delete(get(courseDetailId));
+
 	}
 
 	@Override
 	public List<CourseDetail> findAll() {
-		return (List<CourseDetail>)getHibernateTemplate()
-				.find("from CourseDetail ");
+		return (List<CourseDetail>) getHibernateTemplate().find(
+				"from CourseDetail ");
 	}
 
 	@Override
-	public List<CourseDetail> findByTeacherId(int teacherId,final int offset, final int pageSize) {
-		return this.findByPage("from CourseDetail c where c.teacher.userId=?", teacherId,offset, pageSize);
-//		return (List<CourseDetail>)getHibernateTemplate()
-//				.find("from CourseDetail c where c.teacher.userId=?",teacherId);
+	public List<CourseDetail> findByTeacherId(int teacherId, final int offset,
+			final int pageSize) {
+		return this.findByPage("from CourseDetail c where c.teacher.userId=?",
+				teacherId, offset, pageSize);
+		// return (List<CourseDetail>)getHibernateTemplate()
+		// .find("from CourseDetail c where c.teacher.userId=?",teacherId);
 	}
-
-	
 
 }

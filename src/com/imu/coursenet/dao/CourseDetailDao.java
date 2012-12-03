@@ -16,6 +16,7 @@ public interface CourseDetailDao {
 	void delete(Integer courseDetailId);
 
 	List<CourseDetail> findAll();
-	
-	List<CourseDetail> findByTeacherId(int teacherId,final int offset, final int pageSize);
+
+	List<CourseDetail> findByTeacherId(int teacherId, final int offset,
+			final int pageSize);
 }

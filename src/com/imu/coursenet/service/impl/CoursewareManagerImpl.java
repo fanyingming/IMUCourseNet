@@ -22,7 +22,7 @@ import com.imu.coursenet.domain.Course;
 import com.imu.coursenet.domain.Courseware;
 import com.imu.coursenet.service.*;
 
-public class CoursewareManagerImpl implements CoursewareManager{
+public class CoursewareManagerImpl implements CoursewareManager {
 	private AdminDao adminDao;
 	private TeacherDao teacherDao;
 	private StudentDao studentDao;
@@ -39,87 +39,100 @@ public class CoursewareManagerImpl implements CoursewareManager{
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
-	
-	
-	
-	
-	
+
 	@Override
 	public List<Courseware> listAllCourseware() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	@Override
 	public int addCourseware(Courseware courseware, int courseDetailId) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 	@Override
 	public int deleteCourseware(int coursewareId) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 	@Override
 	public int updateCourseware(Courseware courseware) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 	@Override
 	public Course getCourseware(int coursewareId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	public void setAdminDao(AdminDao adminDao) {
 		this.adminDao = adminDao;
 	}
+
 	public void setTeacherDao(TeacherDao teacherDao) {
 		this.teacherDao = teacherDao;
 	}
+
 	public void setStudentDao(StudentDao studentDao) {
 		this.studentDao = studentDao;
 	}
+
 	public void setDepartmentDao(DepartmentDao departmentDao) {
 		this.departmentDao = departmentDao;
 	}
+
 	public void setSpecialtyDao(SpecialtyDao specialtyDao) {
 		this.specialtyDao = specialtyDao;
 	}
+
 	public void setCourseDao(CourseDao courseDao) {
 		this.courseDao = courseDao;
 	}
+
 	public void setCourseTypeDao(CourseTypeDao courseTypeDao) {
 		this.courseTypeDao = courseTypeDao;
 	}
+
 	public void setCourseDetailDao(CourseDetailDao courseDetailDao) {
 		this.courseDetailDao = courseDetailDao;
 	}
+
 	public void setCoursewareDao(CoursewareDao coursewareDao) {
 		this.coursewareDao = coursewareDao;
 	}
+
 	public void setCourseWorkDao(CourseWorkDao courseWorkDao) {
 		this.courseWorkDao = courseWorkDao;
 	}
+
 	public void setCourseTakingDao(CourseTakingDao courseTakingDao) {
 		this.courseTakingDao = courseTakingDao;
 	}
-	public void setCourseNotificationDao(CourseNotificationDao courseNotificationDao) {
+
+	public void setCourseNotificationDao(
+			CourseNotificationDao courseNotificationDao) {
 		this.courseNotificationDao = courseNotificationDao;
 	}
+
 	public void setLetterDao(LetterDao letterDao) {
 		this.letterDao = letterDao;
 	}
+
 	public void setMessageDao(MessageDao messageDao) {
 		this.messageDao = messageDao;
 	}
+
 	public void setPostDao(PostDao postDao) {
 		this.postDao = postDao;
 	}
+
 	public void setPostReplyDao(PostReplyDao postReplyDao) {
 		this.postReplyDao = postReplyDao;
 	}
-	
-	
-	
-	
-	
+
 }

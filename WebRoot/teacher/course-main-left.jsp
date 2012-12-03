@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <li class="dropdown">
                 <ul>
                     <li><a href="#" target="mainFrame">查看已上传课件</a></li>
-                    <li><a href="#" target="mainFrame">上传课件</a></li>
+                    <li><a href="teacher/uploadCourseware.jsp" target="mainFrame">上传课件</a></li>
                     
                 </ul>
 			</li>

@@ -7,48 +7,40 @@ import com.imu.coursenet.domain.CourseDetail;
 import com.imu.coursenet.domain.Message;
 import com.imu.coursenet.support.YeekuHibernateDaoSupport;
 
-public class MessageDaoImpl 
-	extends YeekuHibernateDaoSupport 
-	implements MessageDao
-{
+public class MessageDaoImpl extends YeekuHibernateDaoSupport implements
+		MessageDao {
 
 	@Override
 	public Message get(Integer messageId) {
-		return getHibernateTemplate()
-				.get(Message.class , messageId);
+		return getHibernateTemplate().get(Message.class, messageId);
 	}
 
 	@Override
 	public Integer save(Message message) {
-		return (Integer)getHibernateTemplate()
-				.save(message);
+		return (Integer) getHibernateTemplate().save(message);
 	}
 
 	@Override
 	public void update(Message message) {
-		getHibernateTemplate()
-		.update(message);
-		
+		getHibernateTemplate().update(message);
+
 	}
 
 	@Override
 	public void delete(Message message) {
-		getHibernateTemplate()
-		.delete(message);
-		
+		getHibernateTemplate().delete(message);
+
 	}
 
 	@Override
 	public void delete(Integer messageId) {
-		getHibernateTemplate()
-		.delete(get(messageId));
-		
+		getHibernateTemplate().delete(get(messageId));
+
 	}
 
 	@Override
 	public List<Message> findAll() {
-		return (List<Message>)getHibernateTemplate()
-				.find("from Message ");
+		return (List<Message>) getHibernateTemplate().find("from Message ");
 	}
 
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import com.imu.coursenet.domain.Admin;
 
 public interface AdminDao {
-	
+
 	Admin get(Integer userId);
 
 	Integer save(Admin admin);
@@ -17,6 +17,8 @@ public interface AdminDao {
 	void delete(Integer userId);
 
 	List<Admin> findAll();
+
 	List<Admin> getAdmin(int userId);
-	List<Admin> findByAccountAndPass(String userAccount,String userPass);
+
+	List<Admin> findByAccountAndPass(String userAccount, String userPass);
 }

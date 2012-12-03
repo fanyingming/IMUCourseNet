@@ -5,7 +5,7 @@ import java.util.List;
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class ListCourseDetailAction extends ManagerBaseAction{
+public class ListCourseDetailAction extends ManagerBaseAction {
 	private List<CourseDetail> courseDetails;
 
 	public List<CourseDetail> getCourseDetails() {
@@ -18,9 +18,8 @@ public class ListCourseDetailAction extends ManagerBaseAction{
 
 	@Override
 	public String execute() throws Exception {
-		courseDetails=courseDetailManager.listAllCourseDetail();
+		courseDetails = courseDetailManager.listAllCourseDetail();
 		return SUCCESS;
 	}
-	
-	
+
 }

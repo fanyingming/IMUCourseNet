@@ -5,7 +5,7 @@ import java.util.List;
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class BeforeUpdateTeacherAction extends ManagerBaseAction{
+public class BeforeUpdateTeacherAction extends ManagerBaseAction {
 	private Teacher teacher;
 	private int userId;
 	private int department_Id;
@@ -18,7 +18,6 @@ public class BeforeUpdateTeacherAction extends ManagerBaseAction{
 	public void setTeacher(Teacher teacher) {
 		this.teacher = teacher;
 	}
-	
 
 	public int getUserId() {
 		return userId;
@@ -36,8 +35,6 @@ public class BeforeUpdateTeacherAction extends ManagerBaseAction{
 		this.departments = departments;
 	}
 
-
-
 	public int getDepartment_Id() {
 		return department_Id;
 	}
@@ -46,12 +43,11 @@ public class BeforeUpdateTeacherAction extends ManagerBaseAction{
 		this.department_Id = department_Id;
 	}
 
-
 	@Override
 	public String execute() throws Exception {
-		teacher=userManager.getTeacherById(userId);
-		department_Id=teacher.getDepartment().getDepartmentId();
-		departments=departmentManager.listAllDepartment();
+		teacher = userManager.getTeacherById(userId);
+		department_Id = teacher.getDepartment().getDepartmentId();
+		departments = departmentManager.listAllDepartment();
 		return SUCCESS;
 	}
 
