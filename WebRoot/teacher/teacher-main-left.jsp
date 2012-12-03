@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <li class="button"><a href="#" class="red">个人信息管理 <span></span></a></li>
             <li class="dropdown">
                 <ul>
-                    <li><a href="#" target="mainFrame">查看个人信息</a></li>
+                    <li><a href="teaShowInfo.action" target="mainFrame">查看个人信息</a></li>
                     
                     
                 </ul>

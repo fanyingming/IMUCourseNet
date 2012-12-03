@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <li><a href="listAdmin.action" target="mainFrame">查看管理员</a></li>
                     <li><a href="listTeacher.action" target="mainFrame">查看教师</a></li>
                     <li><a href="listStudent.action" target="mainFrame">查看学生</a></li>
-                    
+                     <li><a href="adminShowInfo.action" target="mainFrame">查看个人信息</a></li>
                 </ul>
 			</li>
           </ul>

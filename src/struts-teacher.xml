@@ -21,6 +21,16 @@
 			<result name="success">/teacher/course-main.jsp</result>
 		</action>
 		
-		
+		<!-- 个人信息	-->
+	<action name="teaShowInfo" class="com.imu.coursenet.action.teacher.TeaShowInfoAction">
+				<result name="success">/teacher/teaShowInfo.jsp</result>	
+	</action>
+	
+	<!-- 修改个人信息	-->
+	<action name="TeaUpdate" class="com.imu.coursenet.action.teacher.TeaUpdateAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">teaShowInfo</param>
+				</result>	
+	</action>
 	</package>
 </struts>
