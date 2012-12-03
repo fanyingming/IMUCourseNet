@@ -209,7 +209,26 @@
 				</result>	
 		</action>
 		
-		
+		<!-- 显示开设的课程 -->
+		<action name="listCourseDetail" class="com.imu.coursenet.action.admin.ListCourseDetailAction">
+				<result name="success">/admin/listCourseDetail.jsp</result>
+		</action>
+		<!-- 开设课程 -->
+		<action name="addCourseDetail" class="com.imu.coursenet.action.admin.AddCourseDetailAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">listCourseDetail</param>
+				</result>	
+		</action>
+		<!-- 查看留言 -->
+		<action name="adminListMessage" class="com.imu.coursenet.action.admin.AdminListMessageAction">
+			<result name="success">/admin/adminListMessage.jsp</result>
+		</action>
+		<!-- 点击删除后，删除刘留言并返回显示留言界面 -->
+		<action name="deleteMessage" class="com.imu.coursenet.action.admin.DeleteMessageAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">adminListMessage</param>
+				</result>					
+		</action>
 		
 		
 		

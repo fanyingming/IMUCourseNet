@@ -1,5 +1,6 @@
 package com.imu.coursenet.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -33,9 +34,16 @@ public class CourseDetailManagerImpl implements CourseDetailManager{
 	}
 
 	@Override
-	public int addCourseDetail(CourseDetail courseDetail, int teacherId,
+	public int addCourseDetail( int teacherId,
 			int courseId) {
-//		Teacher teacher
+		CourseDetail courseDetail=new CourseDetail();
+		Teacher teacher=teacherDao.get(teacherId);
+		Course course=courseDao.get(courseId);
+		courseDetail.setTeacher(teacher);
+		courseDetail.setCourse(course);
+		Date date=new Date();
+		courseDetail.setEstablishDate(date);
+		courseDetail.setState(1);
 		courseDetailDao.save(courseDetail);
 		return this.OP_SUCC;
 	}

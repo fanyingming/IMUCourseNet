@@ -17,7 +17,7 @@
 		<property name="referenceBook" column="referenceBook"	type="string" />
 		<property name="courseIntroduce" column="courseIntroduce"	type="string"/>
 		<property name="establishDate" column="establishDate"	type="date" not-null="true"/>
-		<property name="state" column="state"	type="integer" not-null="true"/>
+		<property name="state" column="state"	type="integer" />
 		<!-- 映射和Department的关联关系 -->
 		<many-to-one name="teacher" column="teacherId" 
 			class="Teacher" lazy="false"/>

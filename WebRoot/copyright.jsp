@@ -3,13 +3,13 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@taglib prefix="s" uri="/struts-tags" %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'head.jsp' starting page</title>
+    <title>My JSP 'copyright.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,23 +23,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-	   <div>
-	   <img src="images/head0.jpg"  />
-	   <div id="head2">
-	   
-	   	<div class="head2_left">
-		   	<h4>欢迎您，<s:property value="#session.user.userName"/></h4>
-		</div>
-		   	<div class="head2_right">
-		   		<a href="student/student-main.jsp" target="_top">我的主页</a>
-		   		<a href="#">我的课程</a>
-		   		<a href="#">我的通知</a>
-		   		<a href="#">我的信箱</a>
-		   		<a href="#">内大课程</a>
-		   		<a href="listMessage.action" target="mainFrame" >留言板</a>
-		   		<a href="#" >退出</a>
-		   	</div>
-		   </div>
-	   </div>
+    <div id="ban">
+    	<a>Copyright&copy;2012 内蒙古大学版权所有</a>
+    </div>
   </body>
 </html>

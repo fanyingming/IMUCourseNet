@@ -48,16 +48,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</td>
 				<td rowspan=2 style="background:#c5d616;cursor:pointer;" width="140px"><a href="#"><br>软  件  测  试</a></td>
 				<td rowspan=2 style="background:#f9b52c;" width="140px"><a href="#"><br>人  机  交  互</a></td>
-				<td style="text-align:right;" width="300px" height="24px"><font size="4">用户名：
-				</font><input type="text" name="userAccount" style="font-size:17px;"></td>
+				<td style="text-align:right;" width="100px" height="24px"><font size="4">用户名
+				</font></td>
+				<td style="text-align:left;"><input type="text" name="userAccount" style="font-size:17px;"></td>
 				<td rowspan=2 style="text-align:center;" width="100px">
 				<a  style="font-size:22px;height:24px;" onclick= "loginForm.action='login';loginForm.submit(); ">登录</a>
 				<a href="#" style="font-size:18px;height:24px;">忘记密码？</a>
 				</td>
 		   </tr>
 		   <tr>
-		   		<td style="text-align:right;" width="300px" height="24px"><font size="4">密&nbsp;&nbsp;&nbsp;码：
-				</font><input type="password" name="userPass" style="font-size:17px;">&nbsp;</td>
+		   		<td style="text-align:right;" width="100px" height="24px"><font size="4">密码
+				</font></td>
+				<td style="text-align:left;"><input type="password" name="userPass" style="font-size:17px;"></td>
 		   </tr>
 		   <tr>
 			   	<td rowspan=2 style="background:#70c938;"><a href="#"><br>网络信息安全</a></td>
@@ -66,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			   	<td><br></td>
 		   </tr>
 		   <tr>
-		   <td colspan=2 style="text-align:center;"><a style="font-size:20px;background:#d11b2b;color:#eeeeee">有问题请联系：ndjsw@imu.edu.cn</a></td>
+		   <td colspan=3 style="text-align:center;"><a style="font-size:20px;background:#d11b2b;color:#eeeeee">有问题请联系：ndjsw@imu.edu.cn</a></td>
 		   </tr>
 	   </table>
 	   </form>
