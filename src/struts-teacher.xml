@@ -6,6 +6,14 @@
 <struts>
 	<package name="teacher" extends="struts-default" >
 		
+		<action name="uploadCourseware" class="com.imu.coursenet.action.teacher.UploadCoursewareAction">
+			<!-- 动态设置Action的属性值 -->
+			<param name="savePath">/uploadFiles</param>
+			<!-- 配置Struts 2默认的视图页面 -->
+			<result name="success">/teacher/upload-succ.jsp</result>	
+			<result name="input">/teacher/uploadCourseware.jsp</result>	
+		</action>
+		
 		<!-- 罗列教师开设的课程 -->
 		<action name="listTeacherCourseDetail" class="com.imu.coursenet.action.teacher.ListTeacherCourseDetailsAction">
 			<result name="success">/teacher/listTeacherCourseDetails.jsp</result>
