@@ -2,36 +2,33 @@ package com.imu.coursenet.domain;
 
 import java.io.Serializable;
 
-public class User implements Serializable{
+public class User implements Serializable {
 	private static final long serialVersionUID = 48L;
-	
+
 	protected Integer userId;
-	
+
 	protected String userAccount;
-	
+
 	protected String userName;
-	
+
 	protected String userPass;
-	
+
 	protected String userMail;
-	
+
 	protected Department department;
-	
-	
 
-	public User(){
-		
-	}
-	
-	public User(String userAccount,String userName,String userPass,String userMail,Department departments){
-		this.userAccount=userAccount;
-		this.userPass=userPass;
-		this.userName=userName;
-		this.userMail=userMail;
-		this.department=department;
+	public User() {
+
 	}
 
-	
+	public User(String userAccount, String userName, String userPass,
+			String userMail, Department departments) {
+		this.userAccount = userAccount;
+		this.userPass = userPass;
+		this.userName = userName;
+		this.userMail = userMail;
+		this.department = department;
+	}
 
 	public Department getDepartment() {
 		return department;
@@ -80,5 +77,5 @@ public class User implements Serializable{
 	public void setUserMail(String userMail) {
 		this.userMail = userMail;
 	}
-	
+
 }

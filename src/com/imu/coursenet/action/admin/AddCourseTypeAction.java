@@ -4,10 +4,11 @@ import java.util.List;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
+
 /*
  * 这个action用来列出所有部门，以便添加管理员
  */
-public class AddCourseTypeAction extends ManagerBaseAction{
+public class AddCourseTypeAction extends ManagerBaseAction {
 	private List<CourseType> courseTypes;
 
 	public List<CourseType> getCourseTypes() {
@@ -23,5 +24,5 @@ public class AddCourseTypeAction extends ManagerBaseAction{
 		courseTypes = courseTypeManager.listAllCourseType();
 		return SUCCESS;
 	}
-	
+
 }

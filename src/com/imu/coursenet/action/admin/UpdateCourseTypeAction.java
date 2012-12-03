@@ -3,11 +3,11 @@ package com.imu.coursenet.action.admin;
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class UpdateCourseTypeAction extends ManagerBaseAction{
+public class UpdateCourseTypeAction extends ManagerBaseAction {
 	private Integer courseTypeId;
 	private String courseTypeDescription;
 	private String courseTypeName;
-	
+
 	public Integer getCourseTypeId() {
 		return courseTypeId;
 	}
@@ -32,18 +32,16 @@ public class UpdateCourseTypeAction extends ManagerBaseAction{
 		this.courseTypeName = courseTypeName;
 	}
 
-	
 	@Override
 	public String execute() throws Exception {
 		CourseType courseType = courseTypeManager.getCourseType(courseTypeId);
 		courseType.setCourseTypeName(courseTypeName);
 		courseType.setCourseTypeDescription(courseTypeDescription);
-		
-		if(courseTypeManager.updateCourseType(courseType)==courseTypeManager.OP_SUCC){
+
+		if (courseTypeManager.updateCourseType(courseType) == courseTypeManager.OP_SUCC) {
 			return SUCCESS;
-		}
-		else 
+		} else
 			return ERROR;
 	}
-	
+
 }

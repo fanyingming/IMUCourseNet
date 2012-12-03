@@ -17,6 +17,8 @@ public interface TeacherDao {
 	void delete(Integer userId);
 
 	List<Teacher> findAll();
+
 	List<Teacher> getTeacher(int userId);
-	List<Teacher> findByAccountAndPass(String userAccount,String userPass);
+
+	List<Teacher> findByAccountAndPass(String userAccount, String userPass);
 }

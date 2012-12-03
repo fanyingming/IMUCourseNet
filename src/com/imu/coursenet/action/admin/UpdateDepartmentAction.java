@@ -3,12 +3,11 @@ package com.imu.coursenet.action.admin;
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class UpdateDepartmentAction extends ManagerBaseAction{
+public class UpdateDepartmentAction extends ManagerBaseAction {
 	private Integer departmentId;
 	private String departmentDescription;
 	private String departmentName;
-	
-	
+
 	public Integer getDepartmentId() {
 		return departmentId;
 	}
@@ -32,18 +31,17 @@ public class UpdateDepartmentAction extends ManagerBaseAction{
 	public void setDepartmentName(String departmentName) {
 		this.departmentName = departmentName;
 	}
-	
+
 	@Override
 	public String execute() throws Exception {
 		Department department = departmentManager.getDepartment(departmentId);
 		department.setDepartmentName(departmentName);
 		department.setDepartmentDescription(departmentDescription);
-		
-		if(departmentManager.updateDepartment(department)==departmentManager.OP_SUCC){
+
+		if (departmentManager.updateDepartment(department) == departmentManager.OP_SUCC) {
 			return SUCCESS;
-		}
-		else 
+		} else
 			return ERROR;
 	}
-	
+
 }

@@ -3,16 +3,16 @@ package com.imu.coursenet.action.admin;
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class SaveDepartmentAction extends ManagerBaseAction{
+public class SaveDepartmentAction extends ManagerBaseAction {
 
 	private String departmentName;
 	private String departmentDescription;
-	
+
 	@Override
 	public String execute() throws Exception {
-	
-	
-		Department department=new Department(departmentName,departmentDescription);
+
+		Department department = new Department(departmentName,
+				departmentDescription);
 		departmentManager.addDepartment(department);
 		return SUCCESS;
 	}
@@ -33,5 +33,4 @@ public class SaveDepartmentAction extends ManagerBaseAction{
 		this.departmentDescription = departmentDescription;
 	}
 
-	
 }

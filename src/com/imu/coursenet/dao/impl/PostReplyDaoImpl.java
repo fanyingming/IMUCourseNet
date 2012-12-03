@@ -7,48 +7,40 @@ import com.imu.coursenet.domain.CourseDetail;
 import com.imu.coursenet.domain.PostReply;
 import com.imu.coursenet.support.YeekuHibernateDaoSupport;
 
-public class PostReplyDaoImpl 
-	extends YeekuHibernateDaoSupport 
-	implements PostReplyDao
-{
+public class PostReplyDaoImpl extends YeekuHibernateDaoSupport implements
+		PostReplyDao {
 
 	@Override
 	public PostReply get(Integer postReplyId) {
-		return getHibernateTemplate()
-				.get(PostReply.class , postReplyId);
+		return getHibernateTemplate().get(PostReply.class, postReplyId);
 	}
 
 	@Override
 	public Integer save(PostReply postReply) {
-		return (Integer)getHibernateTemplate()
-				.save(postReply);
+		return (Integer) getHibernateTemplate().save(postReply);
 	}
 
 	@Override
 	public void update(PostReply postReply) {
-		getHibernateTemplate()
-		.update(postReply);
-		
+		getHibernateTemplate().update(postReply);
+
 	}
 
 	@Override
 	public void delete(PostReply postReply) {
-		getHibernateTemplate()
-		.delete(postReply);
-		
+		getHibernateTemplate().delete(postReply);
+
 	}
 
 	@Override
 	public void delete(Integer postReplyId) {
-		getHibernateTemplate()
-		.delete(get(postReplyId));
-		
+		getHibernateTemplate().delete(get(postReplyId));
+
 	}
 
 	@Override
 	public List<PostReply> findAll() {
-		return (List<PostReply>)getHibernateTemplate()
-				.find("from PostReply ");
+		return (List<PostReply>) getHibernateTemplate().find("from PostReply ");
 	}
 
 }

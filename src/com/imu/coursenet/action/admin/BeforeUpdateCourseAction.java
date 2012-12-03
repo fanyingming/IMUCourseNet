@@ -5,14 +5,13 @@ import java.util.List;
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class BeforeUpdateCourseAction extends ManagerBaseAction{
+public class BeforeUpdateCourseAction extends ManagerBaseAction {
 	private Course course;
 	private int courseId;
 	private int courseType_Id;
 	private int department_Id;
 	private List<CourseType> courseTypes;
 	private List<Department> departments;
-
 
 	public List<CourseType> getCourseTypes() {
 		return courseTypes;
@@ -47,15 +46,14 @@ public class BeforeUpdateCourseAction extends ManagerBaseAction{
 	}
 
 	@Override
-	//Department getDepartment(int departmentId);
+	// Department getDepartment(int departmentId);
 	public String execute() throws Exception {
-		course=courseManager.getCourse(courseId);
-		department_Id=course.getDepartment().getDepartmentId();
-		departments=departmentManager.listAllDepartment();
-		courseType_Id=course.getCourseType().getCourseTypeId();
-		courseTypes=courseTypeManager.listAllCourseType();
+		course = courseManager.getCourse(courseId);
+		department_Id = course.getDepartment().getDepartmentId();
+		departments = departmentManager.listAllDepartment();
+		courseType_Id = course.getCourseType().getCourseTypeId();
+		courseTypes = courseTypeManager.listAllCourseType();
 		return SUCCESS;
 	}
-
 
 }

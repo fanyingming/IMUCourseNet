@@ -6,19 +6,61 @@ import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
 
-public class CourseTypeManagerImpl implements CourseTypeManager{
+public class CourseTypeManagerImpl implements CourseTypeManager {
 	private AdminDao adminDao;
 	private TeacherDao teacherDao;
 	private StudentDao studentDao;
 	private DepartmentDao departmentDao;
 	private SpecialtyDao specialtyDao;
-	private CourseTypeDao courseTypeDao;
 	private CourseDao courseDao;
-	private Specialty specialty;
-	
-	public void setSpecialty(Specialty specialty) {
-		this.specialty = specialty;
+	private CourseTypeDao courseTypeDao;
+	private CourseDetailDao courseDetailDao;
+	private CoursewareDao coursewareDao;
+	private CourseWorkDao courseWorkDao;
+	private CourseTakingDao courseTakingDao;
+	private CourseNotificationDao courseNotificationDao;
+	private LetterDao letterDao;
+	private MessageDao messageDao;
+	private PostDao postDao;
+	private PostReplyDao postReplyDao;
+
+	public void setCourseDetailDao(CourseDetailDao courseDetailDao) {
+		this.courseDetailDao = courseDetailDao;
 	}
+
+	public void setCoursewareDao(CoursewareDao coursewareDao) {
+		this.coursewareDao = coursewareDao;
+	}
+
+	public void setCourseWorkDao(CourseWorkDao courseWorkDao) {
+		this.courseWorkDao = courseWorkDao;
+	}
+
+	public void setCourseTakingDao(CourseTakingDao courseTakingDao) {
+		this.courseTakingDao = courseTakingDao;
+	}
+
+	public void setCourseNotificationDao(
+			CourseNotificationDao courseNotificationDao) {
+		this.courseNotificationDao = courseNotificationDao;
+	}
+
+	public void setLetterDao(LetterDao letterDao) {
+		this.letterDao = letterDao;
+	}
+
+	public void setMessageDao(MessageDao messageDao) {
+		this.messageDao = messageDao;
+	}
+
+	public void setPostDao(PostDao postDao) {
+		this.postDao = postDao;
+	}
+
+	public void setPostReplyDao(PostReplyDao postReplyDao) {
+		this.postReplyDao = postReplyDao;
+	}
+
 	public void setCourseDao(CourseDao courseDao) {
 		this.courseDao = courseDao;
 	}
@@ -39,7 +81,6 @@ public class CourseTypeManagerImpl implements CourseTypeManager{
 		this.departmentDao = departmentDao;
 	}
 
-	
 	public void setSpecialtyDao(SpecialtyDao specialtyDao) {
 		this.specialtyDao = specialtyDao;
 	}
@@ -56,10 +97,10 @@ public class CourseTypeManagerImpl implements CourseTypeManager{
 	@Override
 	public int addCourseType(CourseType courseType) {
 		// TODO Auto-generated method stub
-	//	Department.setDepartment(department);
+		// Department.setDepartment(department);
 		courseTypeDao.save(courseType);
 		return this.OP_SUCC;
-		//return 0;
+		// return 0;
 	}
 
 	@Override
@@ -79,6 +120,5 @@ public class CourseTypeManagerImpl implements CourseTypeManager{
 	public CourseType getCourseType(int courseTypeId) {
 		return courseTypeDao.get(courseTypeId);
 	}
-	
-	
+
 }

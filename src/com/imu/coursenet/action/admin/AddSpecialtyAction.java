@@ -4,13 +4,14 @@ import java.util.List;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
+
 /*
  * 这个action用来列出所有部门，以便添加管理员
  */
-public class AddSpecialtyAction extends ManagerBaseAction{
+public class AddSpecialtyAction extends ManagerBaseAction {
 	private List<Specialty> specialtys;
 	private List<Department> departments;
-	
+
 	public List<Specialty> getSpecialtys() {
 		return specialtys;
 	}
@@ -27,12 +28,11 @@ public class AddSpecialtyAction extends ManagerBaseAction{
 		this.departments = departments;
 	}
 
-
 	@Override
 	public String execute() throws Exception {
 		specialtys = specialtyManager.listAllSpecialty();
 		departments = departmentManager.listAllDepartment();
 		return SUCCESS;
 	}
-	
+
 }

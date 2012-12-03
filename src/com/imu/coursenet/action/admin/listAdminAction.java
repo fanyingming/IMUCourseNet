@@ -5,9 +5,10 @@ import java.util.List;
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class listAdminAction extends ManagerBaseAction{
+public class listAdminAction extends ManagerBaseAction {
 	private List<Admin> admins;
 	private int counts;
+
 	public List<Admin> getAdmins() {
 		return admins;
 	}
@@ -24,10 +25,10 @@ public class listAdminAction extends ManagerBaseAction{
 		this.counts = counts;
 	}
 
-	public String execute() throws Exception{
-		admins=userManager.listAllAdmin();
-		counts=admins.size();
+	public String execute() throws Exception {
+		admins = userManager.listAllAdmin();
+		counts = admins.size();
 		return SUCCESS;
-		
+
 	}
 }

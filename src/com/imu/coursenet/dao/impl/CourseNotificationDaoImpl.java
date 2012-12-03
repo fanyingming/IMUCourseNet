@@ -7,50 +7,42 @@ import com.imu.coursenet.domain.CourseDetail;
 import com.imu.coursenet.domain.CourseNotification;
 import com.imu.coursenet.support.YeekuHibernateDaoSupport;
 
-public class CourseNotificationDaoImpl 
-	extends YeekuHibernateDaoSupport 
-	implements CourseNotificationDao
-{
+public class CourseNotificationDaoImpl extends YeekuHibernateDaoSupport
+		implements CourseNotificationDao {
 
 	@Override
 	public CourseNotification get(Integer courseNotificationId) {
-		return getHibernateTemplate()
-				.get(CourseNotification.class , courseNotificationId);
+		return getHibernateTemplate().get(CourseNotification.class,
+				courseNotificationId);
 	}
 
 	@Override
 	public Integer save(CourseNotification courseNotification) {
-		return (Integer)getHibernateTemplate()
-				.save(courseNotification);
+		return (Integer) getHibernateTemplate().save(courseNotification);
 	}
 
 	@Override
 	public void update(CourseNotification courseNotification) {
-		getHibernateTemplate()
-		.update(courseNotification);
-		
+		getHibernateTemplate().update(courseNotification);
+
 	}
 
 	@Override
 	public void delete(CourseNotification courseNotification) {
-		getHibernateTemplate()
-		.delete(courseNotification);
-		
+		getHibernateTemplate().delete(courseNotification);
+
 	}
 
 	@Override
 	public void delete(Integer courseNotificationId) {
-		getHibernateTemplate()
-		.delete(get(courseNotificationId));
-		
+		getHibernateTemplate().delete(get(courseNotificationId));
+
 	}
 
 	@Override
 	public List<CourseNotification> findAll() {
-		return (List<CourseNotification>)getHibernateTemplate()
-				.find("from CourseNotification ");
+		return (List<CourseNotification>) getHibernateTemplate().find(
+				"from CourseNotification ");
 	}
-
-	
 
 }

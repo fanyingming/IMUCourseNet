@@ -3,13 +3,13 @@ package com.imu.coursenet.action.admin;
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
-public class SaveStudentAction extends ManagerBaseAction{
+public class SaveStudentAction extends ManagerBaseAction {
 	private String userAccount;
 	private String userPass;
 	private String userName;
 	private String userMail;
 	private Integer departmentId;
-	
+
 	public String getUserAccount() {
 		return userAccount;
 	}
@@ -42,8 +42,6 @@ public class SaveStudentAction extends ManagerBaseAction{
 		this.userMail = userMail;
 	}
 
-
-
 	public Integer getDepartmentId() {
 		return departmentId;
 	}
@@ -54,12 +52,11 @@ public class SaveStudentAction extends ManagerBaseAction{
 
 	@Override
 	public String execute() throws Exception {
-	
-	//	System.out.println("departmentId="+department.getDepartmentId());
-		Student student=new Student(userAccount,userPass,userName,userMail);
-		userManager.addStudent(student,departmentId);
+
+		// System.out.println("departmentId="+department.getDepartmentId());
+		Student student = new Student(userAccount, userPass, userName, userMail);
+		userManager.addStudent(student, departmentId);
 		return SUCCESS;
 	}
 
-	
 }
