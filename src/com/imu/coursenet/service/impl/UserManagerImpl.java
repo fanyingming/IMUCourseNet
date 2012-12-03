@@ -106,8 +106,9 @@ public class UserManagerImpl implements UserManager{
 
 	@Override
 	public int validLogin(String userAccount,String userPass) {
-		
-		if(userAccount.length()==0 || userPass.length()==0) {
+		System.out.println("userAccount:"+userAccount);
+		System.out.println("userPass:"+userPass);
+		if(userAccount.length()==0 || userPass.length()==0||userAccount==null||userPass==null) {
 			return this.LOGIN_FAIL;
 		}
 		else if(adminDao.findByAccountAndPass(userAccount, userPass).size()==1){

@@ -1,0 +1,204 @@
+@CHARSET "UTF-8";
+							/* left.jsp */
+#menu1{
+	margin:7 auto;
+	width:205px;
+	height:300px;
+	background:url(../images/menu.jpg) no-repeat;
+}
+.menu1_down{
+	width:200px;
+	padding-top:10px;
+	margin-left:20px;
+}
+.menu1_down #lie{width:190px;height:25px; line-height:25px;margin-top:5px;}
+.menu1_down #lie span{margin-left:0px;}
+.menu1_down #lie span a{ font-size:18px; color:#000; text-decoration:none;text-align:left;}
+.menu1_down #lie span a:hover{text-decoration:none; color:red; font-style:宋体}
+
+							/* left2.jsp */
+p{
+	margin-left:15px;
+	font-weight:bold;
+	font-size:20px;
+}
+ul{
+	margin:0;
+	padding:0;
+}
+ul.container{
+	/* The topmost UL */
+	width:210px;
+}
+li{
+	list-style:none;
+	text-align:left;
+}
+li.menu{
+	/* The main list elements */
+	padding:3px 0;
+	width:100%;
+}
+li.button a{
+	/* The section titles */
+	display:block;
+	font-family:BPreplay,Arial,Helvetica,sans-serif;
+	font-size:21px;
+	height:28px;
+	overflow:hidden;
+	padding:5px 0 0;
+	position:relative;
+	width:200px;
+	text-align:center;
+}
+li.button a:hover{
+	/* Removing the inherited underline from the titles */
+	text-decoration:none;
+}
+li.button a span{
+	/* This span acts as the right part of the section's background */
+	height:33px;
+	position:absolute;
+	right:0;
+	top:0;
+	width:4px;
+	display:block;
+}
+li.button a.blue{background:url(../index-images/blue.png) repeat-x top left; color:#074384;}
+li.button a.blue span{ background:url(../index-images/blue.png) repeat-x top right;}
+
+li.button a.green{background:url(../index-images/green.png) repeat-x top left; color:#436800;}
+li.button a.green span{ background:url(../index-images/green.png) repeat-x top right;}
+
+li.button a.orange{background:url(../index-images/orange.png) repeat-x top left; color:#882e02;}
+li.button a.orange span{ background:url(../index-images/orange.png) repeat-x top right;}
+
+li.button a.red{background:url(../index-images/red.png) repeat-x top left; 	color:#eeeeee;}
+li.button a.red span{ background:url(../index-images/red.png) repeat-x top right;}
+
+li.button a:hover{ background-position:bottom left;}
+li.button a:hover span{ background-position:bottom right;}
+
+.dropdown{
+	/* The expandable lists */
+	display:none;
+	padding-top:5px;
+	width:100%;
+}
+.dropdown li{
+	/* Each element in the expandable list */
+	color:#333333;
+	margin:5px 0;
+	padding:4px 0px;
+	text-align:center;
+	background:#f8c0c0;
+}
+.dropdown li a{
+	font-size:20px;
+}
+.clear{
+	clear:both;
+}
+#main{
+	width:210px;
+}
+a, a:visited {
+	color:#333333;
+	text-decoration:none;
+	outline:none;
+}
+a:hover{
+	text-decoration:none;
+}
+	/*inner.jsp*/
+.zhu{
+	width:1100px;
+	margin:5 0 auto;
+	text-align:center;
+}
+#top{
+	width:1100px;
+	margin:0 auto;
+	text-align:left;
+	height:33px;
+	background:url(../images/topbg.jpg) no-repeat;
+}
+.top_wordbg{
+	width:150px;
+	height:33px;
+	background:url(../images/lefttop.gif) no-repeat;
+}
+.top_wor{
+	margin:0 auto;
+	width:150px;
+	padding-top:10px;
+	font-weight:bold;
+	font-size:18px;
+	text-align:center;
+}
+.top_wor a{
+	margin-left:0px;
+}
+#medium{
+	width:100%;
+	margin:0 auto;
+	background-color:#f8e7e9;
+}
+.medium_content{
+	margin:0 auto;
+	padding:15px auto;
+	margin-bottom:20px;
+}
+.medium_content_tabal1{
+	margin:0 auto;
+	padding-top:15px;
+	padding-bottom:10px;
+	border:0;
+	cellpadding:0;
+	cellspacing:0;
+	text-align:center;
+}
+.medium_content_tabal1 a{
+	text-decoration:none;
+	font-size:17px;
+}
+.medium_content_tabal1 a:hover{
+	text-decoration:underline;
+	color:red;
+}
+.medium_content_tabal1 input{
+	height:25px;
+	margin-left:10px;
+	margin-right:5px;
+}
+#bottom{
+	font-size:15px;
+	color:#4f4f4f;
+}
+.bottom_left{
+	text-align:left;
+	float:left;
+}
+.bottom_left span{
+	margin-left:3px;
+	margin-right:3px;
+	font-weight:bold;
+}
+.bottom_right{
+	float:right;
+	text-align:right;
+}
+.bottom_right a{
+	color:blue;
+}
+.bottom_right a:hover{
+	text-decoration:underline;
+	color:red;
+}
+.bottom_right span{
+	margin-left:10px;
+}
+.bottomdown{
+	height:30px;
+	background:url(../images/bottom.jpg);
+}
