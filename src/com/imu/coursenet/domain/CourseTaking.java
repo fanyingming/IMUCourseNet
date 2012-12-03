@@ -8,6 +8,10 @@ public class CourseTaking implements Serializable{
 	private Integer score;
 	private CourseDetail courseDetail;
 	private Student student;
+	public CourseTaking(CourseDetail courseDetail,Student student){
+		this.courseDetail=courseDetail;
+		this.student=student;
+	}
 	public CourseTaking(){
 		
 	}

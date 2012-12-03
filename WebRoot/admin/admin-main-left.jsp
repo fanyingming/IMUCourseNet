@@ -63,9 +63,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <ul>
                     <li><a href="listCourse.action" target="mainFrame">查看课程</a></li>
                     <li><a href="listCourseType.action" target="mainFrame">课程类型管理</a></li>
+					<li><a href="admin/addCourseDetail.jsp" target="mainFrame">教师开课</a></li>
                     <li><a href="listCourseDetail" target="mainFrame">查看开设课程</a></li>
-                    <li><a href="admin/addCourseDetail.jsp" target="mainFrame">教师开课</a></li>
-                    <li><a href="#" target="mainFrame">学生选课</a></li>
+                    <li><a href="admin/addCourseTaking.jsp" target="mainFrame">学生选课</a></li>
+					<li><a href="adminListCourseTaking.action" target="mainFrame">查看选课信息</a></li>
                 </ul>
 			</li>
           </ul>

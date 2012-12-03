@@ -229,8 +229,16 @@
 					<param name="actionName">adminListMessage</param>
 				</result>					
 		</action>
-		
-		
+		<!-- 查看选课信息 -->
+		<action name="adminListCourseTaking" class="com.imu.coursenet.action.admin.AdminListCourseTakingAction">
+			<result name="success">/admin/adminListCourseTaking.jsp</result>
+		</action>
+		<!-- 增加选课信息 -->
+		<action name="addCourseTaking" class="com.imu.coursenet.action.admin.AddCourseTakingAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">adminListCourseTaking</param>
+				</result>					
+		</action>
 		
 	</package>
 </struts>

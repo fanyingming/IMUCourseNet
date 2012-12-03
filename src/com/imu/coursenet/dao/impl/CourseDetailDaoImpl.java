@@ -10,6 +10,8 @@ public class CourseDetailDaoImpl
 	extends YeekuHibernateDaoSupport 
 	implements CourseDetailDao
 {
+	
+	
 
 	@Override
 	public CourseDetail get(Integer courseDetailId) {
@@ -48,6 +50,13 @@ public class CourseDetailDaoImpl
 	public List<CourseDetail> findAll() {
 		return (List<CourseDetail>)getHibernateTemplate()
 				.find("from CourseDetail ");
+	}
+
+	@Override
+	public List<CourseDetail> findByTeacherId(int teacherId,final int offset, final int pageSize) {
+		return this.findByPage("from CourseDetail c where c.teacher.userId=?", teacherId,offset, pageSize);
+//		return (List<CourseDetail>)getHibernateTemplate()
+//				.find("from CourseDetail c where c.teacher.userId=?",teacherId);
 	}
 
 	

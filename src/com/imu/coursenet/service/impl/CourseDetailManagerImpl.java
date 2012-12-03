@@ -48,22 +48,29 @@ public class CourseDetailManagerImpl implements CourseDetailManager{
 		return this.OP_SUCC;
 	}
 
+	
+	@Override
+	public List<CourseDetail> listCourseDetailByTeacherId(int teacherId,final int offset, final int pageSize) {
+		return courseDetailDao.findByTeacherId(teacherId,offset,pageSize);
+		
+	}
+
 	@Override
 	public int deleteCourseDetail(int courseDetailId) {
-		// TODO Auto-generated method stub
-		return 0;
+		courseDetailDao.delete(courseDetailId);
+		return this.OP_SUCC;
 	}
 
 	@Override
 	public int updateCourseDetail(CourseDetail courseDetail) {
-		// TODO Auto-generated method stub
-		return 0;
+		courseDetailDao.update(courseDetail);
+		return this.OP_SUCC;
 	}
 
 	@Override
-	public Course getCourseDetail(int courseDetailId) {
-		// TODO Auto-generated method stub
-		return null;
+	public CourseDetail getCourseDetail(int courseDetailId) {
+		return courseDetailDao.get(courseDetailId);
+		
 	}
 
 	public void setAdminDao(AdminDao adminDao) {

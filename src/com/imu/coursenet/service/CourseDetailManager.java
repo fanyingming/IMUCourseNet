@@ -9,8 +9,9 @@ public interface CourseDetailManager {
 	public static final int OP_FAIL=-1;
 	
 	List<CourseDetail> listAllCourseDetail();
+	List<CourseDetail> listCourseDetailByTeacherId(int teacherId,final int offset, final int pageSize);
 	int addCourseDetail(int teacherId,int courseId);
 	int deleteCourseDetail(int courseDetailId);
 	int updateCourseDetail(CourseDetail courseDetail);
-	Course getCourseDetail(int courseDetailId);
+	CourseDetail getCourseDetail(int courseDetailId);
 }

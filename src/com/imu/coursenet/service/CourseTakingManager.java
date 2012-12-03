@@ -9,8 +9,8 @@ public interface CourseTakingManager {
 	public static final int OP_FAIL=-1;
 	
 	List<CourseTaking> listAllCourseTaking();
-	int addCourseTaking(CourseTaking courseTaking,int courseDetailId,int studentId);
+	int addCourseTaking(int courseDetailId,int studentId);
 	int deleteCourseTaking(int courseTakingId);
 	int updateCourseTaking(CourseTaking courseTaking);
-	Course getCourseTaking(int courseTakingId);
+	CourseTaking getCourseTaking(int courseTakingId);
 }

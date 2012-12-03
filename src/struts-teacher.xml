@@ -4,5 +4,23 @@
 	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
 <!-- 指定Struts 2配置文件的根元素 -->
 <struts>
-	
+	<package name="teacher" extends="struts-default" >
+		
+		<!-- 罗列教师开设的课程 -->
+		<action name="listTeacherCourseDetail" class="com.imu.coursenet.action.teacher.ListTeacherCourseDetailsAction">
+			<result name="success">/teacher/listTeacherCourseDetails.jsp</result>
+		</action>
+
+		<!-- 罗列某门课程的详细信息 -->
+		<action name="showCourseDetail" class="com.imu.coursenet.action.teacher.ShowCourseDetailAction">
+			<result name="success">/teacher/showCourseDetail.jsp</result>
+		</action>
+		
+		<!-- 罗列教师开设的课程 -->
+		<action name="goToCourseMainPage" class="com.imu.coursenet.action.teacher.GoToCourseMainPageAction">
+			<result name="success">/teacher/course-main.jsp</result>
+		</action>
+		
+		
+	</package>
 </struts>

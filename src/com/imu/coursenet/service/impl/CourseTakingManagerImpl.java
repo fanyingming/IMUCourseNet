@@ -3,8 +3,7 @@ package com.imu.coursenet.service.impl;
 import java.util.List;
 
 import com.imu.coursenet.dao.*;
-import com.imu.coursenet.domain.Course;
-import com.imu.coursenet.domain.CourseTaking;
+import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
 public class CourseTakingManagerImpl implements CourseTakingManager{
 	private AdminDao adminDao;
@@ -30,29 +29,30 @@ public class CourseTakingManagerImpl implements CourseTakingManager{
 	
 	@Override
 	public List<CourseTaking> listAllCourseTaking() {
-		// TODO Auto-generated method stub
-		return null;
+		return courseTakingDao.findAll();
 	}
 	@Override
-	public int addCourseTaking(CourseTaking courseTaking, int courseDetailId,
+	public int addCourseTaking(int courseDetailId,
 			int studentId) {
-		// TODO Auto-generated method stub
-		return 0;
+		CourseDetail courseDetail=courseDetailDao.get(courseDetailId);
+		Student student=studentDao.get(studentId);
+		CourseTaking courseTaking=new CourseTaking(courseDetail,student);
+		courseTakingDao.save(courseTaking);
+		return this.OP_SUCC;
 	}
 	@Override
 	public int deleteCourseTaking(int courseTakingId) {
-		// TODO Auto-generated method stub
-		return 0;
+		courseTakingDao.delete(courseTakingId);
+		return this.OP_SUCC;
 	}
 	@Override
 	public int updateCourseTaking(CourseTaking courseTaking) {
-		// TODO Auto-generated method stub
-		return 0;
+		courseTakingDao.update(courseTaking);
+		return this.OP_SUCC;
 	}
 	@Override
-	public Course getCourseTaking(int courseTakingId) {
-		// TODO Auto-generated method stub
-		return null;
+	public CourseTaking getCourseTaking(int courseTakingId) {
+		return courseTakingDao.get(courseTakingId);
 	}
 	public void setAdminDao(AdminDao adminDao) {
 		this.adminDao = adminDao;
