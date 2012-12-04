@@ -239,6 +239,16 @@
 					<param name="actionName">adminListCourseTaking</param>
 				</result>					
 		</action>
-		
+		<!-- 个人信息	-->
+	<action name="adminShowInfo" class="com.imu.coursenet.action.admin.AdminShowInfoAction">
+				<result name="success">/admin/adminShowInfo.jsp</result>	
+	</action>
+	
+	<!-- 修改个人信息	-->
+	<action name="adminUpdate" class="com.imu.coursenet.action.admin.AdminUpdateAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">adminShowInfo</param>
+				</result>	
+	</action>
 	</package>
 </struts>

@@ -17,7 +17,7 @@ Date:
 	<title></title>
 </head>
 <body>
-<s:form action="uploadPro"
+<s:form action="uploadCourseware"
 	enctype="multipart/form-data">
 	<s:textfield name="title" label="文件标题"/><br />
 	<s:file name="upload" label="选择文件"/><br />

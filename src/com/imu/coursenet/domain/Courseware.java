@@ -11,10 +11,14 @@ public class Courseware implements Serializable {
 	private Date uploadDate;
 	private Integer downloadCounts;
 	private CourseDetail courseDetail;
-
-	public Courseware(String saveLocation, String title, Date uploadDate,
-			Integer downloadCounts) {
-
+	public Courseware(){
+		
+	}
+	public Courseware(String saveLocation, String title, Date uploadDate,CourseDetail courseDetail) {
+		this.saveLocation=saveLocation;
+		this.title=title;
+		this.uploadDate=uploadDate;
+		this.courseDetail=courseDetail;
 	}
 
 	public CourseDetail getCourseDetail() {

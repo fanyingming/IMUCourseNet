@@ -4,5 +4,17 @@
 	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
 <!-- 指定Struts 2配置文件的根元素 -->
 <struts>
+	<package name="student" extends="struts-default" >
+	<!-- 个人信息	-->
+	<action name="stuShowInfo" class="com.imu.coursenet.action.student.StuShowInfoAction">
+				<result name="success">/student/stuShowInfo.jsp</result>	
+	</action>
 	
+	<!-- 修改个人信息	-->
+	<action name="stuUpdate" class="com.imu.coursenet.action.student.StuUpdateAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">stuShowInfo</param>
+				</result>	
+	</action>
+	</package>
 </struts>

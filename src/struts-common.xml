@@ -34,12 +34,8 @@
 					<param name="actionName">listMessage</param>
 			</result>
 		</action>
-		<action name="uploadPro" class="com.imu.coursenet.action.UploadAction">
-			<!-- 动态设置Action的属性值 -->
-			<param name="savePath">/uploadFiles</param>
-			<!-- 配置Struts 2默认的视图页面 -->
-			<result name="success">/upload-succ.jsp</result>	
-		</action>
+		
+		
 		
 		
 	</package>

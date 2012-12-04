@@ -1,13 +1,14 @@
-package com.imu.coursenet.action;
+package com.imu.coursenet.action.teacher;
 
+import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.opensymphony.xwork2.Action;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
 
-import java.io.File;
 import java.io.*;
 
-public class UploadAction extends ActionSupport {
+public class UploadCoursewareAction extends  ManagerBaseAction {
 
 	private String title;
 
@@ -59,11 +60,10 @@ public class UploadAction extends ActionSupport {
 		return (this.uploadFileName);
 	}
 
-	@Override
 	public String execute() throws Exception {
-
-		FileOutputStream fos = new FileOutputStream(getSavePath() + "\\"
-				+ getUploadFileName());
+		title=getUploadFileName();
+		String saveLocation=getSavePath() + "\\"+ getUploadFileName();
+		FileOutputStream fos = new FileOutputStream(saveLocation);
 		FileInputStream fis = new FileInputStream(getUpload());
 		byte[] buffer = new byte[1024];
 		int len = 0;
@@ -71,6 +71,14 @@ public class UploadAction extends ActionSupport {
 			fos.write(buffer, 0, len);
 		}
 		fos.close();
-		return SUCCESS;
+		
+		ActionContext ctx = ActionContext.getContext();
+		int courseDetailId = Integer.parseInt(ctx.getSession()
+				.get("courseDetailId").toString());
+		if(coursewareManager.addCourseware(saveLocation,title, courseDetailId)==coursewareManager.OP_SUCC){
+			return SUCCESS;
+		}else{
+			return ERROR;
+		}
 	}
 }

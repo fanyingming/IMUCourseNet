@@ -1,5 +1,6 @@
 package com.imu.coursenet.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import com.imu.coursenet.dao.AdminDao;
@@ -19,6 +20,7 @@ import com.imu.coursenet.dao.SpecialtyDao;
 import com.imu.coursenet.dao.StudentDao;
 import com.imu.coursenet.dao.TeacherDao;
 import com.imu.coursenet.domain.Course;
+import com.imu.coursenet.domain.CourseDetail;
 import com.imu.coursenet.domain.Courseware;
 import com.imu.coursenet.service.*;
 
@@ -47,9 +49,13 @@ public class CoursewareManagerImpl implements CoursewareManager {
 	}
 
 	@Override
-	public int addCourseware(Courseware courseware, int courseDetailId) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int  addCourseware(String savaLocation,String title, int courseDetailId) {
+		CourseDetail courseDetail=courseDetailDao.get(courseDetailId);
+		Date date=new Date();
+		Courseware courseware=new Courseware(savaLocation,title,date,courseDetail);
+		courseware.setDownloadCounts(0);
+		coursewareDao.save(courseware);
+		return this.OP_SUCC;
 	}
 
 	@Override
@@ -65,7 +71,7 @@ public class CoursewareManagerImpl implements CoursewareManager {
 	}
 
 	@Override
-	public Course getCourseware(int coursewareId) {
+	public Courseware getCourseware(int coursewareId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
