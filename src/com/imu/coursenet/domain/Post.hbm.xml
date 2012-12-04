@@ -24,8 +24,8 @@
 		<property name="replyCounts" column="replyCounts"	 not-null="true" 
 		type="integer" />
 		<!-- 映射和CourseDetail的关联关系 -->
-		<many-to-one name="courseDetail" column="courseDetailId" 
-			class="CourseDetail" lazy="false"/>
+		<many-to-one name="course" column="course" 
+			class="Course" lazy="false"/>
 		<!-- 映射和User的关联关系 -->
 		<many-to-one name="user" column="userId" 
 			class="User" lazy="false"/>

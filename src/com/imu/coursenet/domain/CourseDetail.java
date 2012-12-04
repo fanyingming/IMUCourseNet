@@ -14,7 +14,7 @@ public class CourseDetail implements Serializable {
 	private String referenceBook;
 	private String courseIntroduce;
 	private Date establishDate;
-	private Integer state;// -1代表开始，1代表未开始。
+	private Integer state;// -1代表未开始，1代表开始。
 	private Course course;
 	private Teacher teacher;
 	private Set<Courseware> coursewares = new HashSet<Courseware>();

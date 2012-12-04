@@ -11,7 +11,7 @@ public class Post implements Serializable {
 	private Date editDate;
 	private Integer checkCounts;
 	private Integer replyCounts;
-	private CourseDetail courseDetail;
+	private Course course;
 	private User user;
 
 	public Post() {
@@ -66,12 +66,16 @@ public class Post implements Serializable {
 		this.replyCounts = replyCounts;
 	}
 
-	public CourseDetail getCourseDetail() {
-		return courseDetail;
+	
+
+	
+
+	public Course getCourse() {
+		return course;
 	}
 
-	public void setCourseDetail(CourseDetail courseDetail) {
-		this.courseDetail = courseDetail;
+	public void setCourse(Course course) {
+		this.course = course;
 	}
 
 	public User getUser() {

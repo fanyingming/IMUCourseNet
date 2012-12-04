@@ -28,5 +28,10 @@
 			<key column="courseId" />
 			<one-to-many class="CourseDetail"/>
 		</set>
+		<!-- 映射和CourseDetail的关联关系 -->
+		<set name="posts" inverse="true">
+			<key column="courseId" />
+			<one-to-many class="Post"/>
+		</set>
 	</class>
 </hibernate-mapping>

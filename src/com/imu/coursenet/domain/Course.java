@@ -12,7 +12,7 @@ public class Course implements Serializable {
 	private Department department;
 	private CourseType courseType;
 	private Set<CourseDetail> courseDetails = new HashSet<CourseDetail>();
-
+	private Set<Post> posts = new HashSet<Post>();
 	public Course() {
 
 	}
@@ -20,6 +20,14 @@ public class Course implements Serializable {
 	public Course(String courseName, String courseDescription) {
 		this.courseName = courseName;
 		this.courseDescription = courseDescription;
+	}
+
+	public Set<Post> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(Set<Post> posts) {
+		this.posts = posts;
 	}
 
 	public Integer getCourseId() {
