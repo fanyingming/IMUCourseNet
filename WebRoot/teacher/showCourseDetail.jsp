@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </tr>
     <tr>
       <td><div align="right">教学计划：</div></td>
-      <td><s:property value="courseDetail.teachPlane"/></td>
+      <td><s:property value="courseDetail.teachPlan"/></td>
     </tr>
     <tr>
       <td><div align="right">参考书籍：</div></td>

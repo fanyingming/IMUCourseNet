@@ -10,7 +10,7 @@ import com.imu.coursenet.domain.*;
 public class CourseDetail implements Serializable {
 	private static final long serialVersionUID = 48L;
 	private Integer courseDetailId;
-	private String teachPlane;
+	private String teachPlan;
 	private String referenceBook;
 	private String courseIntroduce;
 	private Date establishDate;
@@ -54,12 +54,14 @@ public class CourseDetail implements Serializable {
 		this.courseDetailId = courseDetailId;
 	}
 
-	public String getTeachPlane() {
-		return teachPlane;
+	
+
+	public String getTeachPlan() {
+		return teachPlan;
 	}
 
-	public void setTeachPlane(String teachPlane) {
-		this.teachPlane = teachPlane;
+	public void setTeachPlan(String teachPlan) {
+		this.teachPlan = teachPlan;
 	}
 
 	public String getReferenceBook() {

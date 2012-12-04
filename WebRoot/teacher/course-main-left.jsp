@@ -53,23 +53,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </ul>
       </li>
 	  
-      <li class="menu">
+	  
+	  <li class="menu">
           <ul>
-		    <li class="button"><a href="#" class="red">编辑课程介绍 <span></span></a></li>          	
+		    <li class="button"><a href="#" class="red">课程内容管理 <span></span></a></li>
+            <li class="dropdown">
+                <ul>
+                    <li><a href="teacher/updateRefBook.jsp" target="mainFrame">编辑参考书籍</a></li>
+                    <li><a href="teacher/updateTeachPlan.jsp" target="mainFrame">编辑教学计划</a></li>
+                    <li><a href="teacher/updateCourseIntroduce.jsp" target="mainFrame">编辑课程介绍</a></li>
+                </ul>
+			</li>
           </ul>
       </li>
-	
-	<li class="menu">
-          <ul>
-		    <li class="button"><a href="#" class="red">编辑参考书籍<span></span></a></li>          	
-          </ul>
-      </li>
-	
-	 <li class="menu">
-          <ul>
-		    <li class="button"><a href="#" class="red">编辑教学计划<span></span></a></li>          	
-          </ul>
-      </li>
+	  
+	 
 	
 
 

@@ -13,7 +13,7 @@
 			<generator class="identity"/>
 		</id>
 		<!-- 映射普通属性 -->
-		<property name="teachPlane" column="teachPlane"	type="string"/>
+		<property name="teachPlan" column="teachPlan"	type="string"/>
 		<property name="referenceBook" column="referenceBook"	type="string" />
 		<property name="courseIntroduce" column="courseIntroduce"	type="string"/>
 		<property name="establishDate" column="establishDate"	type="date" not-null="true"/>

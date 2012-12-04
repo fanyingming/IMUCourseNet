@@ -40,5 +40,23 @@
 					<param name="actionName">teaShowInfo</param>
 				</result>	
 	</action>
+	<!-- 为课程添加参考书 -->
+		<action name="editRefBook" class="com.imu.coursenet.action.teacher.EditRefBookAction">
+			<result type="redirectAction">
+					<param name="actionName">showCourseDetail</param>
+				</result>
+		</action>
+		<!-- 为课程添加教学计划-->
+		<action name="editTeachPlan" class="com.imu.coursenet.action.teacher.EditTeachPlanAction">
+			<result type="redirectAction">
+					<param name="actionName">showCourseDetail</param>
+				</result>
+		</action>
+		<!-- 为课程添加课程简介 -->
+		<action name="editCourseIntroduce" class="com.imu.coursenet.action.teacher.EditCourseIntroduceAction">
+			<result type="redirectAction">
+					<param name="actionName">showCourseDetail</param>
+				</result>
+		</action>
 	</package>
 </struts>
