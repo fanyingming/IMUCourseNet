@@ -40,38 +40,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <img src="images/ad2.jpg" width="900" height="290" />
    </div>	
    <div id="lef1">
-   <form action="login" name="loginForm">
 	   <table class="lef1_table1">
 		   <tr>
-				<td rowspan=2 style="background-color:#70c9d1;" width="140px">
-				<a href="#"><br>操  作  系  统</a>
-				</td>
-				<td rowspan=2 style="background:#c5d616;cursor:pointer;" width="140px"><a href="#"><br>软  件  测  试</a></td>
-				<td rowspan=2 style="background:#f9b52c;" width="140px"><a href="#"><br>人  机  交  互</a></td>
-				<td style="text-align:right;" width="100px" height="24px"><font size="4">用户名
-				</font></td>
-				<td style="text-align:left;"><input type="text" name="userAccount" style="font-size:17px;"></td>
-				<td rowspan=2 style="text-align:center;" width="100px">
-				<a  style="font-size:22px;height:24px;" onclick= "loginForm.action='login';loginForm.submit(); ">登录</a>
-				<a href="#" style="font-size:18px;height:24px;">忘记密码？</a>
-				</td>
-		   </tr>
-		   <tr>
-		   		<td style="text-align:right;" width="100px" height="24px"><font size="4">密码
-				</font></td>
-				<td style="text-align:left;"><input type="password" name="userPass" style="font-size:17px;"></td>
-		   </tr>
-		   <tr>
-			   	<td rowspan=2 style="background:#70c938;"><a href="#"><br>网络信息安全</a></td>
-			   	<td rowspan=2 style="background:#e76b21;"><a href="#"><br>网络安全</a></td>
-			   	<td rowspan=2 style="background:#ff4da6;" width="140px"><a href="#"><br>编译原理</a></td>
-			   	<td><br></td>
-		   </tr>
-		   <tr>
-		   <td colspan=3 style="text-align:center;"><a style="font-size:20px;background:#d11b2b;color:#eeeeee">有问题请联系：ndjsw@imu.edu.cn</a></td>
-		   </tr>
+		   <td>
+				<table class="lef1_table1_tab1">
+					<tr>
+						<td style="background:#70c9d1;" width="150px" height="60px"><div id="change1"><a href="#" ><br>操作系统</a></div></td>
+						<td style="background:#c5d616;" width="150px" height="60px"><div id="change2"><a href="#"><br>软件测试</a></div></td>
+						<td style="background:#f9b52c;" width="150px" height="60px"><div id="change3"><a href="#"><br>人机交互</a></div></td>
+					</tr>
+					 <tr>
+						<td style="background:#70c938;" height="60px"><div id="change4"><a href="#"><br>网络信息安全</a></div></td>
+						<td style="background:#e76b21;" height="60px"><div id="change5"><a href="#"><br>网络安全</a></div></td>
+						<td style="background:#ff4da6;" height="60px"><div id="change6"><a href="#"><br>编译原理</a></div></td>
+				    </tr>
+				</table>
+			</td>
+			<td>
+			<form action="login">
+			<table class="lef1_table1_tab2">
+				<tr>
+					<td width="110px" height="40px" id="a1"><a >用户名</a></td>
+					<td ><input type="text" name="userAccount" tabindex="1" id="inpu1"></td>
+					<td rowspan=2 width="130px">
+					<input type="submit" value="登录"  id="inpu2" tabindex="3" />
+					<br><a href="#" tabindex="4" style="font-size:21px;">忘记密码？</a>
+					</td>
+				</tr>
+				<tr>
+					<td width="110px" height="40px" id="a1"><a >密&nbsp;&nbsp;&nbsp;码</a></td>
+			   		<td ><input type="password" name="userPass" id="inpu1" tabindex="2"></td>
+				</tr>
+				<tr>
+			    	<td colspan=3 height="39px" id="td1"><a class="a2">有问题请联系：ndjsw@imu.edu.cn</a></td>
+			    </tr>
+			</table>
+			</form>
+			</td>
+		  </tr>
 	   </table>
-	   </form>
    </div>
    <div id="content">
    		<div class="content_left">
@@ -94,7 +101,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    				</div>
    				<div class="news_right">
    					<p><a href="#">aaaaaaaaaa</a></p>
-   					<p><a href="#">bbbbbbbbbbbbbbbbbbbbbb</a></p>
+   					<p><a href="#">bbbbbbbbbbbbbbbbbbdcedcfdcsc</a></p>
    					<p><a href="#">fddddddddddddddddddd</a></p>
    					<p><a href="#">dasgfasgfghjhgkjhljh</a></p>
    					<p><a href="#">恭喜内蒙古大学教学网成立！</a></p>
@@ -107,7 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		<p><img src="images/notes.jpg" /><a style="margin-left:215px;">&nbsp;</a><a href="#">more>></a></p>
 			<div class="content_right_down">
 				<div id="marquees">
-					<div class="topLoop" style="width:420px">
+					<div class="topLoop" style="width:425px">
 						<div class="hd">
 							<a class="next"></a>
 							<a class="prev"></a>
@@ -137,9 +144,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	<div id="main">
    	<div id="good">
    		<div class="good_jing">
-   			<p><img src="images/good.jpg" /><a href="#" style="margin-left:695px;text-decoration:none;">more>></a></p>
+   			<p><img src="images/good.jpg"/><a href="#" style="margin-left:700px;text-decoration:none;">more>></a></p>
    		</div>
-		<div class="effect" style="width:900px">
+		<div class="effect" style="width:910px">
 					<div id="leftMarquee" class="leftLoop">
 						<div class="bd">
 							<ul class="picList">
@@ -155,6 +162,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li>
 									<div class="pic"><a href=""><img src="images/4.jpg" /></a></div>
 								</li>
+								</li>
+								<li>
+									<div class="pic"><a href=""><img src="images/2.jpg" /></a></div>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -163,7 +174,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
    	
 	   <div id="links">
-	   <hr width="900px" size=4 noshade>
+	   <hr width="890px" size=4 noshade>
 	   		<div class="links_pic">
 			  <a href="http://www.flagnet.net/" target="_blank"><img src="images/flagnet.jpg" /></a>
 		  	  <a href="http://job.imu.edu.cn/" target="_blank"><img src="images/imujob.jpg" /></a>
@@ -172,7 +183,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  	  <a href="http://www.5xue.com/" target="_blank"><img src="images/cxpt.jpg" /></a>
 		  	  <a href="http://www.douban.com/" target="_blank"><img src="images/imuedu.jpg" /></a>
 			</div>
-		<hr width="900px" size=4 noshade>
+		<hr width="890px" size=4 noshade>
 	   </div>
    		<div id="copy">
    		<p><a>Copyright&copy;2012 内蒙古大学版权所有</a></p>

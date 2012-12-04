@@ -29,12 +29,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <ul class="container">
       <li class="menu">
           <ul>
-		    <li class="button"><a href="#" class="red">课件管理 <span></span></a></li>
+		    <li class="button"><a href="#" class="red">查看课程内容 <span></span></a></li>
             <li class="dropdown">
                 <ul>
-                    <li><a href="listUploadCourseware.action" target="mainFrame">查看已上传课件</a></li>
-                    <li><a href="teacher/uploadCourseware.jsp" target="mainFrame">上传课件</a></li>
-                    
+                    <li><a href="#" target="mainFrame">查看通知</a></li>
+                    <li><a href="#" target="mainFrame">下载课件</a></li>
+                    <li><a href="#" target="mainFrame">查看课程介绍</a></li>
+                    <li><a href="#" target="mainFrame">查看教学计划</a></li>
+                    <li><a href="#" target="mainFrame">查看参考书籍</a></li>
                 </ul>
 			</li>
           </ul>
@@ -42,11 +44,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       
 	  <li class="menu">
           <ul>
-		    <li class="button"><a href="#" class="red">课程通知管理 <span></span></a></li>
+		    <li class="button"><a href="#" class="red">师生互动 <span></span></a></li>
             <li class="dropdown">
                 <ul>
-                    <li><a href="#" target="mainFrame">查看已发布通知</a></li>
-                    <li><a href="#" target="mainFrame">发布通知</a></li>
+                    <li><a href="#" target="mainFrame">查看帖子</a></li>
+                    <li><a href="#" target="mainFrame">查看留言</a></li>
                     
                 </ul>
 			</li>
@@ -56,12 +58,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  
 	  <li class="menu">
           <ul>
-		    <li class="button"><a href="#" class="red">课程内容管理 <span></span></a></li>
+		    <li class="button"><a href="#" class="red">私密信箱 <span></span></a></li>
             <li class="dropdown">
                 <ul>
-                    <li><a href="teacher/updateRefBook.jsp" target="mainFrame">编辑参考书籍</a></li>
-                    <li><a href="teacher/updateTeachPlan.jsp" target="mainFrame">编辑教学计划</a></li>
-                    <li><a href="teacher/updateCourseIntroduce.jsp" target="mainFrame">编辑课程介绍</a></li>
+                    <li><a href="#" target="mainFrame">写信</a></li>
+                    <li><a href="#" target="mainFrame">已发信件</a></li>
+                    
                 </ul>
 			</li>
           </ul>

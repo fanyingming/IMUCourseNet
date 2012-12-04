@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
+import com.opensymphony.xwork2.ActionContext;
 public class ShowStudentMainPageAction extends ManagerBaseAction{
 	private List<CourseTaking> courseTakings;
 
@@ -13,6 +14,14 @@ public class ShowStudentMainPageAction extends ManagerBaseAction{
 
 	public void setCourseTakings(List<CourseTaking> courseTakings) {
 		this.courseTakings = courseTakings;
+	}
+
+	@Override
+	public String execute() throws Exception {
+		ActionContext ctx = ActionContext.getContext();
+		User user=(User)ctx.getSession().get("user");
+		courseTakings=courseTakingManager.listCourseTakingByStudentId(user.getUserId(), 0, 10);
+		return SUCCESS;
 	}
 	
 }

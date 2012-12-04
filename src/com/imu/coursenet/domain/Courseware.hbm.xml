@@ -17,8 +17,10 @@
 			not-null="true" length="200" />
 		<property name="title" column="title"	 not-null="true" 
 		type="string" length="50"/>
-		<property name="uploadDate" column="uploadDate"	type="date"
-			not-null="true" />
+			
+		<property name="uploadDate">
+			<column name="uploadDate" sql-type="datetime" not-null="true"/>
+		</property>
 		<property name="downloadCounts" column="downloadCounts"	 not-null="true" 
 		type="integer" />
 		<!-- 映射和CourseDetail的关联关系 -->

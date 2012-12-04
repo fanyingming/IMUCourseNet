@@ -25,7 +25,7 @@
 		</action>
 		
 		<!-- 罗列教师开设的课程 -->
-		<action name="goToCourseMainPage" class="com.imu.coursenet.action.teacher.GoToCourseMainPageAction">
+		<action name="goToTeacherCourseMainPage" class="com.imu.coursenet.action.teacher.GoToCourseMainPageAction">
 			<result name="success">/teacher/course-main.jsp</result>
 		</action>
 		
@@ -57,6 +57,11 @@
 			<result type="redirectAction">
 					<param name="actionName">showCourseDetail</param>
 				</result>
+		</action>
+		
+		<!-- 罗列某门开设的课程的所有课件 -->
+		<action name="listUploadCourseware" class="com.imu.coursenet.action.teacher.ListUploadCoursewareAction">
+			<result name="success">/teacher/listUploadCourseware.jsp</result>
 		</action>
 	</package>
 </struts>

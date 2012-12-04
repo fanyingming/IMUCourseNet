@@ -32,11 +32,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    </div>
 	    <div id="medium">
 	    	<div class="medium_content">
+	    	<form name="fom" id="fom" method="post" action="">
 		    <table class="medium_content_tabal1">
 			    <tr>
 			    	<td style="text-align: left;">
 			    		<a>选择:</a><a href="#">全选</a><a>&nbsp;—&nbsp;</a><a href="#">反选</a>
-			    		<input type="button" value=" 删  除 "><input type="button" value="添加">
+			    		<input type="button" value=" 删  除 ">
+			    		<input type="button" value=" 添加" onclick= "fom.action='admin/addAdmin.action';fom.submit(); ">
 			    	</td>
 			    </tr>
 			    <tr>
@@ -70,9 +72,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					    </s:iterator>
 					    </table>
 					     </table>
+					  </form>
 					  
-					  
-				    </td>
+				    <td>a</td>
 			    </tr>
 			    <tr id="bottom">
 			    	<td class="bottom_left">

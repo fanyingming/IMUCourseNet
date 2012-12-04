@@ -50,9 +50,18 @@ public class CoursewareManagerImpl implements CoursewareManager {
 
 	@Override
 	public List<Courseware> listAllCourseware() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return coursewareDao.findAll();
 	}
+
+	
+	@Override
+	public List<Courseware> listAllCoursewareByCourseDetailId(
+			Integer courseDetailId) {
+		return coursewareDao.findByCourseDetailId(courseDetailId);
+		 
+	}
+
 
 	@Override
 	public int  addCourseware(String savaLocation,String title, int courseDetailId) {
@@ -66,20 +75,19 @@ public class CoursewareManagerImpl implements CoursewareManager {
 
 	@Override
 	public int deleteCourseware(int coursewareId) {
-		// TODO Auto-generated method stub
-		return 0;
+		coursewareDao.delete(coursewareId);
+		return this.OP_SUCC;
 	}
 
 	@Override
 	public int updateCourseware(Courseware courseware) {
-		// TODO Auto-generated method stub
-		return 0;
+		coursewareDao.update(courseware);
+		return this.OP_SUCC;
 	}
 
 	@Override
 	public Courseware getCourseware(int coursewareId) {
-		// TODO Auto-generated method stub
-		return null;
+		return coursewareDao.get(coursewareId);
 	}
 
 	public void setAdminDao(AdminDao adminDao) {

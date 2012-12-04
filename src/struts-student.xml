@@ -5,6 +5,10 @@
 <!-- 指定Struts 2配置文件的根元素 -->
 <struts>
 	<package name="student" extends="struts-default" >
+	<!-- 获取学生选的课和通知	-->
+	<action name="showStudentMainPage" class="com.imu.coursenet.action.student.ShowStudentMainPageAction">
+				<result name="success">/student/student-main-right.jsp</result>	
+	</action>
 	<!-- 个人信息	-->
 	<action name="stuShowInfo" class="com.imu.coursenet.action.student.StuShowInfoAction">
 				<result name="success">/student/stuShowInfo.jsp</result>	
@@ -15,6 +19,11 @@
 				<result name="success" type="redirectAction">
 					<param name="actionName">stuShowInfo</param>
 				</result>	
+	</action>
+	
+	<!-- 点击某门课程后，进入课程	-->
+	<action name="goToStudentCourseMainPage" class="com.imu.coursenet.action.student.GoToCourseMainPageAction">
+				<result name="success">/student/course-main.jsp</result>	
 	</action>
 	</package>
 </struts>
