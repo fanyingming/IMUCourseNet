@@ -42,8 +42,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <td >
       		
       		<div align="right">
-      			<s:property value="#message.editDate"/>
-      			&nbsp;  &nbsp;
+      			
+      			 <s:date name="#message.editDate" format="yyyy-mm-dd HH:mm:ss"/>
+      			&nbsp; 
       			by &nbsp;&nbsp;
       		  	<s:property value="#message.user.userName"/>
             </div>       </td>

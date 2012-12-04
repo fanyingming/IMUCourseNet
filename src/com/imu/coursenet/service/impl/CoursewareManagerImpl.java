@@ -1,5 +1,7 @@
 package com.imu.coursenet.service.impl;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.Date;
 import java.util.List;
 
@@ -41,6 +43,10 @@ public class CoursewareManagerImpl implements CoursewareManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+
+	
+	
+	
 
 	@Override
 	public List<Courseware> listAllCourseware() {

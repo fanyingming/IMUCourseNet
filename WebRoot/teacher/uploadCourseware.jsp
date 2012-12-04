@@ -19,7 +19,7 @@ Date:
 <body>
 <s:form action="uploadCourseware"
 	enctype="multipart/form-data">
-	<s:textfield name="title" label="文件标题"/><br />
+	
 	<s:file name="upload" label="选择文件"/><br />
 	<s:submit value="上传"/>
 </s:form>

@@ -15,9 +15,10 @@
 		<!-- 映射普通属性 -->
 		<property name="content" column="content"	 
 		type="string" />
-		<property name="editDate" column="editDate"	type="date"
-			not-null="true" />
-		
+
+		<property name="editDate">
+			<column name="editDate" sql-type="datetime" not-null="true"/>
+		</property>
 		<!-- 映射和User的关联关系 -->
 		<many-to-one name="user" column="userId" 
 			class="User" lazy="false"/>

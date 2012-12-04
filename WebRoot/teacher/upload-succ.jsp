@@ -19,6 +19,5 @@ Date:
 <body>
 	上传成功!<br/>
 	文件标题:<s:property value=" title"/><br/>
-	文件路径：<s:property value="savePath+ '/' + uploadFileName"/><br/>
 </body>
 </html>

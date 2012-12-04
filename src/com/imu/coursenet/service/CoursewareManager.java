@@ -17,4 +17,6 @@ public interface CoursewareManager {
 	int updateCourseware(Courseware courseware);
 
 	Courseware getCourseware(int coursewareId);
+	
+	
 }

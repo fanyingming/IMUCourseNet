@@ -34,8 +34,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<table class="medium_content_tabal1">
 					<tr>
 						<td style="text-align: left;"><a>选择:</a><a href="#">全选</a><a>&nbsp;—&nbsp;</a><a
-							href="#">反选</a> <input type="button" value=" 删  除 "><input
-							type="button" value="添加"></td>
+							href="#">反选</a> <input type="button" value=" 删  除 ">
+							<a href="addDepartment">添加</a>
+							</td>
 					</tr>
 					<tr>
 						<td width="100%">

@@ -1,5 +1,7 @@
 package com.imu.coursenet.action.admin;
 
+import org.apache.struts2.ServletActionContext;
+
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 
@@ -46,8 +48,12 @@ public class SaveCourseAction extends ManagerBaseAction {
 	public String execute() throws Exception {
 
 		Course course = new Course(courseName, courseDescription);
-		courseManager.addCourse(course, departmentId, courseTypeId);
-		return SUCCESS;
+		if (courseManager.addCourse(course, departmentId, courseTypeId) == courseManager.OP_SUCC) {
+			
+			return SUCCESS;
+		} else {
+			return ERROR;
+		}
 
 	}
 

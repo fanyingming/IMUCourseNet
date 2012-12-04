@@ -1,5 +1,6 @@
 package com.imu.coursenet.service.impl;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -35,9 +36,10 @@ public class MessageManagerImpl implements MessageManager {
 	public int addMessage(String content, int userId) {
 		Student student;
 		Teacher teacher;
-		Date date = new Date();
+		
 		Message message = new Message();
 		message.setContent(content);
+		Date date=new Date();
 		message.setEditDate(date);
 		if (studentDao.getStudent(userId).size() != 0) {
 			student = studentDao.get(userId);

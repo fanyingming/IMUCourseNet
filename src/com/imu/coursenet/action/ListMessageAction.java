@@ -29,6 +29,7 @@ public class ListMessageAction extends ManagerBaseAction {
 	public String execute() throws Exception {
 		messageNum = messageManager.listAllMessage().size();
 		messages = messageManager.listAllMessage();
+		
 		return SUCCESS;
 	}
 
