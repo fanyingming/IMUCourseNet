@@ -25,5 +25,10 @@
 	<action name="goToStudentCourseMainPage" class="com.imu.coursenet.action.student.GoToCourseMainPageAction">
 				<result name="success">/student/course-main.jsp</result>	
 	</action>
+	
+	<!-- 学生查看课程的课件	-->
+	<action name="listCourseware" class="com.imu.coursenet.action.student.ListCoursewareAction">
+				<result name="success">/student/listCourseware.jsp</result>	
+	</action>
 	</package>
 </struts>

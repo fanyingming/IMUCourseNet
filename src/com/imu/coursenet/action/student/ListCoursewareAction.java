@@ -1,4 +1,4 @@
-package com.imu.coursenet.action.teacher;
+package com.imu.coursenet.action.student;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.Courseware;
 import com.opensymphony.xwork2.ActionContext;
 
-public class ListUploadCoursewareAction extends ManagerBaseAction{
+public class ListCoursewareAction extends ManagerBaseAction{
 	private List<Courseware> coursewares;
 
 	public List<Courseware> getCoursewares() {
@@ -25,6 +25,4 @@ public class ListUploadCoursewareAction extends ManagerBaseAction{
 		coursewares=coursewareManager.listAllCoursewareByCourseDetailId(courseDetailId);
 		return SUCCESS;
 	}
-	
-	
 }

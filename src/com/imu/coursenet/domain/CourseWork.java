@@ -8,7 +8,7 @@ public class CourseWork implements Serializable {
 	private Integer courseWorkId;
 	private String courseWorkLocation;
 	private Date editDate;
-	private CourseDetail courseDetail;
+	private CourseWorkRequirement courseWorkRequirement;
 	private Student student;
 
 	public CourseWork() {
@@ -39,12 +39,14 @@ public class CourseWork implements Serializable {
 		this.editDate = editDate;
 	}
 
-	public CourseDetail getCourseDetail() {
-		return courseDetail;
+	
+
+	public CourseWorkRequirement getCourseWorkRequirement() {
+		return courseWorkRequirement;
 	}
 
-	public void setCourseDetail(CourseDetail courseDetail) {
-		this.courseDetail = courseDetail;
+	public void setCourseWorkRequirement(CourseWorkRequirement courseWorkRequirement) {
+		this.courseWorkRequirement = courseWorkRequirement;
 	}
 
 	public Student getStudent() {

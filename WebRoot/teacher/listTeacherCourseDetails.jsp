@@ -23,10 +23,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>  
   <body>
   <table width="644" border="0">
+	  <tr>
+      		<td>
+      			开设的课程
+      		</td>
+   	 </tr>
   	<s:iterator value="courseDetails" id="courseDetail">
    		<tr>
       		<td>
-      			<a href="goToTeacherCourseMainPage.action?courseDetailId=<s:property value="#courseDetail.courseDetailId"/>" target="_top"><s:property value="#courseDetail.course.courseName"/>,<s:property value="#courseDetail.establishDate"/></a>
+      			<a href="goToTeacherCourseMainPage.action?courseDetailId=<s:property value="#courseDetail.courseDetailId"/>" target="_top">
+					<s:property value="#courseDetail.course.courseName"/>&nbsp;,&nbsp;<s:property value="#courseDetail.course.courseType.courseTypeName"/>,&nbsp;<s:property value="#courseDetail.establishDate"/>
+				</a>
       		</td>
    	 </tr>
      </s:iterator>

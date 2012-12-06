@@ -18,8 +18,8 @@
 		<property name="editDate" column="editDate"	type="date"
 			not-null="true" />	
 		<!-- 映射和CourseDetail的关联关系 -->
-		<many-to-one name="courseDetail" column="courseDetailId" 
-			class="CourseDetail" lazy="false"/>
+		<many-to-one name="courseWorkRequirement" column="courseWorkRequirementId" 
+			class="CourseWorkRequirement" lazy="false"/>
 		<many-to-one name="student" column="studentId" 
 			class="Student" lazy="false"/>
 	</class>

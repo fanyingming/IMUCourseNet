@@ -19,7 +19,7 @@ public class CourseDetail implements Serializable {
 	private Teacher teacher;
 	private Set<Courseware> coursewares = new HashSet<Courseware>();
 	private Set<CourseNotification> courseNotifications = new HashSet<CourseNotification>();
-
+	private Set<CourseWorkRequirement> courseWorkRequirements = new HashSet<CourseWorkRequirement>();
 	public CourseDetail() {
 
 	}
@@ -27,6 +27,18 @@ public class CourseDetail implements Serializable {
 	public CourseDetail(String teachPlane, String referenceBook,
 			String courseIntroduce, Date establishDate, Integer state) {
 
+	}
+
+	
+	
+
+	public Set<CourseWorkRequirement> getCourseWorkRequirements() {
+		return courseWorkRequirements;
+	}
+
+	public void setCourseWorkRequirements(
+			Set<CourseWorkRequirement> courseWorkRequirements) {
+		this.courseWorkRequirements = courseWorkRequirements;
 	}
 
 	public Set<CourseNotification> getCourseNotifications() {

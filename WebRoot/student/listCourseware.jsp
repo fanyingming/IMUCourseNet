@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <br>
-  <p align="center">已上传的课件</p>
+  <p align="center">课程的课件</p>
   <table width="907" border="0" align="center">
     <tr>
       <td width="755"><div align="left"></div></td>
@@ -38,14 +38,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	      		上传于 <s:date name="#courseware.uploadDate" format="yyyy-MM-dd HH:mm:ss"/>
 	     	 </div>
 	      </td>
-	      <td>
-	      	<div align="left">
-	      		<a href="deleteCourseware.action?coursewareId=<s:property value="#courseware.coursewareId"/>">删除</a>	
-	      	</div>
-	      </td>
 	    </tr>
     </s:iterator>
   </table>
-  <s:debug/>
+
   </body>
 </html>

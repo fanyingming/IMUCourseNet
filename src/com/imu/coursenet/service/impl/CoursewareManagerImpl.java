@@ -25,6 +25,7 @@ import com.imu.coursenet.domain.Course;
 import com.imu.coursenet.domain.CourseDetail;
 import com.imu.coursenet.domain.Courseware;
 import com.imu.coursenet.service.*;
+import com.imu.coursenet.support.FileOperation;
 
 public class CoursewareManagerImpl implements CoursewareManager {
 	private AdminDao adminDao;
@@ -75,7 +76,13 @@ public class CoursewareManagerImpl implements CoursewareManager {
 
 	@Override
 	public int deleteCourseware(int coursewareId) {
+		/*删除相应的实体文件*/
+		Courseware courseware=coursewareDao.get(coursewareId);
+		if(!FileOperation.deleteFile(courseware.getSaveLocation())){
+			return this.OP_FAIL;
+		}
 		coursewareDao.delete(coursewareId);
+		
 		return this.OP_SUCC;
 	}
 

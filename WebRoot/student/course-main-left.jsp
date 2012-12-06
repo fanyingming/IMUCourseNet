@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <li class="dropdown">
                 <ul>
                     <li><a href="#" target="mainFrame">查看通知</a></li>
-                    <li><a href="#" target="mainFrame">下载课件</a></li>
+                    <li><a href="listCourseware.action" target="mainFrame">下载课件</a></li>
                     <li><a href="#" target="mainFrame">查看课程介绍</a></li>
                     <li><a href="#" target="mainFrame">查看教学计划</a></li>
                     <li><a href="#" target="mainFrame">查看参考书籍</a></li>

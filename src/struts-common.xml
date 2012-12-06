@@ -23,7 +23,10 @@
 			<result name="teacher">/teacher/teacher-main.jsp</result>
 			<result name="student">/student/student-main.jsp</result>
 		</action>
-
+		<!-- 退出 -->
+		<action name="exit" class="com.imu.coursenet.action.ExitAction">
+			<result name="success">/index.jsp</result>
+		</action>
 		<!-- 查看留言 -->
 		<action name="listMessage" class="com.imu.coursenet.action.ListMessageAction">
 			<result name="success">/listMessage.jsp</result>

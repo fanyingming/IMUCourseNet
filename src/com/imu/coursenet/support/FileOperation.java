@@ -12,4 +12,13 @@ public class FileOperation {
 		}
 		return true;
 	}
+	public static boolean deleteFile(String saveLocation){
+		File file=new File(saveLocation);
+		if(file.exists()){
+			if(!file.delete()){
+				return false;
+			}
+		}
+		return true;
+	}
 }
