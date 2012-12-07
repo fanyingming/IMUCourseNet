@@ -12,6 +12,7 @@ import com.imu.coursenet.dao.CourseNotificationDao;
 import com.imu.coursenet.dao.CourseTakingDao;
 import com.imu.coursenet.dao.CourseTypeDao;
 import com.imu.coursenet.dao.CourseWorkDao;
+import com.imu.coursenet.dao.CourseWorkRequirementDao;
 import com.imu.coursenet.dao.CoursewareDao;
 import com.imu.coursenet.dao.DepartmentDao;
 import com.imu.coursenet.dao.LetterDao;
@@ -44,10 +45,16 @@ public class CoursewareManagerImpl implements CoursewareManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+	private CourseWorkRequirementDao courseWorkRequirementDao;
+	
+	
+	
 
-	
-	
-	
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
+	}
+
 
 	@Override
 	public List<Courseware> listAllCourseware() {

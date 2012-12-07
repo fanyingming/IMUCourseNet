@@ -44,4 +44,11 @@ public class CourseWorkDaoImpl extends YeekuHibernateDaoSupport implements
 				"from CourseWork ");
 	}
 
+	@Override
+	public List<CourseWork> findByCourseWorkRequirementId(
+			Integer courseWorkRequirementId) {
+		return (List<CourseWork>) getHibernateTemplate().find(
+				"from CourseWork c where c.courseWorkRequirement.courseWorkRequirementId=?",courseWorkRequirementId);
+	}
+
 }

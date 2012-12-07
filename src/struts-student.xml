@@ -30,5 +30,22 @@
 	<action name="listCourseware" class="com.imu.coursenet.action.student.ListCoursewareAction">
 				<result name="success">/student/listCourseware.jsp</result>	
 	</action>
+	
+	<!-- 罗列所有的作业要求	-->
+	<action name="studentListCourseWorkRequirement" class="com.imu.coursenet.action.student.StudentListCourseWorkRequirementAction">
+				<result name="success">/student/studentListCourseWorkRequirement.jsp</result>	
+	</action>
+	
+	<!-- 查看具体的作业要求	-->
+	<action name="showCourseWorkRequirementDetail" class="com.imu.coursenet.action.student.ShowCourseWorkRequirementDetailAction">
+				<result name="success">/student/showCourseWorkRequirementDetail.jsp</result>	
+	</action>
+	
+	<!-- 学生上传作业	-->
+	<action name="uploadCourseWork" class="com.imu.coursenet.action.student.UploadCourseWorkAction">
+			<!-- 动态设置Action的属性值 -->
+			<param name="savePath">/uploadFiles</param>
+			<result name="success">/upload-succ.jsp</result>	
+	</action>
 	</package>
 </struts>

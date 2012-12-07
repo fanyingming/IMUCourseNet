@@ -21,6 +21,13 @@ public class PostReplyManagerImpl implements PostReplyManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+	private CourseWorkRequirementDao courseWorkRequirementDao;
+	
+	
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
+	}
 
 	@Override
 	public int addPostReply(PostReply postReply, int postId, int userId) {

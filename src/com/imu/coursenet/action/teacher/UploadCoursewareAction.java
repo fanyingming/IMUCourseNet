@@ -1,18 +1,17 @@
 package com.imu.coursenet.action.teacher;
 
-import com.imu.coursenet.action.base.ManagerBaseAction;
-import com.imu.coursenet.domain.Course;
-import com.imu.coursenet.domain.CourseDetail;
-import com.imu.coursenet.support.FileOperation;
-import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
 import org.apache.struts2.ServletActionContext;
 
-import java.io.*;
+import com.imu.coursenet.action.base.ManagerBaseAction;
+import com.imu.coursenet.domain.Course;
+import com.imu.coursenet.support.FileOperation;
+import com.opensymphony.xwork2.ActionContext;
 
-public class UploadCoursewareAction extends  ManagerBaseAction {
-
+public class UploadCoursewareAction extends  ManagerBaseAction{
 	private String title;
 
 	private File upload;

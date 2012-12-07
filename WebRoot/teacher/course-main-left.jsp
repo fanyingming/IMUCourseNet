@@ -66,7 +66,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</li>
           </ul>
       </li>
-	  
+	  <li class="menu">
+          <ul>
+		    <li class="button"><a href="#" class="red">课程作业管理 <span></span></a></li>
+            <li class="dropdown">
+                <ul>
+                    <li><a href="teacher/addCourseWorkRequirement.jsp" target="mainFrame">发布作业要求</a></li>
+                    <li><a href="teacherListCourseWorkRequirement.action" target="mainFrame">查看发布的作业</a></li>
+                    
+                </ul>
+			</li>
+          </ul>
+      </li>
 	 
 	
 

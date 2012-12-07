@@ -23,6 +23,13 @@ public class UserManagerImpl implements UserManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+	private CourseWorkRequirementDao courseWorkRequirementDao;
+	
+	
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
+	}
 
 	public void setCourseDao(CourseDao courseDao) {
 		this.courseDao = courseDao;

@@ -79,6 +79,7 @@
 		p:courseDetailDao-ref="courseDetailDao"
 		p:coursewareDao-ref="coursewareDao"
 		p:courseWorkDao-ref="courseWorkDao"
+		p:courseWorkRequirementDao-ref="courseWorkRequirementDao"
 		p:courseNotificationDao-ref="courseNotificationDao"
 		p:courseTakingDao-ref="courseTakingDao"
 		p:postDao-ref="postDao"
@@ -106,6 +107,8 @@
     		parent="managerTemplate"/>
     <bean id="courseWorkManager" class="com.imu.coursenet.service.impl.CourseWorkManagerImpl"
     		parent="managerTemplate"/>
+    <bean id="courseWorkRequirementManager" class="com.imu.coursenet.service.impl.CourseWorkRequirementManagerImpl"
+    		parent="managerTemplate"/>
     <bean id="courseTakingManager" class="com.imu.coursenet.service.impl.CourseTakingManagerImpl"
     		parent="managerTemplate"/>
    	<bean id="postManager" class="com.imu.coursenet.service.impl.PostManagerImpl"
@@ -127,6 +130,7 @@
     	p:courseNotificationManager-ref="courseNotificationManager"
     	p:coursewareManager-ref="coursewareManager"
     	p:courseWorkManager-ref="courseWorkManager"
+    	p:courseWorkRequirementManager-ref="courseWorkRequirementManager"
     	p:courseTakingManager-ref="courseTakingManager"
     	p:postManager-ref="postManager"
     	p:postReplyManager-ref="postReplyManager"

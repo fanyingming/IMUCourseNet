@@ -17,7 +17,14 @@ public class CourseWorkRequirement implements Serializable{
 	public CourseWorkRequirement(){
 		
 	}
-	
+	public CourseWorkRequirement(String title,String requirementContent,
+			Date createDate,Date deadLine,CourseDetail courseDetail){
+		this.title=title;
+		this.requirementContent=requirementContent;
+		this.createDate=createDate;
+		this.deadLine=deadLine;
+		this.courseDetail=courseDetail;
+	}
 	public Set<CourseWork> getCourseWorks() {
 		return courseWorks;
 	}

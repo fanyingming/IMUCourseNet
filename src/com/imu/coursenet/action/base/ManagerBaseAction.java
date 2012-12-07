@@ -18,6 +18,12 @@ public class ManagerBaseAction extends ActionSupport {
 	protected PostReplyManager postReplyManager;
 	protected LetterManager letterManager;
 	protected MessageManager messageManager;
+	protected CourseWorkRequirementManager courseWorkRequirementManager;
+
+	public void setCourseWorkRequirementManager(
+			CourseWorkRequirementManager courseWorkRequirementManager) {
+		this.courseWorkRequirementManager = courseWorkRequirementManager;
+	}
 
 	public void setUserManager(UserManager userManager) {
 		this.userManager = userManager;

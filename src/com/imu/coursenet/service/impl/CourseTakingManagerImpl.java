@@ -23,8 +23,15 @@ public class CourseTakingManagerImpl implements CourseTakingManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+	private CourseWorkRequirementDao courseWorkRequirementDao;
+	
 
 	
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
+	}
+
 	@Override
 	public List<CourseTaking> listCourseTakingByStudentId(int studentId,
 			int offset, int pageSize) {

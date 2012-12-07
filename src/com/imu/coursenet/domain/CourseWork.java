@@ -10,11 +10,26 @@ public class CourseWork implements Serializable {
 	private Date editDate;
 	private CourseWorkRequirement courseWorkRequirement;
 	private Student student;
+	private String title;
 
 	public CourseWork() {
 
 	}
-
+	public CourseWork(String courseWorkLocation,String title,CourseWorkRequirement courseWorkRequirement,
+			Student student,Date editDate){
+		this.courseWorkLocation=courseWorkLocation;
+		this.courseWorkRequirement=courseWorkRequirement;
+		this.student=student;
+		this.title=title;
+		this.editDate=editDate;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 	public Integer getCourseWorkId() {
 		return courseWorkId;
 	}

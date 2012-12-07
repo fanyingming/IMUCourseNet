@@ -4,12 +4,13 @@ import java.util.Date;
 import java.util.List;
 
 import com.imu.coursenet.dao.*;
-import com.imu.coursenet.domain.*;
-
+import com.imu.coursenet.domain.Course;
+import com.imu.coursenet.domain.CourseDetail;
+import com.imu.coursenet.domain.CourseWorkRequirement;
 import com.imu.coursenet.service.*;
 
-public class CourseDetailManagerImpl implements CourseDetailManager {
 
+public class CourseWorkRequirementManagerImpl implements CourseWorkRequirementManager{
 	private AdminDao adminDao;
 	private TeacherDao teacherDao;
 	private StudentDao studentDao;
@@ -27,120 +28,92 @@ public class CourseDetailManagerImpl implements CourseDetailManager {
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
 	private CourseWorkRequirementDao courseWorkRequirementDao;
-
-	
+	public void setAdminDao(AdminDao adminDao) {
+		this.adminDao = adminDao;
+	}
+	public void setTeacherDao(TeacherDao teacherDao) {
+		this.teacherDao = teacherDao;
+	}
+	public void setStudentDao(StudentDao studentDao) {
+		this.studentDao = studentDao;
+	}
+	public void setDepartmentDao(DepartmentDao departmentDao) {
+		this.departmentDao = departmentDao;
+	}
+	public void setSpecialtyDao(SpecialtyDao specialtyDao) {
+		this.specialtyDao = specialtyDao;
+	}
+	public void setCourseDao(CourseDao courseDao) {
+		this.courseDao = courseDao;
+	}
+	public void setCourseTypeDao(CourseTypeDao courseTypeDao) {
+		this.courseTypeDao = courseTypeDao;
+	}
+	public void setCourseDetailDao(CourseDetailDao courseDetailDao) {
+		this.courseDetailDao = courseDetailDao;
+	}
+	public void setCoursewareDao(CoursewareDao coursewareDao) {
+		this.coursewareDao = coursewareDao;
+	}
+	public void setCourseWorkDao(CourseWorkDao courseWorkDao) {
+		this.courseWorkDao = courseWorkDao;
+	}
+	public void setCourseTakingDao(CourseTakingDao courseTakingDao) {
+		this.courseTakingDao = courseTakingDao;
+	}
+	public void setCourseNotificationDao(CourseNotificationDao courseNotificationDao) {
+		this.courseNotificationDao = courseNotificationDao;
+	}
+	public void setLetterDao(LetterDao letterDao) {
+		this.letterDao = letterDao;
+	}
+	public void setMessageDao(MessageDao messageDao) {
+		this.messageDao = messageDao;
+	}
+	public void setPostDao(PostDao postDao) {
+		this.postDao = postDao;
+	}
+	public void setPostReplyDao(PostReplyDao postReplyDao) {
+		this.postReplyDao = postReplyDao;
+	}
 	public void setCourseWorkRequirementDao(
 			CourseWorkRequirementDao courseWorkRequirementDao) {
 		this.courseWorkRequirementDao = courseWorkRequirementDao;
 	}
-
 	@Override
-	public List<CourseDetail> listAllCourseDetail() {
-		return courseDetailDao.findAll();
+	public List<CourseWorkRequirement> listAllCourseWorkRequirement() {
+		return courseWorkRequirementDao.findAll();
 	}
-
 	@Override
-	public int addCourseDetail(int teacherId, int courseId) {
-		CourseDetail courseDetail = new CourseDetail();
-		Teacher teacher = teacherDao.get(teacherId);
-		Course course = courseDao.get(courseId);
-		courseDetail.setTeacher(teacher);
-		courseDetail.setCourse(course);
-		Date date = new Date();
-		courseDetail.setEstablishDate(date);
-		courseDetail.setState(1);
-		courseDetailDao.save(courseDetail);
+	public int addCourseWorkRequirement(int courseDetailId, String title,
+			String requirementContent,Date deadLine) {
+		CourseDetail courseDetail=courseDetailDao.get(courseDetailId);
+		CourseWorkRequirement courseWorkRequirement=new CourseWorkRequirement(title,requirementContent,
+				new Date(),deadLine,courseDetail);
+		courseWorkRequirementDao.save(courseWorkRequirement);
 		return this.OP_SUCC;
 	}
-
 	@Override
-	public List<CourseDetail> listCourseDetailByTeacherId(int teacherId,
-			final int offset, final int pageSize) {
-		return courseDetailDao.findByTeacherId(teacherId, offset, pageSize);
-
-	}
-
-	@Override
-	public int deleteCourseDetail(int courseDetailId) {
-		courseDetailDao.delete(courseDetailId);
+	public int deleteCourseWorkRequirement(int courseWorkRequirementId) {
+		courseWorkRequirementDao.delete(courseWorkRequirementId);
 		return this.OP_SUCC;
 	}
-
 	@Override
-	public int updateCourseDetail(CourseDetail courseDetail) {
-		courseDetailDao.update(courseDetail);
+	public int updateCourseWorkRequirement(
+			CourseWorkRequirement courseWorkRequirement) {
+		courseWorkRequirementDao.update(courseWorkRequirement);
 		return this.OP_SUCC;
 	}
-
 	@Override
-	public CourseDetail getCourseDetail(int courseDetailId) {
-		return courseDetailDao.get(courseDetailId);
-
+	public CourseWorkRequirement getCourseWorkRequirement(int courseWorkRequirementId) {
+		return courseWorkRequirementDao.get(courseWorkRequirementId);
+		
 	}
-
-	public void setAdminDao(AdminDao adminDao) {
-		this.adminDao = adminDao;
+	@Override
+	public List<CourseWorkRequirement> listCourseWorkRequirementByCourseDetailId(
+			Integer courseDetailId) {
+		return courseWorkRequirementDao.findByCourseDetailId(courseDetailId);
 	}
-
-	public void setTeacherDao(TeacherDao teacherDao) {
-		this.teacherDao = teacherDao;
-	}
-
-	public void setStudentDao(StudentDao studentDao) {
-		this.studentDao = studentDao;
-	}
-
-	public void setDepartmentDao(DepartmentDao departmentDao) {
-		this.departmentDao = departmentDao;
-	}
-
-	public void setSpecialtyDao(SpecialtyDao specialtyDao) {
-		this.specialtyDao = specialtyDao;
-	}
-
-	public void setCourseDao(CourseDao courseDao) {
-		this.courseDao = courseDao;
-	}
-
-	public void setCourseTypeDao(CourseTypeDao courseTypeDao) {
-		this.courseTypeDao = courseTypeDao;
-	}
-
-	public void setCourseDetailDao(CourseDetailDao courseDetailDao) {
-		this.courseDetailDao = courseDetailDao;
-	}
-
-	public void setCoursewareDao(CoursewareDao coursewareDao) {
-		this.coursewareDao = coursewareDao;
-	}
-
-	public void setCourseWorkDao(CourseWorkDao courseWorkDao) {
-		this.courseWorkDao = courseWorkDao;
-	}
-
-	public void setCourseTakingDao(CourseTakingDao courseTakingDao) {
-		this.courseTakingDao = courseTakingDao;
-	}
-
-	public void setCourseNotificationDao(
-			CourseNotificationDao courseNotificationDao) {
-		this.courseNotificationDao = courseNotificationDao;
-	}
-
-	public void setLetterDao(LetterDao letterDao) {
-		this.letterDao = letterDao;
-	}
-
-	public void setMessageDao(MessageDao messageDao) {
-		this.messageDao = messageDao;
-	}
-
-	public void setPostDao(PostDao postDao) {
-		this.postDao = postDao;
-	}
-
-	public void setPostReplyDao(PostReplyDao postReplyDao) {
-		this.postReplyDao = postReplyDao;
-	}
-
+	
+	
 }
