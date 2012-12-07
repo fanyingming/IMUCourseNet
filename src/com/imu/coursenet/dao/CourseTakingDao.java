@@ -18,4 +18,6 @@ public interface CourseTakingDao {
 	List<CourseTaking> findAll();
 	
 	List<CourseTaking> findByStudentId(Integer studentId, int offset, int pageSize);
+
+	List<CourseTaking> findAllByStudentId(int studentId);
 }

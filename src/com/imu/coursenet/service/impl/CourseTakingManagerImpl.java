@@ -27,6 +27,11 @@ public class CourseTakingManagerImpl implements CourseTakingManager {
 	
 
 	
+	@Override
+	public List<CourseTaking> listAllCourseTakingByStudentId(int studentId) {
+		return courseTakingDao.findAllByStudentId(studentId);
+	}
+
 	public void setCourseWorkRequirementDao(
 			CourseWorkRequirementDao courseWorkRequirementDao) {
 		this.courseWorkRequirementDao = courseWorkRequirementDao;

@@ -19,6 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	
   </head>
   
   <body>
@@ -40,7 +41,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <tr>
         <td><div align="right">截止日期</div></td>
         <td><label>
-          <input type="text" name="deadline">
+        <input type="text" name="deadLine" >
+
         </label></td>
       </tr>
       <tr>

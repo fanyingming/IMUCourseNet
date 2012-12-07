@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>登 陆</title> 
+    <title>My JSP 'addCourseNotification.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -20,37 +20,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 
-  </head>
-  
-  <body> 
-  <br><br><br>
-  
-  <hr>
-  <form name="form1" method="post" action="login">
-    <table width="445" border="0" align="right">
+</head>
+<body>
+  <br>
+  <form name="form1" method="post" action="addCourseNotification">
+    <table width="830" border="0" align="center">
+   
       <tr>
-        <td width="117"><div align="right">用户名</div></td>
-        <td width="312"><label>
-          <input type="text" name="userAccount">
-        </label></td>
+        <td><div align="right">标题：
+        </div></td>
+        <td><div align="left">
+          <input type="text" name="title">
+        </div></td>
       </tr>
       <tr>
-        <td><div align="right">密 码</div></td>
-        <td><label>
-          <input type="text" name="userPass">
-        </label></td>
+        <td><div align="right">内容：</div></td>
+        <td><div align="left">
+
+          <textarea name="content" cols="100" rows="8"></textarea>
+         
+        </div></td>
       </tr>
+
       <tr>
         <td><div align="right"></div></td>
-        <td><label>
-          <input type="submit" name="Submit" value="登陆">
-        </label>
+        <td><div align="left">
           <label>
-          <input type="reset" name="Submit2" value="重置">
-        </label></td>
+          <input type="submit" name="Submit" value="发布">
+          </label>
+          <label>
+          <input type="reset" name="Submit2" value="取消">
+          </label>
+        </div></td>
       </tr>
     </table>
   </form>
-  
+  <s:debug/>
   </body>
 </html>

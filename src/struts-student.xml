@@ -47,5 +47,15 @@
 			<param name="savePath">/uploadFiles</param>
 			<result name="success">/upload-succ.jsp</result>	
 	</action>
+	
+	<!-- 显示所有通知 -->
+		<action name="studentListCourseNotification" class="com.imu.coursenet.action.student.ListCourseNotificationAction">
+			<result name="success">/student/studentListCourseNotification.jsp</result>
+		</action>
+		
+	<!-- 显示某个学生选的所有课程 -->
+		<action name="listStudentAllCourseDetail" class="com.imu.coursenet.action.student.ListStudentAllCourseDetailAction">
+			<result name="success">/student/listStudentAllCourseDetail.jsp</result>
+		</action>
 	</package>
 </struts>

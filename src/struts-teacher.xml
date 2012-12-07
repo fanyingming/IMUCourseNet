@@ -144,5 +144,24 @@
 				<param name="actionName" >listStudentCourseWork</param>
 			</result>
 		</action>
+		
+		<!-- 显示所有通知 -->
+		<action name="listCourseNotification" class="com.imu.coursenet.action.teacher.ListCourseNotificationAction">
+			<result name="success">/teacher/teacherListCourseNotification.jsp</result>
+		</action>
+		
+		<!-- 添加通知 -->
+		<action name="addCourseNotification" class="com.imu.coursenet.action.teacher.AddCourseNotificationAction">
+			<result name="success" type="redirectAction">
+					<param name="actionName">listCourseNotification</param>
+				</result>
+		</action>
+		
+		<!-- 点击删除后，删除选课信息 -->
+		<action name="deleteCourseNotification" class="com.imu.coursenet.action.teacher.DeleteCourseNotificationAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">listCourseNotification</param>
+				</result>					
+		</action>
 	</package>
 </struts>

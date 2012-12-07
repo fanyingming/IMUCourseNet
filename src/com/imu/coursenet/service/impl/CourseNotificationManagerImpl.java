@@ -1,9 +1,11 @@
 package com.imu.coursenet.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.Course;
+import com.imu.coursenet.domain.CourseDetail;
 import com.imu.coursenet.domain.CourseNotification;
 import com.imu.coursenet.service.*;
 
@@ -26,40 +28,51 @@ public class CourseNotificationManagerImpl implements CourseNotificationManager 
 	private PostReplyDao postReplyDao;
 	private CourseWorkRequirementDao courseWorkRequirementDao;
 	
-	public void setCourseWorkRequirementDao(
-			CourseWorkRequirementDao courseWorkRequirementDao) {
-		this.courseWorkRequirementDao = courseWorkRequirementDao;
-	}
-
 	@Override
 	public List<CourseNotification> listAllCourseNotification() {
 		// TODO Auto-generated method stub
-		return null;
+		return courseNotificationDao.findAll();
 	}
 
+	
+
 	@Override
-	public int addCourseNotification(CourseNotification courseNotification,
-			int courseDetailId) {
-		// TODO Auto-generated method stub
-		return 0;
+	public List<CourseNotification> listCourseNotificationByCourseDetailId(
+			Integer courseDetailId) {
+		return courseNotificationDao.findByCourseDetailId(courseDetailId);
 	}
+
+
+
+	@Override
+	public int addCourseNotification(int courseDetailId, String title,
+			String content) {
+		CourseDetail courseDetail=courseDetailDao.get(courseDetailId);
+		CourseNotification courseNotification=new CourseNotification(courseDetail,title,content,new Date(),0);
+		courseNotificationDao.save(courseNotification);
+		return this.OP_SUCC;
+	}
+
+
 
 	@Override
 	public int deleteCourseNotification(int courseNotificationId) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		courseNotificationDao.delete(courseNotificationId);
+		return this.OP_SUCC;
 	}
 
 	@Override
 	public int updateCourseNotification(CourseNotification courseNotification) {
 		// TODO Auto-generated method stub
-		return 0;
+		return this.OP_SUCC;
 	}
 
 	@Override
 	public Course getCourseNotification(int courseNotificationId) {
 		// TODO Auto-generated method stub
-		return null;
+		return courseDao.get(courseNotificationId);
+		//return null;
 	}
 
 	public void setAdminDao(AdminDao adminDao) {
@@ -127,4 +140,12 @@ public class CourseNotificationManagerImpl implements CourseNotificationManager 
 		this.postReplyDao = postReplyDao;
 	}
 
+
+
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
+	}
+
+	
 }

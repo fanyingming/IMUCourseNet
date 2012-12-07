@@ -45,4 +45,12 @@ public class CourseNotificationDaoImpl extends YeekuHibernateDaoSupport
 				"from CourseNotification ");
 	}
 
+	@Override
+	public List<CourseNotification> findByCourseDetailId(Integer courseDetailId) {
+		return (List<CourseNotification>) getHibernateTemplate().find(
+				"from CourseNotification c where c.courseDetail.courseDetailId=?",courseDetailId);
+	}
+	
+	
+
 }

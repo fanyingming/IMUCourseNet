@@ -52,6 +52,12 @@ public class CourseTakingDaoImpl
 		return this.findByPage("from CourseTaking c where c.student.userId=?",
 				studentId, offset, pageSize);
 	}
+
+	@Override
+	public List<CourseTaking> findAllByStudentId(int studentId) {
+		return (List<CourseTaking>) getHibernateTemplate().find(
+				"from CourseTaking c where c.student.userId=?",studentId);
+	}
 	
 	
 

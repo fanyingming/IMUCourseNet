@@ -23,19 +23,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>  
   <body>
-  <table width="442" height="27" border="0">
-  		<tr>
-    	  <td>选修的课程：</td>
-    	</tr>
-  	<s:iterator value="courseTakings" id="courseTaking">
-   		<tr>
-    	  <td><a href="goToStudentCourseMainPage.action?courseDetailId=<s:property value="#courseTaking.courseDetail.courseDetailId"/>" target="_top">
-    	  		<s:property value="#courseTaking.courseDetail.course.courseName"/> &nbsp;<s:property value="#courseTaking.courseDetail.course.courseType.courseTypeName"/> 
-    	  	 </a></td>
-    	</tr>
-    </s:iterator>
-    
+  <table width="100%" border="1">
+  <tr>
+    <td width="55%">
+			<table width="487" height="74" border="1">
+    <tr>
+      <td colspan="3"><div align="center">选择的课程</div></td>
+    </tr>
+	<s:iterator value="courseTakings" id="courseTaking">
+    <tr>
+      <td width="135">
+	  	<a href="goToStudentCourseMainPage.action?courseDetailId=<s:property value="#courseTaking.courseDetail.courseDetailId"/>" target="_top">
+	  		<s:property value="#courseTaking.courseDetail.course.courseName"/>
+		</a>
+	  </td>
+      <td width="156"><s:property value="#courseTaking.courseDetail.teacher.userName"/> </td>
+      <td width="174"><s:property value="#courseTaking.courseDetail.course.courseType.courseTypeName"/> </td>
+    </tr>
+	</s:iterator>
   </table>
+	</td>
+	
+    <td width="45%">
+	  <table width="485" border="1">
+          <tr>
+            <td colspan="2"><div align="center">课程通知</div></td>
+          </tr>
+          <tr>
+            <td width="322">&nbsp;</td>
+            <td width="130">&nbsp;</td>
+          </tr>
+        </table>	</td>
+  </tr>
+</table>
+
+  
+  
+  
+    
+
   <s:debug/>
   </body>
 </html>

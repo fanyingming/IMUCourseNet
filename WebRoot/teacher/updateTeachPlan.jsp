@@ -29,7 +29,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <td><div align="right">教学计划：
         </div></td>
         <td><div align="left">
-          <input type="text" name="teachPlan">
+         
+          <textarea name="teachPlan" cols="100" rows="10"></textarea>
+         
         </div></td>
       </tr>
       <tr>

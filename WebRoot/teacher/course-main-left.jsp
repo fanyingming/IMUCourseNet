@@ -45,8 +45,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <li class="button"><a href="#" class="red">课程通知管理 <span></span></a></li>
             <li class="dropdown">
                 <ul>
-                    <li><a href="#" target="mainFrame">查看已发布通知</a></li>
-                    <li><a href="#" target="mainFrame">发布通知</a></li>
+                     <li><a href="listCourseNotification.action" target="mainFrame">查看已发布通知</a></li>
+                    <li><a href="teacher/teacherAddCourseNotification.jsp" target="mainFrame">发布通知</a></li>
                     
                 </ul>
 			</li>
