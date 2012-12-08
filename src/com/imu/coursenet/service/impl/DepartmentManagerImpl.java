@@ -6,6 +6,7 @@ import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
 import com.imu.coursenet.support.*;
+
 public class DepartmentManagerImpl implements DepartmentManager {
 	private AdminDao adminDao;
 	private TeacherDao teacherDao;
@@ -24,8 +25,7 @@ public class DepartmentManagerImpl implements DepartmentManager {
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
 	private CourseWorkRequirementDao courseWorkRequirementDao;
-	
-	
+
 	public void setCourseWorkRequirementDao(
 			CourseWorkRequirementDao courseWorkRequirementDao) {
 		this.courseWorkRequirementDao = courseWorkRequirementDao;
@@ -128,7 +128,4 @@ public class DepartmentManagerImpl implements DepartmentManager {
 		return departmentDao.get(departmentId);
 	}
 
-
-
-	
 }

@@ -10,9 +10,10 @@ public interface CourseWorkManager {
 
 	List<CourseWork> listAllCourseWork();
 
-	List<CourseWork> listByCourseWorkRequirementId(Integer courseWorkRequirementId);
-	
-	int addCourseWork(String saveLocation,String title, Integer studentId,
+	List<CourseWork> listByCourseWorkRequirementId(
+			Integer courseWorkRequirementId);
+
+	int addCourseWork(String saveLocation, String title, Integer studentId,
 			Integer courseWorkRequirementId);
 
 	int deleteCourseWork(int courseWorkId);

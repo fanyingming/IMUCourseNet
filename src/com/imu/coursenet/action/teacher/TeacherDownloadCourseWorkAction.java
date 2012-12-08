@@ -8,7 +8,7 @@ import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.CourseWork;
 import com.imu.coursenet.domain.Courseware;
 
-public class TeacherDownloadCourseWorkAction extends  ManagerBaseAction{
+public class TeacherDownloadCourseWorkAction extends ManagerBaseAction {
 	private Integer courseWorkId;
 
 	public Integer getCourseWorkId() {
@@ -19,18 +19,20 @@ public class TeacherDownloadCourseWorkAction extends  ManagerBaseAction{
 		this.courseWorkId = courseWorkId;
 	}
 
-	public String getDownloadChineseFileName() throws UnsupportedEncodingException {
-		CourseWork courseWork=courseWorkManager.getCourseWork(courseWorkId);
-        String downloadChineseFileName = courseWork.getTitle();
+	public String getDownloadChineseFileName()
+			throws UnsupportedEncodingException {
+		CourseWork courseWork = courseWorkManager.getCourseWork(courseWorkId);
+		String downloadChineseFileName = courseWork.getTitle();
 
-        downloadChineseFileName = new String(downloadChineseFileName.getBytes(),"ISO8859-1");
-        return downloadChineseFileName;
+		downloadChineseFileName = new String(
+				downloadChineseFileName.getBytes(), "ISO8859-1");
+		return downloadChineseFileName;
 	}
-	
+
 	public InputStream getInputStream() throws Exception {
-		CourseWork courseWork=courseWorkManager.getCourseWork(courseWorkId);
-        return new FileInputStream(courseWork.getCourseWorkLocation());   
-     
-    }
-	
+		CourseWork courseWork = courseWorkManager.getCourseWork(courseWorkId);
+		return new FileInputStream(courseWork.getCourseWorkLocation());
+
+	}
+
 }

@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>Welcome!</title>
+    <title></title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -36,14 +36,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    <tr>
 			    	<td style="text-align: left;">
 			    		<a>选择:</a><a href="#">全选</a><a>&nbsp;—&nbsp;</a><a href="#">反选</a>
-			    		<input type="button" value=" 删  除 "><input type="button" value="添加">
+			    		<input type="button" value=" 删  除 ">
+			    		
 			    	</td>
 			    </tr>
 			    <tr>
 				    <td width="100%">
 					    <table border="0" cellpadding="3" cellspacing="1" width="100%" align="center" style="background-color: #464646;text-align: center;">
 					    	<tr>
-		                   	 	<td height="25" colspan="13" align="left" bgcolor="#aaaaaa"><p>开设课程列表</p></td>
+		                   	 	<td height="25" colspan="13" align="left" bgcolor="#aaaaaa"><p>选课信息列表</p></td>
 		                    </tr>
 					    	<tr style="background: #dddddd; font-weight: bold">
 							    <td width="60px">选择</td>

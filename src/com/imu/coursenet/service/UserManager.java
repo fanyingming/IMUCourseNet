@@ -63,7 +63,9 @@ public interface UserManager {
 
 	List<Student> listAllStudent();
 
-	int addStudent(Student student, int departmentId);
+	int addStudent(Integer specialtyId, Integer departmentId,
+			String userAccount, String userPass, String userName,
+			String userMail);
 
 	int updateStudent(Student student);
 

@@ -15,21 +15,25 @@ public class CourseWork implements Serializable {
 	public CourseWork() {
 
 	}
-	public CourseWork(String courseWorkLocation,String title,CourseWorkRequirement courseWorkRequirement,
-			Student student,Date editDate){
-		this.courseWorkLocation=courseWorkLocation;
-		this.courseWorkRequirement=courseWorkRequirement;
-		this.student=student;
-		this.title=title;
-		this.editDate=editDate;
+
+	public CourseWork(String courseWorkLocation, String title,
+			CourseWorkRequirement courseWorkRequirement, Student student,
+			Date editDate) {
+		this.courseWorkLocation = courseWorkLocation;
+		this.courseWorkRequirement = courseWorkRequirement;
+		this.student = student;
+		this.title = title;
+		this.editDate = editDate;
 	}
-	
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public Integer getCourseWorkId() {
 		return courseWorkId;
 	}
@@ -54,13 +58,12 @@ public class CourseWork implements Serializable {
 		this.editDate = editDate;
 	}
 
-	
-
 	public CourseWorkRequirement getCourseWorkRequirement() {
 		return courseWorkRequirement;
 	}
 
-	public void setCourseWorkRequirement(CourseWorkRequirement courseWorkRequirement) {
+	public void setCourseWorkRequirement(
+			CourseWorkRequirement courseWorkRequirement) {
 		this.courseWorkRequirement = courseWorkRequirement;
 	}
 

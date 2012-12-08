@@ -16,6 +16,6 @@ public interface CoursewareDao {
 	void delete(Integer coursewareId);
 
 	List<Courseware> findAll();
-	
+
 	List<Courseware> findByCourseDetailId(Integer courseDetailId);
 }

@@ -66,10 +66,6 @@ public class Post implements Serializable {
 		this.replyCounts = replyCounts;
 	}
 
-	
-
-	
-
 	public Course getCourse() {
 		return course;
 	}

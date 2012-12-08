@@ -3,7 +3,7 @@ package com.imu.coursenet.action.student;
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.opensymphony.xwork2.ActionContext;
 
-public class GoToCourseMainPageAction extends ManagerBaseAction{
+public class GoToCourseMainPageAction extends ManagerBaseAction {
 	private int courseDetailId;
 
 	public int getCourseDetailId() {

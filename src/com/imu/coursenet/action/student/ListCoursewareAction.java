@@ -6,7 +6,7 @@ import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.Courseware;
 import com.opensymphony.xwork2.ActionContext;
 
-public class ListCoursewareAction extends ManagerBaseAction{
+public class ListCoursewareAction extends ManagerBaseAction {
 	private List<Courseware> coursewares;
 
 	public List<Courseware> getCoursewares() {
@@ -22,7 +22,8 @@ public class ListCoursewareAction extends ManagerBaseAction{
 		ActionContext ctx = ActionContext.getContext();
 		int courseDetailId = Integer.parseInt(ctx.getSession()
 				.get("courseDetailId").toString());
-		coursewares=coursewareManager.listAllCoursewareByCourseDetailId(courseDetailId);
+		coursewares = coursewareManager
+				.listAllCoursewareByCourseDetailId(courseDetailId);
 		return SUCCESS;
 	}
 }

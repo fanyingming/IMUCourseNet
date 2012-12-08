@@ -13,6 +13,7 @@ public class Course implements Serializable {
 	private CourseType courseType;
 	private Set<CourseDetail> courseDetails = new HashSet<CourseDetail>();
 	private Set<Post> posts = new HashSet<Post>();
+
 	public Course() {
 	}
 

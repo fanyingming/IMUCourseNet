@@ -24,8 +24,7 @@ public class SpecialtyManagerImpl implements SpecialtyManager {
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
 	private CourseWorkRequirementDao courseWorkRequirementDao;
-	
-	
+
 	public void setCourseWorkRequirementDao(
 			CourseWorkRequirementDao courseWorkRequirementDao) {
 		this.courseWorkRequirementDao = courseWorkRequirementDao;

@@ -27,8 +27,7 @@ public class MessageManagerImpl implements MessageManager {
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
 	private CourseWorkRequirementDao courseWorkRequirementDao;
-	
-	
+
 	public void setCourseWorkRequirementDao(
 			CourseWorkRequirementDao courseWorkRequirementDao) {
 		this.courseWorkRequirementDao = courseWorkRequirementDao;
@@ -43,10 +42,10 @@ public class MessageManagerImpl implements MessageManager {
 	public int addMessage(String content, int userId) {
 		Student student;
 		Teacher teacher;
-		
+
 		Message message = new Message();
 		message.setContent(content);
-		Date date=new Date();
+		Date date = new Date();
 		message.setEditDate(date);
 		if (studentDao.getStudent(userId).size() != 0) {
 			student = studentDao.get(userId);

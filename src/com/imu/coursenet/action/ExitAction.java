@@ -4,7 +4,7 @@ import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.User;
 import com.opensymphony.xwork2.ActionContext;
 
-public class ExitAction extends ManagerBaseAction{
+public class ExitAction extends ManagerBaseAction {
 
 	@Override
 	public String execute() throws Exception {
@@ -13,6 +13,5 @@ public class ExitAction extends ManagerBaseAction{
 		ctx.getSession().clear();
 		return SUCCESS;
 	}
-	
-	
+
 }

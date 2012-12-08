@@ -24,9 +24,7 @@ public class CourseTakingManagerImpl implements CourseTakingManager {
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
 	private CourseWorkRequirementDao courseWorkRequirementDao;
-	
 
-	
 	@Override
 	public List<CourseTaking> listAllCourseTakingByStudentId(int studentId) {
 		return courseTakingDao.findAllByStudentId(studentId);

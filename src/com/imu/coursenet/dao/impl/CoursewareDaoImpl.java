@@ -47,8 +47,8 @@ public class CoursewareDaoImpl extends YeekuHibernateDaoSupport implements
 	@Override
 	public List<Courseware> findByCourseDetailId(Integer courseDetailId) {
 		return (List<Courseware>) getHibernateTemplate().find(
-				"from Courseware c where c.courseDetail.courseDetailId=?",courseDetailId);
+				"from Courseware c where c.courseDetail.courseDetailId=?",
+				courseDetailId);
 	}
 
-	
 }

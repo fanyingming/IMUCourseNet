@@ -1,17 +1,15 @@
 package com.imu.coursenet.action.admin;
 
-
 import java.util.List;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 import com.opensymphony.xwork2.ActionContext;
 
-public class AdminShowInfoAction extends ManagerBaseAction{
+public class AdminShowInfoAction extends ManagerBaseAction {
 	private Admin admin;
 	private int department_Id;
 	private List<Department> departments;
-	
 
 	public int getDepartment_Id() {
 		return department_Id;
@@ -37,17 +35,15 @@ public class AdminShowInfoAction extends ManagerBaseAction{
 		this.admin = admin;
 	}
 
-	
-	public String execute() throws Exception{
-		
+	public String execute() throws Exception {
+
 		ActionContext ctx = ActionContext.getContext();
-		User user=(User)ctx.getSession().get("user");
-		admin=userManager.getAdminById(user.getUserId());
-		department_Id=admin.getDepartment().getDepartmentId();
-		departments=departmentManager.listAllDepartment();
+		User user = (User) ctx.getSession().get("user");
+		admin = userManager.getAdminById(user.getUserId());
+		department_Id = admin.getDepartment().getDepartmentId();
+		departments = departmentManager.listAllDepartment();
 		return SUCCESS;
-	
+
 	}
 
-	
 }

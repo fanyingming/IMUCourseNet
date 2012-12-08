@@ -25,8 +25,7 @@ public class CourseWorkManagerImpl implements CourseWorkManager {
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
 	private CourseWorkRequirementDao courseWorkRequirementDao;
-	
-	
+
 	public void setCourseWorkRequirementDao(
 			CourseWorkRequirementDao courseWorkRequirementDao) {
 		this.courseWorkRequirementDao = courseWorkRequirementDao;
@@ -35,16 +34,17 @@ public class CourseWorkManagerImpl implements CourseWorkManager {
 	@Override
 	public List<CourseWork> listAllCourseWork() {
 		return courseWorkDao.findAll();
-		
+
 	}
 
-	
 	@Override
 	public int addCourseWork(String saveLocation, String title,
 			Integer studentId, Integer courseWorkRequirementId) {
-		CourseWorkRequirement courseWorkRequirement=courseWorkRequirementDao.get(courseWorkRequirementId);
-		Student student=studentDao.get(studentId);
-		CourseWork courseWork=new CourseWork(saveLocation,title,courseWorkRequirement,student,new Date());
+		CourseWorkRequirement courseWorkRequirement = courseWorkRequirementDao
+				.get(courseWorkRequirementId);
+		Student student = studentDao.get(studentId);
+		CourseWork courseWork = new CourseWork(saveLocation, title,
+				courseWorkRequirement, student, new Date());
 		courseWorkDao.save(courseWork);
 		return this.OP_SUCC;
 	}
@@ -134,7 +134,8 @@ public class CourseWorkManagerImpl implements CourseWorkManager {
 	@Override
 	public List<CourseWork> listByCourseWorkRequirementId(
 			Integer courseWorkRequirementId) {
-		return courseWorkDao.findByCourseWorkRequirementId(courseWorkRequirementId);
+		return courseWorkDao
+				.findByCourseWorkRequirementId(courseWorkRequirementId);
 	}
 
 }

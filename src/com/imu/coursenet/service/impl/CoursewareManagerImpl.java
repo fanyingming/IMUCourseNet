@@ -46,36 +46,32 @@ public class CoursewareManagerImpl implements CoursewareManager {
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
 	private CourseWorkRequirementDao courseWorkRequirementDao;
-	
-	
-	
 
 	public void setCourseWorkRequirementDao(
 			CourseWorkRequirementDao courseWorkRequirementDao) {
 		this.courseWorkRequirementDao = courseWorkRequirementDao;
 	}
 
-
 	@Override
 	public List<Courseware> listAllCourseware() {
-		
+
 		return coursewareDao.findAll();
 	}
 
-	
 	@Override
 	public List<Courseware> listAllCoursewareByCourseDetailId(
 			Integer courseDetailId) {
 		return coursewareDao.findByCourseDetailId(courseDetailId);
-		 
+
 	}
 
-
 	@Override
-	public int  addCourseware(String savaLocation,String title, int courseDetailId) {
-		CourseDetail courseDetail=courseDetailDao.get(courseDetailId);
-		Date date=new Date();
-		Courseware courseware=new Courseware(savaLocation,title,date,courseDetail);
+	public int addCourseware(String savaLocation, String title,
+			int courseDetailId) {
+		CourseDetail courseDetail = courseDetailDao.get(courseDetailId);
+		Date date = new Date();
+		Courseware courseware = new Courseware(savaLocation, title, date,
+				courseDetail);
 		courseware.setDownloadCounts(0);
 		coursewareDao.save(courseware);
 		return this.OP_SUCC;
@@ -83,13 +79,13 @@ public class CoursewareManagerImpl implements CoursewareManager {
 
 	@Override
 	public int deleteCourseware(int coursewareId) {
-		/*删除相应的实体文件*/
-		Courseware courseware=coursewareDao.get(coursewareId);
-		if(!FileOperation.deleteFile(courseware.getSaveLocation())){
+		/* 删除相应的实体文件 */
+		Courseware courseware = coursewareDao.get(coursewareId);
+		if (!FileOperation.deleteFile(courseware.getSaveLocation())) {
 			return this.OP_FAIL;
 		}
 		coursewareDao.delete(coursewareId);
-		
+
 		return this.OP_SUCC;
 	}
 

@@ -15,7 +15,8 @@ public class DeleteCourseNotificationAction extends ManagerBaseAction {
 
 	@Override
 	public String execute() throws Exception {
-		int result = courseNotificationManager.deleteCourseNotification(courseNotificationId);
+		int result = courseNotificationManager
+				.deleteCourseNotification(courseNotificationId);
 		if (result == courseNotificationManager.OP_SUCC) {
 			return SUCCESS;
 		} else

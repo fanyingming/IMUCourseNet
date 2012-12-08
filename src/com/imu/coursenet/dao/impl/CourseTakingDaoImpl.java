@@ -7,10 +7,8 @@ import com.imu.coursenet.domain.CourseDetail;
 import com.imu.coursenet.domain.CourseTaking;
 import com.imu.coursenet.support.YeekuHibernateDaoSupport;
 
-public class CourseTakingDaoImpl 
-	extends YeekuHibernateDaoSupport 
-	implements CourseTakingDao 
-{
+public class CourseTakingDaoImpl extends YeekuHibernateDaoSupport implements
+		CourseTakingDao {
 
 	@Override
 	public CourseTaking get(Integer courseTakingId) {
@@ -56,9 +54,7 @@ public class CourseTakingDaoImpl
 	@Override
 	public List<CourseTaking> findAllByStudentId(int studentId) {
 		return (List<CourseTaking>) getHibernateTemplate().find(
-				"from CourseTaking c where c.student.userId=?",studentId);
+				"from CourseTaking c where c.student.userId=?", studentId);
 	}
-	
-	
 
 }

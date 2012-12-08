@@ -5,11 +5,11 @@ import java.util.List;
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.CourseWork;
 
-public class ListStudentCourseWorkAction extends ManagerBaseAction{
+public class ListStudentCourseWorkAction extends ManagerBaseAction {
 	private List<CourseWork> courseWorks;
 	private Integer courseWorkRequirementId;
 	private Integer courseWorkCounts;
-	
+
 	public Integer getCourseWorkCounts() {
 		return courseWorkCounts;
 	}
@@ -36,10 +36,10 @@ public class ListStudentCourseWorkAction extends ManagerBaseAction{
 
 	@Override
 	public String execute() throws Exception {
-		courseWorks=courseWorkManager.listByCourseWorkRequirementId(courseWorkRequirementId);
-		courseWorkCounts=courseWorks.size();
+		courseWorks = courseWorkManager
+				.listByCourseWorkRequirementId(courseWorkRequirementId);
+		courseWorkCounts = courseWorks.size();
 		return SUCCESS;
 	}
-	
-	
+
 }

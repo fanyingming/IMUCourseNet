@@ -9,10 +9,11 @@ public interface CourseNotificationManager {
 	public static final int OP_FAIL = -1;
 
 	List<CourseNotification> listAllCourseNotification();
-	
-	List<CourseNotification> listCourseNotificationByCourseDetailId(Integer courseDetailId);
 
-	int addCourseNotification(int courseDetailId,String title,String content);
+	List<CourseNotification> listCourseNotificationByCourseDetailId(
+			Integer courseDetailId);
+
+	int addCourseNotification(int courseDetailId, String title, String content);
 
 	int deleteCourseNotification(int courseNotificationId);
 

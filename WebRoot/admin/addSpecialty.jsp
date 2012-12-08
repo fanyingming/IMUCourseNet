@@ -16,58 +16,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+	<link rel="stylesheet" type="text/css" href="css/detail.css">
 
   </head>
   
   <body>
-  <br>
-  <form name="form1" method="post" action="saveSpecialty">
-    <table width="830" border="1" align="center">
-       <tr>
-        <td><div align="right">部门号：</div></td>
-       <td><div align="left">
-          <label>
-          <select name="departmentId">
-          <s:iterator value="departments" id="department">
-          	<option value="<s:property value="#department.departmentId"/>">
-          		<s:property value="#department.departmentName"/>
-          	</option>
-          </s:iterator>
-          </select>
-          </label>
-        </div></td>
-      </tr> 
-       <tr>
-        <td><div align="right">名字：
-        <td width="589"><div align="left">
-          <label>
-          <input type="text" name="specialtyName">
-          </label>
-        </div></td>
-      </tr>
-      <tr>
-        <td><div align="right">简介：</div></td>
-        <td><div align="left">
-          <input type="text" name="specialtyDescription">
-        </div></td>
-      </tr>
-   
-      <tr>
-        <td><div align="right"></div></td>
-        <td><div align="left">
-          <label>
-          <input type="submit" name="Submit" value="添加">
-          </label>
-          <label>
-          <input type="reset" name="Submit2" value="重置">
-          </label>
-        </div></td>
-      </tr>
-    </table>
-  </form>
-  <s:debug/>
+  <div class="zhu">
+	    <div id="top">
+	    	<div class="top_wordbg">
+		    	<div class="top_wor">
+		    		<a>添加专业信息</a>
+		    	</div>
+		    </div>
+	    </div>
+	    <div id="medium">
+	    <div id="add">
+	    	<div class="add_content">
+	    	<a>&nbsp;</a>
+				<form name="form1" method="post" action="addCourseDetail">
+	    		<table class="add_content_tab">
+	    			<tr>
+	    				<td class="addtd1"><a>专业名称：</a></td><td class="addtd2"><input type="text" name="specialtyName"></td>
+	    			</tr>
+	    			<tr>
+	    				<td class="addtd1"><a>描述：</a></td><td class="addtd2"> <input type="text" name="specialtyDescription"></td>
+	    			</tr>						    			
+	    			<tr>
+	    				<td class="addtd1"></td>
+	    				<td class="addtd2">
+	    				<input type="submit" value="提交" style="font-size:14px;">
+	    				<input type="reset" value="重置" style="font-size:14px;"></td>
+	    			</tr>
+	    		</table>
+	    			    	
+	    	</form>
+			</div>
+			
+	    </div>
+	    <div class="bottomdown"></div>
+	    </div>
+	</div>
   </body>
 </html>

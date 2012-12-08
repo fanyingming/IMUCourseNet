@@ -27,17 +27,19 @@
 		<div id="top">
 			<div class="top_wordbg">
 				<div class="top_wor">
-					<a>开设的课程</a>
+					<a>查看教师</a>
 				</div>
 			</div>
 		</div>
 		<div id="medium">
 			<div class="medium_content">
+			<form name="fom" id="fom" method="post" action="">
 				<table class="medium_content_tabal1">
 					<tr>
 						<td style="text-align: left;"><a>选择:</a><a href="#">全选</a><a>&nbsp;—&nbsp;</a><a
-							href="#">反选</a> <input type="button" value=" 删  除 "><input
-							type="button" value="添加"></td>
+							href="#">反选</a> <input type="button" value=" 删  除 ">
+							<input type="button" value=" 添 加 " onclick= "fom.action='admin/addTeacher.action';fom.submit(); ">
+							</td>
 					</tr>
 					<tr>
 						<td width="100%">
@@ -45,21 +47,22 @@
 								align="center"
 								style="background-color: #464646;text-align: center;">
 								<tr>
-									<td height="25" colspan="13" align="left" bgcolor="#aaaaaa"><p>开设课程列表</p>
+									<td height="25" colspan="13" align="left" bgcolor="#aaaaaa"><p>教师列表</p>
 									</td>
 								</tr>
 								<tr style="background: #dddddd; font-weight: bold">
+									 <td width="40">选择</td>
 									<td width="71" height="24">编号</td>
-									<td width="109">用户名</td>
-									<td width="117">密码</td>
-									<td width="117">姓名</td>
-									<td width="154">邮箱</td>
-									<td width="155">部门</td>
-									<td width="123">专业</td>
-									<td width="216">操作</td>
+									<td width="180">用户名</td>
+									<td width="180">密码</td>
+									<td width="100">姓名</td>
+									<td width="220">邮箱</td>
+									<td width="200">部门</td>
+									<td width="90">操作</td>
 								</tr>
 								<s:iterator value="teachers" id="teacher">
 									 <tr style="background:#ffffff;">
+										<td><input type="checkbox" /></td>
 										<td><s:property value="#teacher.userId" />
 										</td>
 										<td><s:property value="#teacher.userAccount" />
@@ -73,7 +76,7 @@
 										<td><s:property
 												value="#teacher.department.departmentName" />
 										</td>
-										<td>&nbsp;</td>
+									
 										<td><a
 											href="deleteUser.action?userId=<s:property value="#teacher.userId"/>">删除</a>&nbsp;&nbsp;<a
 											href="beforeUpdateTeacher.action?userId=<s:property value="#teacher.userId"/>">修改</a>
@@ -94,6 +97,7 @@
 							</div></td>
 					</tr>
 				</table>
+				</form>
 			</div>
 			<div class="bottomdown"></div>
 		</div>

@@ -1,17 +1,15 @@
 package com.imu.coursenet.action.teacher;
 
-
 import java.util.List;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 import com.opensymphony.xwork2.ActionContext;
 
-public class TeaShowInfoAction extends ManagerBaseAction{
+public class TeaShowInfoAction extends ManagerBaseAction {
 	private Teacher teacher;
 	private int department_Id;
 	private List<Department> departments;
-	
 
 	public int getDepartment_Id() {
 		return department_Id;
@@ -29,16 +27,15 @@ public class TeaShowInfoAction extends ManagerBaseAction{
 		this.departments = departments;
 	}
 
-	
-	public String execute() throws Exception{
-		
+	public String execute() throws Exception {
+
 		ActionContext ctx = ActionContext.getContext();
-		User user=(User)ctx.getSession().get("user");
-		teacher=userManager.getTeacherById(user.getUserId());
-		department_Id=teacher.getDepartment().getDepartmentId();
-		departments=departmentManager.listAllDepartment();
+		User user = (User) ctx.getSession().get("user");
+		teacher = userManager.getTeacherById(user.getUserId());
+		department_Id = teacher.getDepartment().getDepartmentId();
+		departments = departmentManager.listAllDepartment();
 		return SUCCESS;
-	
+
 	}
 
 	public Teacher getTeacher() {

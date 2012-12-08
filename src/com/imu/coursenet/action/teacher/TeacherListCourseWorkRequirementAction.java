@@ -6,7 +6,7 @@ import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.CourseWorkRequirement;
 import com.opensymphony.xwork2.ActionContext;
 
-public class TeacherListCourseWorkRequirementAction extends ManagerBaseAction{
+public class TeacherListCourseWorkRequirementAction extends ManagerBaseAction {
 	private List<CourseWorkRequirement> courseWorkRequirements;
 
 	public List<CourseWorkRequirement> getCourseWorkRequirements() {
@@ -21,10 +21,11 @@ public class TeacherListCourseWorkRequirementAction extends ManagerBaseAction{
 	@Override
 	public String execute() throws Exception {
 		ActionContext ctx = ActionContext.getContext();
-		Integer courseDetailId = (Integer) ctx.getSession().get("courseDetailId");
-		courseWorkRequirements=courseWorkRequirementManager.listCourseWorkRequirementByCourseDetailId(courseDetailId);
+		Integer courseDetailId = (Integer) ctx.getSession().get(
+				"courseDetailId");
+		courseWorkRequirements = courseWorkRequirementManager
+				.listCourseWorkRequirementByCourseDetailId(courseDetailId);
 		return SUCCESS;
 	}
-	
 
 }

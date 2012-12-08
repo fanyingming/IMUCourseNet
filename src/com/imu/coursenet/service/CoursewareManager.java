@@ -11,14 +11,13 @@ public interface CoursewareManager {
 	List<Courseware> listAllCourseware();
 
 	List<Courseware> listAllCoursewareByCourseDetailId(Integer courseDetailId);
-	
-	int addCourseware(String savaLocation,String title, int courseDetailId);
+
+	int addCourseware(String savaLocation, String title, int courseDetailId);
 
 	int deleteCourseware(int coursewareId);
 
 	int updateCourseware(Courseware courseware);
 
 	Courseware getCourseware(int coursewareId);
-	
-	
+
 }

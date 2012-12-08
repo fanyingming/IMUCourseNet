@@ -27,14 +27,12 @@ public class CourseNotificationManagerImpl implements CourseNotificationManager 
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
 	private CourseWorkRequirementDao courseWorkRequirementDao;
-	
+
 	@Override
 	public List<CourseNotification> listAllCourseNotification() {
 		// TODO Auto-generated method stub
 		return courseNotificationDao.findAll();
 	}
-
-	
 
 	@Override
 	public List<CourseNotification> listCourseNotificationByCourseDetailId(
@@ -42,22 +40,19 @@ public class CourseNotificationManagerImpl implements CourseNotificationManager 
 		return courseNotificationDao.findByCourseDetailId(courseDetailId);
 	}
 
-
-
 	@Override
 	public int addCourseNotification(int courseDetailId, String title,
 			String content) {
-		CourseDetail courseDetail=courseDetailDao.get(courseDetailId);
-		CourseNotification courseNotification=new CourseNotification(courseDetail,title,content,new Date(),0);
+		CourseDetail courseDetail = courseDetailDao.get(courseDetailId);
+		CourseNotification courseNotification = new CourseNotification(
+				courseDetail, title, content, new Date(), 0);
 		courseNotificationDao.save(courseNotification);
 		return this.OP_SUCC;
 	}
 
-
-
 	@Override
 	public int deleteCourseNotification(int courseNotificationId) {
-		
+
 		courseNotificationDao.delete(courseNotificationId);
 		return this.OP_SUCC;
 	}
@@ -72,7 +67,7 @@ public class CourseNotificationManagerImpl implements CourseNotificationManager 
 	public Course getCourseNotification(int courseNotificationId) {
 		// TODO Auto-generated method stub
 		return courseDao.get(courseNotificationId);
-		//return null;
+		// return null;
 	}
 
 	public void setAdminDao(AdminDao adminDao) {
@@ -140,12 +135,9 @@ public class CourseNotificationManagerImpl implements CourseNotificationManager 
 		this.postReplyDao = postReplyDao;
 	}
 
-
-
 	public void setCourseWorkRequirementDao(
 			CourseWorkRequirementDao courseWorkRequirementDao) {
 		this.courseWorkRequirementDao = courseWorkRequirementDao;
 	}
 
-	
 }

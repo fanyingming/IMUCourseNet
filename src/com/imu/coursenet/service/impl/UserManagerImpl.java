@@ -24,8 +24,7 @@ public class UserManagerImpl implements UserManager {
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
 	private CourseWorkRequirementDao courseWorkRequirementDao;
-	
-	
+
 	public void setCourseWorkRequirementDao(
 			CourseWorkRequirementDao courseWorkRequirementDao) {
 		this.courseWorkRequirementDao = courseWorkRequirementDao;
@@ -175,6 +174,18 @@ public class UserManagerImpl implements UserManager {
 	}
 
 	@Override
+	public int addStudent(Integer specialtyId, Integer departmentId,
+			String userAccount, String userPass, String userName,
+			String userMail) {
+		Department department = departmentDao.get(departmentId);
+		Specialty specialty = specialtyDao.get(specialtyId);
+		Student student = new Student(specialty, department, userAccount,
+				userPass, userName, userMail);
+		studentDao.save(student);
+		return this.OP_SUCC;
+	}
+
+	@Override
 	public int updateAdmin(Admin admin) {
 		adminDao.update(admin);
 		return this.OP_SUCC;
@@ -193,16 +204,6 @@ public class UserManagerImpl implements UserManager {
 	@Override
 	public int updateTeacher(Teacher teacher) {
 		teacherDao.update(teacher);
-		return this.OP_SUCC;
-	}
-
-	@Override
-	public int addStudent(Student student, int departmentId) {
-		Department department = departmentDao.get(departmentId);
-		if (department == null)
-			return this.OP_FAIL;
-		student.setDepartment(department);
-		studentDao.save(student);
 		return this.OP_SUCC;
 	}
 

@@ -10,6 +10,7 @@ import com.imu.coursenet.domain.*;
  */
 public class AddStudentAction extends ManagerBaseAction {
 	private List<Department> departments;
+	private List<Specialty> specialtys;
 
 	public List<Department> getDepartments() {
 		return departments;
@@ -19,9 +20,18 @@ public class AddStudentAction extends ManagerBaseAction {
 		this.departments = departments;
 	}
 
+	public List<Specialty> getSpecialtys() {
+		return specialtys;
+	}
+
+	public void setSpecialtys(List<Specialty> specialtys) {
+		this.specialtys = specialtys;
+	}
+
 	@Override
 	public String execute() throws Exception {
 		departments = departmentManager.listAllDepartment();
+		specialtys = specialtyManager.listAllSpecialty();
 		return SUCCESS;
 	}
 

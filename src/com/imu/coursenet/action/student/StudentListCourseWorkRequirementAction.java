@@ -7,9 +7,10 @@ import com.imu.coursenet.domain.CourseWorkRequirement;
 import com.imu.coursenet.domain.User;
 import com.opensymphony.xwork2.ActionContext;
 
-public class StudentListCourseWorkRequirementAction extends ManagerBaseAction{
+public class StudentListCourseWorkRequirementAction extends ManagerBaseAction {
 	private List<CourseWorkRequirement> CourseWorkRequirements;
 	private Integer courseWorkCounts;
+
 	public List<CourseWorkRequirement> getCourseWorkRequirements() {
 		return CourseWorkRequirements;
 	}
@@ -30,10 +31,12 @@ public class StudentListCourseWorkRequirementAction extends ManagerBaseAction{
 	@Override
 	public String execute() throws Exception {
 		ActionContext ctx = ActionContext.getContext();
-		Integer courseDetailId = (Integer) ctx.getSession().get("courseDetailId");
-		CourseWorkRequirements=courseWorkRequirementManager.listCourseWorkRequirementByCourseDetailId(courseDetailId);
-		courseWorkCounts=CourseWorkRequirements.size();
+		Integer courseDetailId = (Integer) ctx.getSession().get(
+				"courseDetailId");
+		CourseWorkRequirements = courseWorkRequirementManager
+				.listCourseWorkRequirementByCourseDetailId(courseDetailId);
+		courseWorkCounts = CourseWorkRequirements.size();
 		return SUCCESS;
 	}
-	
+
 }

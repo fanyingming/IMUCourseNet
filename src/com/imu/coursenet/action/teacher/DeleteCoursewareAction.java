@@ -2,7 +2,7 @@ package com.imu.coursenet.action.teacher;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
 
-public class DeleteCoursewareAction  extends ManagerBaseAction{
+public class DeleteCoursewareAction extends ManagerBaseAction {
 	private Integer coursewareId;
 
 	public Integer getCoursewareId() {
@@ -15,13 +15,11 @@ public class DeleteCoursewareAction  extends ManagerBaseAction{
 
 	@Override
 	public String execute() throws Exception {
-		if(coursewareManager.deleteCourseware(coursewareId)==coursewareManager.OP_SUCC){
+		if (coursewareManager.deleteCourseware(coursewareId) == coursewareManager.OP_SUCC) {
 			return SUCCESS;
-		}else{
+		} else {
 			return ERROR;
 		}
 	}
-	
-	
 
 }

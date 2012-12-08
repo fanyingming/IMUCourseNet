@@ -25,34 +25,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div id="top">
 	    	<div class="top_wordbg">
 		    	<div class="top_wor">
-		    		<a>开设的课程</a>
+		    		<a>查看课程类型</a>
 		    	</div>
 		    </div>
 	    </div>
 	    <div id="medium">
 	    	<div class="medium_content">
+	    	<form name="fom" id="fom" method="post" action="">
 		    <table class="medium_content_tabal1">
 			    <tr>
 			    	<td style="text-align: left;">
 			    		<a>选择:</a><a href="#">全选</a><a>&nbsp;—&nbsp;</a><a href="#">反选</a>
-			    		<input type="button" value=" 删  除 "><input type="button" value="添加">
+			    		<input type="button" value=" 删  除 ">
+			    		<input type="button" value=" 添 加 " onclick= "fom.action='admin/addCourseType.action';fom.submit(); ">
 			    	</td>
 			    </tr>
 			    <tr>
 				    <td width="100%">
 					    <table border="0" cellpadding="3" cellspacing="1" width="100%" align="center" style="background-color: #464646;text-align: center;">
 					    	<tr>
-		                   	 	<td height="25" colspan="13" align="left" bgcolor="#aaaaaa"><p>开设课程列表</p></td>
+		                   	 	<td height="25" colspan="13" align="left" bgcolor="#aaaaaa"><p>课程类型列表</p></td>
 		                    </tr>
 					    	<tr style="background: #dddddd; font-weight: bold">
 							    <tr bgcolor="#CCCCCC">
-      <td width="171" height="24">编号</td>
+	  <td width="40">选择</td>
+      <td width="71" height="24">编号</td>
       <td width="255">部门</td>
-      <td width="316">简介</td>
-      <td width="316">操作</td>
+      <td width="400">简介</td>
+      <td width="120">操作</td>
     </tr>
    <s:iterator value="courseTypes" id="courseType">
     <tr style="background:#ffffff;">
+    <td><input type="checkbox" /></td>
       <td><s:property value="#courseType.courseTypeId"/></td>
       <td><s:property value="#courseType.courseTypeName"/></td>
       <td><s:property value="#courseType.courseTypeDescription"/></td>
@@ -77,6 +81,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    	</td>
 			    </tr>
 		    </table>
+		    </form>
 		    </div>
 		    <div class="bottomdown"></div>
 	    </div>

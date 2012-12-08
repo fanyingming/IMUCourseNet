@@ -10,8 +10,11 @@ public class Student extends User implements Serializable {
 
 	}
 
-	public Student(String userAccount, String userPass, String userName,
+	public Student(Specialty specialty, Department department,
+			String userAccount, String userPass, String userName,
 			String userMail) {
+		this.specialty = specialty;
+		this.department = department;
 		this.userAccount = userAccount;
 		this.userPass = userPass;
 		this.userName = userName;

@@ -16,8 +16,9 @@ public interface CourseTakingDao {
 	void delete(Integer courseTakingId);
 
 	List<CourseTaking> findAll();
-	
-	List<CourseTaking> findByStudentId(Integer studentId, int offset, int pageSize);
+
+	List<CourseTaking> findByStudentId(Integer studentId, int offset,
+			int pageSize);
 
 	List<CourseTaking> findAllByStudentId(int studentId);
 }

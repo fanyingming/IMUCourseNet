@@ -17,6 +17,5 @@ public interface DepartmentManager {
 	int updateDepartment(Department department);
 
 	Department getDepartment(int departmentId);
-	
-	
+
 }
