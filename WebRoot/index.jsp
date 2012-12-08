@@ -29,11 +29,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div id="main">
      <div id="head1"><!-- 头部标题-->
      	<div class="head1_right">
-	     <a href="index.jsp" target="_blank">首页</a>&nbsp;&nbsp;
-	     <a href="news.jsp"  target="_blank">新闻通知</a>&nbsp;&nbsp;
-	     <a href="#">内大课程</a>&nbsp;&nbsp;
-	     <a href="#">院系应用</a>&nbsp;&nbsp;
-	     <a href="#">下载专区</a>&nbsp;&nbsp;
+	     <a href="index.jsp" target="_blank">首页</a>
+	     <a href="news.jsp"  target="_blank">新闻通知</a>
+	     <a href="#">内大课程</a>
+	     <a href="#">院系应用</a>
+	     <a href="#">下载专区</a>
      	</div>     
    	</div>
   <div>
@@ -174,16 +174,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
    	
 	   <div id="links">
-	   <hr width="890px" size=4 noshade>
+	   <hr width="900px" size=4 noshade>
 	   		<div class="links_pic">
 			  <a href="http://www.flagnet.net/" target="_blank"><img src="images/flagnet.jpg" /></a>
 		  	  <a href="http://job.imu.edu.cn/" target="_blank"><img src="images/imujob.jpg" /></a>
-		  	  <a href="http://www.csdn.com/" target="_blank"><img src="images/urp.jpg" /></a>
+		  	  <a href="http://jwxt.imu.edu.cn/" target="_blank"><img src="images/urp.jpg" /></a>
 		  	  <a href="http://www.nm.zsks.cn/" target="_blank"><img src="images/zsks.jpg" /></a>
-		  	  <a href="http://www.5xue.com/" target="_blank"><img src="images/cxpt.jpg" /></a>
-		  	  <a href="http://www.douban.com/" target="_blank"><img src="images/imuedu.jpg" /></a>
+		  	  <a href="http://xscx.flagnet.net/" target="_blank"><img src="images/cxpt.jpg" /></a>
+		  	  <a href="http://www.imu.edu.cn/" target="_blank"><img src="images/imuedu.jpg" /></a>
 			</div>
-		<hr width="890px" size=4 noshade>
+		<hr width="900px" size=4 noshade>
 	   </div>
    		<div id="copy">
    		<p><a>Copyright&copy;2012 内蒙古大学版权所有</a></p>

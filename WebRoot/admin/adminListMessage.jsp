@@ -9,58 +9,48 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'listMessage.jsp' starting page</title>
+    <title>inMessage</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+
+	<link rel="stylesheet" type="text/css" href="css/detail.css">
+
 
   </head>
   
   <body>
-  <table width=890 border="0" align="center">
-  <tr>
-  	<td>共&nbsp;<s:property value="messageNum"/>&nbsp;条留言</td>
-  </tr>
-  <tr>
-  <td>
-  <s:iterator value="messages" id="message">
-  <table width="783"  border="0" align="center">
-    
-    <tr>
-      <td  >
-      <div align="center">
-      	<s:property value="#message.content"/>
-      	</div>      </td>
-    </tr>
-    <tr>
-      <td >
-      		
-      		<div align="right">
-      			<s:property value="#message.editDate"/>
-      			&nbsp;  &nbsp;
-      			by &nbsp;&nbsp;
-      		  	<s:property value="#message.user.userName"/>
-            </div>       </td>
-	  <td> 	
-	  	<div align="right">
-      	 	<a href="deleteMessage.action?messageId=<s:property value="#message.messageId"/>">删除 </a>
-		</div>
-	</td>
-    </tr>
-  </table>
-  
-  <hr>
-  </s:iterator>   </td>
-  </tr>
-   
-  </table>
-  <s:debug/>
- 
+  	<div class="zhu">
+	    <div id="top">
+	    	<div class="top_wordbg">
+		    	<div class="top_wor">
+		    		<a>留言信息</a>
+		    	</div>
+		    </div>
+	    </div>
+	    <div id="medium">
+		    <div id="mtop">
+		    	<div class="mtop_num"><a>共有<span><s:property value="messageNum"/></span>条留言</a></div>
+		    </div>
+			<s:iterator value="messages" id="message">
+		    <div id="messages">
+		    	<div class="messages_name">
+		    	<a><s:property value="#message.user.userName"/></a><span><a href="deleteMessage.action?messageId=<s:property value="#message.messageId"/>"><img src="index-images/detele.jpg"></a></span>
+		    	</div>
+		    	<hr width=860px size=1 noshade>
+		    	<div class="messages_content">
+					<s:property value="#message.content"/>
+				</div>
+		    	<div class="messages_buttom"><a><s:date name="#message.editDate" format="yyyy-MM-dd HH:mm:ss"/></a></div>
+		    </div>
+			 </s:iterator> 
+		   
+			
+	     	<div class="bottomdown"></div>
+	    </div>
+	</div>
   </body>
 </html>
