@@ -13,11 +13,13 @@ public interface CourseNotificationManager {
 	List<CourseNotification> listCourseNotificationByCourseDetailId(
 			Integer courseDetailId);
 
+	List<CourseNotification> listCourseNotificationByStudentId(Integer studentId);
+
 	int addCourseNotification(int courseDetailId, String title, String content);
 
 	int deleteCourseNotification(int courseNotificationId);
 
 	int updateCourseNotification(CourseNotification courseNotification);
 
-	Course getCourseNotification(int courseNotificationId);
+	CourseNotification getCourseNotification(int courseNotificationId);
 }

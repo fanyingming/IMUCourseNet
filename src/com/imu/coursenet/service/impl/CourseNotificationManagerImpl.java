@@ -1,12 +1,11 @@
 package com.imu.coursenet.service.impl;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import com.imu.coursenet.dao.*;
-import com.imu.coursenet.domain.Course;
-import com.imu.coursenet.domain.CourseDetail;
-import com.imu.coursenet.domain.CourseNotification;
+import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
 
 public class CourseNotificationManagerImpl implements CourseNotificationManager {
@@ -30,7 +29,7 @@ public class CourseNotificationManagerImpl implements CourseNotificationManager 
 
 	@Override
 	public List<CourseNotification> listAllCourseNotification() {
-		// TODO Auto-generated method stub
+
 		return courseNotificationDao.findAll();
 	}
 
@@ -38,6 +37,23 @@ public class CourseNotificationManagerImpl implements CourseNotificationManager 
 	public List<CourseNotification> listCourseNotificationByCourseDetailId(
 			Integer courseDetailId) {
 		return courseNotificationDao.findByCourseDetailId(courseDetailId);
+	}
+
+	@Override
+	public List<CourseNotification> listCourseNotificationByStudentId(
+			Integer studentId) {
+		List<CourseTaking> courseTakings = courseTakingDao
+				.findAllByStudentId(studentId);
+		List<CourseNotification> courseNotificationList = new ArrayList<CourseNotification>();
+		for (int i = 0; i < courseTakings.size(); i++) {
+			CourseDetail courseDetail = courseTakings.get(i).getCourseDetail();
+			List<CourseNotification> courseNotifications = courseNotificationDao
+					.findByCourseDetailId(courseDetail.getCourseDetailId());
+			for (int j = 0; j < courseNotifications.size(); j++) {
+				courseNotificationList.add(courseNotifications.get(j));
+			}
+		}
+		return courseNotificationList;
 	}
 
 	@Override
@@ -59,14 +75,14 @@ public class CourseNotificationManagerImpl implements CourseNotificationManager 
 
 	@Override
 	public int updateCourseNotification(CourseNotification courseNotification) {
-		// TODO Auto-generated method stub
+		courseNotificationDao.update(courseNotification);
 		return this.OP_SUCC;
 	}
 
 	@Override
-	public Course getCourseNotification(int courseNotificationId) {
+	public CourseNotification getCourseNotification(int courseNotificationId) {
 		// TODO Auto-generated method stub
-		return courseDao.get(courseNotificationId);
+		return courseNotificationDao.get(courseNotificationId);
 		// return null;
 	}
 

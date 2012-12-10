@@ -3,13 +3,13 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <base href="<%=basePath%>">
     
-    <title>开始界面</title>
+    <title>内大教学网-Teaching&&Learning@IMU</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -100,13 +100,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<script type="text/javascript">jQuery(".slideBox").slide( { mainCell:".bd ul",effect:"leftLoop",autoPlay:true} );</script>
    				</div>
    				<div class="news_right">
-   					<p><a href="#">aaaaaaaaaa</a></p>
-   					<p><a href="#">bbbbbbbbbbbbbbbbbbdcedcfdcsc</a></p>
-   					<p><a href="#">fddddddddddddddddddd</a></p>
-   					<p><a href="#">dasgfasgfghjhgkjhljh</a></p>
-   					<p><a href="#">恭喜内蒙古大学教学网成立！</a></p>
-   					<p><a href="#">内蒙古大学从此有教学网了...</a></p>
-   					<p><a href="#">有教学网了...</a></p>
+   				
+   					<s:action name="indexPageListNews" executeResult="false" var="news"/>
+   					<s:set value="#news.getNews()" name="newsList"/>
+   					<s:iterator value="#newsList" id="new">
+   					
+   					<p><a href="#"><s:property value="new"/></a></p>
+   					
+   					</s:iterator> 
+   					
    				</div>
    			</div>
    		</div>
@@ -191,5 +193,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		</div>
     </div>
     </div>
+  
   </body>
 </html>

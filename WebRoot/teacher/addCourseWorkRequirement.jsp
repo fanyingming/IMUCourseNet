@@ -16,14 +16,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+	<link rel="stylesheet" type="text/css" href="css/detail.css">
 	
   </head>
   
   <body>
-  <form name="form1" method="post" action="addCourseWorkRequirement">
+   <div class="zhu">
+	    <div id="top">
+	    	<div class="top_wordbg">
+		    	<div class="top_wor">
+		    		<a>发布作业</a>
+		    	</div>
+		    </div>
+	    </div>
+	    <div id="medium">
+	    <div id="add">
+	    	<div class="add_content">
+	    	<a>&nbsp;</a>
+				 <form name="form1" method="post" action="addCourseWorkRequirement">
     <div align="center"><strong>新建课程作业及要求    </strong></div>
     <table width="718" border="0" align="center">
       <tr>
@@ -53,6 +63,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </tr>
     </table>
   </form>
-  <br>
+			</div>
+			
+	    </div>
+	    <div class="bottomdown"></div>
+	    </div>
+	</div>
   </body>
 </html>

@@ -33,7 +33,8 @@ public class ShowStudentMainPageAction extends ManagerBaseAction {
 		User user = (User) ctx.getSession().get("user");
 		courseTakings = courseTakingManager.listCourseTakingByStudentId(
 				user.getUserId(), 0, 10);
-		// courseNotifications=courseNotificationManager.list
+		courseNotifications = courseNotificationManager
+				.listCourseNotificationByStudentId(user.getUserId());
 		return SUCCESS;
 	}
 

@@ -30,12 +30,18 @@ public class LoginAction extends ManagerBaseAction {
 		int result = userManager.validLogin(userAccount, userPass);
 		User user;
 		user = userManager.getUserByAccountAndPass(userAccount, userPass);
-		ctx.getSession().put("user", user);
+
 		if (result == userManager.LOGIN_ADMIN) {
+			ctx.getSession().put("user", user);
+			ctx.getSession().put("level", "admin");
 			return "admin";
 		} else if (result == userManager.LOGIN_TEACHER) {
+			ctx.getSession().put("user", user);
+			ctx.getSession().put("level", "teacher");
 			return "teacher";
 		} else if (result == userManager.LOGIN_STUDENT) {
+			ctx.getSession().put("user", user);
+			ctx.getSession().put("level", "student");
 			return "student";
 		} else {
 			return INPUT;

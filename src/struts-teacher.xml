@@ -5,7 +5,22 @@
 <!-- 指定Struts 2配置文件的根元素 -->
 <struts>
 	<package name="teacher" extends="struts-default">
-
+		<interceptors>
+			<!-- 配置教师的权限检查拦截器 -->
+			<interceptor name="teacherAuth"	class=
+			"com.imu.coursenet.action.authority.TeacherAuthorityInterceptor"/>
+			<!-- 配置教师的默认的拦截器栈 -->
+			<interceptor-stack name="teacherStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="teacherAuth"/>
+			</interceptor-stack>
+	</interceptors>
+		<default-interceptor-ref name="teacherStack"/>
+		<!-- 定义全局Result映射 -->
+		<global-results>
+			<result name="error">/error.jsp</result>
+			<result name="login">/index.jsp</result>
+	</global-results>
 		<action name="uploadCourseware"
 			class="com.imu.coursenet.action.teacher.UploadCoursewareAction">
 			<!-- 动态设置Action的属性值 -->
@@ -163,5 +178,34 @@
 					<param name="actionName">listCourseNotification</param>
 				</result>					
 		</action>
+		
+		<!-- 为课程添加参考书之前显示已有的参考书信息 -->
+		<action name="showRefBookAction"
+			class="com.imu.coursenet.action.teacher.ShowRefBookAction">
+				<result name="success">/teacher/updateRefBook.jsp</result>
+		</action>
+		<!-- 为课程添加课程计划之前显示已有的课程计划信息 -->
+		<action name="showTeachPlanAction"
+			class="com.imu.coursenet.action.teacher.ShowTeachPlanAction">
+				<result name="success">/teacher/updateTeachPlan.jsp</result>
+		</action>
+		<!-- 为课程添加参考书之前显示已有的课程介绍信息 -->
+		<action name="showCourseIntroduceAction"
+			class="com.imu.coursenet.action.teacher.ShowCourseIntroduceAction">
+				<result name="success">/teacher/updateCourseIntroduce.jsp</result>
+		</action>
+		<!-- 查看留言 -->
+		<action name="listMessage" class="com.imu.coursenet.action.ListMessageAction">
+			<result name="success">/listMessage.jsp</result>
+		</action>
+		<!-- 增加留言 -->
+		<action name="addMessage" class="com.imu.coursenet.action.AddMessageAction">
+			<result type="redirectAction">
+					<param name="actionName">listMessage</param>
+			</result>
+		</action>
+		<action name="*">
+			<result>/{1}.jsp</result>
+	</action>
 	</package>
 </struts>

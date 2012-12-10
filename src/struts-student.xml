@@ -5,6 +5,22 @@
 <!-- 指定Struts 2配置文件的根元素 -->
 <struts>
 	<package name="student" extends="struts-default" >
+	<interceptors>
+			<!-- 配置学生的权限检查拦截器 -->
+			<interceptor name="studentAuth"	class=
+			"com.imu.coursenet.action.authority.StudentAuthorityInterceptor"/>
+			<!-- 配置学生的默认的拦截器栈 -->
+			<interceptor-stack name="studentStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="studentAuth"/>
+			</interceptor-stack>
+	</interceptors>
+		<default-interceptor-ref name="studentStack"/>
+		<!-- 定义全局Result映射 -->
+		<global-results>
+			<result name="error">/error.jsp</result>
+			<result name="login">/index.jsp</result>
+	</global-results>
 	<!-- 获取学生选的课和通知	-->
 	<action name="showStudentMainPage" class="com.imu.coursenet.action.student.ShowStudentMainPageAction">
 				<result name="success">/student/student-main-right.jsp</result>	
@@ -53,9 +69,42 @@
 			<result name="success">/student/studentListCourseNotification.jsp</result>
 		</action>
 		
+	<!-- 显示某个通知的详细信息 -->
+		<action name="showCourseNotificationDetail" class="com.imu.coursenet.action.student.ShowCourseNotificationDetailAction">
+			<result name="success">/student/showCourseNotificationDetail.jsp</result>
+		</action>	
 	<!-- 显示某个学生选的所有课程 -->
 		<action name="listStudentAllCourseDetail" class="com.imu.coursenet.action.student.ListStudentAllCourseDetailAction">
 			<result name="success">/student/listStudentAllCourseDetail.jsp</result>
 		</action>
+		
+	<!-- 显示已有的参考书信息 -->
+		<action name="showRefBook"
+			class="com.imu.coursenet.action.student.ShowRefBookAction">
+				<result name="success">/student/showRefBook.jsp</result>
+		</action>
+		<!-- 显示已有的课程计划信息 -->
+		<action name="showTeachPlan"
+			class="com.imu.coursenet.action.student.ShowTeachPlanAction">
+				<result name="success">/student/showTeachPlan.jsp</result>
+		</action>
+		<!--显示已有的课程介绍信息 -->
+		<action name="showCourseIntroduce"
+			class="com.imu.coursenet.action.student.ShowCourseIntroduceAction">
+				<result name="success">/student/showCourseIntroduce.jsp</result>
+		</action>
+		<!-- 查看留言 -->
+		<action name="listMessage" class="com.imu.coursenet.action.ListMessageAction">
+			<result name="success">/listMessage.jsp</result>
+		</action>
+		<!-- 增加留言 -->
+		<action name="addMessage" class="com.imu.coursenet.action.AddMessageAction">
+			<result type="redirectAction">
+					<param name="actionName">listMessage</param>
+			</result>
+		</action>
+		<action name="*">
+			<result>/{1}.jsp</result>
+	</action>
 	</package>
 </struts>

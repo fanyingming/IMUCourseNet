@@ -6,6 +6,23 @@
 <struts>
 	<!-- 所有的Action定义都应该放在package下 -->
 	<package name="admin" extends="struts-default" >
+	
+	<interceptors>
+			<!-- 配置管理员的权限检查拦截器 -->
+			<interceptor name="adminAuth"	class=
+			"com.imu.coursenet.action.authority.AdminAuthorityInterceptor"/>
+			<!-- 配置管理员的默认的拦截器栈 -->
+			<interceptor-stack name="adminStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="adminAuth"/>
+			</interceptor-stack>
+	</interceptors>
+		<default-interceptor-ref name="adminStack"/>
+		<!-- 定义全局Result映射 -->
+		<global-results>
+			<result name="error">/error.jsp</result>
+			<result name="login">/index.jsp</result>
+	</global-results>
 		<!-- 罗列人员 -->
 		<action name="listAdmin" class="com.imu.coursenet.action.admin.listAdminAction">
 				<result name="success">/admin/adminManage.jsp</result>	
@@ -250,5 +267,7 @@
 					<param name="actionName">adminShowInfo</param>
 				</result>	
 	</action>
+	
+	
 	</package>
 </struts>

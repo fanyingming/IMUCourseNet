@@ -16,15 +16,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+	<link rel="stylesheet" type="text/css" href="css/detail.css">
   </head>
   
   <body>
-    <div align="center"><strong>共有<s:property value="courseWorkCounts"/>个作业</strong><br>
-    </div>
-    <s:iterator value="courseWorkRequirements" id="courseWorkRequirement">
+
+<div class="zhu">
+	    <div id="top">
+	    	<div class="top_wordbg">
+		    	<div class="top_wor">
+		    		<a>课程作业</a>
+		    	</div>
+		    </div>
+	    </div>
+	    <div id="medium">
+	    <div id="add">
+	    	<div class="add_content">
+	    	<a>&nbsp;</a>
+	    	<div align="center"><strong>共有<s:property value="courseWorkCounts"/>个作业</strong><br>
+		  <s:iterator value="courseWorkRequirements" id="courseWorkRequirement">
     <table width="538" border="0" align="center">
       <tr>
         <td colspan="2">
@@ -39,6 +49,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </tr>
     </table>
     </s:iterator>
-
+			</div>
+			
+	    </div>
+	    <div class="bottomdown"></div>
+	    </div>
+	</div>
   </body>
 </html>

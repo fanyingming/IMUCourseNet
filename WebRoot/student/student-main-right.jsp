@@ -23,36 +23,49 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>  
   <body>
-  <table width="100%" border="1">
+  <table width="100%" border="0">
   <tr>
     <td width="55%">
-			<table width="487" height="74" border="1">
+			<table width="487" height="74" border="0">
     <tr>
-      <td colspan="3"><div align="center">选择的课程</div></td>
+      <td ><div align="center">选择的课程</div></td>
     </tr>
 	<s:iterator value="courseTakings" id="courseTaking">
     <tr>
-      <td width="135">
-	  	<a href="goToStudentCourseMainPage.action?courseDetailId=<s:property value="#courseTaking.courseDetail.courseDetailId"/>" target="_top">
+    
+    <td>
+    	<a href="goToStudentCourseMainPage.action?courseDetailId=<s:property value="#courseTaking.courseDetail.courseDetailId"/>" target="_top">
 	  		<s:property value="#courseTaking.courseDetail.course.courseName"/>
 		</a>
-	  </td>
-      <td width="156"><s:property value="#courseTaking.courseDetail.teacher.userName"/> </td>
-      <td width="174"><s:property value="#courseTaking.courseDetail.course.courseType.courseTypeName"/> </td>
+		,
+		<s:property value="#courseTaking.courseDetail.course.courseType.courseTypeName"/>
+   		,<s:property value="#courseTaking.courseDetail.teacher.userName"/>
+    </td>
+      
     </tr>
 	</s:iterator>
   </table>
 	</td>
 	
     <td width="45%">
-	  <table width="485" border="1">
+	  <table width="500" border="0">
           <tr>
             <td colspan="2"><div align="center">课程通知</div></td>
           </tr>
+          <s:iterator value="courseNotifications" id="courseNotification">
           <tr>
-            <td width="322">&nbsp;</td>
-            <td width="130">&nbsp;</td>
+            <td width="322">
+            
+				    	
+            <a href="showCourseNotificationDetail?courseNotificationId=<s:property value="#courseNotification.courseNotificationId"/>">
+	  		<s:property value="#courseNotification.title"/>
+		</a>
+            </td>
+            <td width="145">
+            	<s:date name="#courseNotification.editDate" format="yyyy-MM-dd HH:mm:ss"/>
+            </td>
           </tr>
+          </s:iterator>
         </table>	</td>
   </tr>
 </table>
@@ -62,6 +75,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
     
 
-  <s:debug/>
+  
   </body>
 </html>

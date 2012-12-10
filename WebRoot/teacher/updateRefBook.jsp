@@ -16,21 +16,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+	<link rel="stylesheet" type="text/css" href="css/detail.css">
 
   </head>
   <body>
-  <br>
-  <form name="form1" method="post" action="editRefBook">
-    <table width="830" border="1" align="center">
+  
+  <div class="zhu">
+	    <div id="top">
+	    	<div class="top_wordbg">
+		    	<div class="top_wor">
+		    		<a>修改参考书籍</a>
+		    	</div>
+		    </div>
+	    </div>
+	    <div id="medium">
+	    <div id="add">
+	    	<div class="add_content">
+	    	<a>&nbsp;</a>
+				<form name="form1" method="post" action="editRefBook">
+    <table width="830" border="0" align="center">
        <tr>
         <td><div align="right">参考书：
         </div></td>
         <td><div align="left">
          
-          <textarea name="referenceBook" cols="100" rows="10"></textarea>
+          <textarea name="referenceBook" cols="100" rows="10" ><s:property value="courseDetail.referenceBook" /></textarea>
           
         </div></td>
       </tr>
@@ -47,6 +57,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </tr>
     </table>
   </form>
-  <s:debug/>
+			</div>
+			
+	    </div>
+	    <div class="bottomdown"></div>
+	    </div>
+	</div>
   </body>
 </html>

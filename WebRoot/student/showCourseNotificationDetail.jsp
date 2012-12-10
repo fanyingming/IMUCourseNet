@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'updateCourseIntroduce.jsp' starting page</title>
+    <title>My JSP 'showCourseNotificationDetail.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -19,12 +19,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="css/detail.css">
 
   </head>
+  
   <body>
   <div class="zhu">
 	    <div id="top">
 	    	<div class="top_wordbg">
 		    	<div class="top_wor">
-		    		<a>修改课程介绍</a>
+		    		<a>查看通知</a>
 		    	</div>
 		    </div>
 	    </div>
@@ -32,30 +33,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div id="add">
 	    	<div class="add_content">
 	    	<a>&nbsp;</a>
-				  <form name="form1" method="post" action="editCourseIntroduce">
-    <table width="830" border="0" align="center">
-       <tr>
-        <td><div align="right">课程介绍：
-        </div></td>
-        <td><div align="left">
-          
-          <textarea name="courseIntroduce" cols="100" rows="10"><s:property value="courseDetail.courseIntroduce" /></textarea>
-          
-        </div></td>
-      </tr>
-      <tr>
-        <td><div align="right"></div></td>
-        <td><div align="left">
-          <label>
-          <input type="submit" name="Submit" value="保存">
-          </label>
-          <label>
-          <input type="reset" name="Submit2" value="重置">
-          </label>
-        </div></td>
-      </tr>
-    </table>
-  </form>
+		    <table width="885" border="0" align="center">
+    <tr>
+      <td>
+      <div align="left">
+      	<s:property value="courseNotification.title"/>	
+      </div>
+       <div align="right">
+       发布于
+       	<s:date name="courseNotification.editDate" format="yyyy-MM-dd HH:mm:ss"/>			       
+       </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      	<p>
+      		<s:property value="courseNotification.content"/>
+      	</p>
+      </td>
+    </tr>
+  
+  </table>
+  
 			</div>
 			
 	    </div>

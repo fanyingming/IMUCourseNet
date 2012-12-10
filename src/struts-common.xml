@@ -15,6 +15,7 @@
 		<!-- 定义全局Result映射 -->
 		<global-results>
 			<result name="error">/error.jsp</result>
+			<result name="login">/index.jsp</result>
 		</global-results>
 		<!-- 登陆 -->
 		<action name="login" class="com.imu.coursenet.action.LoginAction">
@@ -27,17 +28,13 @@
 		<action name="exit" class="com.imu.coursenet.action.ExitAction">
 			<result name="success">/index.jsp</result>
 		</action>
-		<!-- 查看留言 -->
-		<action name="listMessage" class="com.imu.coursenet.action.ListMessageAction">
-			<result name="success">/listMessage.jsp</result>
+		<action name="*">
+			<result>/{1}.jsp</result>
 		</action>
-		<!-- 增加留言 -->
-		<action name="addMessage" class="com.imu.coursenet.action.AddMessageAction">
-			<result type="redirectAction">
-					<param name="actionName">listMessage</param>
-			</result>
-		</action>
-		
+		<!-- 首页显示新闻 -->
+	<action name="indexPageListNews" class="com.imu.coursenet.action.admin.IndexPageListNewsAction">
+				<result name="success">/error.jsp</result>	
+	</action>
 		
 		
 		

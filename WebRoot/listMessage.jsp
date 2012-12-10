@@ -44,7 +44,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    	<div class="messages_content">
 					<s:property value="#message.content"/>
 				</div>
-		    	<div class="messages_buttom"><a><s:date name="#message.editDate" format="yyyy-MM-dd HH:mm:ss"/></a></div>
+		    	<div class="messages_buttom"><a>
+		    	<s:date name="#message.editDate" format="yyyy-MM-dd HH:mm:ss"/>
+		    	</a></div>
 		    </div>
 			 </s:iterator> 
 		   <form method="post"  action="addMessage">
