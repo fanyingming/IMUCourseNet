@@ -5,26 +5,8 @@ import java.io.FileOutputStream;
 import java.util.Date;
 import java.util.List;
 
-import com.imu.coursenet.dao.AdminDao;
-import com.imu.coursenet.dao.CourseDao;
-import com.imu.coursenet.dao.CourseDetailDao;
-import com.imu.coursenet.dao.CourseNotificationDao;
-import com.imu.coursenet.dao.CourseTakingDao;
-import com.imu.coursenet.dao.CourseTypeDao;
-import com.imu.coursenet.dao.CourseWorkDao;
-import com.imu.coursenet.dao.CourseWorkRequirementDao;
-import com.imu.coursenet.dao.CoursewareDao;
-import com.imu.coursenet.dao.DepartmentDao;
-import com.imu.coursenet.dao.LetterDao;
-import com.imu.coursenet.dao.MessageDao;
-import com.imu.coursenet.dao.PostDao;
-import com.imu.coursenet.dao.PostReplyDao;
-import com.imu.coursenet.dao.SpecialtyDao;
-import com.imu.coursenet.dao.StudentDao;
-import com.imu.coursenet.dao.TeacherDao;
-import com.imu.coursenet.domain.Course;
-import com.imu.coursenet.domain.CourseDetail;
-import com.imu.coursenet.domain.Courseware;
+import com.imu.coursenet.dao.*;
+import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
 import com.imu.coursenet.support.FileOperation;
 
@@ -46,7 +28,15 @@ public class CoursewareManagerImpl implements CoursewareManager {
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
 	private CourseWorkRequirementDao courseWorkRequirementDao;
+	private NewsDao newsDao;
+	private NoticeDao noticeDao;
 
+	public void setNoticeDao(NoticeDao noticeDao) {
+		this.noticeDao=noticeDao;
+	}
+	public void setNewsDao(NewsDao newsDao) {
+		this.newsDao = newsDao;
+	}
 	public void setCourseWorkRequirementDao(
 			CourseWorkRequirementDao courseWorkRequirementDao) {
 		this.courseWorkRequirementDao = courseWorkRequirementDao;

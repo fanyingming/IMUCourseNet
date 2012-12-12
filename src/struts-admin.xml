@@ -268,7 +268,25 @@
 					<param name="actionName">adminShowInfo</param>
 				</result>	
 	</action>
-	
-	
+	<!-- 管理员显示新闻 -->
+	<action name="listNotice" class="com.imu.coursenet.action.admin.listNoticeAction">
+				<result name="success">/admin/noticeManage.jsp</result>	
+		</action>
+	<!--添加新闻-->
+		<action name="addNoticeAction" class="com.imu.coursenet.action.admin.AddNoticeAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">listNotice</param>
+				</result>		
+		</action>
+	<!-- 管理员显示新闻 -->
+	<action name="listNews" class="com.imu.coursenet.action.admin.listNewsAction">
+				<result name="success">/admin/newsManage.jsp</result>	
+		</action>
+	<!--添加新闻-->
+		<action name="addNewsAction" class="com.imu.coursenet.action.admin.AddNewsAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">listNews</param>
+				</result>		
+		</action>
 	</package>
 </struts>

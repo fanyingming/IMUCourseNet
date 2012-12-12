@@ -26,7 +26,15 @@ public class CourseNotificationManagerImpl implements CourseNotificationManager 
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
 	private CourseWorkRequirementDao courseWorkRequirementDao;
+	private NewsDao newsDao;
+	private NoticeDao noticeDao;
 
+	public void setNoticeDao(NoticeDao noticeDao) {
+		this.noticeDao=noticeDao;
+	}
+	public void setNewsDao(NewsDao newsDao) {
+		this.newsDao = newsDao;
+	}
 	@Override
 	public List<CourseNotification> listAllCourseNotification() {
 

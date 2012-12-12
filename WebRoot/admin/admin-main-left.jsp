@@ -93,8 +93,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
             <li class="dropdown">
                 <ul>
-                	<li><a href="#" target="mainFrame">添加通知</a></li>
-                    <li><a href="#" target="mainFrame">查看通知</a></li>
+                	<li><a href="admin/addNotice.jsp" target="mainFrame">添加通知</a></li>
+                    <li><a href="listNotice.action" target="mainFrame">查看通知</a></li>
                     
                     
                 </ul>
@@ -108,8 +108,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
             <li class="dropdown">
                 <ul>
-                	<li><a href="#" target="mainFrame">添加新闻</a></li>
-                    <li><a href="#" target="mainFrame">查看新闻</a></li>
+                	<li><a href="admin/addNews.jsp" target="mainFrame">添加新闻</a></li>
+                    <li><a href="listNews.action" target="mainFrame">查看新闻</a></li>
                     
                     
                 </ul>

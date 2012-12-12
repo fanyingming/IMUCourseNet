@@ -59,7 +59,6 @@ public class AdminDaoImpl extends YeekuHibernateDaoSupport implements AdminDao {
 	@Override
 	public List<Admin> findAll(int offset, int pageSize) {
 		return this.findByPage("from Admin ", offset, pageSize);
-		
 	}
 
 	@Override

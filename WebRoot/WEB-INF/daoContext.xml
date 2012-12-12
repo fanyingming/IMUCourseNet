@@ -64,4 +64,10 @@
 	<bean id="courseWorkRequirementDao"
 		class="com.imu.coursenet.dao.impl.CourseWorkRequirementDaoImpl"
 		parent="daoTemplate"/>
+	<bean id="newsDao"
+		class="com.imu.coursenet.dao.impl.NewsDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="noticeDao"
+		class="com.imu.coursenet.dao.impl.NoticeDaoImpl"
+		parent="daoTemplate"/>
 </beans>

@@ -24,7 +24,15 @@ public class CourseManagerImpl implements CourseManager {
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
 	private CourseWorkRequirementDao courseWorkRequirementDao;
+	private NewsDao newsDao;
+	private NoticeDao noticeDao;
 
+	public void setNoticeDao(NoticeDao noticeDao) {
+		this.noticeDao=noticeDao;
+	}
+	public void setNewsDao(NewsDao newsDao) {
+		this.newsDao = newsDao;
+	}
 	public void setCourseWorkRequirementDao(
 			CourseWorkRequirementDao courseWorkRequirementDao) {
 		this.courseWorkRequirementDao = courseWorkRequirementDao;

@@ -1,13 +1,15 @@
 package com.imu.coursenet.service.impl;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.*;
-import com.imu.coursenet.service.*;
-import com.imu.coursenet.support.FileOperation;
 
-public class PostManagerImpl implements PostManager {
+import com.imu.coursenet.service.*;
+
+public class NewsManagerImpl implements NewsManager {
 	private AdminDao adminDao;
 	private TeacherDao teacherDao;
 	private StudentDao studentDao;
@@ -34,39 +36,32 @@ public class PostManagerImpl implements PostManager {
 	public void setNewsDao(NewsDao newsDao) {
 		this.newsDao = newsDao;
 	}
+
 	public void setCourseWorkRequirementDao(
 			CourseWorkRequirementDao courseWorkRequirementDao) {
 		this.courseWorkRequirementDao = courseWorkRequirementDao;
 	}
 
 	@Override
-	public List<Post> listAllPost() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<News> listAllNews() {
+		return newsDao.findAll();
 	}
 
 	@Override
-	public int addPost(Post post, int courseDetailId, int userId) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int addNews(News news) {
+		newsDao.save(news);
+		return this.OP_SUCC;
 	}
 
 	@Override
-	public int deletePost(int postId) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int deleteNews(int newsId) {
+		newsDao.delete(newsId);
+		return this.OP_SUCC;
 	}
 
 	@Override
-	public int updatePost(Post post) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public Course getPost(int postId) {
-		// TODO Auto-generated method stub
-		return null;
+	public News getNews(int newsId) {
+		return newsDao.get(newsId);
 	}
 
 	public void setAdminDao(AdminDao adminDao) {
@@ -93,6 +88,7 @@ public class PostManagerImpl implements PostManager {
 		this.courseDao = courseDao;
 	}
 
+	
 	public void setCourseTypeDao(CourseTypeDao courseTypeDao) {
 		this.courseTypeDao = courseTypeDao;
 	}

@@ -19,6 +19,12 @@ public class ManagerBaseAction extends ActionSupport {
 	protected LetterManager letterManager;
 	protected MessageManager messageManager;
 	protected CourseWorkRequirementManager courseWorkRequirementManager;
+	protected NewsManager newsManager;
+	protected NoticeManager noticeManager;
+	
+	public void setNoticeManager(NoticeManager noticeManager) {
+		this.noticeManager = noticeManager;
+	}
 
 	public void setCourseWorkRequirementManager(
 			CourseWorkRequirementManager courseWorkRequirementManager) {
@@ -80,6 +86,9 @@ public class ManagerBaseAction extends ActionSupport {
 
 	public void setMessageManager(MessageManager messageManager) {
 		this.messageManager = messageManager;
+	}
+	public void setNewsManager(NewsManager newsManager) {
+		this.newsManager=newsManager;
 	}
 
 }
