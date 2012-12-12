@@ -25,7 +25,18 @@
 		<!-- 映射和Department的关联关系 -->
 		<many-to-one name="department" column="departmentId" 
 			class="Department" lazy="false"/>
-		
+		<set name="posts" inverse="true">
+				<key column="userId" />
+				<one-to-many class="Post"/>
+		</set>
+		<set name="postReplys" inverse="true">
+				<key column="userId" />
+				<one-to-many class="PostReply"/>
+		</set>
+		<set name="messages" inverse="true">
+				<key column="userId" />
+				<one-to-many class="Message"/>
+		</set>
 		<subclass name="Admin" discriminator-value="1">
 			
 		</subclass>
@@ -35,11 +46,19 @@
 				<key column="userId" />
 				<one-to-many class="CourseDetail"/>
 			</set>
+			<set name="letters" inverse="true">
+				<key column="userId" />
+				<one-to-many class="Letter"/>
+			</set>
 		</subclass>
 		
 		<subclass name="Student" discriminator-value="3">
 			<many-to-one name="specialty" column="specialtyId" 
 			class="Specialty" lazy="false"/>
+			<set name="letters" inverse="true">
+				<key column="userId" />
+				<one-to-many class="Letter"/>
+			</set>
 		</subclass>
 	</class>
 </hibernate-mapping>

@@ -26,6 +26,7 @@
 		<!-- 罗列人员 -->
 		<action name="listAdmin" class="com.imu.coursenet.action.admin.listAdminAction">
 				<result name="success">/admin/adminManage.jsp</result>	
+				<param name="pageSize">10</param>
 		</action>
 		<action name="listTeacher" class="com.imu.coursenet.action.admin.listTeacherAction">
 				<result name="success">/admin/teacherManage.jsp</result>	

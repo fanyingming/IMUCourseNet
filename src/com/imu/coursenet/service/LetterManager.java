@@ -10,7 +10,7 @@ public interface LetterManager {
 
 	List<Letter> listAllLetter();
 
-	int addLetter(Letter letter, int senderId, int receiverId);
+	int addLetter(Teacher teacher,Student student,String title,String content);
 
 	int deleteLetter(int letterId);
 

@@ -1,5 +1,6 @@
 package com.imu.coursenet.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import com.imu.coursenet.dao.*;
@@ -36,11 +37,13 @@ public class LetterManagerImpl implements LetterManager {
 	}
 
 	@Override
-	public int addLetter(Letter letter, int senderId, int receiverId) {
-		Teacher receiver = teacherDao.get(receiverId);
-		Student sender = studentDao.get(senderId);
-		letter.setReceiver(receiver);
-		letter.setSender(sender);
+	public int addLetter(Teacher teacher,Student student,String title,String content) {
+		Letter letter=new Letter();
+		letter.setReceiver(teacher);
+		letter.setSender(student);
+		letter.setContent(content);
+		letter.setTitle(title);
+		letter.setDate(new Date());
 		letterDao.save(letter);
 		return this.OP_SUCC;
 	}

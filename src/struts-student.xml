@@ -46,7 +46,24 @@
 	<action name="listCourseware" class="com.imu.coursenet.action.student.ListCoursewareAction">
 				<result name="success">/student/listCourseware.jsp</result>	
 	</action>
-	
+	<!-- 下载课件 -->
+		<action name="studentDownloadCourseware"
+			class="com.imu.coursenet.action.teacher.DownloadCoursewareAction">
+			<result name="success" type="stream">
+				<!-- 指定下载文件的内容类型，text/plain是默认类型 -->
+				<param name="contentType">text/plain</param>
+				<!-- inputName默认值是inputStream，如果action中用于读取下载文件内容的属性名是inputStream，那么可以省略这个参数 -->
+				<param name="inputName">inputStream</param>
+				<!--动态获取文件名，从Action中的取得filename -->
+				<param name="contentDisposition">
+					attachment;filename="${downloadChineseFileName}"
+				</param>
+				<param name="bufferSize">2048</param>
+			</result>
+			<result name="input" type="redirectAction">
+				<param name="actionName" >listCourseware</param>
+			</result>
+		</action>
 	<!-- 罗列所有的作业要求	-->
 	<action name="studentListCourseWorkRequirement" class="com.imu.coursenet.action.student.StudentListCourseWorkRequirementAction">
 				<result name="success">/student/studentListCourseWorkRequirement.jsp</result>	
@@ -102,6 +119,14 @@
 			<result type="redirectAction">
 					<param name="actionName">listMessage</param>
 			</result>
+		</action>
+		<!-- 学生写信前获得老师名字 -->
+		<action name="studentWriteLetter" class="com.imu.coursenet.action.student.StudentWriteLetterAction">
+			<result name="success">/student/studentWriteLetter.jsp</result>
+		</action>
+		<!-- 学生写信 -->
+		<action name="sendLetter" class="com.imu.coursenet.action.student.SendLetterAction">
+			<result name="success">/student/send-succ.jsp</result>
 		</action>
 		<action name="*">
 			<result>/{1}.jsp</result>

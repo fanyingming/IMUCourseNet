@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <li class="button"><a href="#" class="red">私密信箱 <span></span></a></li>
             <li class="dropdown">
                 <ul>
-                    <li><a href="#" target="mainFrame">写信</a></li>
+                    <li><a href="studentWriteLetter" target="mainFrame">写信</a></li>
                     <li><a href="#" target="mainFrame">已发信件</a></li>
                     
                 </ul>

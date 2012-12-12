@@ -17,7 +17,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<link rel="stylesheet" type="text/css" href="css/detail.css">
+	<SCRIPT language=JavaScript>
+function selectAll(){
+	var obj = document.fom.elements;
+	for (var i=0;i<obj.length;i++){
+		if (obj[i].name == "delid"){
+			obj[i].checked = true;
+		}
+	}
+}
 
+function unselectAll(){
+	var obj = document.fom.elements;
+	for (var i=0;i<obj.length;i++){
+		if (obj[i].name == "delid"){
+			if (obj[i].checked==true) obj[i].checked = false;
+			else obj[i].checked = true;
+		}
+	}
+}
+</SCRIPT>
   </head>
   
   <body>
@@ -36,7 +55,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <table class="medium_content_tabal1">
 			    <tr>
 			    	<td style="text-align: left;">
-			    		<a>选择:</a><a href="#">全选</a><a>&nbsp;—&nbsp;</a><a href="#">反选</a>
+			    		<a>选择:</a>
+			    		<a href="javascript:void(0);"  onClick="selectAll();">全选</a><a>&nbsp;—&nbsp;</a>
+			    		<a href="javascript:void(0);"  onClick="unselectAll();">反选</a>
 			    		<input type="button" value=" 删  除 ">
 			    		<input type="button" value=" 添 加 " onclick= "fom.action='admin/addAdmin.action';fom.submit(); ">
 			    	</td>
@@ -59,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</tr>
 							 <s:iterator value="admins" id="admin">
 					    <tr style="background:#ffffff;">
-					      <td><input type="checkbox" /></td>
+					      <td><input type="checkbox" name="delid"/></td>
 					      <td><s:property value="#admin.userId"/></td>
 					      <td><s:property value="#admin.userAccount"/></td>
 					      <td><s:property value="#admin.userPass"/></td>
@@ -80,12 +101,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    </tr>
 			    <tr id="bottom">
 			    	<td class="bottom_left">
-			    		<div class="bottom_left">共&nbsp;<span>4</span>&nbsp;页&nbsp;|&nbsp;第&nbsp;<span>4</span>&nbsp;页&nbsp;|&nbsp;共&nbsp;<span>17</span>&nbsp;条记录</div>
+			    		<div class="bottom_left">共&nbsp;
+			    			<span>
+			    				<s:property value="totalPageCounts"/>
+			    			</span>&nbsp;页&nbsp;|&nbsp;第&nbsp;
+			    			<span>
+			    				<s:property value="currentPage"/>
+			    			</span>&nbsp;页&nbsp;|&nbsp;共&nbsp;
+			    			<span>
+			    				<s:property value="totalRecordCounts"/>
+			    			</span>&nbsp;条记录</div>
 			    		<div class="bottom_right">
-			    		[&nbsp;<a href="#">首页</a><span>|</span>
-			    		<a href="#">上一页</a><span>|</span>
-			    		<a href="#">下一页</a><span>|</span>
-			    		<a href="#">末页</a>&nbsp;]&nbsp;转至:<input type="text" size="1" /><input type="button" value="Go">
+			    		[&nbsp;<a href="listAdmin?currentPage=1">首页</a><span>|</span>
+			    		<a href="listAdmin?currentPage=<s:property value="currentPage-1"/>">上一页</a><span>|</span>
+			    		<a href="listAdmin?currentPage=<s:property value="currentPage+1"/>">下一页</a><span>|</span>
+			    		<a href="listAdmin?currentPage=<s:property value="totalPageCounts"/>">末页</a>&nbsp;]&nbsp;转至:<input type="text" size="1" /><input type="button" value="Go">
 			    		</div>
 			    	</td>
 			    </tr>

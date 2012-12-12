@@ -124,6 +124,12 @@ public class UserManagerImpl implements UserManager {
 	}
 
 	@Override
+	public List<Admin> listAllAdmin(int offset, int pageSize) {
+		return adminDao.findAll(offset, pageSize);
+		
+	}
+
+	@Override
 	public List<Teacher> listAllTeacher() {
 		return teacherDao.findAll();
 	}
@@ -261,6 +267,12 @@ public class UserManagerImpl implements UserManager {
 		}
 
 		return user;
+	}
+
+	@Override
+	public int totalAdminCounts() {
+		return adminDao.getTotalAdminCounts();
+		 
 	}
 
 }

@@ -9,24 +9,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>内大教学网-Teaching&&Learning@IMU</title>
+    <title>My JSP 'send-succ.jsp' starting page</title>
+    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-
-	<link rel="stylesheet" type="text/css" href="..css/styles.css">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
 
   </head>
-  	<frameset rows="105,*,40" frameborder="1">
-  		<frame src="teacher/teacher-main-top.jsp" name="topFrame" scrolling="no" noresize/>
-	<frameset cols="210,*" frameborder="no">
-  		<frame src="teacher/teacher-main-left.jsp" name="leftFrame" scrolling="no"/>
-  		<frame src="listTeacherCourseDetail.action" name="mainFrame"/>
-	</frameset>
-		<frame src="copyright.jsp" scrolling="no" noresize/>
-	</frameset><noframes></noframes>
+  
   <body>
+    发送成功. <br>
   </body>
 </html>

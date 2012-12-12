@@ -1,5 +1,6 @@
 package com.imu.coursenet.action.teacher;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -31,7 +32,19 @@ public class DownloadCoursewareAction extends ManagerBaseAction {
 
 	public InputStream getInputStream() throws Exception {
 		Courseware courseware = coursewareManager.getCourseware(coursewareId);
+		
 		return new FileInputStream(courseware.getSaveLocation());
 
 	}
+
+	@Override
+	public String execute() throws Exception {
+		Courseware courseware = coursewareManager.getCourseware(coursewareId);
+		File file=new File(courseware.getSaveLocation());
+		if(!file.exists()){
+			return ERROR;
+		}
+		return SUCCESS;
+	}
+	
 }

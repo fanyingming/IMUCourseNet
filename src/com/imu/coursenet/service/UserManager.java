@@ -41,9 +41,13 @@ public interface UserManager {
 
 	List<Admin> listAllAdmin();
 
+	List<Admin> listAllAdmin(int offset,int pageSize);
+	
 	int addAdmin(Admin admin, int departmentId);
 
 	int updateAdmin(Admin admin);
+	
+	int totalAdminCounts();
 
 	/*-----------Teacher-----------------*/
 	Teacher getTeacherById(int userId);

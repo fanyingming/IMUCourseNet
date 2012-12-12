@@ -9,24 +9,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>内大教学网-Teaching&&Learning@IMU</title>
+    <title>My JSP 'building.jsp' starting page</title>
+    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-
-	<link rel="stylesheet" type="text/css" href="..css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/detail.css">
 
   </head>
-  	<frameset rows="105,*,40" frameborder="1">
-  		<frame src="teacher/teacher-main-top.jsp" name="topFrame" scrolling="no" noresize/>
-	<frameset cols="210,*" frameborder="no">
-  		<frame src="teacher/teacher-main-left.jsp" name="leftFrame" scrolling="no"/>
-  		<frame src="listTeacherCourseDetail.action" name="mainFrame"/>
-	</frameset>
-		<frame src="copyright.jsp" scrolling="no" noresize/>
-	</frameset><noframes></noframes>
+  
   <body>
+   <div class="zhu">
+	    <div id="top">
+	    	<div class="top_wordbg">
+		    	<div class="top_wor">
+		    		<a>建设中</a>
+		    	</div>
+		    </div>
+	    </div>
+	    <div id="medium">
+	    <div id="add">
+	    	<div class="add_content">
+	    	<a>&nbsp;</a>
+			<h1 adlgn="center">感谢您一如既往的支持，稍后向您呈现更加精彩的内容↖(^ω^)↗。</h1>
+			</div>
+			
+	    </div>
+	    <div class="bottomdown"></div>
+	    </div>
+	</div>
   </body>
 </html>

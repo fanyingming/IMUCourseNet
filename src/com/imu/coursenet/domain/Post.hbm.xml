@@ -29,5 +29,9 @@
 		<!-- 映射和User的关联关系 -->
 		<many-to-one name="user" column="userId" 
 			class="User" lazy="false"/>
+		<set name="postReplys" inverse="true">
+				<key column="postId" />
+				<one-to-many class="PostReply"/>
+		</set>
 	</class>
 </hibernate-mapping>
