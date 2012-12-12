@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="..css/styles.css">
 
   </head>
-  	<frameset rows="105,*,40" frameborder="1">
+  	<frameset rows="105,*,40" frameborder="0">
   		<frame src="student/student-main-top.jsp" name="topFrame" scrolling="no" noresize/>
 	<frameset cols="210,*" frameborder="no">
   		<frame src="student/course-main-left.jsp" name="leftFrame" scrolling="no"/>

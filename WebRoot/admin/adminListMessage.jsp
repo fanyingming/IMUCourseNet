@@ -47,8 +47,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    	<div class="messages_buttom"><a><s:date name="#message.editDate" format="yyyy-MM-dd HH:mm:ss"/></a></div>
 		    </div>
 			 </s:iterator> 
-		   
-			
+		   	<div class="bottom_left" style="margin-left:110px;">共&nbsp;<span>4</span>&nbsp;页&nbsp;|&nbsp;第&nbsp;<span>4</span>&nbsp;页&nbsp;|&nbsp;共&nbsp;<span>17</span>&nbsp;条记录</div>
+			    <div class="bottom_right" style="margin-right:90px;">
+			    [&nbsp;<a href="#">首页</a><span>|</span>
+			    <a href="#">上一页</a><span>|</span>
+			    <a href="#">下一页</a><span>|</span>
+			    <a href="#">末页</a>&nbsp;]&nbsp;转至:<input type="text" size="1" /><input type="button" value="Go">
+			    </div>
 	     	<div class="bottomdown"></div>
 	    </div>
 	</div>

@@ -59,7 +59,7 @@ li.button a:hover span{ background-position:bottom right;}
 	margin:5px 0;
 	padding:4px 0px;
 	text-align:center;
-	background:greenyellow;
+	background:#f8c0c0;
 }
 .dropdown li a{	font-size:20px;}
 .clear{	clear:both;}
@@ -96,7 +96,7 @@ a:hover{	text-decoration:none;}
 	text-align:center;
 }
 .medium_content_tabal1 a{	text-decoration:none;	font-size:17px;}
-.medium_content_tabal1 a:hover{	text-decoration:underline;	color:red;}
+.medium_content_tabal1 a:hover{	text-decoration:underline;	color:#d11b2b;}
 .medium_content_tabal1 input{	height:25px;	margin-left:10px;	margin-right:5px;}
 #bottom{	font-size:15px;	color:#4f4f4f;text-align:center;margin:0 auto;}
 .bottom_left{	text-align:left;	float:left;}
@@ -155,24 +155,27 @@ a:hover{	text-decoration:none;}
 }
 .messages_buttom span{	margin-left:15px;	margin-right:10px;}
 #pl{
-	width:900px;
+	width:960px;
 	height:auto;
-	text-align:center;
-	margin:10 auto;
-}
-.pl_top{	text-align:left;	font-size:18px;}
-#mid{
-	text-align:center;
 	margin:0 auto;
-	margin-left:10px;
+	text-align:center;
+}
+.pl_top{	text-align:left;font-size:18px;padding-top:5px;}
+.pl_top a{
+	text-align:left;
+	padding-left:15px;
+}
+#mid{
+	text-align:left;
+	margin-left:35px;
 }
 .pl_bot{
-	text-align:right;
-	margin-right:60px;
+	text-align:left;
+	margin-left:400px;
 	margin-top:10px;
 }
 .pl_bot1{
-	text-align:left;
+	text-align:center;
 	margin-left:40px;
 	margin-top:10px;
 }
@@ -180,6 +183,12 @@ a:hover{	text-decoration:none;}
 				/*addadmin.jsp*/
 #add{width:1040px;height:auto;margin:0 auto;}
 .add_content{height:auto;text-align:center;margin:0 auto;}
+.add_content a{
+	font-size:17px
+}
+.add_content a:hover{
+	text-decoration:underline;color:#d11b2b;
+}
 .add_content span{margin-left:15px;margin-right:15px;}
 .add_content_tab{	margin:10 auto;}
 .addtd1{	text-align:right;	font-size:18px;}

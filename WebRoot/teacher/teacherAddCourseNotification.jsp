@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<div class="add_content">
 	    	<a>&nbsp;</a>
 				<form name="form1" method="post" action="addCourseNotification">
-    <table width="830" border="0" align="center">
+    <table width="930" border="0" align="center">
    
       <tr>
         <td><div align="right">标题：
@@ -44,13 +44,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </tr>
       <tr>
         <td><div align="right">内容：</div></td>
-        <td><div align="left">
+        <td rowspan=3><div align="left">
 
-          <textarea name="content" cols="100" rows="8"></textarea>
+          <textarea name="content" cols="90" rows="8"></textarea>
          
         </div></td>
       </tr>
-
+	<tr>
+	<td></td>
+	</tr>
+	<tr>
+	<td></td>
+	</tr>
       <tr>
         <td><div align="right"></div></td>
         <td><div align="left">

@@ -83,7 +83,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<td><div align="right">上传作业：</div>
 			</td>
 			<td>
-			<br>
 				<s:form action="uploadCourseWork"
 					enctype="multipart/form-data">
 					
@@ -95,7 +94,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<br />
 					<s:submit value="上传" />
 				</s:form>
-				<br>
 			<hr>
 			</td>
 		</tr>

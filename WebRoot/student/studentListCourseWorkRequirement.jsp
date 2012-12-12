@@ -48,12 +48,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <s:date name="#courseWorkRequirement.deadLine" format="yyyy-MM-dd HH:mm:ss"/></td>
       </tr>
     </table>
+    <hr width="538px">
     </s:iterator>
 			</div>
 			
 	    </div>
 	    <div class="bottomdown"></div>
 	    </div>
+	</div>
 	</div>
   </body>
 </html>

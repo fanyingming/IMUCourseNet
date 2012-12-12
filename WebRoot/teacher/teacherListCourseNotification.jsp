@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'listCourseNotification.jsp' starting page</title>
+    <title>内大教学网-Teaching&&Learning@IMU</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -34,24 +34,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div id="add">
 	    	<div class="add_content">
 	    	<a>&nbsp;</a>
-				  <table width="783"  border="0" align="center">
-    
-    <tr>
-    									
-			<td width="250px">通知标题</td>
-			<td width="180px">内容</td>
-			<td width="150px">次数</td>
-			<td width="150px">时间</td>
+			<table width="783"  border="0" align="center">
+    		<tr style="background:#bbbbbb;">						
+			<td width="300px">通知标题</td>
+			<td width="150px">查看次数</td>
+			<td width="200px">发布时间</td>
 			<td width="150px">操作</td>
 	</tr>
 	<s:iterator value="courseNotifications" id="notification">
     <tr>
        <td >
-	    	 <s:property value="#notification.title"/>
+	    	 <a href="teacherShowCourseNotificationDetail?courseNotificationId=<s:property value="#notification.courseNotificationId"/>"><s:property value="#notification.title"/></a>
        </td>
-       <td >
-	         <s:property value="#notification.content"/>
-       </td>
+       
        <td >
       		 <s:property value="#notification.checkCounts"/>
        </td>
@@ -59,8 +54,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	     	<s:property value="#notification.editDate"/>
        </td>
        <td> 	
-		  	<div align="center">
-	      	 	<a href="deleteCourseNotification.action?courseNotificationId=<s:property value="#notification.courseNotificationId"/>">删除 </a>
+		  	<div align="left">
+	      	 	<a href="deleteCourseNotification?courseNotificationId=<s:property value="#notification.courseNotificationId"/>">删除 </a>
+	      	 	<a href="updateCourseNotification?courseNotificationId=<s:property value="#notification.courseNotificationId"/>">修改 </a>
 			</div>
 	   </td>
     </tr>

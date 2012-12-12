@@ -34,10 +34,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   		<a href="index.jsp" target="_top">主页</a>
 		   		<a href="#">我的信箱</a>
 		   		<a href="#">课程讨论版</a>
-		   		<a href="#" target="_blank">留言板</a>
+		   		<a href="listMessage" target="mainFrame" >留言板</a>
 		   		<a href="exit.action" target="_top">退出</a>
 		   	</div>
 		   </div>
+		   <hr width=100% size=2px color="#d11b2b">
 	   </div>
   </body>
 </html>

@@ -21,11 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  
-  
-
-  
-  
   <div class="zhu">
 	    <div id="top">
 	    	<div class="top_wordbg">
@@ -38,15 +33,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div id="add">
 	    	<div class="add_content">
 	    	<a>&nbsp;</a>
-	    	<div align="center">学生上传的作业,共<s:property value="courseWorkCounts"/>份。<br>
-  </div>
-				  <table width="756" height="28" border="0" align="center">
+	    	<div align="center"><span style="font-size:20px;">学生上传的作业,共</span><a style="font-size:20px;color:#d11b2b;font-weight:bold;"><s:property value="courseWorkCounts"/></a><span  style="font-size:20px;">份。</span><br></div>
+				  <table width="756" height="28" border="0" align="center" style="font-size:20px;">
   <s:iterator value="courseWorks" id="courseWork">
     <tr>
-      <td width="386"><div align="center">
+    	<td width="100"><div align="center">1</div></td>
+      <td width="200"><div align="left">
         <s:property value="#courseWork.student.userName"/>
       </div></td>
-      <td width="234"><div align="center">
+      <td width="254"><div align="left">
       	<s:date name="#courseWork.editDate" format="yyyy-MM-dd HH:mm:ss"/>  
       </div></td>
       <td width="114">

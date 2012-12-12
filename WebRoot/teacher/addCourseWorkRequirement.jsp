@@ -44,10 +44,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </tr>
       <tr>
         <td><div align="right">作业内容及要求</div></td>
-        <td><label>
+        <td rowspan=3><label>
           <textarea name="requirementContent" cols="70" rows="10"></textarea>
         </label></td>
       </tr>
+      <tr>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td></td>
+	  </tr>
       <tr>
         <td><div align="right">截止日期</div></td>
         <td><label>

@@ -34,16 +34,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<div class="add_content">
 	    	<a>&nbsp;</a>
 				<form name="form1" method="post" action="editRefBook">
-    <table width="830" border="0" align="center">
+    <table width="930" border="0" align="center">
        <tr>
-        <td><div align="right">参考书：
+        <td><div align="right"><font size=5>参考书：</font>
         </div></td>
-        <td><div align="left">
+        <td rowspan=3><div align="left">
          
-          <textarea name="referenceBook" cols="100" rows="10" ><s:property value="courseDetail.referenceBook" /></textarea>
+          <textarea name="referenceBook" cols="70" rows="10"  style="font-size:17px;"><s:property value="courseDetail.referenceBook" /></textarea>
           
         </div></td>
       </tr>
+      <tr>
+	<td></td>
+	</tr>
+	<tr>
+	<td></td>
+	</tr>
       <tr>
         <td><div align="right"></div></td>
         <td><div align="left">

@@ -33,16 +33,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<div class="add_content">
 	    	<a>&nbsp;</a>
 				  <s:iterator value="courseWorkRequirements" id="courseWorkRequirement">
+				  <hr>
   <table width="817" border="0" align="center">
     <tr>
-      <td>
-	  	<a href="listStudentCourseWork.action?courseWorkRequirementId=<s:property value="#courseWorkRequirement.courseWorkRequirementId"/>"><s:property value="#courseWorkRequirement.title"/></a><br>
-	  	<p align="center"><s:property value="#courseWorkRequirement.requirementContent"/></p>
-	  	<p align="right">发布日期:<s:date name="#courseWorkRequirement.createDate" format="yyyy-MM-dd HH:mm:ss"/></p>
-	  	<p align="right">截止日期:<s:date name="#courseWorkRequirement.deadLine" format="yyyy-MM-dd HH:mm:ss"/></p>
+      <td rowspan=3>
+	  	<a href="listStudentCourseWork.action?courseWorkRequirementId=<s:property value="#courseWorkRequirement.courseWorkRequirementId"/>" style="font-weight:800;font-size:23px;"><s:property value="#courseWorkRequirement.title"/></a><br>
+	  	<p align="center"><a style=""><s:property value="#courseWorkRequirement.requirementContent"/></a></p>
+	  	<p align="right"><a style="font-size:16px;color:#777777;">发布日期:<s:date name="#courseWorkRequirement.createDate" format="yyyy-MM-dd HH:mm:ss"/></a></p>
+	  	<p align="right"><a style="font-size:16px;color:#777777;">截止日期:<s:date name="#courseWorkRequirement.deadLine" format="yyyy-MM-dd HH:mm:ss"/></a></p>
 	  </td>
+	  <td><p align="right"><a href="">删除</a></p></td>
     </tr>
-	<hr>
+	
   </table>
   <hr>
   </s:iterator>

@@ -35,14 +35,16 @@
 	    <div id="add">
 	    	<div class="add_content">
 	    	<a>&nbsp;</a>
-		<table width="830" >
+		<table width="930" align="center">
 		<tr>
-			<td><div align="right">课程介绍：</div></td>
-			<td><div align="left">
-					<s:property value="courseDetail.courseIntroduce" />					
-				</div></td>
-		</tr>
-
+			<td><div align="right"><font size=5>课程介绍：</font></div></td>
+			<td rowspan=3><div align="left">
+          <textarea name="courseIntroduce" cols="70" rows="10" style="font-size:17px;"><s:property value="courseDetail.courseIntroduce" /></textarea>
+       </div></td>
+      </tr>
+		<tr><td></td></tr>
+      <tr><td></td></tr>
+      <tr><td></td></tr>
 	</table>
 			</div>
 			

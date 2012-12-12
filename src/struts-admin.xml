@@ -241,6 +241,10 @@
 		<action name="adminListMessage" class="com.imu.coursenet.action.admin.AdminListMessageAction">
 			<result name="success">/admin/adminListMessage.jsp</result>
 		</action>
+		<!-- 查看并发布留言 -->
+		<action name="listMessage" class="com.imu.coursenet.action.ListMessageAction">
+			<result name="success">/listMessage.jsp</result>
+		</action>
 		<!-- 点击删除后，删除刘留言并返回显示留言界面 -->
 		<action name="deleteMessage" class="com.imu.coursenet.action.admin.DeleteMessageAction">
 				<result name="success" type="redirectAction">

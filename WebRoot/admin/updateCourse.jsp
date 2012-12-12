@@ -43,10 +43,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    				</td>
 	    			</tr>
 	    			<tr>
-	    				<td class="addtd1"><a>描述：</a></td><td class="addtd2">
+	    				<td class="addtd1"><a>描述：</a></td><td class="addtd2" rowspan=3>
 	    				<textarea name="courseDescription" cols="105" rows="10" ><s:property value="course.courseDescription" /></textarea>
 	    				</td>
 	    			</tr>
+	    			<tr><td></td></tr>
+					<tr><td></td></tr>
+					<tr><td></td></tr>
 					<tr>
 	    				<td class="addtd1"><a>开设学院：</a></td><td class="addtd2">
 	    				<select name="departmentId">

@@ -36,9 +36,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<a>&nbsp;</a>
 		  <table width="840"  border="0" align="center">
     
-    <tr>
+    <tr style="background:#bbbbbb;">
     									
-			<td width="420"><div align="center">通知标题</div></td>
+			<td width="220"><div align="center">通知标题</div></td>
 			<td width="117"><div align="center">查看次数</div></td>
 			<td width="289"><div align="center">发布时间</div></td>
 	</tr>
@@ -46,8 +46,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<s:iterator value="courseNotifications" id="notification">
 			    <tr>
 			       <td >
-				    	 <div align="center"> 
-				    	  <a href="showCourseNotificationDetail?courseNotificationId=<s:property value="#notification.courseNotificationId"/>">
+				    	 <div align="left"> 
+				    	  <a href="studentShowCourseNotificationDetail?courseNotificationId=<s:property value="#notification.courseNotificationId"/>">
 				    	  	 <s:property value="#notification.title"/>	
 				    	  </a>		       
 		    	     </div></td>

@@ -172,6 +172,11 @@
 				</result>
 		</action>
 		
+		<!-- 显示某个通知的详细信息 -->
+		<action name="teacherShowCourseNotificationDetail" class="com.imu.coursenet.action.ShowCourseNotificationDetailAction">
+			<result name="success">/showCourseNotificationDetail.jsp</result>
+		</action>	
+		
 		<!-- 点击删除后，删除选课信息 -->
 		<action name="deleteCourseNotification" class="com.imu.coursenet.action.teacher.DeleteCourseNotificationAction">
 				<result name="success" type="redirectAction">
@@ -206,6 +211,6 @@
 		</action>
 		<action name="*">
 			<result>/{1}.jsp</result>
-	</action>
+		</action>
 	</package>
 </struts>

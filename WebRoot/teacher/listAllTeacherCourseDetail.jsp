@@ -35,32 +35,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div id="add">
 	    	<div class="add_content">
 	    	<a>&nbsp;</a>
-				<table width="907" border="0" align="center" bordercolor="#000000">
-    <tr>
-      <td width="371"><div align="center">课程名称</div></td>
-      <td width="104"><div align="center">课程类别</div></td>
-      <td width="123"><div align="center">开课学院</div></td>
-      <td width="150"><div align="center">开课时间</div></td>
-      <td width="125"><div align="center">选课人数</div></td>
+				<table width="907" border="0" align="center">
+    <tr style="background:#bbbbbb;">
+      <td width="150"><div align="left">课程名称</div></td>
+      <td width="104"><div align="left">课程类别</div></td>
+      <td width="123"><div align="left">开课学院</div></td>
+      <td width="150"><div align="left">开课时间</div></td>
+      <td width="125"><div align="left">选课人数</div></td>
     </tr>
 
 	<s:iterator value="courseDetails" id="courseDetail">
     <tr>
-      <td><div align="center">
+      <td><div align="left">
 	  	<a href="goToTeacherCourseMainPage.action?courseDetailId=<s:property value="#courseDetail.courseDetailId"/>" target="_top">
 			<s:property value="#courseDetail.course.courseName"/>
 		</a></div>
 	  </td>
-      <td><div align="center">
+      <td><div align="left">
 	  	<s:property value="#courseDetail.course.courseType.courseTypeName"/>
 	  </div></td>
-      <td><div align="center">
+      <td><div align="left">
 	  	<s:property value="#courseDetail.course.department.departmentName"/>
 	  </div></td>
-      <td><div align="center">
+      <td><div align="left">
 	  	<s:property value="#courseDetail.establishDate"/>
 	  </div></td>
-      <td><div align="center">
+      <td><div align="left">
 	  	统计中...
 	  </div></td>
     </tr>

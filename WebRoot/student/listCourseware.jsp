@@ -41,10 +41,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <s:iterator value="coursewares" id="courseware">
 	    <tr>
 	      <td>
-	      	<div align="left">
-	      		<a href="studentDownloadCourseware?coursewareId=<s:property value="#courseware.coursewareId"/>"><s:property value="#courseware.title"/></a><br>
-	      		上传于 <s:date name="#courseware.uploadDate" format="yyyy-MM-dd HH:mm:ss"/>
-	     	 </div>
+	      <table>
+		      <tr>
+		      	<td width="600px">
+		      	<div align="left">
+		      		<a href="downloadCourseware.action?coursewareId=<s:property value="#courseware.coursewareId"/>"><s:property value="#courseware.title"/></a>
+		      	</div>
+		      	</td>
+		      	<td width="250px">
+		      	<div>
+		      		上传于 <s:date name="#courseware.uploadDate" format="yyyy-MM-dd HH:mm:ss"/>
+		     	 </div>
+		     	 </td>
+		      </tr>
+	   	  </table>
+	     	 <hr>
 	      </td>
 	    </tr>
     </s:iterator>

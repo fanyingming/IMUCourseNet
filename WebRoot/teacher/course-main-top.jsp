@@ -39,6 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   		<a href="exit.action" target="_top">退出</a>
 		   	</div>
 		   </div>
+		   <hr width=100% size=2px color="#d11b2b">
 	   </div>
   </body>
 </html>

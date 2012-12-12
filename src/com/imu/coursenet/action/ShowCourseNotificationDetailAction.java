@@ -1,4 +1,4 @@
-package com.imu.coursenet.action.student;
+package com.imu.coursenet.action;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.CourseNotification;

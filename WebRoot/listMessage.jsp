@@ -49,22 +49,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    	</a></div>
 		    </div>
 			 </s:iterator> 
-			 <div class="bottom_left">共&nbsp;
-			    			<span>
-			    				<s:property value="totalPageCounts"/>
-			    			</span>&nbsp;页&nbsp;|&nbsp;第&nbsp;
-			    			<span>
-			    				<s:property value="currentPage"/>
-			    			</span>&nbsp;页&nbsp;|&nbsp;共&nbsp;
-			    			<span>
-			    				<s:property value="totalRecordCounts"/>
-			    			</span>&nbsp;条记录</div>
-			    		<div class="bottom_right">
-			    		[&nbsp;<a href="listAdmin?currentPage=1">首页</a><span>|</span>
-			    		<a href="listAdmin?currentPage=<s:property value="currentPage-1"/>">上一页</a><span>|</span>
-			    		<a href="listAdmin?currentPage=<s:property value="currentPage+1"/>">下一页</a><span>|</span>
-			    		<a href="listAdmin?currentPage=<s:property value="totalPageCounts"/>">末页</a>&nbsp;]&nbsp;转至:<input type="text" size="1" /><input type="button" value="Go">
-			    		</div>
+			 <div class="bottom_left" style="margin-left:110px;">共&nbsp;<span>4</span>&nbsp;页&nbsp;|&nbsp;第&nbsp;<span>4</span>&nbsp;页&nbsp;|&nbsp;共&nbsp;<span>17</span>&nbsp;条记录</div>
+			    <div class="bottom_right" style="margin-right:90px;">
+			    [&nbsp;<a href="#">首页</a><span>|</span>
+			    <a href="#">上一页</a><span>|</span>
+			    <a href="#">下一页</a><span>|</span>
+			    <a href="#">末页</a>&nbsp;]&nbsp;转至:<input type="text" size="1" /><input type="button" value="Go">
+			    </div>
 		   <form method="post"  action="addMessage">
 		    <div id="pl">
 		    	<div class="pl_top"><p><a>欢迎评论</a></p>
