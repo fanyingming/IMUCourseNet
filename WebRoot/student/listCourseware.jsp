@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		      <tr>
 		      	<td width="600px">
 		      	<div align="left">
-		      		<a href="downloadCourseware.action?coursewareId=<s:property value="#courseware.coursewareId"/>"><s:property value="#courseware.title"/></a>
+		      		<a href="studentDownloadCourseware?coursewareId=<s:property value="#courseware.coursewareId"/>"><s:property value="#courseware.title"/></a>
 		      	</div>
 		      	</td>
 		      	<td width="250px">

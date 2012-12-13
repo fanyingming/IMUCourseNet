@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.CourseDetail;
+import com.imu.coursenet.domain.Post;
 import com.imu.coursenet.domain.PostReply;
 import com.imu.coursenet.support.YeekuHibernateDaoSupport;
 
@@ -41,6 +42,12 @@ public class PostReplyDaoImpl extends YeekuHibernateDaoSupport implements
 	@Override
 	public List<PostReply> findAll() {
 		return (List<PostReply>) getHibernateTemplate().find("from PostReply ");
+	}
+
+	@Override
+	public List<PostReply> findbyPostId(Integer postId) {
+		// TODO Auto-generated method stub
+		return (List<PostReply>) getHibernateTemplate().find("from PostReply a where a.post.postId = ? ",postId);
 	}
 
 }

@@ -16,4 +16,8 @@ public interface MessageDao {
 	void delete(Integer messageId);
 
 	List<Message> findAll();
+	
+	List<Message> findAll(int offset,int pageSize);
+	
+	int getAllMessageCounts();
 }

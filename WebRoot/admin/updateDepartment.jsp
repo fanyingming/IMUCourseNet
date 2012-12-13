@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<div class="add_content">
 	    	<a>&nbsp;</a>
 				<form name="form1" method="post" action="updateDepartment">
-				<input type="hidden" name="courseId" value="<s:property value="course.courseId" />">
+				<input type="hidden" name="departmentId" value="<s:property value="department.departmentId" />">
 
 	    		<table class="add_content_tab">
 	    			<tr>

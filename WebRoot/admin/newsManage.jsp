@@ -52,32 +52,33 @@
 										</td>
 									</tr>
 									<tr style="background: #dddddd; font-weight: bold">
-										<td width="40">选择</td>
-										<td width="71" height="24">编号</td>
+										
+										
 										<td width="220">标题</td>
-										<td width="220">内容</td>
+										
 										<td width="220">编辑时间</td>
 										<td width="220">查看数</td>
-										<td width="150">作者</td>
+										
 										<td width="120">操作</td>
 									</tr>
 									<s:iterator value="news" id="newss">
 										<tr style="background:#ffffff;">
-											<td><input type="checkbox" /></td>
-											<td><s:property value="#newss.newsId" /></td>
-											<td><s:property value="#newss.newsTitle" /></td>
-											<td><s:property value="#newss.content" /></td>
-											<td><s:property value="#newss.editDate" /></td>
-											<td><s:property value="#newss.checkCounts" /></td>
-											<td><s:property value="#newss.author" /></td>
-											<td><a href="#">删除</a>
-												 &nbsp;&nbsp; 
-												<a href="#">修改</a>
+										
 											</td>
+											<td><a
+												href="showNews?newsId=<s:property value="#newss.newsId"/>"><s:property
+														value="#newss.newsTitle" />
+											</a></td>
+											<td><s:property value="#newss.editDate" />
+											</td>
+											<td><s:property value="#newss.checkCounts" />
+											</td>
+				
+											<td><a href="deleteNews?newsId=<s:property value="#newss.newsId"/>">删除</a>
+											 &nbsp;&nbsp; <a href="beforeUpdateNews?newsId=<s:property value="#newss.newsId"/>">修改</a></td>
 										</tr>
 									</s:iterator>
-								</table>
-							</td>
+								</table></td>
 						</tr>
 						<tr id="bottom">
 							<td class="bottom_left">
@@ -88,8 +89,7 @@
 									[&nbsp;<a href="#">首页</a><span>|</span> <a href="#">上一页</a><span>|</span>
 									<a href="#">下一页</a><span>|</span> <a href="#">末页</a>&nbsp;]&nbsp;转至:<input
 										type="text" size="1" /><input type="button" value="Go">
-								</div>
-							</td>
+								</div></td>
 						</tr>
 					</table>
 				</form>
@@ -97,6 +97,6 @@
 			<div class="bottomdown"></div>
 		</div>
 	</div>
-	<s:debug/>
+	<s:debug />
 </body>
 </html>

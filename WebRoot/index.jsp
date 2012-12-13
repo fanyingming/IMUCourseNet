@@ -105,7 +105,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    					<s:set value="#news.getNews()" name="newsList"/>
    					<s:iterator value="#newsList" id="new">
    					
-   					<p><a href="#"><s:property value="new"/></a></p>
+   					<p><a href="news.jsp"><s:property value="new"/></a></p>
    					
    					</s:iterator> 
    					

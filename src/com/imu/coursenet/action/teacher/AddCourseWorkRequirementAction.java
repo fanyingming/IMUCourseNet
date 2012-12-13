@@ -1,5 +1,6 @@
 package com.imu.coursenet.action.teacher;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
@@ -40,9 +41,12 @@ public class AddCourseWorkRequirementAction extends ManagerBaseAction {
 		ActionContext ctx = ActionContext.getContext();
 		Integer courseDetailId = (Integer) ctx.getSession().get(
 				"courseDetailId");
-
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); 
+		Date date = sdf.parse(deadLine); 
+		
+		System.out.println("===date="+date);
 		if (courseWorkRequirementManager.addCourseWorkRequirement(
-				courseDetailId, title, requirementContent, new Date()) == courseWorkRequirementManager.OP_SUCC) {
+				courseDetailId, title, requirementContent, date) == courseWorkRequirementManager.OP_SUCC) {
 			return SUCCESS;
 		} else {
 			return ERROR;

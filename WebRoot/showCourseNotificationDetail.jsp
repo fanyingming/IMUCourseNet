@@ -32,24 +32,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div id="medium">
 	    <div id="add">
 	    	<div class="add_content">
-	    	<a>&nbsp;</a>
 		    <table width="885" border="0" align="center">
     <tr>
-      <td>
-      <div align="left">
-      	<s:property value="courseNotification.title"/>	
-      </div>
-       <div align="right">
-       发布于
-       	<s:date name="courseNotification.editDate" format="yyyy-MM-dd HH:mm:ss"/>			       
+      <td align="center">
+      <div >
+      	<h2><s:property value="courseNotification.title"/></h2>
+       	<p style="font-size:18px; color:#555555;text-align:right;margin-right:12px;">
+       	<span><font color="#222222">发布于:</font><s:date name="courseNotification.editDate" format="yyyy-MM-dd HH:mm:ss"/></span>
+       	<span><font color="#222222">点击量：</font>45</span>
+       	</p>			       
        </div>
       </td>
     </tr>
     <tr>
       <td>
-      	<p>
-      		<s:property value="courseNotification.content"/>
-      	</p>
+        <div style="width: 800px;">
+      		<font size=4><s:property value="courseNotification.content"/></font>
+      	</div>
       </td>
     </tr>
   

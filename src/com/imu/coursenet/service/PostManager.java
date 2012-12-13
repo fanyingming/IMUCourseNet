@@ -10,11 +10,12 @@ public interface PostManager {
 
 	List<Post> listAllPost();
 
-	int addPost(Post post, int courseDetailId, int userId);
+	int addPost( int courseDetailId, int userId,String title,String content);
 
 	int deletePost(int postId);
 
 	int updatePost(Post post);
 
-	Course getPost(int postId);
+	Post getPost(int postId);
+	List<Post> findAllByCourseDetailId(Integer courseDetailId);
 }

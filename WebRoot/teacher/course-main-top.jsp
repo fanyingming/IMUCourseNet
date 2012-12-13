@@ -32,11 +32,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		   	<div class="head2_right">
 		   		<a href="index.jsp" target="_top">首页</a>
-		   		<a href="showCourseDetail.action" target="mainFrame">课程主页</a>
-		   		<a href="#">课程讨论</a>
-		   		<a href="#">我的信箱</a>
-		   		<a href="listMessage.action" target="mainFrame" >留言板</a>
-		   		<a href="exit.action" target="_top">退出</a>
+		   		<a href="showCourseDetail" target="mainFrame">课程主页</a>
+		   		<a href="listpost" target="mainFrame">课程讨论</a>
+		   		<a href="listTeacherMail"  target="mainFrame">我的信箱</a>
+		   		<a href="teacherListMessage" target="mainFrame" >留言板</a>
+		   		<a href="exit" target="_top">退出</a>
 		   	</div>
 		   </div>
 		   <hr width=100% size=2px color="#d11b2b">

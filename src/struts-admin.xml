@@ -237,13 +237,16 @@
 					<param name="actionName">listCourseDetail</param>
 				</result>	
 		</action>
-		<!-- 查看留言 -->
-		<action name="adminListMessage" class="com.imu.coursenet.action.admin.AdminListMessageAction">
+		<!-- 查看留言并管理 -->
+		<action name="adminListMessage" class="com.imu.coursenet.action.ListMessageAction">
 			<result name="success">/admin/adminListMessage.jsp</result>
+			<param name="pageSize">2</param>
 		</action>
-		<!-- 查看并发布留言 -->
-		<action name="listMessage" class="com.imu.coursenet.action.ListMessageAction">
-			<result name="success">/listMessage.jsp</result>
+		<!-- 增加留言 -->
+		<action name="adminAddMessage" class="com.imu.coursenet.action.AddMessageAction">
+			<result type="redirectAction">
+					<param name="actionName">adminListMessage</param>
+			</result>
 		</action>
 		<!-- 点击删除后，删除刘留言并返回显示留言界面 -->
 		<action name="deleteMessage" class="com.imu.coursenet.action.admin.DeleteMessageAction">
@@ -272,24 +275,69 @@
 					<param name="actionName">adminShowInfo</param>
 				</result>	
 	</action>
+	
+	
 	<!-- 管理员显示新闻 -->
+	<action name="listNews" class="com.imu.coursenet.action.admin.listNewsAction">
+				<result name="success">/admin/newsManage.jsp</result>	
+		</action>
+	
+	<!--添加新闻-->
+		<action name="addNewsAction" class="com.imu.coursenet.action.admin.AddNewsAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">listNews</param>
+				</result>		
+		</action>
+	<!-- 显示某个新闻的详细信息 -->
+		<action name="showNews" class="com.imu.coursenet.action.ShowNewsAction">
+			<result name="success">/showNewsInfo.jsp</result>
+		</action>	
+		<!--删除新闻-->
+		<action name="deleteNews" class="com.imu.coursenet.action.admin.DeleteNewsAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">listNews</param>
+				</result>		
+		</action>
+		<!-- 在显示修改新闻之前,用来找到新闻信息 -->
+		<action name="beforeUpdateNews" class="com.imu.coursenet.action.admin.BeforeUpdateNewsAction">
+				<result name="success">/admin/updateNews.jsp</result>	
+		</action>
+		<!--修改新闻-->
+		<action name="updateNewsaction" class="com.imu.coursenet.action.admin.UpdateNewsAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">listNews</param>
+				</result>		
+		</action>
+		
+		<!-- 管理员显示通知 -->
 	<action name="listNotice" class="com.imu.coursenet.action.admin.listNoticeAction">
 				<result name="success">/admin/noticeManage.jsp</result>	
 		</action>
-	<!--添加新闻-->
+		
+		<!--添加通知-->
 		<action name="addNoticeAction" class="com.imu.coursenet.action.admin.AddNoticeAction">
 				<result name="success" type="redirectAction">
 					<param name="actionName">listNotice</param>
 				</result>		
 		</action>
-	<!-- 管理员显示新闻 -->
-	<action name="listNews" class="com.imu.coursenet.action.admin.listNewsAction">
-				<result name="success">/admin/newsManage.jsp</result>	
-		</action>
-	<!--添加新闻-->
-		<action name="addNewsAction" class="com.imu.coursenet.action.admin.AddNewsAction">
+		<!-- 显示某个新闻的详细信息 -->
+		<action name="showNotice" class="com.imu.coursenet.action.ShowNoticeAction">
+			<result name="success">/showNoticeInfo.jsp</result>
+		</action>	
+		<!--删除通知-->
+		<action name="deleteNotice" class="com.imu.coursenet.action.admin.DeleteNoticeAction">
 				<result name="success" type="redirectAction">
-					<param name="actionName">listNews</param>
+					<param name="actionName">listNotice</param>
+				</result>		
+		</action>
+		<!-- 在显示修改通知之前,用来找到通知信息 -->
+		<action name="beforeUpdateNotice" class="com.imu.coursenet.action.admin.BeforeUpdateNoticeAction">
+				<result name="success">/admin/updateNotice.jsp</result>	
+		</action>
+		<!--修改通知-->
+		<action name="updateNoticeaction" class="com.imu.coursenet.action.admin.UpdateNoticeAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">listNotice</param>
 				</result>		
 		</action>
 	</package>

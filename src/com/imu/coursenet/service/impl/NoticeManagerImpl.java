@@ -63,7 +63,11 @@ public class NoticeManagerImpl implements NoticeManager {
 	public Notice getNotice(int noticeId) {
 		return noticeDao.get(noticeId);
 	}
-
+	@Override
+	public int updateNotice(Notice notice) {
+		noticeDao.update(notice);
+		return this.OP_SUCC;
+	}
 	public void setAdminDao(AdminDao adminDao) {
 		this.adminDao = adminDao;
 	}

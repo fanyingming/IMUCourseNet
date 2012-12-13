@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        <td> 	
 		  	<div align="left">
 	      	 	<a href="deleteCourseNotification?courseNotificationId=<s:property value="#notification.courseNotificationId"/>">删除 </a>
-	      	 	<a href="updateCourseNotification?courseNotificationId=<s:property value="#notification.courseNotificationId"/>">修改 </a>
+	      	 	<a href="beforeUpdateCourseNotification?courseNotificationId=<s:property value="#notification.courseNotificationId"/>">修改 </a>
 			</div>
 	   </td>
     </tr>

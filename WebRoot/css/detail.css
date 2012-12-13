@@ -12,6 +12,9 @@
 .menu1_down #lie span a{ font-size:18px; color:#000; text-decoration:none;text-align:left;}
 .menu1_down #lie span a:hover{text-decoration:none; color:red; font-style:宋体}
 
+a, a:visited {	color:#333333;	text-decoration:none;	outline:none;}
+
+
 							/* left2.jsp */
 p{	margin-left:15px;	font-weight:bold;	font-size:20px;}
 ul{	margin:0;	padding:0;}
@@ -64,8 +67,10 @@ li.button a:hover span{ background-position:bottom right;}
 .dropdown li a{	font-size:20px;}
 .clear{	clear:both;}
 #main{	width:210px;}
-a, a:visited {	color:#333333;	text-decoration:none;	outline:none;}
-a:hover{	text-decoration:none;}
+#main a:hover{	text-decoration:none;}
+
+
+
 	/*inner.jsp*/
 .zhu{	width:1100px;	margin:5 0 auto;	text-align:center;}
 #top{
@@ -95,7 +100,7 @@ a:hover{	text-decoration:none;}
 	cellspacing:0;
 	text-align:center;
 }
-.medium_content_tabal1 a{	text-decoration:none;	font-size:17px;}
+.medium_content_tabal1 a{	text-decoration:underline;	font-size:17px;}
 .medium_content_tabal1 a:hover{	text-decoration:underline;	color:#d11b2b;}
 .medium_content_tabal1 input{	height:25px;	margin-left:10px;	margin-right:5px;}
 #bottom{	font-size:15px;	color:#4f4f4f;text-align:center;margin:0 auto;}
@@ -107,8 +112,8 @@ a:hover{	text-decoration:none;}
 	color:red;
 }
 .bottom_right{	float:right;	text-align:right;}
-.bottom_right a{	color:blue;}
-.bottom_right a:hover{	text-decoration:underline;	color:red;}
+.bottom_right a{	text-decoration:underline;color:blue;}
+.bottom_right a:hover{	text-decoration:underline;	color:#d11b2b;}
 .bottom_right span{	margin-left:10px;}
 .bottomdown{	height:30px;	background:url(../images/bottom.jpg);}
 
@@ -182,9 +187,14 @@ a:hover{	text-decoration:none;}
 
 				/*addadmin.jsp*/
 #add{width:1040px;height:auto;margin:0 auto;}
-.add_content{height:auto;text-align:center;margin:0 auto;}
+.add_content{height:auto;text-align:center;margin:0 auto;padding-top:10px;}
+.add_content p{
+	font-weight:500;
+	font-size:17px;
+}
 .add_content a{
-	font-size:17px
+	font-size:17px;
+	text-decoration:underline;
 }
 .add_content a:hover{
 	text-decoration:underline;color:#d11b2b;
@@ -209,14 +219,14 @@ a:hover{	text-decoration:none;}
 	font-weight:bold;
 	color:#888888;
 }
-.tabcontent a{	font-size:19px;}
+.tabcontent a{	font-size:19px;text-decoration:underline;}
 .tabcontent a:hover{	text-decoration:underline;	color:#d11b2b;}
 
 			/*inMailbox.jsp*/
 #mail{	text-align:center;	margin:0 auto;}
 .mailtab{	text-align:center;}
 .mailtab a{	display:inline-block;	width:100%; font-size:18px;}
-.mailtab span a{	display:inline;}
+.mailtab span a{	display:inline;text-decoration:underline;}
 .mailtab span a:hover{	text-decoration:underline;	color:#d11b2b;}
 
 			/*inMail.jsp*/
@@ -237,7 +247,7 @@ a:hover{	text-decoration:none;}
 	margin-right:15px;
 	margin-top:10px;
 }
-.mailinfo_right a{	margin-right:5px;font-size:18px;}
+.mailinfo_right a{	margin-right:5px;font-size:18px;text-decoration:underline;}
 .mailinfo_right a:hover{	text-decoration:underline;	color:#d11b2b;}
 
 #mailcontent{
@@ -323,6 +333,7 @@ a:hover{	text-decoration:none;}
 	margin-left:10px;
 	margin-right:10px;
 	font-weight:400;
+	text-decoration:underline;
 }
 .course_mid a:hover{
 	color:#d11b2b;
@@ -375,6 +386,7 @@ a:hover{	text-decoration:none;}
 	font-size:19px;
 	margin-left:10px;
 	font-weight:400;
+	text-decoration:underline;
 }
 .tips_mid a:hover{
 	color:#d11b2b;
@@ -389,6 +401,7 @@ a:hover{	text-decoration:none;}
 }
 .tips_bottom a{
 	font-size:17px;
+	text-decoration:underline;
 }
 .tips_bottom a:hover{
 	color:#d11b2b;

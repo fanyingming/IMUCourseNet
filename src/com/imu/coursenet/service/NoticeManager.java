@@ -15,4 +15,5 @@ public interface NoticeManager {
 	int deleteNotice(int noticeId);
 
 	Notice getNotice(int noticeId);
+	int updateNotice(Notice notice);
 }

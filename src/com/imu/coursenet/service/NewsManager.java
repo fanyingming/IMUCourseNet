@@ -15,4 +15,6 @@ public interface NewsManager {
 	int deleteNews(int newsId);
 
 	News getNews(int newsId);
+
+	int updateNews(News news);
 }

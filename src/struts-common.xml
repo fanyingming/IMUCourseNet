@@ -35,8 +35,29 @@
 	<action name="indexPageListNews" class="com.imu.coursenet.action.admin.IndexPageListNewsAction">
 				<result name="success">/error.jsp</result>	
 	</action>
-		
-		
+		<!--查看帖子  -->
+		 <action name="listpost" class="com.imu.coursenet.action.ListPostAction">
+		    <result name="success">/post.jsp</result>
+		 </action>
+		 <!--查看帖子详细并回复  -->
+		  <action name="replypost" class="com.imu.coursenet.action.ReplyPostAction">
+		    <result name="success">/CheckPost.jsp</result>
+		 </action>
+		 <!--回复帖子  -->
+		 <action name="addPost" class="com.imu.coursenet.action.AddPostAction">
+			<result name="success" type="chain">replypost</result>
+	    </action>
+	    <!-- 增加帖子 -->
+		<action name="writePost" class="com.imu.coursenet.action.WritePostAction">
+			<result type="redirectAction">
+					<param name="actionName">listpost</param>
+			</result>
+	    </action>
+		<!-- 罗列某门课程的详细信息 -->
+		<action name="showCourseDetail"
+			class="com.imu.coursenet.action.ShowCourseDetailAction">
+			<result name="success">/showCourseDetail.jsp</result>
+		</action>
 		
 	</package>
 </struts>

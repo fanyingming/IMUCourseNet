@@ -1,11 +1,29 @@
 package com.imu.coursenet.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
-import com.imu.coursenet.dao.*;
+import com.imu.coursenet.dao.AdminDao;
+import com.imu.coursenet.dao.CourseDao;
+import com.imu.coursenet.dao.CourseDetailDao;
+import com.imu.coursenet.dao.CourseNotificationDao;
+import com.imu.coursenet.dao.CourseTakingDao;
+import com.imu.coursenet.dao.CourseTypeDao;
+import com.imu.coursenet.dao.CourseWorkDao;
+import com.imu.coursenet.dao.CourseWorkRequirementDao;
+import com.imu.coursenet.dao.CoursewareDao;
+import com.imu.coursenet.dao.DepartmentDao;
+import com.imu.coursenet.dao.LetterDao;
+import com.imu.coursenet.dao.MessageDao;
+import com.imu.coursenet.dao.NewsDao;
+import com.imu.coursenet.dao.NoticeDao;
+import com.imu.coursenet.dao.PostDao;
+import com.imu.coursenet.dao.PostReplyDao;
+import com.imu.coursenet.dao.SpecialtyDao;
+import com.imu.coursenet.dao.StudentDao;
+import com.imu.coursenet.dao.TeacherDao;
 import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
-import com.imu.coursenet.support.FileOperation;
 
 public class PostManagerImpl implements PostManager {
 	private AdminDao adminDao;
@@ -34,6 +52,8 @@ public class PostManagerImpl implements PostManager {
 	public void setNewsDao(NewsDao newsDao) {
 		this.newsDao = newsDao;
 	}
+	
+	
 	public void setCourseWorkRequirementDao(
 			CourseWorkRequirementDao courseWorkRequirementDao) {
 		this.courseWorkRequirementDao = courseWorkRequirementDao;
@@ -45,11 +65,7 @@ public class PostManagerImpl implements PostManager {
 		return null;
 	}
 
-	@Override
-	public int addPost(Post post, int courseDetailId, int userId) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 	@Override
 	public int deletePost(int postId) {
@@ -63,10 +79,41 @@ public class PostManagerImpl implements PostManager {
 		return 0;
 	}
 
+	
+
 	@Override
-	public Course getPost(int postId) {
+	public int addPost(int courseDetailId, int userId, String title, String content) {
 		// TODO Auto-generated method stub
-		return null;
+		Integer checkCounts=0;
+		Integer replyCounts=0;
+		Student student;
+		Teacher teacher;
+		CourseDetail courseDetail=courseDetailDao.get(courseDetailId);
+		//	System.out.println("courseDetailId="+courseDetail.getCourseDetailId());
+	    Course course=courseDetail.getCourse();
+	    Post post=new Post();
+	    post.setCourse(course);
+	    post.setCheckCounts(checkCounts);
+	    post.setReplyCounts(replyCounts);
+	    post.setContent(content);
+	    post.setTitle(title);
+	    Date date=new Date();
+	    post.setEditDate(date);
+	    if (studentDao.getStudent(userId).size() != 0) {
+			student = studentDao.get(userId);
+			post.setUser(student);
+		} else {
+			teacher = teacherDao.get(userId);
+			post.setUser(teacher);
+		}
+	    postDao.save(post);
+		return this.OP_SUCC;
+	}
+
+	@Override
+	public Post getPost(int postId) {
+		// TODO Auto-generated method stub
+		return postDao.get(postId);
 	}
 
 	public void setAdminDao(AdminDao adminDao) {
@@ -133,5 +180,18 @@ public class PostManagerImpl implements PostManager {
 	public void setPostReplyDao(PostReplyDao postReplyDao) {
 		this.postReplyDao = postReplyDao;
 	}
+
+	@Override
+	public List<Post> findAllByCourseDetailId(Integer courseDetailId) {
+		CourseDetail courseDetail=courseDetailDao.get(courseDetailId);
+	//	System.out.println("courseDetailId="+courseDetail.getCourseDetailId());
+		Course course=courseDetail.getCourse();
+	//	System.out.println("courseId="+course.getCourseId());
+		return postDao.findAllByCourseId(course.getCourseId());
+//		return null;
+	}
+
+	
+	
 
 }

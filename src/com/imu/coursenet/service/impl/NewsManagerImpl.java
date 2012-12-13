@@ -63,7 +63,12 @@ public class NewsManagerImpl implements NewsManager {
 	public News getNews(int newsId) {
 		return newsDao.get(newsId);
 	}
-
+	@Override
+	public int updateNews(News news) {
+		newsDao.update(news);
+		return this.OP_SUCC;
+	}
+	
 	public void setAdminDao(AdminDao adminDao) {
 		this.adminDao = adminDao;
 	}

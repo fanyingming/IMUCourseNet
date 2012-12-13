@@ -356,3 +356,42 @@ border:0;
 	margin:0 auto;
 	text-align:center;
 }
+
+
+				/*news.jsp*/
+#medium{
+	width:880px;
+	height:auto;
+	margin:0 auto;
+	padding-left:10px;
+}
+.medium_content{
+	width:860px;
+	text-align:center;
+}
+.medium_content a:hover{
+	color:#d11b2b;
+	text-decoration:underline;
+}
+.medium_content_top{
+	text-align:center;
+	margin-top:5px;
+}
+.top_line{
+	width:100%;
+	margin-right:40px;
+}
+.top_line span{
+	font-size:19px;
+	padding-left:20px;
+	margin-right:20px;
+}
+.top_line span a{
+	color:#666666;
+	
+}
+.medium_content_mid{
+	width:850px;
+	margin:5 auto;
+	background:#fcf9f4;
+}

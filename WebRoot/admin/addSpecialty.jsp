@@ -33,14 +33,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div id="add">
 	    	<div class="add_content">
 	    	<a>&nbsp;</a>
-				<form name="form1" method="post" action="addCourseDetail">
+				<form name="form1" method="post" action="saveSpecialty">
 	    		<table class="add_content_tab">
 	    			<tr>
 	    				<td class="addtd1"><a>专业名称：</a></td><td class="addtd2"><input type="text" name="specialtyName"></td>
 	    			</tr>
 	    			<tr>
 	    				<td class="addtd1"><a>描述：</a></td><td class="addtd2"> <input type="text" name="specialtyDescription"></td>
-	    			</tr>						    			
+	    			</tr>					
+	    			<tr>
+	    				<td class="addtd1"><a>所属部门：</a></td>
+	    				<td class="addtd2">
+		    				<select name="departmentId">
+							 <s:iterator value="departments" id="department">
+          	<option value="<s:property value="#department.departmentId"/>">
+          		<s:property value="#department.departmentName"/>
+          	</option>
+          </s:iterator>
+							</select>
+						</td>
+	    			</tr>	    			
 	    			<tr>
 	    				<td class="addtd1"></td>
 	    				<td class="addtd2">

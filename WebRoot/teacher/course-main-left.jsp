@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <li class="button"><a href="#" class="red">课件管理 <span></span></a></li>
             <li class="dropdown">
                 <ul>
-                    <li><a href="listUploadCourseware.action" target="mainFrame">查看已上传课件</a></li>
+                    <li><a href="listUploadCourseware" target="mainFrame">查看已上传课件</a></li>
                     <li><a href="teacher/uploadCourseware.jsp" target="mainFrame">上传课件</a></li>
                     
                 </ul>
@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <li class="button"><a href="#" class="red">课程通知管理 <span></span></a></li>
             <li class="dropdown">
                 <ul>
-                     <li><a href="listCourseNotification.action" target="mainFrame">查看已发布通知</a></li>
+                     <li><a href="listCourseNotification" target="mainFrame">查看已发布通知</a></li>
                     <li><a href="teacher/teacherAddCourseNotification.jsp" target="mainFrame">发布通知</a></li>
                     
                 </ul>
@@ -72,7 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <li class="dropdown">
                 <ul>
                     <li><a href="teacher/addCourseWorkRequirement.jsp" target="mainFrame">发布作业要求</a></li>
-                    <li><a href="teacherListCourseWorkRequirement.action" target="mainFrame">查看发布的作业</a></li>
+                    <li><a href="teacherListCourseWorkRequirement" target="mainFrame">查看发布的作业</a></li>
                     
                 </ul>
 			</li>

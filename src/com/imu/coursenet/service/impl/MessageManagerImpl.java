@@ -47,10 +47,14 @@ public class MessageManagerImpl implements MessageManager {
 	}
 
 	@Override
+	public List<Message> listAllMessage(int offset, int pageSize) {
+		return messageDao.findAll(offset, pageSize);
+	}
+	@Override
 	public int addMessage(String content, int userId) {
 		Student student;
 		Teacher teacher;
-
+		Admin admin;
 		Message message = new Message();
 		message.setContent(content);
 		Date date = new Date();
@@ -58,9 +62,12 @@ public class MessageManagerImpl implements MessageManager {
 		if (studentDao.getStudent(userId).size() != 0) {
 			student = studentDao.get(userId);
 			message.setUser(student);
-		} else {
+		} else if (teacherDao.getTeacher(userId).size() != 0){
 			teacher = teacherDao.get(userId);
 			message.setUser(teacher);
+		}else{
+			admin = adminDao.get(userId);
+			message.setUser(admin);
 		}
 		messageDao.save(message);
 		return this.OP_SUCC;
@@ -140,6 +147,10 @@ public class MessageManagerImpl implements MessageManager {
 
 	public void setPostReplyDao(PostReplyDao postReplyDao) {
 		this.postReplyDao = postReplyDao;
+	}
+	@Override
+	public int getTotalMessageCounts() {
+		return messageDao.getAllMessageCounts();
 	}
 
 }

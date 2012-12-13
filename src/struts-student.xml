@@ -111,13 +111,14 @@
 				<result name="success">/student/showCourseIntroduce.jsp</result>
 		</action>
 		<!-- 查看留言 -->
-		<action name="listMessage" class="com.imu.coursenet.action.ListMessageAction">
-			<result name="success">/listMessage.jsp</result>
+		<action name="studentListMessage" class="com.imu.coursenet.action.ListMessageAction">
+			<result name="success">/student/studentListMessage.jsp</result>
+			<param name="pageSize">5</param>
 		</action>
 		<!-- 增加留言 -->
-		<action name="addMessage" class="com.imu.coursenet.action.AddMessageAction">
+		<action name="studentAddMessage" class="com.imu.coursenet.action.AddMessageAction">
 			<result type="redirectAction">
-					<param name="actionName">listMessage</param>
+					<param name="actionName">studentListMessage</param>
 			</result>
 		</action>
 		<!-- 学生写信前获得老师名字 -->

@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>inMessage</title>
+    <title>内大教学网-Teaching&&Learning@IMU</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div id="top">
 	    	<div class="top_wordbg">
 		    	<div class="top_wor">
-		    		<a>留言信息</a>
+		    		<a>留言板</a>
 		    	</div>
 		    </div>
 	    </div>
@@ -56,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    <a href="#">下一页</a><span>|</span>
 			    <a href="#">末页</a>&nbsp;]&nbsp;转至:<input type="text" size="1" /><input type="button" value="Go">
 			    </div>
-		   <form method="post"  action="addMessage">
+		   <form method="post"  action="teacherAddMessage">
 		    <div id="pl">
 		    	<div class="pl_top"><p><a>欢迎评论</a></p>
 		    	<p id="mid"><textarea name="content" cols="105" rows="10"></textarea></p>

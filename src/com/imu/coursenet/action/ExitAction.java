@@ -9,7 +9,7 @@ public class ExitAction extends ManagerBaseAction {
 	@Override
 	public String execute() throws Exception {
 		ActionContext ctx = ActionContext.getContext();
-		User user = (User) ctx.getSession().get("user");
+//		User user = (User) ctx.getSession().get("user");
 		ctx.getSession().clear();
 		return SUCCESS;
 	}

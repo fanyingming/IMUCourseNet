@@ -16,4 +16,5 @@ public interface PostReplyDao {
 	void delete(Integer postReplyId);
 
 	List<PostReply> findAll();
+	List<PostReply> findbyPostId(Integer postId);
 }

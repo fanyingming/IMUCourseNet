@@ -115,7 +115,9 @@ function unselectAll(){
 			    		[&nbsp;<a href="listAdmin?currentPage=1">首页</a><span>|</span>
 			    		<a href="listAdmin?currentPage=<s:property value="currentPage-1"/>">上一页</a><span>|</span>
 			    		<a href="listAdmin?currentPage=<s:property value="currentPage+1"/>">下一页</a><span>|</span>
-			    		<a href="listAdmin?currentPage=<s:property value="totalPageCounts"/>">末页</a>&nbsp;]&nbsp;转至:<input type="text" size="1" /><input type="button" value="Go">
+			    		<a href="listAdmin?currentPage=<s:property value="totalPageCounts"/>">末页</a>
+			    		&nbsp;]&nbsp;转至:<input type="text" size="1" />
+			    		<input type="button" value="Go">
 			    		</div>
 			    	</td>
 			    </tr>

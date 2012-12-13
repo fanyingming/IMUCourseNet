@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<link rel="stylesheet" type="text/css" href="css/detail.css">
-	
+	<script language=javascript src="js/wpCalendar.js"></script>
   </head>
   
   <body>
@@ -32,7 +32,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div id="medium">
 	    <div id="add">
 	    	<div class="add_content">
-	    	<a>&nbsp;</a>
 				 <form name="form1" method="post" action="addCourseWorkRequirement">
     <div align="center"><strong>新建课程作业及要求    </strong></div>
     <table width="718" border="0" align="center">
@@ -57,8 +56,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <tr>
         <td><div align="right">截止日期</div></td>
         <td><label>
-        <input type="text" name="deadLine" >
-
+        
+		<input type=text  name="deadLine" size=22 id=text1 onfocus="showCalendar(this)">
         </label></td>
       </tr>
       <tr>

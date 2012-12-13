@@ -32,10 +32,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <li class="button"><a href="#" class="red">人员管理 <span></span></a></li>
             <li class="dropdown">
                 <ul>
-                    <li><a href="listAdmin.action" target="mainFrame">查看管理员</a></li>
-                    <li><a href="listTeacher.action" target="mainFrame">查看教师</a></li>
-                    <li><a href="listStudent.action" target="mainFrame">查看学生</a></li>
-                     <li><a href="adminShowInfo.action" target="mainFrame">查看个人信息</a></li>
+                    <li><a href="listAdmin" target="mainFrame">查看管理员</a></li>
+                    <li><a href="listTeacher" target="mainFrame">查看教师</a></li>
+                    <li><a href="listStudent" target="mainFrame">查看学生</a></li>
+                     <li><a href="adminShowInfo" target="mainFrame">查看个人信息</a></li>
                 </ul>
 			</li>
           </ul>
@@ -47,8 +47,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
             <li class="dropdown">
                 <ul>
-                    <li><a href="listDepartment.action" target="mainFrame">查看部门</a></li>
-                    <li><a href="listSpecialty.action" target="mainFrame">查看专业</a></li>
+                    <li><a href="listDepartment" target="mainFrame">查看部门</a></li>
+                    <li><a href="listSpecialty" target="mainFrame">查看专业</a></li>
                     
                 </ul>
 			</li>
@@ -61,12 +61,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
             <li class="dropdown">
                 <ul>
-                    <li><a href="listCourse.action" target="mainFrame">查看课程</a></li>
-                    <li><a href="listCourseType.action" target="mainFrame">课程类型管理</a></li>
+                    <li><a href="listCourse" target="mainFrame">查看课程</a></li>
+                    <li><a href="listCourseType" target="mainFrame">课程类型管理</a></li>
 					<li><a href="admin/addCourseDetail.jsp" target="mainFrame">教师开课</a></li>
                     <li><a href="listCourseDetail" target="mainFrame">查看开设课程</a></li>
                     <li><a href="admin/addCourseTaking.jsp" target="mainFrame">学生选课</a></li>
-					<li><a href="adminListCourseTaking.action" target="mainFrame">查看选课信息</a></li>
+					<li><a href="adminListCourseTaking" target="mainFrame">查看选课信息</a></li>
                 </ul>
 			</li>
           </ul>
@@ -79,7 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
             <li class="dropdown">
                 <ul>
-                    <li><a href="adminListMessage.action" target="mainFrame">查看留言</a></li>
+                    <li><a href="adminListMessage" target="mainFrame">查看留言</a></li>
                     <li><a href="#" target="mainFrame">设置过滤关键字</a></li>
                     
                 </ul>
@@ -94,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <li class="dropdown">
                 <ul>
                 	<li><a href="admin/addNotice.jsp" target="mainFrame">添加通知</a></li>
-                    <li><a href="listNotice.action" target="mainFrame">查看通知</a></li>
+                    <li><a href="listNotice" target="mainFrame">查看通知</a></li>
                     
                     
                 </ul>
@@ -109,7 +109,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <li class="dropdown">
                 <ul>
                 	<li><a href="admin/addNews.jsp" target="mainFrame">添加新闻</a></li>
-                    <li><a href="listNews.action" target="mainFrame">查看新闻</a></li>
+                    <li><a href="listNews" target="mainFrame">查看新闻</a></li>
                     
                     
                 </ul>

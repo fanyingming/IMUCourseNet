@@ -45,6 +45,10 @@ public class LetterManagerImpl implements LetterManager {
 	}
 
 	@Override
+	public List<Letter> listLetterByReceiverId(Integer userId) {
+		return letterDao.findByReceiverId(userId);
+	}
+	@Override
 	public int addLetter(Teacher teacher,Student student,String title,String content) {
 		Letter letter=new Letter();
 		letter.setReceiver(teacher);
@@ -58,20 +62,19 @@ public class LetterManagerImpl implements LetterManager {
 
 	@Override
 	public int deleteLetter(int letterId) {
-		// TODO Auto-generated method stub
-		return 0;
+		letterDao.delete(letterId);
+		return this.OP_SUCC;
 	}
 
 	@Override
 	public int updateLetter(Letter letter) {
-		// TODO Auto-generated method stub
-		return 0;
+		letterDao.update(letter);
+		return this.OP_SUCC;
 	}
 
 	@Override
-	public Course getLetter(int letterId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Letter getLetter(int letterId) {
+		return letterDao.get(letterId);
 	}
 
 	public void setAdminDao(AdminDao adminDao) {
