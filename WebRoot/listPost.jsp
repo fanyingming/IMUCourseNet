@@ -52,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    		<s:iterator value="posts" id="post">
 									 <tr onmouseover="this.style.backgroundColor='#cccccc';" onmouseout="this.style.backgroundColor='';">
 										<td width="100px"><s:property value="#post.replyCounts" /></td>
-										<td width="500px" style="text-align:left;"><div><a href="replypost?postId=<s:property value="#post.postId" />"><s:property value="#post.title" /></a></div></td>
+										<td width="500px" style="text-align:left;"><div><a href="showPost?postId=<s:property value="#post.postId" />"><s:property value="#post.title" /></a></div></td>
 										<td width="200px"><a><s:property value="#post.user.userName" /></a><br><time><s:property value="#post.editDate" /></time></td>
 										<td width="100px"><s:property value="#post.checkCounts" /></td>
 										<td width="200px"><a>qing</a><br><time></time></td>
@@ -73,5 +73,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<div class="bottomdown"></div>
 	    </div>
 	</div>
+	<s:debug/>
   </body>
 </html>

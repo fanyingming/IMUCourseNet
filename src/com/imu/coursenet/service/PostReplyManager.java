@@ -18,4 +18,6 @@ public interface PostReplyManager {
 	PostReply getPostReply(int postReplyId);
 
 	List<PostReply> findbyPostId(Integer postId);
+	
+	int getPostReplyCountsByPostId(Integer postId);
 }

@@ -22,12 +22,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>  
   <body>
-  <table width="644" border="0">
-	  <tr>
-      		<td>
-      			开设的课程
-      		</td>
-   	 </tr>
+        <div class="zhu">
+	    <div id="top">
+	    	<div class="top_wordbg">
+		    	<div class="top_wor">
+		    		<a>开设的课程</a>
+		    	</div>
+		    </div>
+	    </div>
+	    <div id="medium">
+	    <div id="add">
+	    	<div class="add_content">
+	    	<a>&nbsp;</a>
+	<table width="644" border="0">
+	 
   	<s:iterator value="courseDetails" id="courseDetail">
    		<tr>
       		<td>
@@ -38,5 +46,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	 </tr>
      </s:iterator>
   </table>
+			</div>
+			
+	    </div>
+	    <div class="bottomdown"></div>
+	    </div>
+	</div>
   </body>
 </html>

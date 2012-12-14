@@ -1,5 +1,6 @@
 package com.imu.coursenet.action.student;
 
+import java.util.Date;
 import java.util.List;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
@@ -10,10 +11,11 @@ import com.opensymphony.xwork2.ActionContext;
 public class StudentListCourseWorkRequirementAction extends ManagerBaseAction {
 	private List<CourseWorkRequirement> CourseWorkRequirements;
 	private Integer courseWorkCounts;
-
 	public List<CourseWorkRequirement> getCourseWorkRequirements() {
 		return CourseWorkRequirements;
 	}
+
+	
 
 	public void setCourseWorkRequirements(
 			List<CourseWorkRequirement> courseWorkRequirements) {
@@ -36,6 +38,7 @@ public class StudentListCourseWorkRequirementAction extends ManagerBaseAction {
 		CourseWorkRequirements = courseWorkRequirementManager
 				.listCourseWorkRequirementByCourseDetailId(courseDetailId);
 		courseWorkCounts = CourseWorkRequirements.size();
+		
 		return SUCCESS;
 	}
 

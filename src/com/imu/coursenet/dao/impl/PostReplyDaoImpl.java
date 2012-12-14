@@ -50,4 +50,9 @@ public class PostReplyDaoImpl extends YeekuHibernateDaoSupport implements
 		return (List<PostReply>) getHibernateTemplate().find("from PostReply a where a.post.postId = ? ",postId);
 	}
 
+	@Override
+	public int getPostReplyCountsByPostId(Integer postId) {
+		return findbyPostId(postId).size();
+	}
+
 }

@@ -21,4 +21,8 @@ public interface CourseWorkManager {
 	int updateCourseWork(CourseWork courseWork);
 
 	CourseWork getCourseWork(int courseWorkId);
+	
+	List<CourseWork> getCourseWorkByCourseWorkRequirementIdAndUserId(int courseWorkRequirementId,int userId);
+	List<CourseWork> getCourseWorkByUserId(Integer userId);
+	List<CourseWork> getCourseWorkByCourseWorkId(Integer courseWorkId);
 }

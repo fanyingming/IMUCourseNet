@@ -4,7 +4,7 @@ import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.opensymphony.xwork2.ActionContext;
 import com.imu.coursenet.domain.*;
 
-public class AddPostAction extends ManagerBaseAction {
+public class AddPostReplyAction extends ManagerBaseAction {
 	
 	private String postReply;
 	private Integer postId;
@@ -29,9 +29,11 @@ public class AddPostAction extends ManagerBaseAction {
 	public String execute() throws Exception {
 		post=postManager.getPost(postId);
 		userId=post.getUser().getUserId();
-//		System.out.println("postId="+postId);
-//		System.out.println("userId="+userId);
 		postReplyManager.addPostReply(postReply, postId, userId);
+		//是回复数+1还是统计总数
+		post.setReplyCounts(postReplyManager.getPostReplyCountsByPostId(postId));
+		
+		postManager.updatePost(post);
 		return SUCCESS;
 	}
 	

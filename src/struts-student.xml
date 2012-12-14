@@ -14,6 +14,7 @@
 				<interceptor-ref name="defaultStack"/>
 				<interceptor-ref name="studentAuth"/>
 			</interceptor-stack>
+			
 	</interceptors>
 		<default-interceptor-ref name="studentStack"/>
 		<!-- 定义全局Result映射 -->
@@ -72,6 +73,7 @@
 	<!-- 查看具体的作业要求	-->
 	<action name="showCourseWorkRequirementDetail" class="com.imu.coursenet.action.student.ShowCourseWorkRequirementDetailAction">
 				<result name="success">/student/showCourseWorkRequirementDetail.jsp</result>	
+				
 	</action>
 	
 	<!-- 学生上传作业	-->
@@ -79,17 +81,12 @@
 			<!-- 动态设置Action的属性值 -->
 			<param name="savePath">/uploadFiles</param>
 			<result name="success">/upload-succ.jsp</result>	
+			<result name="input">/upload-fail.jsp</result>		
 	</action>
 	
-	<!-- 显示所有通知 -->
-		<action name="studentListCourseNotification" class="com.imu.coursenet.action.student.ListCourseNotificationAction">
-			<result name="success">/student/studentListCourseNotification.jsp</result>
-		</action>
+	
 		
-	<!-- 显示某个通知的详细信息 -->
-		<action name="studentShowCourseNotificationDetail" class="com.imu.coursenet.action.ShowCourseNotificationDetailAction">
-			<result name="success">/showCourseNotificationDetail.jsp</result>
-		</action>	
+		
 	<!-- 显示某个学生选的所有课程 -->
 		<action name="listStudentAllCourseDetail" class="com.imu.coursenet.action.student.ListStudentAllCourseDetailAction">
 			<result name="success">/student/listStudentAllCourseDetail.jsp</result>
@@ -110,11 +107,7 @@
 			class="com.imu.coursenet.action.student.ShowCourseIntroduceAction">
 				<result name="success">/student/showCourseIntroduce.jsp</result>
 		</action>
-		<!-- 查看留言 -->
-		<action name="studentListMessage" class="com.imu.coursenet.action.ListMessageAction">
-			<result name="success">/student/studentListMessage.jsp</result>
-			<param name="pageSize">5</param>
-		</action>
+		
 		<!-- 增加留言 -->
 		<action name="studentAddMessage" class="com.imu.coursenet.action.AddMessageAction">
 			<result type="redirectAction">

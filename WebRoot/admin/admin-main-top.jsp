@@ -34,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   		<a href="index.jsp" target="_top">主页</a>
 		   		<a href="building.jsp" target="mainFrame">我的信箱</a>
 		   		<a href="building.jsp" target="mainFrame">课程讨论版</a>
-		   		<a href="adminListMessage" target="mainFrame" >留言板</a>
+		   		<a href="listMessage" target="mainFrame" >留言板</a>
 		   		<a href="exit" target="_top">退出</a>
 		   	</div>
 		   </div>

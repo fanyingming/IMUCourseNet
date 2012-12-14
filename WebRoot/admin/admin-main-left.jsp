@@ -79,7 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
             <li class="dropdown">
                 <ul>
-                    <li><a href="adminListMessage" target="mainFrame">查看留言</a></li>
+                    <li><a href="listMessage" target="mainFrame">查看留言</a></li>
                     <li><a href="#" target="mainFrame">设置过滤关键字</a></li>
                     
                 </ul>

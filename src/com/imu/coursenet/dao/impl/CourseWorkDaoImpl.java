@@ -12,7 +12,13 @@ public class CourseWorkDaoImpl extends YeekuHibernateDaoSupport implements
 
 	@Override
 	public CourseWork get(Integer courseWorkId) {
-		return getHibernateTemplate().get(CourseWork.class, courseWorkId);
+		System.out.println("======in dao");
+		CourseWork courseWork=getHibernateTemplate().get(CourseWork.class, courseWorkId);
+		if(courseWork==null)
+			System.out.println("======courseWork null");
+		else
+			System.out.println("======courseWork not null");
+		return courseWork;
 	}
 
 	@Override
@@ -50,6 +56,29 @@ public class CourseWorkDaoImpl extends YeekuHibernateDaoSupport implements
 		return (List<CourseWork>) getHibernateTemplate()
 				.find("from CourseWork c where c.courseWorkRequirement.courseWorkRequirementId=?",
 						courseWorkRequirementId);
+	}
+
+	@Override
+	public List<CourseWork> findByCourseWorkRequirementIdAndUserId(
+			Integer courseWorkRequirementId, Integer userId) {
+		return (List<CourseWork>) getHibernateTemplate()
+				.find("from CourseWork c where c.courseWorkRequirement.courseWorkRequirementId=? and c.student.userId=?",
+						courseWorkRequirementId,userId);
+	}
+
+	@Override
+	public List<CourseWork> findByUserId(Integer userId) {
+		return (List<CourseWork>) getHibernateTemplate()
+				.find("from CourseWork c where c.student.userId=?",
+						userId);
+	}
+
+	@Override
+	public List<CourseWork> findByCourseWorkId(Integer courseWorkId) {
+		System.out.println("in courseWorkDao,courseWorkId="+courseWorkId);
+		return (List<CourseWork>) getHibernateTemplate()
+				.find("from CourseWork c where c.courseWorkId=?",
+						courseWorkId);
 	}
 
 }

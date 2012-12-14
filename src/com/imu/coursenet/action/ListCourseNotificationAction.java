@@ -1,4 +1,4 @@
-package com.imu.coursenet.action.teacher;
+package com.imu.coursenet.action;
 
 import java.util.List;
 

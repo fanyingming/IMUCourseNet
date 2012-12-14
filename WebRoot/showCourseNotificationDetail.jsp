@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       	<h2><s:property value="courseNotification.title"/></h2>
        	<p style="font-size:18px; color:#555555;text-align:right;margin-right:12px;">
        	<span><font color="#222222">发布于:</font><s:date name="courseNotification.editDate" format="yyyy-MM-dd HH:mm:ss"/></span>
-       	<span><font color="#222222">点击量：</font>45</span>
+       	<span><font color="#222222">点击量：</font><s:property value="courseNotification.checkCounts"/></span>
        	</p>			       
        </div>
       </td>

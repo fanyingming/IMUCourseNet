@@ -33,7 +33,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    </div>
 	    <div id="medium">
 		    <div id="mtop">
-		    	<div class="mtop_num"><a>共有<span><s:property value="post.replyCounts" /></span>条跟帖</a></div>
+		    	<div class="mtop_num">
+		    	<a>共有<span><s:property value="post.replyCounts" /></span>条跟帖，<span><s:property value="post.checkCounts" /></span>次浏览</a></div>
 		    	
 		    </div>
 		    <div id="messages">
@@ -45,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    	<div class="messages_buttom"><a><s:property value="post.editDate" /></a></div>
 		    </div>
 		    
-		    <s:iterator value="Postreplys" id="Postreply">
+		    <s:iterator value="Postreplys" id="Postreply" status="st">
 		     <div id="messages">	
 		    	<div class="messages_name">
 		    	<a><s:property value="#Postreply.user.userName" /></a>
@@ -57,12 +58,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    	</div>
 		    	<hr width=860px size=1 noshade>
 		    	<div class="messages_content"><a><s:property value="#Postreply.content" /></a></div>
-		    	<div class="messages_buttom"><span><a>3楼</a></span><a><s:property value="#Postreply.editDate" /></a></div>
+		    	<div class="messages_buttom"><span><a><s:property value="#st.index+2" />#</a></span>
+		    	<a>
+		    	<s:date name="#Postreply.editDate" format="yyyy-MM-dd HH:mm:ss"/>
+		    	</a></div>
 		    	
 		      </div>
 		      </s:iterator>
 		    <div id="pl">
-		        <form name="form1" method="post" action="addPost">
+		        <form name="form1" method="post" action="addPostReply">
 		    	<input type="hidden" name="postId" value="<s:property value="post.postId" />"/>
 		    	<div class="pl_top"><p><a>发表回复</a></p>
 		    	<p id="mid"><textarea name="postReply" cols="105" rows="10"></textarea></p>

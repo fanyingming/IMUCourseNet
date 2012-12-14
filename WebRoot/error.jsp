@@ -8,6 +8,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=GBK">
 </head>
 <body>
-	<h1 align="center">出错啦~!~</h1>
+	<s:if test="#session.tip!=null">
+		<h1 align="center"><s:property value="#session.tip"/></h1>
+	</s:if>
+	<s:else>
+		<h1 align="center">出错啦~!~</h1>
+	</s:else>
 </body>
 </html>

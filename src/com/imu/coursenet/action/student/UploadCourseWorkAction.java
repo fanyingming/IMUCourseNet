@@ -1,10 +1,7 @@
 package com.imu.coursenet.action.student;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
-import com.imu.coursenet.domain.Course;
-import com.imu.coursenet.domain.CourseDetail;
-import com.imu.coursenet.domain.CourseWorkRequirement;
-import com.imu.coursenet.domain.User;
+import com.imu.coursenet.domain.*;
 import com.imu.coursenet.support.FileOperation;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
@@ -17,7 +14,9 @@ public class UploadCourseWorkAction extends ManagerBaseAction {
 	private String title;
 
 	private Integer courseWorkRequirementId;
-
+	
+	private Integer courseWorkId;
+	
 	private File upload;
 
 	private String uploadContentType;
@@ -25,6 +24,14 @@ public class UploadCourseWorkAction extends ManagerBaseAction {
 	private String uploadFileName;
 
 	private String savePath;
+
+	public Integer getCourseWorkId() {
+		return courseWorkId;
+	}
+
+	public void setCourseWorkId(Integer courseWorkId) {
+		this.courseWorkId = courseWorkId;
+	}
 
 	public String getTitle() {
 		return title;
@@ -75,6 +82,13 @@ public class UploadCourseWorkAction extends ManagerBaseAction {
 	}
 
 	public String execute() throws Exception {
+		//先删除之前上传的文件，并删除数据库中的记录
+		if(courseWorkId!=null){
+			CourseWork courseWork=courseWorkManager.getCourseWork(courseWorkId);
+			FileOperation.deleteFile(courseWork.getCourseWorkLocation());
+			courseWorkManager.deleteCourseWork(courseWorkId);
+		}
+		
 		title = getUploadFileName();
 
 		CourseWorkRequirement courseWorkRequirement = courseWorkRequirementManager

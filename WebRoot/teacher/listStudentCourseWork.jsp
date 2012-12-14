@@ -46,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </div></td>
       <td width="114">
    	    <div align="center">
-   	         <a href="teacherDownloadCourseWork.action?courseWorkId=<s:property value="#courseWork.courseWorkId"/>">查看</a>
+   	         <a href="downloadCourseWork?courseWorkId=<s:property value="#courseWork.courseWorkId"/>">点击下载</a>
    	    </div></td>
     </tr>
    </s:iterator>

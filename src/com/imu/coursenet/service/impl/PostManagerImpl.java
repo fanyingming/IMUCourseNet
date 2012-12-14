@@ -61,7 +61,6 @@ public class PostManagerImpl implements PostManager {
 
 	@Override
 	public List<Post> listAllPost() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -69,14 +68,14 @@ public class PostManagerImpl implements PostManager {
 
 	@Override
 	public int deletePost(int postId) {
-		// TODO Auto-generated method stub
-		return 0;
+		postDao.delete(postId);
+		return this.OP_SUCC;
 	}
 
 	@Override
 	public int updatePost(Post post) {
-		// TODO Auto-generated method stub
-		return 0;
+		postDao.update(post);
+		return this.OP_SUCC;
 	}
 
 	

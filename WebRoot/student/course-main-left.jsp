@@ -32,12 +32,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <li class="button"><a href="#" class="red">查看课程内容 <span></span></a></li>
             <li class="dropdown">
                 <ul>
-                    <li><a href="studentListCourseNotification" target="mainFrame">查看通知</a></li>
-                    <li><a href="listCourseware.action" target="mainFrame">下载课件</a></li>
-                    <li><a href="showCourseIntroduce.action" target="mainFrame">查看课程介绍</a></li>
-                    <li><a href="showTeachPlan.action" target="mainFrame">查看教学计划</a></li>
-                    <li><a href="showRefBook.action" target="mainFrame">查看参考书籍</a></li>
-					<li><a href="studentListCourseWorkRequirement.action" target="mainFrame">查看作业</a></li>
+                    <li><a href="listCourseNotification" target="mainFrame">查看通知</a></li>
+                    <li><a href="listCourseware" target="mainFrame">下载课件</a></li>
+                    <li><a href="showCourseIntroduce" target="mainFrame">查看课程介绍</a></li>
+                    <li><a href="showTeachPlan" target="mainFrame">查看教学计划</a></li>
+                    <li><a href="showRefBook" target="mainFrame">查看参考书籍</a></li>
+					<li><a href="studentListCourseWorkRequirement" target="mainFrame">查看作业</a></li>
                 </ul>
 			</li>
           </ul>
@@ -48,8 +48,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <li class="button"><a href="#" class="red">师生互动 <span></span></a></li>
             <li class="dropdown">
                 <ul>
-                    <li><a href="#" target="mainFrame">查看帖子</a></li>
-                    <li><a href="#" target="mainFrame">查看留言</a></li>
+                    <li><a href="listpost" target="mainFrame">查看帖子</a></li>
+                    <li><a href="WritePost.jsp" target="mainFrame">发帖</a></li>
                     
                 </ul>
 			</li>
@@ -63,7 +63,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <li class="dropdown">
                 <ul>
                     <li><a href="studentWriteLetter" target="mainFrame">写信</a></li>
-                    <li><a href="#" target="mainFrame">已发信件</a></li>
+                    
                     
                 </ul>
 			</li>

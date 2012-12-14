@@ -137,31 +137,9 @@
 			<result name="success">/teacher/listStudentCourseWork.jsp</result>
 		</action>
 		
-		<!-- 下载学生提交的作业 -->
-		<action name="teacherDownloadCourseWork"
-			class="com.imu.coursenet.action.teacher.TeacherDownloadCourseWorkAction">
-			<result name="success" type="stream">
-				<!-- 指定下载文件的内容类型，text/plain是默认类型 -->
-				<param name="contentType">text/plain</param>
-				<!-- inputName默认值是inputStream，如果action中用于读取下载文件内容的属性名是inputStream，那么可以省略这个参数 -->
-				<param name="inputName">inputStream</param>
-				<!--动态获取文件名，从Action中的取得filename -->
-				<param name="contentDisposition">
-					attachment;filename="${downloadChineseFileName}"
-				</param>
-				<param name="bufferSize">2048</param>
-			</result>
-			<result name="input" type="redirectAction">
-				<param name="actionName" >listStudentCourseWork</param>
-			</result>
-		</action>
 		
-		<!-- 显示所有通知 -->
-		<action name="listCourseNotification" class="com.imu.coursenet.action.teacher.ListCourseNotificationAction">
-			<result name="success">/teacher/teacherListCourseNotification.jsp</result>
-		</action>
 		
-		<!-- 添加通知 -->
+		<!-- 添加课程通知 -->
 		<action name="addCourseNotification" class="com.imu.coursenet.action.teacher.AddCourseNotificationAction">
 			<result name="success" type="redirectAction">
 					<param name="actionName">listCourseNotification</param>
@@ -177,10 +155,7 @@
 					<param name="actionName">listCourseNotification</param>
 				</result>	
 		</action>
-		<!-- 显示某个通知的详细信息 -->
-		<action name="teacherShowCourseNotificationDetail" class="com.imu.coursenet.action.ShowCourseNotificationDetailAction">
-			<result name="success">/showCourseNotificationDetail.jsp</result>
-		</action>	
+		
 		
 		<!-- 点击删除后，删除选课信息 -->
 		<action name="deleteCourseNotification" class="com.imu.coursenet.action.teacher.DeleteCourseNotificationAction">
@@ -204,11 +179,7 @@
 			class="com.imu.coursenet.action.teacher.ShowCourseIntroduceAction">
 				<result name="success">/teacher/updateCourseIntroduce.jsp</result>
 		</action>
-		<!-- 查看留言 -->
-		<action name="teacherListMessage" class="com.imu.coursenet.action.ListMessageAction">
-			<result name="success">/teacher/teacherListMessage.jsp</result>
-			<param name="pageSize">5</param>
-		</action>
+		
 		<!-- 增加留言 -->
 		<action name="teacherAddMessage" class="com.imu.coursenet.action.AddMessageAction">
 			<result type="redirectAction">

@@ -76,14 +76,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					    </table>
 				    </td>
 			    </tr>
-			    <tr id="bottom">
+			   <tr id="bottom">
 			    	<td class="bottom_left">
-			    		<div class="bottom_left">共&nbsp;<span>4</span>&nbsp;页&nbsp;|&nbsp;第&nbsp;<span>4</span>&nbsp;页&nbsp;|&nbsp;共&nbsp;<span>17</span>&nbsp;条记录</div>
+			    		<div class="bottom_left">共&nbsp;
+			    			<span>
+			    				<s:property value="totalPageCounts"/>
+			    			</span>&nbsp;页&nbsp;|&nbsp;第&nbsp;
+			    			<span>
+			    				<s:property value="currentPage"/>
+			    			</span>&nbsp;页&nbsp;|&nbsp;共&nbsp;
+			    			<span>
+			    				<s:property value="totalRecordCounts"/>
+			    			</span>&nbsp;条记录</div>
 			    		<div class="bottom_right">
-			    		[&nbsp;<a href="#">首页</a><span>|</span>
-			    		<a href="#">上一页</a><span>|</span>
-			    		<a href="#">下一页</a><span>|</span>
-			    		<a href="#">末页</a>&nbsp;]&nbsp;转至:<input type="text" size="1" /><input type="button" value="Go">
+			    		[&nbsp;<a href="listCourseTaking?currentPage=1">首页</a><span>|</span>
+			    		<a href="listCourseTaking?currentPage=<s:property value="currentPage-1"/>">上一页</a><span>|</span>
+			    		<a href="listCourseTaking?currentPage=<s:property value="currentPage+1"/>">下一页</a><span>|</span>
+			    		<a href="listCourseTaking?currentPage=<s:property value="totalPageCounts"/>">末页</a>
+			    		&nbsp;]&nbsp;转至:<input type="text" size="1" />
+			    		<input type="button" value="Go">
 			    		</div>
 			    	</td>
 			    </tr>

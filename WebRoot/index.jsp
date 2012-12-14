@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</table>
 			</td>
 			<td>
-			<form action="login">
+			<form action="login" method="post">
 			<table class="lef1_table1_tab2">
 				<tr>
 					<td width="110px" height="40px" id="a1"><a >用户名</a></td>

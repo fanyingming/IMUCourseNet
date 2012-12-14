@@ -237,11 +237,7 @@
 					<param name="actionName">listCourseDetail</param>
 				</result>	
 		</action>
-		<!-- 查看留言并管理 -->
-		<action name="adminListMessage" class="com.imu.coursenet.action.ListMessageAction">
-			<result name="success">/admin/adminListMessage.jsp</result>
-			<param name="pageSize">2</param>
-		</action>
+		
 		<!-- 增加留言 -->
 		<action name="adminAddMessage" class="com.imu.coursenet.action.AddMessageAction">
 			<result type="redirectAction">

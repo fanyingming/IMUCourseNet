@@ -35,20 +35,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<a>&nbsp;</a>
 	    	<div align="center"><strong>共有<s:property value="courseWorkCounts"/>个作业</strong><br>
 		  <s:iterator value="courseWorkRequirements" id="courseWorkRequirement">
-    <table width="538" border="0" align="center">
+    <table width="720" border="0" align="center">
       <tr>
-        <td colspan="2">
+        <td colspan="3">
         	<a href="showCourseWorkRequirementDetail.action?courseWorkRequirementId=<s:property value="#courseWorkRequirement.courseWorkRequirementId"/>"><s:property value="#courseWorkRequirement.title"/></a>
         </td>
       </tr>
       <tr>
-        <td width="268">发布日期:
+        <td width="300">发布日期:
         <s:date name="#courseWorkRequirement.createDate" format="yyyy-MM-dd HH:mm:ss"/></td>
-        <td width="260">截止日期:
-        <s:date name="#courseWorkRequirement.deadLine" format="yyyy-MM-dd HH:mm:ss"/></td>
+        <td width="300">截止日期:
+        <s:date name="#courseWorkRequirement.deadLine" format="yyyy-MM-dd HH:mm:ss"/>
+        </td>
+        <td width="120">
+      	<s:set name="nowTime" value="new java.util.Date()"></s:set>
+      	<s:set name="deadLine" value="#courseWorkRequirement.deadLine"></s:set>
+		<s:if test='#deadLine.getTime()<#nowTime.getTime()'>
+        		
+        	<font color="red">已截止提交</font>
+        	
+        </s:if >
+        	
+        </td>
       </tr>
     </table>
-    <hr width="538px">
+    <hr width="720px">
     </s:iterator>
 			</div>
 			

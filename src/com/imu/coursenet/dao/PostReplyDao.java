@@ -17,4 +17,6 @@ public interface PostReplyDao {
 
 	List<PostReply> findAll();
 	List<PostReply> findbyPostId(Integer postId);
+	
+	int getPostReplyCountsByPostId(Integer postId);
 }

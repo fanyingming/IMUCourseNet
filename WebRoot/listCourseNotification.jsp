@@ -39,12 +39,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<td width="300px">通知标题</td>
 			<td width="150px">查看次数</td>
 			<td width="200px">发布时间</td>
-			<td width="150px">操作</td>
+			<s:if test="#session.level == 'teacher'">
+				<td width="150px">操作</td>
+			</s:if>
+			
 	</tr>
 	<s:iterator value="courseNotifications" id="notification">
     <tr>
        <td >
-	    	 <a href="teacherShowCourseNotificationDetail?courseNotificationId=<s:property value="#notification.courseNotificationId"/>"><s:property value="#notification.title"/></a>
+	    	 <a href="showCourseNotificationDetail?courseNotificationId=<s:property value="#notification.courseNotificationId"/>"><s:property value="#notification.title"/></a>
        </td>
        
        <td >
@@ -53,12 +56,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        <td >
 	     	<s:property value="#notification.editDate"/>
        </td>
+       <s:if test="#session.level == 'teacher'">
        <td> 	
 		  	<div align="left">
 	      	 	<a href="deleteCourseNotification?courseNotificationId=<s:property value="#notification.courseNotificationId"/>">删除 </a>
 	      	 	<a href="beforeUpdateCourseNotification?courseNotificationId=<s:property value="#notification.courseNotificationId"/>">修改 </a>
 			</div>
 	   </td>
+	   </s:if>
     </tr>
       </s:iterator>  
   </table>

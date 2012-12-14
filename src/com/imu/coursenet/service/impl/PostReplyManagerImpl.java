@@ -151,8 +151,12 @@ public class PostReplyManagerImpl implements PostReplyManager {
 
 	@Override
 	public List<PostReply> findbyPostId(Integer postId) {
-		// TODO Auto-generated method stub
+		
 		 return postReplyDao.findbyPostId(postId);
+	}
+	@Override
+	public int getPostReplyCountsByPostId(Integer postId) {
+		return postReplyDao.getPostReplyCountsByPostId(postId);
 	}
 
 	

@@ -17,5 +17,8 @@ public interface PostManager {
 	int updatePost(Post post);
 
 	Post getPost(int postId);
+	
 	List<Post> findAllByCourseDetailId(Integer courseDetailId);
+	
+	
 }

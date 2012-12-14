@@ -79,24 +79,67 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<hr>
 			</td>
 		</tr>
+		<s:if test="courseWork!=null">
+		<tr>
+			<td><div align="right">上次提交的作业：</div>
+			</td>
+			<td>
+			<br>
+			<a href="downloadCourseWork?courseWorkId=<s:property value="courseWork.courseWorkId"/>"><s:property value="courseWork.title" /></a>&nbsp;于
+			<s:date
+					name="courseWork.editDate"
+					format="yyyy-MM-dd HH:mm:ss" />
+					<br>
+			<hr>
+			</td>
+		</tr>
+		</s:if>
+		<s:else>
+		<tr>
+			<td>
+			</td>
+			<td>
+			<br>
+			<font color="red">还未提交作业</font>
+					<br>
+			<hr>
+			</td>
+		</tr>
+		</s:else>
+		<s:set name="nowTime" value="new java.util.Date()"></s:set>
+      	<s:set name="deadLine" value="courseWorkRequirement.deadLine"></s:set>
+		<s:if test='#deadLine.getTime()>=#nowTime.getTime()'>
 		<tr>
 			<td><div align="right">上传作业：</div>
 			</td>
 			<td>
 				<s:form action="uploadCourseWork"
 					enctype="multipart/form-data">
-					
+					  
 					 <s:set name="workRequirementId" value="courseWorkRequirement.courseWorkRequirementId"></s:set>
 					<s:hidden name="courseWorkRequirementId" value="%{workRequirementId}"></s:hidden>
 
-					
+					 
 					<s:file name="upload" label="选择文件" />
 					<br />
 					<s:submit value="上传" />
+					<!-- 如果之前提交过作业，则将作业编号也提交，以便更新之前的文件 -->
+					<s:if test="courseWork!=null">
+					<font color="red">您的此次上传会覆盖上次提交的作业</font>
+					<s:set name="workId" value="courseWork.courseWorkId"></s:set>
+					<s:hidden name="courseWorkId" value="%{workId}"></s:hidden>
+					</s:if>
 				</s:form>
 			<hr>
 			</td>
 		</tr>
+		</s:if >
+		<s:else>
+			<tr>
+				<td></td>
+				<td><font color="red">已截止提交</font></td>
+			</tr>
+		</s:else>
 	</table>
 			</div>
 			

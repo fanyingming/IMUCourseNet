@@ -71,6 +71,7 @@ public class CourseWorkManagerImpl implements CourseWorkManager {
 
 	@Override
 	public CourseWork getCourseWork(int courseWorkId) {
+//		System.out.println("in CourseWorkManagerImpl,courseWorkId="+courseWorkId);
 		return courseWorkDao.get(courseWorkId);
 	}
 
@@ -144,6 +145,22 @@ public class CourseWorkManagerImpl implements CourseWorkManager {
 			Integer courseWorkRequirementId) {
 		return courseWorkDao
 				.findByCourseWorkRequirementId(courseWorkRequirementId);
+	}
+	@Override
+	public List<CourseWork> getCourseWorkByCourseWorkRequirementIdAndUserId(
+			int courseWorkRequirementId, int userId) {
+		return courseWorkDao.findByCourseWorkRequirementIdAndUserId(courseWorkRequirementId, userId);
+	}
+	@Override
+	public List<CourseWork> getCourseWorkByUserId(Integer userId) {
+		
+		return courseWorkDao.findByUserId(userId);
+	}
+	@Override
+	public List<CourseWork> getCourseWorkByCourseWorkId(Integer courseWorkId) {
+		System.out.println("in courseWorkManager,courseWorkId="+courseWorkId);
+		
+		return courseWorkDao.findByCourseWorkId(courseWorkId);
 	}
 
 }
