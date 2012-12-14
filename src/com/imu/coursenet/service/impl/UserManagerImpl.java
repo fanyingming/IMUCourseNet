@@ -130,7 +130,19 @@ public class UserManagerImpl implements UserManager {
 		return adminDao.findAll();
 
 	}
+	
+	@Override
+	public List<Teacher> listAllTeacher() {
+		return teacherDao.findAll();
 
+	}
+	
+	@Override
+	public List<Student> listAllStudent() {
+		return studentDao.findAll();
+	}
+
+	
 	@Override
 	public List<Admin> listAllAdmin(int offset, int pageSize) {
 		return adminDao.findAll(offset, pageSize);
@@ -138,13 +150,13 @@ public class UserManagerImpl implements UserManager {
 	}
 
 	@Override
-	public List<Teacher> listAllTeacher() {
-		return teacherDao.findAll();
+	public List<Teacher> listAllTeacher(int offset, int pageSize) {
+		return teacherDao.findAll(offset, pageSize);
 	}
 
 	@Override
-	public List<Student> listAllStudent() {
-		return studentDao.findAll();
+	public List<Student> listAllStudent(int offset, int pageSize) {
+		return studentDao.findAll(offset, pageSize);
 	}
 
 	@Override
@@ -282,5 +294,15 @@ public class UserManagerImpl implements UserManager {
 		return adminDao.getTotalAdminCounts();
 		 
 	}
-
+	
+	@Override
+	public int totalTeacherCounts() {
+		return teacherDao.getTotalTeacherCounts();
+		 
+	}
+	@Override
+	public int totalStudentCounts() {
+		return studentDao.getTotalStudentCounts();
+		 
+	}
 }

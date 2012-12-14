@@ -136,5 +136,17 @@ public class CourseManagerImpl implements CourseManager {
 	public Course getCourse(int courseId) {
 		return courseDao.get(courseId);
 	}
+	
+	
+	@Override
+	public List<Course> listAllCourse(int offset, int pageSize) {
+		return courseDao.findAll(offset, pageSize);
+		
+	}
 
+	@Override
+	public int totalCourseCounts() {
+		return courseDao.getTotalCourseCounts();
+		 
+	}
 }

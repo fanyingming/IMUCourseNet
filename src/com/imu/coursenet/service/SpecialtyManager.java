@@ -17,4 +17,8 @@ public interface SpecialtyManager {
 	int updateSpecialty(Specialty specialty);
 
 	Specialty getSpecialty(int specialtyId);
+
+	List<Specialty> listAllSpecialty(int offset,int pageSize);
+	
+	int totalSpecialtyCounts();
 }

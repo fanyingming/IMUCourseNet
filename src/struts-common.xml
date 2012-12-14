@@ -90,6 +90,12 @@
 			<result name="success">/listMessage.jsp</result>
 			<param name="pageSize">2</param>
 		</action>
+		<!-- 增加留言 -->
+		<action name="addMessage" class="com.imu.coursenet.action.AddMessageAction">
+			<result type="redirectAction">
+					<param name="actionName">listMessage</param>
+			</result>
+		</action>
 		<!-- 学生或老师下载自己提交的或发布的作业 -->
 		<action name="downloadCourseWork"
 			class="com.imu.coursenet.action.DownloadCourseWorkAction">

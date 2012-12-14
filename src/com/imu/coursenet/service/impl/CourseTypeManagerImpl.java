@@ -135,4 +135,16 @@ public class CourseTypeManagerImpl implements CourseTypeManager {
 		return courseTypeDao.get(courseTypeId);
 	}
 
+	
+	@Override
+	public List<CourseType> listAllCourseType(int offset, int pageSize) {
+		return courseTypeDao.findAll(offset, pageSize);
+		
+	}
+
+	@Override
+	public int totalCourseTypeCounts() {
+		return courseTypeDao.getTotalCourseTypeCounts();
+		 
+	}
 }

@@ -26,27 +26,33 @@
 		<!-- 罗列人员 -->
 		<action name="listAdmin" class="com.imu.coursenet.action.admin.listAdminAction">
 				<result name="success">/admin/adminManage.jsp</result>	
-				<param name="pageSize">10</param>
+				<param name="pageSize">2</param>
 		</action>
 		<action name="listTeacher" class="com.imu.coursenet.action.admin.listTeacherAction">
 				<result name="success">/admin/teacherManage.jsp</result>	
+				<param name="pageSize">2</param>
 		</action>
 		<action name="listStudent" class="com.imu.coursenet.action.admin.listStudentAction">
 				<result name="success">/admin/studentManage.jsp</result>	
+				<param name="pageSize">2</param>
 		</action>
 		<action name="listDepartment" class="com.imu.coursenet.action.admin.listDepartmentAction">
 				<result name="success">/admin/departmentManage.jsp</result>	
+				<param name="pageSize">2</param>
 		</action>
 		<action name="listCourse" class="com.imu.coursenet.action.admin.listCourseAction">
 				<result name="success">/admin/courseManage.jsp</result>	
+				<param name="pageSize">2</param>
 		</action>
 		
 		<action name="listCourseType" class="com.imu.coursenet.action.admin.listCourseTypeAction">
 				<result name="success">/admin/courseTypeManage.jsp</result>	
+				<param name="pageSize">2</param>
 		</action>
 		
 		<action name="listSpecialty" class="com.imu.coursenet.action.admin.listSpecialtyAction">
-				<result name="success">/admin/specialtyManage.jsp</result>	
+				<result name="success">/admin/specialtyManage.jsp</result>
+				<param name="pageSize">2</param>	
 		</action>
 		<!-- 用来列出所有部门，以便添加管理员 -->
 		<action name="addAdmin" class="com.imu.coursenet.action.admin.AddAdminAction">
@@ -237,17 +243,10 @@
 					<param name="actionName">listCourseDetail</param>
 				</result>	
 		</action>
-		
-		<!-- 增加留言 -->
-		<action name="adminAddMessage" class="com.imu.coursenet.action.AddMessageAction">
-			<result type="redirectAction">
-					<param name="actionName">adminListMessage</param>
-			</result>
-		</action>
 		<!-- 点击删除后，删除刘留言并返回显示留言界面 -->
 		<action name="deleteMessage" class="com.imu.coursenet.action.admin.DeleteMessageAction">
 				<result name="success" type="redirectAction">
-					<param name="actionName">adminListMessage</param>
+					<param name="actionName">listMessage</param>
 				</result>					
 		</action>
 		<!-- 查看选课信息 -->

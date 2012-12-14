@@ -5,6 +5,7 @@ import java.util.List;
 import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.CourseDetail;
 import com.imu.coursenet.domain.CourseTaking;
+import com.imu.coursenet.domain.Department;
 import com.imu.coursenet.support.YeekuHibernateDaoSupport;
 
 public class CourseTakingDaoImpl extends YeekuHibernateDaoSupport implements
@@ -57,4 +58,15 @@ public class CourseTakingDaoImpl extends YeekuHibernateDaoSupport implements
 				"from CourseTaking c where c.student.userId=?", studentId);
 	}
 
+	@Override
+	public List<CourseTaking> findAll(int offset, int pageSize) {
+		return this.findByPage("from CourseTaking ", offset, pageSize);
+	}
+
+	@Override
+	public int getTotalCourseTakingCounts() {
+		int counts=findAll().size();
+		System.out.println("total courseTaking counts="+counts);
+		return counts;
+	}
 }

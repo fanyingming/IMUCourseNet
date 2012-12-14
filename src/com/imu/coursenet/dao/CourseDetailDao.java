@@ -17,6 +17,10 @@ public interface CourseDetailDao {
 
 	List<CourseDetail> findAll();
 
+	List<CourseDetail> findAll(int offset,int pageSize);
+	
 	List<CourseDetail> findByTeacherId(int teacherId, final int offset,
 			final int pageSize);
+	
+	int getAllCourseDetailCounts();
 }

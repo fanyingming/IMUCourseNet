@@ -17,5 +17,8 @@ public interface DepartmentManager {
 	int updateDepartment(Department department);
 
 	Department getDepartment(int departmentId);
+	
+	List<Department> listAllDepartment(int offset,int pageSize);
 
+	int totalDepartmentCounts();
 }

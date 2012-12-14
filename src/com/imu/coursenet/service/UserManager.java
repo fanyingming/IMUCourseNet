@@ -53,6 +53,8 @@ public interface UserManager {
 	Teacher getTeacherById(int userId);
 
 	Teacher getTeacherByAccountAndPass(String userAccount, String userPass);
+	
+	List<Teacher> listAllTeacher(int offset,int pageSize);
 
 	List<Teacher> listAllTeacher();
 
@@ -60,11 +62,14 @@ public interface UserManager {
 
 	int updateTeacher(Teacher teacher);
 
+	int totalTeacherCounts();
 	/*-----------Student-----------------*/
 	Student getStudentById(int userId);
 
 	Student getStudentByAccountAndPass(String userAccount, String userPass);
 
+	List<Student> listAllStudent(int offset,int pageSize);
+	
 	List<Student> listAllStudent();
 
 	int addStudent(Integer specialtyId, Integer departmentId,
@@ -72,5 +77,6 @@ public interface UserManager {
 			String userMail);
 
 	int updateStudent(Student student);
-
+	
+	int totalStudentCounts();
 }

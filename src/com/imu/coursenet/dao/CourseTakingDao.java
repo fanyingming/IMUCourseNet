@@ -21,4 +21,8 @@ public interface CourseTakingDao {
 			int pageSize);
 
 	List<CourseTaking> findAllByStudentId(int studentId);
+
+	int getTotalCourseTakingCounts();
+
+	List<CourseTaking> findAll(int offset, int pageSize);
 }

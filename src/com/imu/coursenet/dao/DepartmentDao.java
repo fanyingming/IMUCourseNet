@@ -16,4 +16,8 @@ public interface DepartmentDao {
 	void delete(Integer departmentId);
 
 	List<Department> findAll();
+	
+	int getTotalDepartmentCounts();
+	
+	List<Department> findAll(int offset,int pageSize);
 }

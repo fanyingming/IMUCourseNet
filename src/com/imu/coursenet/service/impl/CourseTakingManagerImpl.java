@@ -80,6 +80,19 @@ public class CourseTakingManagerImpl implements CourseTakingManager {
 		return courseTakingDao.get(courseTakingId);
 	}
 
+
+	@Override
+	public List<CourseTaking> listAllCourseTaking(int offset, int pageSize) {
+		return courseTakingDao.findAll(offset, pageSize);
+		
+	}
+
+	@Override
+	public int totalCourseTakingCounts() {
+		return courseTakingDao.getTotalCourseTakingCounts();
+		 
+	}
+	
 	public void setAdminDao(AdminDao adminDao) {
 		this.adminDao = adminDao;
 	}
@@ -145,4 +158,5 @@ public class CourseTakingManagerImpl implements CourseTakingManager {
 		this.postReplyDao = postReplyDao;
 	}
 
+	
 }

@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    <a href="listMessage?currentPage=<s:property value="totalPageCounts"/>">末页</a>
 			    &nbsp;]&nbsp;转至:<input type="text" size="1" /><input type="button" value="Go">
 			    </div>
-			<form method="post"  action="adminAddMessage">
+			<form method="post"  action="addMessage">
 		    <div id="pl">
 		    	<div class="pl_top"><p><a>欢迎评论</a></p>
 		    	<p id="mid"><textarea name="content" cols="105" rows="10"></textarea></p>

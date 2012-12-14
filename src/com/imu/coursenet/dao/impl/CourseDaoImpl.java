@@ -43,4 +43,16 @@ public class CourseDaoImpl extends YeekuHibernateDaoSupport implements
 		return (List<Course>) getHibernateTemplate().find("from Course ");
 	}
 
+
+	@Override
+	public List<Course> findAll(int offset, int pageSize) {
+		return this.findByPage("from Course ", offset, pageSize);
+	}
+
+	@Override
+	public int getTotalCourseCounts() {
+		int counts=findAll().size();
+		System.out.println("total course counts="+counts);
+		return counts;
+	}
 }

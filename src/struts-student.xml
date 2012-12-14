@@ -108,12 +108,7 @@
 				<result name="success">/student/showCourseIntroduce.jsp</result>
 		</action>
 		
-		<!-- 增加留言 -->
-		<action name="studentAddMessage" class="com.imu.coursenet.action.AddMessageAction">
-			<result type="redirectAction">
-					<param name="actionName">studentListMessage</param>
-			</result>
-		</action>
+		
 		<!-- 学生写信前获得老师名字 -->
 		<action name="studentWriteLetter" class="com.imu.coursenet.action.student.StudentWriteLetterAction">
 			<result name="success">/student/studentWriteLetter.jsp</result>

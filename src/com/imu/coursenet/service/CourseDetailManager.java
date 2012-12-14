@@ -12,6 +12,8 @@ public interface CourseDetailManager {
 
 	List<CourseDetail> listCourseDetailByTeacherId(int teacherId,
 			final int offset, final int pageSize);
+	
+	List<CourseDetail> listCourseDetail(int offset, int pageSize);
 
 	int addCourseDetail(int teacherId, int courseId);
 
@@ -20,4 +22,6 @@ public interface CourseDetailManager {
 	int updateCourseDetail(CourseDetail courseDetail);
 
 	CourseDetail getCourseDetail(int courseDetailId);
+	
+	int getTotalCourseDetailCounts();
 }

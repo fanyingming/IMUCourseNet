@@ -108,11 +108,24 @@ public class SpecialtyManagerImpl implements SpecialtyManager {
 		return this.OP_SUCC;
 	}
 
+
+	@Override
+	public List<Specialty> listAllSpecialty(int offset, int pageSize) {
+		return specialtyDao.findAll(offset, pageSize);
+	}
+	
 	@Override
 	public Specialty getSpecialty(int specialtyId) {
 		return specialtyDao.get(specialtyId);
 	}
 
+
+	@Override
+	public int totalSpecialtyCounts() {
+		return specialtyDao.getTotalSpecialtyCounts();
+		 
+	}
+	
 	public void setAdminDao(AdminDao adminDao) {
 		this.adminDao = adminDao;
 	}

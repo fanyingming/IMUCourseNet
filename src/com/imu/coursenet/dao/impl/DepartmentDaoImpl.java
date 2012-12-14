@@ -43,5 +43,17 @@ public class DepartmentDaoImpl extends YeekuHibernateDaoSupport implements
 		return (List<Department>) getHibernateTemplate().find(
 				"from Department ");
 	}
+	
 
+	@Override
+	public List<Department> findAll(int offset, int pageSize) {
+		return this.findByPage("from Department ", offset, pageSize);
+	}
+
+	@Override
+	public int getTotalDepartmentCounts() {
+		int counts=findAll().size();
+		System.out.println("total department counts="+counts);
+		return counts;
+	}
 }

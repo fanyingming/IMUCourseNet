@@ -22,4 +22,8 @@ public interface CourseTakingManager {
 	int updateCourseTaking(CourseTaking courseTaking);
 
 	CourseTaking getCourseTaking(int courseTakingId);
+	
+	List<CourseTaking> listAllCourseTaking(int offset,int pageSize);
+
+	int totalCourseTakingCounts();
 }

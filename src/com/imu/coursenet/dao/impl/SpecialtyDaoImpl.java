@@ -5,6 +5,7 @@ import java.util.List;
 import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.Department;
 import com.imu.coursenet.domain.Specialty;
+import com.imu.coursenet.domain.Student;
 import com.imu.coursenet.support.YeekuHibernateDaoSupport;
 
 public class SpecialtyDaoImpl extends YeekuHibernateDaoSupport implements
@@ -43,4 +44,17 @@ public class SpecialtyDaoImpl extends YeekuHibernateDaoSupport implements
 		return (List<Specialty>) getHibernateTemplate().find("from Specialty ");
 	}
 
+	@Override
+	public List<Specialty> findAll(int offset, int pageSize) {
+		// TODO Auto-generated method stub
+		return this.findByPage("from Specialty ", offset, pageSize);
+	}
+	
+
+	@Override
+	public int getTotalSpecialtyCounts() {
+		int counts=findAll().size();
+		System.out.println("total specialty counts="+counts);
+		return counts;
+	}
 }

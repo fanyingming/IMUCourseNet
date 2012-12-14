@@ -149,5 +149,14 @@ public class CourseDetailManagerImpl implements CourseDetailManager {
 	public void setPostReplyDao(PostReplyDao postReplyDao) {
 		this.postReplyDao = postReplyDao;
 	}
+	@Override
+	public int getTotalCourseDetailCounts() {
+		return courseDetailDao.getAllCourseDetailCounts();
+	}
+	@Override
+	public List<CourseDetail> listCourseDetail(int offset, int pageSize) {
+		
+		return courseDetailDao.findAll(offset, pageSize);
+	}
 
 }

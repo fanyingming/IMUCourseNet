@@ -17,4 +17,8 @@ public interface CourseManager {
 	int updateCourse(Course course);
 
 	Course getCourse(int courseId);
+	
+	List<Course> listAllCourse(int offset,int pageSize);
+
+	int totalCourseCounts();
 }

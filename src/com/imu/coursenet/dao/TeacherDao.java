@@ -21,4 +21,8 @@ public interface TeacherDao {
 	List<Teacher> getTeacher(int userId);
 
 	List<Teacher> findByAccountAndPass(String userAccount, String userPass);
+	
+	List<Teacher> findAll(int offset,int pageSize);
+	
+	int getTotalTeacherCounts();
 }

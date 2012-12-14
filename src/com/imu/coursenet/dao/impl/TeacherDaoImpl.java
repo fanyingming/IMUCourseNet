@@ -12,6 +12,12 @@ public class TeacherDaoImpl extends YeekuHibernateDaoSupport implements
 		TeacherDao {
 
 	@Override
+	public List<Teacher> findAll(int offset, int pageSize) {
+		// TODO Auto-generated method stub
+		return this.findByPage("from Teacher ", offset, pageSize);
+	}
+
+	@Override
 	public Teacher get(Integer userId) {
 		return getHibernateTemplate().get(Teacher.class, userId);
 	}
@@ -58,4 +64,10 @@ public class TeacherDaoImpl extends YeekuHibernateDaoSupport implements
 				"from Teacher a where a.userId = ?", userId);
 	}
 
+	@Override
+	public int getTotalTeacherCounts() {
+		int counts=findAll().size();
+		System.out.println("total teacher counts="+counts);
+		return counts;
+	}
 }

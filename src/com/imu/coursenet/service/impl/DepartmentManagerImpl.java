@@ -135,5 +135,17 @@ public class DepartmentManagerImpl implements DepartmentManager {
 	public Department getDepartment(int departmentId) {
 		return departmentDao.get(departmentId);
 	}
+	
+	
+	@Override
+	public List<Department> listAllDepartment(int offset, int pageSize) {
+		return departmentDao.findAll(offset, pageSize);
+		
+	}
 
+	@Override
+	public int totalDepartmentCounts() {
+		return departmentDao.getTotalDepartmentCounts();
+		 
+	}
 }
