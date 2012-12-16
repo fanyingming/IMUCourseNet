@@ -1,6 +1,7 @@
 package com.imu.coursenet.action.admin;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
+import com.imu.coursenet.domain.Course;
 
 public class DeleteCourseAction extends ManagerBaseAction {
 	private int courseId;
@@ -15,6 +16,8 @@ public class DeleteCourseAction extends ManagerBaseAction {
 
 	@Override
 	public String execute() throws Exception {
+		Course course=courseManager.getCourse(courseId);
+		
 		int result = courseManager.deleteCourse(courseId);
 		if (result == courseManager.OP_SUCC) {
 			return SUCCESS;

@@ -48,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <li class="button"><a href="#" class="red">师生互动 <span></span></a></li>
             <li class="dropdown">
                 <ul>
-                    <li><a href="listpost" target="mainFrame">查看帖子</a></li>
+                    <li><a href="listPost" target="mainFrame">查看帖子</a></li>
                     <li><a href="WritePost.jsp" target="mainFrame">发帖</a></li>
                     
                 </ul>
