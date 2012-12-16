@@ -6,7 +6,7 @@ import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-
+  
 public class ShowPostAction extends ManagerBaseAction {
 	
 	private Integer postId;
