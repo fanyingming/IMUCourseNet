@@ -24,5 +24,7 @@ public interface AdminDao {
 
 	List<Admin> findByAccountAndPass(String userAccount, String userPass);
 	
+	List<Admin> findByAccount(String userAccount);
+	
 	int getTotalAdminCounts();
 }

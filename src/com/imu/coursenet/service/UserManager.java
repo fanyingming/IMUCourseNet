@@ -49,6 +49,7 @@ public interface UserManager {
 	
 	int totalAdminCounts();
 
+	boolean isExistAdminByAccount(String userAccount);
 	/*-----------Teacher-----------------*/
 	Teacher getTeacherById(int userId);
 

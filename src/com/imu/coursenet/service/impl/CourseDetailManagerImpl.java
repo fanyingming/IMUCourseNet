@@ -158,5 +158,9 @@ public class CourseDetailManagerImpl implements CourseDetailManager {
 		
 		return courseDetailDao.findAll(offset, pageSize);
 	}
+	@Override
+	public List<CourseDetail> listCourseDetailByCourseId(int courseId) {
+		return courseDetailDao.findByCourseId(courseId);
+	}
 
 }

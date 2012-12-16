@@ -13,8 +13,12 @@ public interface CourseDetailManager {
 	List<CourseDetail> listCourseDetailByTeacherId(int teacherId,
 			final int offset, final int pageSize);
 	
+	List<CourseDetail> listCourseDetailByCourseId(int courseId);
+	
 	List<CourseDetail> listCourseDetail(int offset, int pageSize);
 
+	
+	
 	int addCourseDetail(int teacherId, int courseId);
 
 	int deleteCourseDetail(int courseDetailId);

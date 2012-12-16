@@ -68,4 +68,11 @@ public class AdminDaoImpl extends YeekuHibernateDaoSupport implements AdminDao {
 		return counts;
 	}
 
+	@Override
+	public List<Admin> findByAccount(String userAccount) {
+		return (List<Admin>) getHibernateTemplate().find(
+				"from Admin a where a.userAccount = ?",
+				userAccount);
+	}
+
 }

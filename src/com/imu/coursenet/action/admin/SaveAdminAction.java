@@ -2,6 +2,7 @@ package com.imu.coursenet.action.admin;
 
 import com.imu.coursenet.action.base.ManagerBaseAction;
 import com.imu.coursenet.domain.*;
+import com.opensymphony.xwork2.ActionContext;
 
 public class SaveAdminAction extends ManagerBaseAction {
 	private String userAccount;
@@ -52,8 +53,12 @@ public class SaveAdminAction extends ManagerBaseAction {
 
 	@Override
 	public String execute() throws Exception {
-
-		// System.out.println("departmentId="+department.getDepartmentId());
+		
+		if(userManager.isExistAdminByAccount(userAccount)){
+			ActionContext ctx = ActionContext.getContext();
+			ctx.getSession().put("tip", "存在此用户名的管理员，不能重复");
+			return ERROR;
+		}
 		Admin admin = new Admin(userAccount, userPass, userName, userMail);
 		userManager.addAdmin(admin, departmentId);
 		return SUCCESS;

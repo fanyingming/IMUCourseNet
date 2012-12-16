@@ -62,4 +62,11 @@ public class CourseDetailDaoImpl extends YeekuHibernateDaoSupport implements
 		return this.findByPage("from CourseDetail",offset, pageSize);
 	}
 
+	@Override
+	public List<CourseDetail> findByCourseId(Integer courseId) {
+
+		return (List<CourseDetail>) getHibernateTemplate().find("from CourseDetail c where c.course.courseId=?",
+				courseId);
+	}
+
 }

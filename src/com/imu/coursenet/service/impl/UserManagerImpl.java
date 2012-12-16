@@ -253,7 +253,9 @@ public class UserManagerImpl implements UserManager {
 
 	@Override
 	public Admin getAdminByAccountAndPass(String userAccount, String userPass) {
-		return adminDao.findByAccountAndPass(userAccount, userPass).get(0);
+		Admin admin=null;
+		admin=adminDao.findByAccountAndPass(userAccount, userPass).get(0);
+		return admin;
 	}
 
 	@Override
@@ -305,4 +307,14 @@ public class UserManagerImpl implements UserManager {
 		return studentDao.getTotalStudentCounts();
 		 
 	}
+	@Override
+	public boolean isExistAdminByAccount(String userAccount) {
+		if(adminDao.findByAccount(userAccount).size()==0){
+			return false;
+		}else{
+			return true;
+		}
+		
+	}
+	
 }
