@@ -16,4 +16,8 @@ public interface CourseDao {
 	void delete(Integer courseId);
 
 	List<Course> findAll();
+	
+	List<Course> findAll(int offset,int pageSize);
+	
+	int getTotalCourseCounts();
 }

@@ -3,13 +3,13 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <base href="<%=basePath%>">
     
-    <title>开始界面</title>
+    <title>内大教学网-Teaching&&Learning@IMU</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -29,49 +29,56 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div id="main">
      <div id="head1"><!-- 头部标题-->
      	<div class="head1_right">
-	     <a href="index.jsp" target="_blank">首页</a>&nbsp;&nbsp;
-	     <a href="news.jsp"  target="_blank">新闻通知</a>&nbsp;&nbsp;
-	     <a href="#">内大课程</a>&nbsp;&nbsp;
-	     <a href="#">院系应用</a>&nbsp;&nbsp;
-	     <a href="#">下载专区</a>&nbsp;&nbsp;
+	     <a href="index.jsp" target="_blank">首页</a>
+	     <a href="news.jsp"  target="_blank">新闻通知</a>
+	     <a href="#">内大课程</a>
+	     <a href="#">院系应用</a>
+	     <a href="#">下载专区</a>
      	</div>     
    	</div>
   <div>
    <img src="images/ad2.jpg" width="900" height="290" />
    </div>	
    <div id="lef1">
-   <form action="login" name="loginForm">
 	   <table class="lef1_table1">
 		   <tr>
-				<td rowspan=2 style="background-color:#70c9d1;" width="140px">
-				<a href="#"><br>操  作  系  统</a>
-				</td>
-				<td rowspan=2 style="background:#c5d616;cursor:pointer;" width="140px"><a href="#"><br>软  件  测  试</a></td>
-				<td rowspan=2 style="background:#f9b52c;" width="140px"><a href="#"><br>人  机  交  互</a></td>
-				<td style="text-align:right;" width="100px" height="24px"><font size="4">用户名
-				</font></td>
-				<td style="text-align:left;"><input type="text" name="userAccount" style="font-size:17px;"></td>
-				<td rowspan=2 style="text-align:center;" width="100px">
-				<a  style="font-size:22px;height:24px;" onclick= "loginForm.action='login';loginForm.submit(); ">登录</a>
-				<a href="#" style="font-size:18px;height:24px;">忘记密码？</a>
-				</td>
-		   </tr>
-		   <tr>
-		   		<td style="text-align:right;" width="100px" height="24px"><font size="4">密码
-				</font></td>
-				<td style="text-align:left;"><input type="password" name="userPass" style="font-size:17px;"></td>
-		   </tr>
-		   <tr>
-			   	<td rowspan=2 style="background:#70c938;"><a href="#"><br>网络信息安全</a></td>
-			   	<td rowspan=2 style="background:#e76b21;"><a href="#"><br>网络安全</a></td>
-			   	<td rowspan=2 style="background:#ff4da6;" width="140px"><a href="#"><br>编译原理</a></td>
-			   	<td><br></td>
-		   </tr>
-		   <tr>
-		   <td colspan=3 style="text-align:center;"><a style="font-size:20px;background:#d11b2b;color:#eeeeee">有问题请联系：ndjsw@imu.edu.cn</a></td>
-		   </tr>
+		   <td>
+				<table class="lef1_table1_tab1">
+					<tr>
+						<td style="background:#70c9d1;" width="150px" height="60px"><div id="change1"><a href="#" ><br>操作系统</a></div></td>
+						<td style="background:#c5d616;" width="150px" height="60px"><div id="change2"><a href="#"><br>软件测试</a></div></td>
+						<td style="background:#f9b52c;" width="150px" height="60px"><div id="change3"><a href="#"><br>人机交互</a></div></td>
+					</tr>
+					 <tr>
+						<td style="background:#70c938;" height="60px"><div id="change4"><a href="#"><br>网络信息安全</a></div></td>
+						<td style="background:#e76b21;" height="60px"><div id="change5"><a href="#"><br>网络安全</a></div></td>
+						<td style="background:#ff4da6;" height="60px"><div id="change6"><a href="#"><br>编译原理</a></div></td>
+				    </tr>
+				</table>
+			</td>
+			<td>
+			<form action="login" method="post">
+			<table class="lef1_table1_tab2">
+				<tr>
+					<td width="110px" height="40px" id="a1"><a >用户名</a></td>
+					<td ><input type="text" name="userAccount" tabindex="1" id="inpu1"></td>
+					<td rowspan=2 width="130px">
+					<input type="submit" value="登录"  id="inpu2" tabindex="3" />
+					<br><a href="#" tabindex="4" style="font-size:21px;">忘记密码？</a>
+					</td>
+				</tr>
+				<tr>
+					<td width="110px" height="40px" id="a1"><a >密&nbsp;&nbsp;&nbsp;码</a></td>
+			   		<td ><input type="password" name="userPass" id="inpu1" tabindex="2"></td>
+				</tr>
+				<tr>
+			    	<td colspan=3 height="39px" id="td1"><a class="a2">有问题请联系：ndjsw@imu.edu.cn</a></td>
+			    </tr>
+			</table>
+			</form>
+			</td>
+		  </tr>
 	   </table>
-	   </form>
    </div>
    <div id="content">
    		<div class="content_left">
@@ -93,13 +100,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<script type="text/javascript">jQuery(".slideBox").slide( { mainCell:".bd ul",effect:"leftLoop",autoPlay:true} );</script>
    				</div>
    				<div class="news_right">
-   					<p><a href="#">aaaaaaaaaa</a></p>
-   					<p><a href="#">bbbbbbbbbbbbbbbbbbbbbb</a></p>
-   					<p><a href="#">fddddddddddddddddddd</a></p>
-   					<p><a href="#">dasgfasgfghjhgkjhljh</a></p>
-   					<p><a href="#">恭喜内蒙古大学教学网成立！</a></p>
-   					<p><a href="#">内蒙古大学从此有教学网了...</a></p>
-   					<p><a href="#">有教学网了...</a></p>
+   				
+   					<s:action name="indexPageListNews" executeResult="false" var="news"/>
+   					<s:set value="#news.getNews()" name="newsList"/>
+   					<s:iterator value="#newsList" id="new">
+   					
+   					<p><a href="news.jsp"><s:property value="new"/></a></p>
+   					
+   					</s:iterator> 
+   					
    				</div>
    			</div>
    		</div>
@@ -107,7 +116,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		<p><img src="images/notes.jpg" /><a style="margin-left:215px;">&nbsp;</a><a href="#">more>></a></p>
 			<div class="content_right_down">
 				<div id="marquees">
-					<div class="topLoop" style="width:420px">
+					<div class="topLoop" style="width:425px">
 						<div class="hd">
 							<a class="next"></a>
 							<a class="prev"></a>
@@ -137,9 +146,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	<div id="main">
    	<div id="good">
    		<div class="good_jing">
-   			<p><img src="images/good.jpg" /><a href="#" style="margin-left:695px;text-decoration:none;">more>></a></p>
+   			<p><img src="images/good.jpg"/><a href="#" style="margin-left:700px;text-decoration:none;">more>></a></p>
    		</div>
-		<div class="effect" style="width:900px">
+		<div class="effect" style="width:910px">
 					<div id="leftMarquee" class="leftLoop">
 						<div class="bd">
 							<ul class="picList">
@@ -155,6 +164,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<li>
 									<div class="pic"><a href=""><img src="images/4.jpg" /></a></div>
 								</li>
+								</li>
+								<li>
+									<div class="pic"><a href=""><img src="images/2.jpg" /></a></div>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -167,10 +180,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   		<div class="links_pic">
 			  <a href="http://www.flagnet.net/" target="_blank"><img src="images/flagnet.jpg" /></a>
 		  	  <a href="http://job.imu.edu.cn/" target="_blank"><img src="images/imujob.jpg" /></a>
-		  	  <a href="http://www.csdn.com/" target="_blank"><img src="images/urp.jpg" /></a>
+		  	  <a href="http://jwxt.imu.edu.cn/" target="_blank"><img src="images/urp.jpg" /></a>
 		  	  <a href="http://www.nm.zsks.cn/" target="_blank"><img src="images/zsks.jpg" /></a>
-		  	  <a href="http://www.5xue.com/" target="_blank"><img src="images/cxpt.jpg" /></a>
-		  	  <a href="http://www.douban.com/" target="_blank"><img src="images/imuedu.jpg" /></a>
+		  	  <a href="http://xscx.flagnet.net/" target="_blank"><img src="images/cxpt.jpg" /></a>
+		  	  <a href="http://www.imu.edu.cn/" target="_blank"><img src="images/imuedu.jpg" /></a>
 			</div>
 		<hr width="900px" size=4 noshade>
 	   </div>
@@ -180,5 +193,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		</div>
     </div>
     </div>
+  
   </body>
 </html>

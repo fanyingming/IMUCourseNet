@@ -5,6 +5,7 @@ import java.util.List;
 import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.CourseDetail;
 import com.imu.coursenet.domain.Post;
+import com.imu.coursenet.domain.Student;
 import com.imu.coursenet.support.YeekuHibernateDaoSupport;
 
 public class PostDaoImpl extends YeekuHibernateDaoSupport implements PostDao {
@@ -36,10 +37,9 @@ public class PostDaoImpl extends YeekuHibernateDaoSupport implements PostDao {
 		getHibernateTemplate().delete(get(postId));
 
 	}
-
-	@Override
-	public List<Post> findAll() {
-		return (List<Post>) getHibernateTemplate().find("from Post ");
+   
+	public List<Post> findAllByCourseId(Integer courseId) {
+		return (List<Post>) getHibernateTemplate().find("from Post a where a.course.courseId = ? ",courseId);
 	}
-
+    
 }
