@@ -15,5 +15,5 @@ public interface PostDao {
 
 	void delete(Integer postId);
 
-	List<Post> findAll();
+	List<Post> findAllByCourseId(Integer courseId);
 }

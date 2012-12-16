@@ -19,7 +19,7 @@
 		type="string" />
 		<property name="date" column="date"	type="date"
 			not-null="true" />
-		<property name="state" column="state"	 not-null="true" 
+		<property name="state" column="state"	  
 		type="integer" />
 		
 		

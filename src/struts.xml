@@ -8,4 +8,7 @@
 	<include file="struts-admin.xml"/>
 	<include file="struts-teacher.xml"/>
 	<include file="struts-student.xml"/>
+	<package name="default" extends="struts-default">
+	
+	</package>
 </struts>

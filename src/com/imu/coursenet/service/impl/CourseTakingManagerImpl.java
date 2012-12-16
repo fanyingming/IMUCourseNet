@@ -23,6 +23,31 @@ public class CourseTakingManagerImpl implements CourseTakingManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+	private CourseWorkRequirementDao courseWorkRequirementDao;
+	private NewsDao newsDao;
+	private NoticeDao noticeDao;
+
+	public void setNoticeDao(NoticeDao noticeDao) {
+		this.noticeDao=noticeDao;
+	}
+	public void setNewsDao(NewsDao newsDao) {
+		this.newsDao = newsDao;
+	}
+	@Override
+	public List<CourseTaking> listAllCourseTakingByStudentId(int studentId) {
+		return courseTakingDao.findAllByStudentId(studentId);
+	}
+
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
+	}
+
+	@Override
+	public List<CourseTaking> listCourseTakingByStudentId(int studentId,
+			int offset, int pageSize) {
+		return courseTakingDao.findByStudentId(studentId, offset, pageSize);
+	}
 
 	@Override
 	public List<CourseTaking> listAllCourseTaking() {
@@ -55,6 +80,19 @@ public class CourseTakingManagerImpl implements CourseTakingManager {
 		return courseTakingDao.get(courseTakingId);
 	}
 
+
+	@Override
+	public List<CourseTaking> listAllCourseTaking(int offset, int pageSize) {
+		return courseTakingDao.findAll(offset, pageSize);
+		
+	}
+
+	@Override
+	public int totalCourseTakingCounts() {
+		return courseTakingDao.getTotalCourseTakingCounts();
+		 
+	}
+	
 	public void setAdminDao(AdminDao adminDao) {
 		this.adminDao = adminDao;
 	}
@@ -120,4 +158,5 @@ public class CourseTakingManagerImpl implements CourseTakingManager {
 		this.postReplyDao = postReplyDao;
 	}
 
+	
 }

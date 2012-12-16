@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>进入系统</title>
+    <title>内大教学网-Teaching&&Learning@IMU</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -19,11 +19,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="..css/styles.css">
 
   </head>
-  	<frameset rows="105,*,40" frameborder="1">
+  	<frameset rows="105,*,40" frameborder="0">
   		<frame src="teacher/teacher-main-top.jsp" name="topFrame" scrolling="no" noresize/>
 	<frameset cols="210,*" frameborder="no">
   		<frame src="teacher/teacher-main-left.jsp" name="leftFrame" scrolling="no"/>
-  		<frame src="listTeacherCourseDetail.action" name="mainFrame"/>
+  		<frame src="listTeacherCourseDetail" name="mainFrame"/>
 	</frameset>
 		<frame src="copyright.jsp" scrolling="no" noresize/>
 	</frameset><noframes></noframes>

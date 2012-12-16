@@ -23,6 +23,20 @@ public class UserManagerImpl implements UserManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+	private CourseWorkRequirementDao courseWorkRequirementDao;
+	private NewsDao newsDao;
+	private NoticeDao noticeDao;
+
+	public void setNoticeDao(NoticeDao noticeDao) {
+		this.noticeDao=noticeDao;
+	}
+	public void setNewsDao(NewsDao newsDao) {
+		this.newsDao = newsDao;
+	}
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
+	}
 
 	public void setCourseDao(CourseDao courseDao) {
 		this.courseDao = courseDao;
@@ -116,15 +130,33 @@ public class UserManagerImpl implements UserManager {
 		return adminDao.findAll();
 
 	}
-
+	
 	@Override
 	public List<Teacher> listAllTeacher() {
 		return teacherDao.findAll();
-	}
 
+	}
+	
 	@Override
 	public List<Student> listAllStudent() {
 		return studentDao.findAll();
+	}
+
+	
+	@Override
+	public List<Admin> listAllAdmin(int offset, int pageSize) {
+		return adminDao.findAll(offset, pageSize);
+		
+	}
+
+	@Override
+	public List<Teacher> listAllTeacher(int offset, int pageSize) {
+		return teacherDao.findAll(offset, pageSize);
+	}
+
+	@Override
+	public List<Student> listAllStudent(int offset, int pageSize) {
+		return studentDao.findAll(offset, pageSize);
 	}
 
 	@Override
@@ -168,6 +200,18 @@ public class UserManagerImpl implements UserManager {
 	}
 
 	@Override
+	public int addStudent(Integer specialtyId, Integer departmentId,
+			String userAccount, String userPass, String userName,
+			String userMail) {
+		Department department = departmentDao.get(departmentId);
+		Specialty specialty = specialtyDao.get(specialtyId);
+		Student student = new Student(specialty, department, userAccount,
+				userPass, userName, userMail);
+		studentDao.save(student);
+		return this.OP_SUCC;
+	}
+
+	@Override
 	public int updateAdmin(Admin admin) {
 		adminDao.update(admin);
 		return this.OP_SUCC;
@@ -186,16 +230,6 @@ public class UserManagerImpl implements UserManager {
 	@Override
 	public int updateTeacher(Teacher teacher) {
 		teacherDao.update(teacher);
-		return this.OP_SUCC;
-	}
-
-	@Override
-	public int addStudent(Student student, int departmentId) {
-		Department department = departmentDao.get(departmentId);
-		if (department == null)
-			return this.OP_FAIL;
-		student.setDepartment(department);
-		studentDao.save(student);
 		return this.OP_SUCC;
 	}
 
@@ -219,7 +253,9 @@ public class UserManagerImpl implements UserManager {
 
 	@Override
 	public Admin getAdminByAccountAndPass(String userAccount, String userPass) {
-		return adminDao.findByAccountAndPass(userAccount, userPass).get(0);
+		Admin admin=null;
+		admin=adminDao.findByAccountAndPass(userAccount, userPass).get(0);
+		return admin;
 	}
 
 	@Override
@@ -255,4 +291,30 @@ public class UserManagerImpl implements UserManager {
 		return user;
 	}
 
+	@Override
+	public int totalAdminCounts() {
+		return adminDao.getTotalAdminCounts();
+		 
+	}
+	
+	@Override
+	public int totalTeacherCounts() {
+		return teacherDao.getTotalTeacherCounts();
+		 
+	}
+	@Override
+	public int totalStudentCounts() {
+		return studentDao.getTotalStudentCounts();
+		 
+	}
+	@Override
+	public boolean isExistAdminByAccount(String userAccount) {
+		if(adminDao.findByAccount(userAccount).size()==0){
+			return false;
+		}else{
+			return true;
+		}
+		
+	}
+	
 }

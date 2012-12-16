@@ -6,6 +6,7 @@ import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
 import com.imu.coursenet.support.*;
+
 public class DepartmentManagerImpl implements DepartmentManager {
 	private AdminDao adminDao;
 	private TeacherDao teacherDao;
@@ -23,6 +24,20 @@ public class DepartmentManagerImpl implements DepartmentManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+	private CourseWorkRequirementDao courseWorkRequirementDao;
+	private NewsDao newsDao;
+	private NoticeDao noticeDao;
+
+	public void setNoticeDao(NoticeDao noticeDao) {
+		this.noticeDao=noticeDao;
+	}
+	public void setNewsDao(NewsDao newsDao) {
+		this.newsDao = newsDao;
+	}
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
+	}
 
 	public void setCourseDetailDao(CourseDetailDao courseDetailDao) {
 		this.courseDetailDao = courseDetailDao;
@@ -120,8 +135,17 @@ public class DepartmentManagerImpl implements DepartmentManager {
 	public Department getDepartment(int departmentId) {
 		return departmentDao.get(departmentId);
 	}
-
-
-
 	
+	
+	@Override
+	public List<Department> listAllDepartment(int offset, int pageSize) {
+		return departmentDao.findAll(offset, pageSize);
+		
+	}
+
+	@Override
+	public int totalDepartmentCounts() {
+		return departmentDao.getTotalDepartmentCounts();
+		 
+	}
 }

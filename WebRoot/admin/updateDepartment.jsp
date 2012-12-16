@@ -16,44 +16,55 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+	<link rel="stylesheet" type="text/css" href="css/detail.css">
 
   </head>
   
   <body>
-  <br>
-  <form name="form1" method="post" action="updateDepartment">
-   <input type="hidden" name="departmentId" value="<s:property value="departmentId"/>"/>
-    <table width="830" border="1" align="center">
-       <tr>
-        <td><div align="right">名字：
-        </div></td>
-        <td><div align="left">
-          <input type="text" name="departmentName"  value="<s:property value="department.departmentName" />">
-        </div></td>
-      </tr>
-      <tr>
-        <td><div align="right">简介：</div></td>
-        <td><div align="left">
-          <input type="text" name="departmentDescription"  value="<s:property value="department.departmentDescription" />">
-        </div></td>
-      </tr>
-     
-      <tr>
-        <td><div align="right"></div></td>
-        <td><div align="left">
-          <label>
-          <input type="submit" name="Submit" value="修改">
-          </label>
-          <label>
-          <input type="reset" name="Submit2" value="取消">
-          </label>
-        </div></td>
-      </tr>
-    </table>
   
-  <s:debug/>
+  <div class="zhu">
+	    <div id="top">
+	    	<div class="top_wordbg">
+		    	<div class="top_wor">
+		    		<a>修改部门信息</a>
+		    	</div>
+		    </div>
+	    </div>
+	    <div id="medium">
+	    <div id="add">
+	    	<div class="add_content">
+	    	<a>&nbsp;</a>
+				<form name="form1" method="post" action="updateDepartment">
+				<input type="hidden" name="departmentId" value="<s:property value="department.departmentId" />">
+
+	    		<table class="add_content_tab">
+	    			<tr>
+	    				<td class="addtd1"><a>部门名称：</a></td><td class="addtd2">
+	    				<input type="text" name="departmentName"  value="<s:property value="department.departmentName" />">
+	    				</td>
+	    			</tr>
+	    			<tr>
+	    				<td class="addtd1"><a>描述：</a></td><td class="addtd2"  rowspan=3>
+	    				<textarea name="departmentDescription" cols="105" rows="10" ><s:property value="department.departmentDescription" /></textarea>
+	    				</td>
+	    			</tr>
+					<tr><td></td></tr>
+					<tr><td></td></tr>
+					<tr><td></td></tr>
+	    			<tr>
+	    				<td class="addtd1"></td>
+	    				<td class="addtd2">
+	    				<input type="submit" value="提交" style="font-size:14px;">
+	    				<input type="reset" value="重置" style="font-size:14px;"></td>
+	    			</tr>
+	    		</table>
+	    			    	
+	    	</form>
+			</div>
+			
+	    </div>
+	    <div class="bottomdown"></div>
+	    </div>
+	</div>
   </body>
 </html>

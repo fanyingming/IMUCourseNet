@@ -16,4 +16,14 @@ public interface CourseWorkDao {
 	void delete(Integer courseWorkId);
 
 	List<CourseWork> findAll();
+
+	List<CourseWork> findByCourseWorkRequirementId(
+			Integer courseWorkRequirementId);
+	
+	List<CourseWork> findByCourseWorkRequirementIdAndUserId(
+			Integer courseWorkRequirementId,Integer userId);
+	
+	List<CourseWork> findByUserId(Integer userId);
+	
+	List<CourseWork> findByCourseWorkId(Integer courseWorkId);
 }

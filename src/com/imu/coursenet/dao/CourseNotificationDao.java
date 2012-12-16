@@ -16,4 +16,6 @@ public interface CourseNotificationDao {
 	void delete(Integer courseNotificationId);
 
 	List<CourseNotification> findAll();
+
+	List<CourseNotification> findByCourseDetailId(Integer courseDetailId);
 }

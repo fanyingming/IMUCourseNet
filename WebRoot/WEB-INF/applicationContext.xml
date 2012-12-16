@@ -40,12 +40,15 @@
 				<value>com/imu/coursenet/domain/CourseDetail.hbm.xml</value>
 				<value>com/imu/coursenet/domain/Courseware.hbm.xml</value>
 				<value>com/imu/coursenet/domain/CourseNotification.hbm.xml</value>
+				<value>com/imu/coursenet/domain/CourseWorkRequirement.hbm.xml</value>
 				<value>com/imu/coursenet/domain/CourseWork.hbm.xml</value>
 				<value>com/imu/coursenet/domain/CourseTaking.hbm.xml</value>
 				<value>com/imu/coursenet/domain/Post.hbm.xml</value>
 				<value>com/imu/coursenet/domain/PostReply.hbm.xml</value>
 				<value>com/imu/coursenet/domain/Letter.hbm.xml</value>
 				<value>com/imu/coursenet/domain/Message.hbm.xml</value>
+				<value>com/imu/coursenet/domain/News.hbm.xml</value>
+				<value>com/imu/coursenet/domain/Notice.hbm.xml</value>
 			</list>
 		</property>
 		<!-- 定义Hibernate的SessionFactory的属性 -->
@@ -78,12 +81,15 @@
 		p:courseDetailDao-ref="courseDetailDao"
 		p:coursewareDao-ref="coursewareDao"
 		p:courseWorkDao-ref="courseWorkDao"
+		p:courseWorkRequirementDao-ref="courseWorkRequirementDao"
 		p:courseNotificationDao-ref="courseNotificationDao"
 		p:courseTakingDao-ref="courseTakingDao"
 		p:postDao-ref="postDao"
 		p:postReplyDao-ref="postReplyDao"
 		p:letterDao-ref="letterDao"
 		p:messageDao-ref="messageDao"
+		p:newsDao-ref="newsDao"
+		p:noticeDao-ref="noticeDao"
 		/>
 
 	<!-- 定义业务逻辑组件，继承业务逻辑组件的模板 -->
@@ -105,6 +111,8 @@
     		parent="managerTemplate"/>
     <bean id="courseWorkManager" class="com.imu.coursenet.service.impl.CourseWorkManagerImpl"
     		parent="managerTemplate"/>
+    <bean id="courseWorkRequirementManager" class="com.imu.coursenet.service.impl.CourseWorkRequirementManagerImpl"
+    		parent="managerTemplate"/>
     <bean id="courseTakingManager" class="com.imu.coursenet.service.impl.CourseTakingManagerImpl"
     		parent="managerTemplate"/>
    	<bean id="postManager" class="com.imu.coursenet.service.impl.PostManagerImpl"
@@ -115,6 +123,10 @@
     		parent="managerTemplate"/>
     <bean id="messageManager" class="com.imu.coursenet.service.impl.MessageManagerImpl"
     		parent="managerTemplate"/>
+	<bean id="newsManager" class="com.imu.coursenet.service.impl.NewsManagerImpl"
+		parent="managerTemplate" />
+	<bean id="noticeManager" class="com.imu.coursenet.service.impl.NoticeManagerImpl"
+		parent="managerTemplate" />
    	<!-- Action -->
 	<bean id="ManagerBaseAction" class="com.imu.coursenet.action.base.ManagerBaseAction"
     	p:userManager-ref="userManager"
@@ -126,12 +138,14 @@
     	p:courseNotificationManager-ref="courseNotificationManager"
     	p:coursewareManager-ref="coursewareManager"
     	p:courseWorkManager-ref="courseWorkManager"
+    	p:courseWorkRequirementManager-ref="courseWorkRequirementManager"
     	p:courseTakingManager-ref="courseTakingManager"
     	p:postManager-ref="postManager"
     	p:postReplyManager-ref="postReplyManager"
     	p:letterManager-ref="letterManager"
     	p:messageManager-ref="messageManager"
-    	
+    	p:newsManager-ref="newsManager"
+    	p:noticeManager-ref="noticeManager"
     	/>
     
 

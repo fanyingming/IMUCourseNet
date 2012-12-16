@@ -26,6 +26,20 @@ public class MessageManagerImpl implements MessageManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+	private CourseWorkRequirementDao courseWorkRequirementDao;
+	private NewsDao newsDao;
+	private NoticeDao noticeDao;
+
+	public void setNoticeDao(NoticeDao noticeDao) {
+		this.noticeDao=noticeDao;
+	}
+	public void setNewsDao(NewsDao newsDao) {
+		this.newsDao = newsDao;
+	}
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
+	}
 
 	@Override
 	public List<Message> listAllMessage() {
@@ -33,20 +47,27 @@ public class MessageManagerImpl implements MessageManager {
 	}
 
 	@Override
+	public List<Message> listAllMessage(int offset, int pageSize) {
+		return messageDao.findAll(offset, pageSize);
+	}
+	@Override
 	public int addMessage(String content, int userId) {
 		Student student;
 		Teacher teacher;
-		
+		Admin admin;
 		Message message = new Message();
 		message.setContent(content);
-		Date date=new Date();
+		Date date = new Date();
 		message.setEditDate(date);
 		if (studentDao.getStudent(userId).size() != 0) {
 			student = studentDao.get(userId);
 			message.setUser(student);
-		} else {
+		} else if (teacherDao.getTeacher(userId).size() != 0){
 			teacher = teacherDao.get(userId);
 			message.setUser(teacher);
+		}else{
+			admin = adminDao.get(userId);
+			message.setUser(admin);
 		}
 		messageDao.save(message);
 		return this.OP_SUCC;
@@ -126,6 +147,10 @@ public class MessageManagerImpl implements MessageManager {
 
 	public void setPostReplyDao(PostReplyDao postReplyDao) {
 		this.postReplyDao = postReplyDao;
+	}
+	@Override
+	public int getTotalMessageCounts() {
+		return messageDao.getAllMessageCounts();
 	}
 
 }

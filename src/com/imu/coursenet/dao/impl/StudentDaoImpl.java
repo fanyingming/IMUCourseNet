@@ -5,11 +5,18 @@ import java.util.List;
 import com.imu.coursenet.dao.*;
 import com.imu.coursenet.domain.Admin;
 import com.imu.coursenet.domain.Student;
+import com.imu.coursenet.domain.Teacher;
 import com.imu.coursenet.support.YeekuHibernateDaoSupport;
 
 public class StudentDaoImpl extends YeekuHibernateDaoSupport implements
 		StudentDao {
 
+	@Override
+	public List<Student> findAll(int offset, int pageSize) {
+		// TODO Auto-generated method stub
+		return this.findByPage("from Student ", offset, pageSize);
+	}
+	
 	@Override
 	public Student get(Integer userId) {
 		return getHibernateTemplate().get(Student.class, userId);
@@ -57,4 +64,10 @@ public class StudentDaoImpl extends YeekuHibernateDaoSupport implements
 				"from Student a where a.userId = ?", userId);
 	}
 
+	@Override
+	public int getTotalStudentCounts() {
+		int counts=findAll().size();
+		System.out.println("total student counts="+counts);
+		return counts;
+	}
 }

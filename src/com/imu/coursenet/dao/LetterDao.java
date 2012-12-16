@@ -16,4 +16,6 @@ public interface LetterDao {
 	void delete(Integer letterId);
 
 	List<Letter> findAll();
+	
+	List<Letter> findByReceiverId( Integer userId);
 }

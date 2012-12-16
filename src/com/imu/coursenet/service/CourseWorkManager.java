@@ -10,11 +10,19 @@ public interface CourseWorkManager {
 
 	List<CourseWork> listAllCourseWork();
 
-	int addCourseWork(CourseWork courseWork, int courseDetailId);
+	List<CourseWork> listByCourseWorkRequirementId(
+			Integer courseWorkRequirementId);
+
+	int addCourseWork(String saveLocation, String title, Integer studentId,
+			Integer courseWorkRequirementId);
 
 	int deleteCourseWork(int courseWorkId);
 
 	int updateCourseWork(CourseWork courseWork);
 
-	Course getCourseWork(int courseWorkId);
+	CourseWork getCourseWork(int courseWorkId);
+	
+	List<CourseWork> getCourseWorkByCourseWorkRequirementIdAndUserId(int courseWorkRequirementId,int userId);
+	List<CourseWork> getCourseWorkByUserId(Integer userId);
+	List<CourseWork> getCourseWorkByCourseWorkId(Integer courseWorkId);
 }

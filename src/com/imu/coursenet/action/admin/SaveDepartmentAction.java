@@ -12,13 +12,13 @@ public class SaveDepartmentAction extends ManagerBaseAction {
 
 	@Override
 	public String execute() throws Exception {
-		
+
 		Department department = new Department(departmentName,
 				departmentDescription);
-		if(departmentManager.addDepartment(department)==departmentManager.OP_SUCC){
-			
+		if (departmentManager.addDepartment(department) == departmentManager.OP_SUCC) {
+
 			return SUCCESS;
-		}else{
+		} else {
 			return ERROR;
 		}
 	}

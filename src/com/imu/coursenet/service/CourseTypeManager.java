@@ -17,4 +17,9 @@ public interface CourseTypeManager {
 	int updateCourseType(CourseType courseType);
 
 	CourseType getCourseType(int courseTypeId);
+	
+
+	List<CourseType> listAllCourseType(int offset,int pageSize);
+
+	int totalCourseTypeCounts();
 }

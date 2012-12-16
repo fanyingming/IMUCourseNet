@@ -16,70 +16,85 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+	<link rel="stylesheet" type="text/css" href="css/detail.css">
 
   </head>
   
   <body>
-  <br>
-  <form name="form1" method="post" action="updateCourse">
-   <input type="hidden" name="courseId" value="<s:property value="courseId"/>"/>
-    <table width="830" border="1" align="center">
-       <tr>
-        <td><div align="right">名字：
-        </div></td>
-        <td><div align="left">
-          <input type="text" name="courseName"  value="<s:property value="course.courseName" />">
-        </div></td>
-      </tr>
-      <tr>
-        <td><div align="right">简介：</div></td>
-        <td><div align="left">
-          <input type="text" name="courseDescription"  value="<s:property value="course.courseDescription" />">
-        </div></td>
-      </tr>
-      <tr>
-        <td><div align="right">部门号：</div></td>
-        <td><div align="left">
-          <label>
-          <select name="departmentId">
+    <div class="zhu">
+	    <div id="top">
+	    	<div class="top_wordbg">
+		    	<div class="top_wor">
+		    		<a>修改课程信息</a>
+		    	</div>
+		    </div>
+	    </div>
+	    <div id="medium">
+	    <div id="add">
+	    	<div class="add_content">
+	    	<a>&nbsp;</a>
+				<form name="form1" method="post" action="updateCourse">
+				<input type="hidden" name="courseId" value="<s:property value="course.courseId" />">
+
+	    		<table class="add_content_tab">
+	    			<tr>
+	    				<td class="addtd1"><a>课程名称：</a></td><td class="addtd2">
+	    				<input type="text" name="courseName"  value="<s:property value="course.courseName" />">
+	    				</td>
+	    			</tr>
+	    			<tr>
+	    				<td class="addtd1"><a>描述：</a></td><td class="addtd2" rowspan=3>
+	    				<textarea name="courseDescription" cols="105" rows="10" ><s:property value="course.courseDescription" /></textarea>
+	    				</td>
+	    			</tr>
+	    			<tr><td></td></tr>
+					<tr><td></td></tr>
+					<tr><td></td></tr>
+					<tr>
+	    				<td class="addtd1"><a>开设学院：</a></td><td class="addtd2">
+	    				<select name="departmentId">
           <s:iterator value="departments" id="department">
-          	<option value="<s:property value="#department.departmentId"/>">
+          	<option value="<s:property value="#department.departmentId"/>"
+          		<s:if test=" #department.departmentId == department_Id">
+          			selected="selected"
+          		</s:if>
+          	>
           		<s:property value="#department.departmentName"/>
           	</option>
           </s:iterator>
           </select>
-          </label>
-        </div></td>
-      </tr> <tr>
-        <td><div align="right">课程类型：</div></td>
-        <td><div align="left">
-          <label>
-          <select name="courseTypeId">
+	    				</td>
+	    			</tr>
+	    			<tr>
+	    				<td class="addtd1"><a>课程类型：</a></td><td class="addtd2">
+	    				<select name="courseTypeId">
           <s:iterator value="courseTypes" id="courseType">
-          	<option value="<s:property value="#courseType.courseTypeId"/>">
+          	<option value="<s:property value="#courseType.courseTypeId"/>"
+          		<s:if test=" #courseType.courseTypeId == courseType_Id">
+          			selected="selected"
+          		</s:if>
+          	>
           		<s:property value="#courseType.courseTypeName"/>
           	</option>
           </s:iterator>
           </select>
-          </label>
-        </div></td>
-      </tr>
-      <tr>
-        <td><div align="right"></div></td>
-        <td><div align="left">
-          <label>
-          <input type="submit" name="Submit" value="修改">
-          </label>
-          <label>
-          <input type="reset" name="Submit2" value="取消">
-          </label>
-        </div></td>
-      </tr>
-    </table>
- 
-  <s:debug/>
+	    				</td>
+	    			</tr>
+	    			
+	    			<tr>
+	    				<td class="addtd1"></td>
+	    				<td class="addtd2">
+	    				<input type="submit" value="提交" style="font-size:14px;">
+	    				<input type="reset" value="重置" style="font-size:14px;"></td>
+	    			</tr>
+	    		</table>
+	    			    	
+	    	</form>
+			</div>
+			
+	    </div>
+	    <div class="bottomdown"></div>
+	    </div>
+	</div>
   </body>
 </html>

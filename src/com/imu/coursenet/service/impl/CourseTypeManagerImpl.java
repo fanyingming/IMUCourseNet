@@ -23,6 +23,20 @@ public class CourseTypeManagerImpl implements CourseTypeManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+	private CourseWorkRequirementDao courseWorkRequirementDao;
+	private NewsDao newsDao;
+	private NoticeDao noticeDao;
+
+	public void setNoticeDao(NoticeDao noticeDao) {
+		this.noticeDao=noticeDao;
+	}
+	public void setNewsDao(NewsDao newsDao) {
+		this.newsDao = newsDao;
+	}
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
+	}
 
 	public void setCourseDetailDao(CourseDetailDao courseDetailDao) {
 		this.courseDetailDao = courseDetailDao;
@@ -121,4 +135,16 @@ public class CourseTypeManagerImpl implements CourseTypeManager {
 		return courseTypeDao.get(courseTypeId);
 	}
 
+	
+	@Override
+	public List<CourseType> listAllCourseType(int offset, int pageSize) {
+		return courseTypeDao.findAll(offset, pageSize);
+		
+	}
+
+	@Override
+	public int totalCourseTypeCounts() {
+		return courseTypeDao.getTotalCourseTypeCounts();
+		 
+	}
 }

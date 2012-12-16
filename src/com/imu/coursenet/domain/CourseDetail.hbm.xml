@@ -13,7 +13,7 @@
 			<generator class="identity"/>
 		</id>
 		<!-- 映射普通属性 -->
-		<property name="teachPlane" column="teachPlane"	type="string"/>
+		<property name="teachPlan" column="teachPlan"	type="string"/>
 		<property name="referenceBook" column="referenceBook"	type="string" />
 		<property name="courseIntroduce" column="courseIntroduce"	type="string"/>
 		<property name="establishDate" column="establishDate"	type="date" not-null="true"/>
@@ -32,6 +32,11 @@
 		<set name="courseNotifications" inverse="true">
 			<key column="courseDetailId" />
 			<one-to-many class="CourseNotification"/>
+		</set>
+		<!-- 映射和courseWorkRequirement的关联关系 -->
+		<set name="courseWorkRequirements" inverse="true">
+			<key column="courseDetailId" />
+			<one-to-many class="CourseWorkRequirement"/>
 		</set>
 	</class>
 </hibernate-mapping>

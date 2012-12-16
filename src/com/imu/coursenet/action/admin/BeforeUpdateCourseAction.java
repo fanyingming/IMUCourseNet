@@ -45,6 +45,22 @@ public class BeforeUpdateCourseAction extends ManagerBaseAction {
 		this.courseId = courseId;
 	}
 
+	public int getCourseType_Id() {
+		return courseType_Id;
+	}
+
+	public void setCourseType_Id(int courseType_Id) {
+		this.courseType_Id = courseType_Id;
+	}
+
+	public int getDepartment_Id() {
+		return department_Id;
+	}
+
+	public void setDepartment_Id(int department_Id) {
+		this.department_Id = department_Id;
+	}
+
 	@Override
 	// Department getDepartment(int departmentId);
 	public String execute() throws Exception {

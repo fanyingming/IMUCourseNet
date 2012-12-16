@@ -23,6 +23,20 @@ public class SpecialtyManagerImpl implements SpecialtyManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+	private CourseWorkRequirementDao courseWorkRequirementDao;
+	private NewsDao newsDao;
+	private NoticeDao noticeDao;
+
+	public void setNoticeDao(NoticeDao noticeDao) {
+		this.noticeDao=noticeDao;
+	}
+	public void setNewsDao(NewsDao newsDao) {
+		this.newsDao = newsDao;
+	}
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
+	}
 
 	public void setCourseDetailDao(CourseDetailDao courseDetailDao) {
 		this.courseDetailDao = courseDetailDao;
@@ -94,11 +108,24 @@ public class SpecialtyManagerImpl implements SpecialtyManager {
 		return this.OP_SUCC;
 	}
 
+
+	@Override
+	public List<Specialty> listAllSpecialty(int offset, int pageSize) {
+		return specialtyDao.findAll(offset, pageSize);
+	}
+	
 	@Override
 	public Specialty getSpecialty(int specialtyId) {
 		return specialtyDao.get(specialtyId);
 	}
 
+
+	@Override
+	public int totalSpecialtyCounts() {
+		return specialtyDao.getTotalSpecialtyCounts();
+		 
+	}
+	
 	public void setAdminDao(AdminDao adminDao) {
 		this.adminDao = adminDao;
 	}

@@ -49,7 +49,7 @@ public class SaveCourseAction extends ManagerBaseAction {
 
 		Course course = new Course(courseName, courseDescription);
 		if (courseManager.addCourse(course, departmentId, courseTypeId) == courseManager.OP_SUCC) {
-			
+
 			return SUCCESS;
 		} else {
 			return ERROR;

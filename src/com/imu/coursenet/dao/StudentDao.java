@@ -21,4 +21,8 @@ public interface StudentDao {
 	List<Student> getStudent(int userId);
 
 	List<Student> findByAccountAndPass(String userAccount, String userPass);
+
+	List<Student> findAll(int offset,int pageSize);
+	
+	int getTotalStudentCounts();
 }

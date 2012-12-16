@@ -5,26 +5,10 @@ import java.io.FileOutputStream;
 import java.util.Date;
 import java.util.List;
 
-import com.imu.coursenet.dao.AdminDao;
-import com.imu.coursenet.dao.CourseDao;
-import com.imu.coursenet.dao.CourseDetailDao;
-import com.imu.coursenet.dao.CourseNotificationDao;
-import com.imu.coursenet.dao.CourseTakingDao;
-import com.imu.coursenet.dao.CourseTypeDao;
-import com.imu.coursenet.dao.CourseWorkDao;
-import com.imu.coursenet.dao.CoursewareDao;
-import com.imu.coursenet.dao.DepartmentDao;
-import com.imu.coursenet.dao.LetterDao;
-import com.imu.coursenet.dao.MessageDao;
-import com.imu.coursenet.dao.PostDao;
-import com.imu.coursenet.dao.PostReplyDao;
-import com.imu.coursenet.dao.SpecialtyDao;
-import com.imu.coursenet.dao.StudentDao;
-import com.imu.coursenet.dao.TeacherDao;
-import com.imu.coursenet.domain.Course;
-import com.imu.coursenet.domain.CourseDetail;
-import com.imu.coursenet.domain.Courseware;
+import com.imu.coursenet.dao.*;
+import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
+import com.imu.coursenet.support.FileOperation;
 
 public class CoursewareManagerImpl implements CoursewareManager {
 	private AdminDao adminDao;
@@ -43,22 +27,41 @@ public class CoursewareManagerImpl implements CoursewareManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+	private CourseWorkRequirementDao courseWorkRequirementDao;
+	private NewsDao newsDao;
+	private NoticeDao noticeDao;
 
-	
-	
-	
-
-	@Override
-	public List<Courseware> listAllCourseware() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setNoticeDao(NoticeDao noticeDao) {
+		this.noticeDao=noticeDao;
+	}
+	public void setNewsDao(NewsDao newsDao) {
+		this.newsDao = newsDao;
+	}
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
 	}
 
 	@Override
-	public int  addCourseware(String savaLocation,String title, int courseDetailId) {
-		CourseDetail courseDetail=courseDetailDao.get(courseDetailId);
-		Date date=new Date();
-		Courseware courseware=new Courseware(savaLocation,title,date,courseDetail);
+	public List<Courseware> listAllCourseware() {
+
+		return coursewareDao.findAll();
+	}
+
+	@Override
+	public List<Courseware> listAllCoursewareByCourseDetailId(
+			Integer courseDetailId) {
+		return coursewareDao.findByCourseDetailId(courseDetailId);
+
+	}
+
+	@Override
+	public int addCourseware(String savaLocation, String title,
+			int courseDetailId) {
+		CourseDetail courseDetail = courseDetailDao.get(courseDetailId);
+		Date date = new Date();
+		Courseware courseware = new Courseware(savaLocation, title, date,
+				courseDetail);
 		courseware.setDownloadCounts(0);
 		coursewareDao.save(courseware);
 		return this.OP_SUCC;
@@ -66,20 +69,25 @@ public class CoursewareManagerImpl implements CoursewareManager {
 
 	@Override
 	public int deleteCourseware(int coursewareId) {
-		// TODO Auto-generated method stub
-		return 0;
+		/* 删除相应的实体文件 */
+		Courseware courseware = coursewareDao.get(coursewareId);
+		if (!FileOperation.deleteFile(courseware.getSaveLocation())) {
+			return this.OP_FAIL;
+		}
+		coursewareDao.delete(coursewareId);
+
+		return this.OP_SUCC;
 	}
 
 	@Override
 	public int updateCourseware(Courseware courseware) {
-		// TODO Auto-generated method stub
-		return 0;
+		coursewareDao.update(courseware);
+		return this.OP_SUCC;
 	}
 
 	@Override
 	public Courseware getCourseware(int coursewareId) {
-		// TODO Auto-generated method stub
-		return null;
+		return coursewareDao.get(coursewareId);
 	}
 
 	public void setAdminDao(AdminDao adminDao) {

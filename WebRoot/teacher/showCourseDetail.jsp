@@ -16,39 +16,80 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+	<link rel="stylesheet" type="text/css" href="css/detail.css">
 
   </head>
   
   <body>
-  <br>
-  <table width="832" border="1" align="center">
+
+   <div class="zhu">
+	    <div id="top">
+	    	<div class="top_wordbg">
+		    	<div class="top_wor">
+		    		<a>课程内容</a>
+		    	</div>
+		    </div>
+	    </div>
+	    <div id="medium">
+	    <div id="add">
+	    	<div class="add_content">
+	    	<a>&nbsp;</a>
+			<table width="832"  >
     <tr>
       <td width="136"><div align="right">课程名称：</div></td>
-      <td width="680"><s:property value="courseDetail.course.courseName"/></td>
+      <td width="680">
+      <br>
+      <s:property value="courseDetail.course.courseName"/>
+      <br>
+      <hr>
+      </td>
+      
     </tr>
     <tr>
       <td><div align="right">开课时间：</div></td>
-      <td><s:property value="courseDetail.establishDate"/></td>
+      <td>
+      <br>
+      <s:date name="courseDetail.establishDate" format="yyyy-MM-dd"/>
+       <br>
+      <hr>
+      </td>
     </tr>
     <tr>
       <td><div align="right">课程介绍：</div></td>
-      <td><s:property value="courseDetail.courseIntroduce"/></td>
+      <td>
+      <br>
+      <s:property value="courseDetail.courseIntroduce"/>
+      <br>
+      <hr>
+      </td>
+       
     </tr>
     <tr>
       <td><div align="right">教学计划：</div></td>
-      <td><s:property value="courseDetail.teachPlane"/></td>
+      <td>
+      <br>
+      <s:property value="courseDetail.teachPlan"/>
+      <br>
+      <hr>
+      </td>
+       
     </tr>
     <tr>
       <td><div align="right">参考书籍：</div></td>
-     <td><s:property value="courseDetail.referenceBook"/></td>
+     <td>
+     <br><s:property value="courseDetail.referenceBook"/>
+     <br>
+      <hr>
+     </td>
+
     </tr>
-    <tr>
-      <td><div align="right">课件：</div></td>
-      <td>&nbsp;</td>
-    </tr>
+    
   </table>
+			</div>
+			
+	    </div>
+	    <div class="bottomdown"></div>
+	    </div>
+	</div>
   </body>
 </html>

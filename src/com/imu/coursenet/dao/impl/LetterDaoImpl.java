@@ -43,4 +43,9 @@ public class LetterDaoImpl extends YeekuHibernateDaoSupport implements
 		return (List<Letter>) getHibernateTemplate().find("from Letter ");
 	}
 
+	@Override
+	public List<Letter> findByReceiverId(Integer userId) {
+		return (List<Letter>) getHibernateTemplate().find("from Letter l where l.receiver.userId=?",userId);
+	}
+
 }

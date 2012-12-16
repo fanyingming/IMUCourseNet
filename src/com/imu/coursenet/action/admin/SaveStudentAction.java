@@ -9,6 +9,15 @@ public class SaveStudentAction extends ManagerBaseAction {
 	private String userName;
 	private String userMail;
 	private Integer departmentId;
+	private Integer specialtyId;
+
+	public Integer getSpecialtyId() {
+		return specialtyId;
+	}
+
+	public void setSpecialtyId(Integer specialtyId) {
+		this.specialtyId = specialtyId;
+	}
 
 	public String getUserAccount() {
 		return userAccount;
@@ -53,9 +62,8 @@ public class SaveStudentAction extends ManagerBaseAction {
 	@Override
 	public String execute() throws Exception {
 
-		// System.out.println("departmentId="+department.getDepartmentId());
-		Student student = new Student(userAccount, userPass, userName, userMail);
-		userManager.addStudent(student, departmentId);
+		userManager.addStudent(specialtyId, departmentId, userAccount,
+				userPass, userName, userMail);
 		return SUCCESS;
 	}
 

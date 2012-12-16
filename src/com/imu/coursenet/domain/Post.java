@@ -2,6 +2,8 @@ package com.imu.coursenet.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Post implements Serializable {
 	private static final long serialVersionUID = 48L;
@@ -13,6 +15,7 @@ public class Post implements Serializable {
 	private Integer replyCounts;
 	private Course course;
 	private User user;
+	private Set<PostReply> postReplys = new HashSet<PostReply>();
 
 	public Post() {
 
@@ -20,6 +23,14 @@ public class Post implements Serializable {
 
 	public Integer getPostId() {
 		return postId;
+	}
+
+	public Set<PostReply> getPostReplys() {
+		return postReplys;
+	}
+
+	public void setPostReplys(Set<PostReply> postReplys) {
+		this.postReplys = postReplys;
 	}
 
 	public void setPostId(Integer postId) {
@@ -65,10 +76,6 @@ public class Post implements Serializable {
 	public void setReplyCounts(Integer replyCounts) {
 		this.replyCounts = replyCounts;
 	}
-
-	
-
-	
 
 	public Course getCourse() {
 		return course;

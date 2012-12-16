@@ -1,18 +1,17 @@
 package com.imu.coursenet.action.teacher;
 
-import com.imu.coursenet.action.base.ManagerBaseAction;
-import com.imu.coursenet.domain.Course;
-import com.imu.coursenet.domain.CourseDetail;
-import com.imu.coursenet.support.FileOperation;
-import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
 import org.apache.struts2.ServletActionContext;
 
-import java.io.*;
+import com.imu.coursenet.action.base.ManagerBaseAction;
+import com.imu.coursenet.domain.Course;
+import com.imu.coursenet.support.FileOperation;
+import com.opensymphony.xwork2.ActionContext;
 
-public class UploadCoursewareAction extends  ManagerBaseAction {
-
+public class UploadCoursewareAction extends ManagerBaseAction {
 	private String title;
 
 	private File upload;
@@ -64,24 +63,27 @@ public class UploadCoursewareAction extends  ManagerBaseAction {
 	}
 
 	public String execute() throws Exception {
-		title=getUploadFileName();
-		
-		/*首先获取当前开设课程的编号*/
+		title = getUploadFileName();
+
+		/* 首先获取当前开设课程的编号 */
 		ActionContext ctx = ActionContext.getContext();
 		int courseDetailId = Integer.parseInt(ctx.getSession()
 				.get("courseDetailId").toString());
-		/*然后通过开设课程的编号获得课程的所属部门、课程名称、课程类型*/
-		Course course=courseDetailManager.getCourseDetail(courseDetailId).getCourse();
-		String courseName=course.getCourseName();
-		String departmentName=course.getDepartment().getDepartmentName();
-		String courseTypeName=course.getCourseType().getCourseTypeName();
-		String teacherName=courseDetailManager.getCourseDetail(courseDetailId).getTeacher().getUserName();
-		/*获得要保存课件的目录*/
-		String saveDir=getSavePath()+"\\"+departmentName+"\\"+courseName+"_"+courseTypeName+"\\"+teacherName;
-		String saveLocation=saveDir + "\\"+ title;
-		/*先创建相应文件夹*/
+		/* 然后通过开设课程的编号获得课程的所属部门、课程名称、课程类型 */
+		Course course = courseDetailManager.getCourseDetail(courseDetailId)
+				.getCourse();
+		String courseName = course.getCourseName();
+		String departmentName = course.getDepartment().getDepartmentName();
+		String courseTypeName = course.getCourseType().getCourseTypeName();
+		String teacherName = courseDetailManager
+				.getCourseDetail(courseDetailId).getTeacher().getUserName();
+		/* 获得要保存课件的目录 */
+		String saveDir = getSavePath() + "\\" + departmentName + "\\"
+				+ courseName + "_" + courseTypeName + "\\" + teacherName;
+		String saveLocation = saveDir + "\\" + title;
+		/* 先创建相应文件夹 */
 		FileOperation.makeFolder(saveDir);
-		/*开始上传*/
+		/* 开始上传 */
 		FileOutputStream fos = new FileOutputStream(saveLocation);
 		FileInputStream fis = new FileInputStream(getUpload());
 		byte[] buffer = new byte[1024];
@@ -90,10 +92,11 @@ public class UploadCoursewareAction extends  ManagerBaseAction {
 			fos.write(buffer, 0, len);
 		}
 		fos.close();
-		/*上传完保存到数据库*/
-		if(coursewareManager.addCourseware(saveLocation,title, courseDetailId)==coursewareManager.OP_SUCC){
+		/* 上传完保存到数据库 */
+		if (coursewareManager
+				.addCourseware(saveLocation, title, courseDetailId) == coursewareManager.OP_SUCC) {
 			return SUCCESS;
-		}else{
+		} else {
 			return ERROR;
 		}
 	}

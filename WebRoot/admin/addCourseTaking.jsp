@@ -16,38 +16,47 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+	<link rel="stylesheet" type="text/css" href="css/detail.css">
 
   </head>
   
   <body>
-  <br>
-  <form name="form1" method="post" action="addCourseTaking">
-    <table width="639" border="1" align="center">
-      <tr>
-        <td width="168"><div align="right">学生编号：</div></td>
-        <td width="455"><label>
-          <input type="text" name="userId">
-        </label></td>
-      </tr>
-      <tr>
-        <td><div align="right">开设课程编号：</div></td>
-        <td><label>
-          <input type="text" name="courseDetailId">
-        </label></td>
-      </tr>
-      <tr>
-        <td><div align="right"></div></td>
-        <td><label>
-          <input type="submit" name="Submit" value="提交">
-        </label>
-          <label>
-          <input type="reset" name="Submit2" value="重置">
-        </label></td>
-      </tr>
-    </table>
-  </form>
+  <div class="zhu">
+	    <div id="top">
+	    	<div class="top_wordbg">
+		    	<div class="top_wor">
+		    		<a>学生选课</a>
+		    	</div>
+		    </div>
+	    </div>
+	    <div id="medium">
+	    <div id="add">
+	    	<div class="add_content">
+	    	<a>&nbsp;</a>
+				 <form name="form1" method="post" action="addCourseTaking">
+	    		<table class="add_content_tab">
+	    			<tr>
+	    				<td class="addtd1"><a>学生编号：</a></td><td class="addtd2"><input type="text" name="userId"></td>
+	    			</tr>
+	    			<tr>
+	    				<td class="addtd1"><a>开设的课程编号：</a></td><td class="addtd2"> <input type="text" name="courseDetailId"></td>
+	    			</tr>
+					
+	    			
+	    			<tr>
+	    				<td class="addtd1"></td>
+	    				<td class="addtd2">
+	    				<input type="submit" value="提交" style="font-size:14px;">
+	    				<input type="reset" value="重置" style="font-size:14px;"></td>
+	    			</tr>
+	    		</table>
+	    			    	
+	    	</form>
+			</div>
+			
+	    </div>
+	    <div class="bottomdown"></div>
+	    </div>
+	</div>
   </body>
 </html>

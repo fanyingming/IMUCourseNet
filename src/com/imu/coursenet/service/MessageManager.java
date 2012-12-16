@@ -10,10 +10,15 @@ public interface MessageManager {
 
 	List<Message> listAllMessage();
 
+	List<Message> listAllMessage(int offset,int pageSize);
+	
 	int addMessage(String content, int userId);
 
 	int deleteMessage(int messageId);
 
 	// int updateMessage(Message message);
+	
 	Message getMessage(int messageId);
+	
+	int getTotalMessageCounts();
 }

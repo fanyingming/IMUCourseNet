@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <li class="button"><a href="#" class="red">课件管理 <span></span></a></li>
             <li class="dropdown">
                 <ul>
-                    <li><a href="#" target="mainFrame">查看已上传课件</a></li>
+                    <li><a href="listUploadCourseware" target="mainFrame">查看已上传课件</a></li>
                     <li><a href="teacher/uploadCourseware.jsp" target="mainFrame">上传课件</a></li>
                     
                 </ul>
@@ -45,31 +45,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    <li class="button"><a href="#" class="red">课程通知管理 <span></span></a></li>
             <li class="dropdown">
                 <ul>
-                    <li><a href="#" target="mainFrame">查看已发布通知</a></li>
-                    <li><a href="#" target="mainFrame">发布通知</a></li>
+                     <li><a href="listCourseNotification" target="mainFrame">查看已发布通知</a></li>
+                    <li><a href="teacher/teacherAddCourseNotification.jsp" target="mainFrame">发布通知</a></li>
                     
                 </ul>
 			</li>
           </ul>
       </li>
 	  
-      <li class="menu">
+	  
+	  <li class="menu">
           <ul>
-		    <li class="button"><a href="#" class="red">编辑课程介绍 <span></span></a></li>          	
+		    <li class="button"><a href="#" class="red">课程内容管理 <span></span></a></li>
+            <li class="dropdown">
+                <ul>
+                    <li><a href="teacher/showRefBookAction" target="mainFrame">编辑参考书籍</a></li>
+                    <li><a href="teacher/showTeachPlanAction" target="mainFrame">编辑教学计划</a></li>
+                    <li><a href="teacher/showCourseIntroduceAction" target="mainFrame">编辑课程介绍</a></li>
+                </ul>
+			</li>
           </ul>
       </li>
-	
-	<li class="menu">
+	  <li class="menu">
           <ul>
-		    <li class="button"><a href="#" class="red">编辑参考书籍<span></span></a></li>          	
+		    <li class="button"><a href="#" class="red">课程作业管理 <span></span></a></li>
+            <li class="dropdown">
+                <ul>
+                    <li><a href="teacher/addCourseWorkRequirement.jsp" target="mainFrame">发布作业要求</a></li>
+                    <li><a href="teacherListCourseWorkRequirement" target="mainFrame">查看发布的作业</a></li>
+                    
+                </ul>
+			</li>
           </ul>
       </li>
-	
-	 <li class="menu">
-          <ul>
-		    <li class="button"><a href="#" class="red">编辑教学计划<span></span></a></li>          	
-          </ul>
-      </li>
+	 
 	
 
 

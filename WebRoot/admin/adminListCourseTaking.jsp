@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>Welcome!</title>
+    <title></title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -36,14 +36,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    <tr>
 			    	<td style="text-align: left;">
 			    		<a>选择:</a><a href="#">全选</a><a>&nbsp;—&nbsp;</a><a href="#">反选</a>
-			    		<input type="button" value=" 删  除 "><input type="button" value="添加">
+			    		<input type="button" value=" 删  除 ">
+			    		
 			    	</td>
 			    </tr>
 			    <tr>
 				    <td width="100%">
 					    <table border="0" cellpadding="3" cellspacing="1" width="100%" align="center" style="background-color: #464646;text-align: center;">
 					    	<tr>
-		                   	 	<td height="25" colspan="13" align="left" bgcolor="#aaaaaa"><p>开设课程列表</p></td>
+		                   	 	<td height="25" colspan="13" align="left" bgcolor="#aaaaaa"><p>选课信息列表</p></td>
 		                    </tr>
 					    	<tr style="background: #dddddd; font-weight: bold">
 							    <td width="60px">选择</td>
@@ -75,14 +76,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					    </table>
 				    </td>
 			    </tr>
-			    <tr id="bottom">
+			   <tr id="bottom">
 			    	<td class="bottom_left">
-			    		<div class="bottom_left">共&nbsp;<span>4</span>&nbsp;页&nbsp;|&nbsp;第&nbsp;<span>4</span>&nbsp;页&nbsp;|&nbsp;共&nbsp;<span>17</span>&nbsp;条记录</div>
+			    		<div class="bottom_left">共&nbsp;
+			    			<span>
+			    				<s:property value="totalPageCounts"/>
+			    			</span>&nbsp;页&nbsp;|&nbsp;第&nbsp;
+			    			<span>
+			    				<s:property value="currentPage"/>
+			    			</span>&nbsp;页&nbsp;|&nbsp;共&nbsp;
+			    			<span>
+			    				<s:property value="totalRecordCounts"/>
+			    			</span>&nbsp;条记录</div>
 			    		<div class="bottom_right">
-			    		[&nbsp;<a href="#">首页</a><span>|</span>
-			    		<a href="#">上一页</a><span>|</span>
-			    		<a href="#">下一页</a><span>|</span>
-			    		<a href="#">末页</a>&nbsp;]&nbsp;转至:<input type="text" size="1" /><input type="button" value="Go">
+			    		[&nbsp;<a href="listCourseTaking?currentPage=1">首页</a><span>|</span>
+			    		<a href="listCourseTaking?currentPage=<s:property value="currentPage-1"/>">上一页</a><span>|</span>
+			    		<a href="listCourseTaking?currentPage=<s:property value="currentPage+1"/>">下一页</a><span>|</span>
+			    		<a href="listCourseTaking?currentPage=<s:property value="totalPageCounts"/>">末页</a>
+			    		&nbsp;]&nbsp;转至:<input type="text" size="1" />
+			    		<input type="button" value="Go">
 			    		</div>
 			    	</td>
 			    </tr>
@@ -92,6 +104,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    </div>
 	    
     </div>
-    <s:debug/>
+    
   </body>
 </html>

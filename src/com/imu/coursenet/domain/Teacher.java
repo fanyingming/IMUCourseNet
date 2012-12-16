@@ -9,6 +9,7 @@ import com.imu.coursenet.domain.*;
 public class Teacher extends User implements Serializable {
 	private static final long serialVersionUID = 48L;
 	private Set<CourseDetail> courseDetails = new HashSet<CourseDetail>();
+	private Set<Letter> letters = new HashSet<Letter>();
 
 	public Teacher() {
 
@@ -21,6 +22,14 @@ public class Teacher extends User implements Serializable {
 		this.userName = userName;
 		this.userMail = userMail;
 
+	}
+
+	public Set<Letter> getLetters() {
+		return letters;
+	}
+
+	public void setLetters(Set<Letter> letters) {
+		this.letters = letters;
 	}
 
 	public Set<CourseDetail> getCourseDetails() {

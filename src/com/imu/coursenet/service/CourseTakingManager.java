@@ -10,6 +10,11 @@ public interface CourseTakingManager {
 
 	List<CourseTaking> listAllCourseTaking();
 
+	List<CourseTaking> listCourseTakingByStudentId(int studentId,
+			final int offset, final int pageSize);
+
+	List<CourseTaking> listAllCourseTakingByStudentId(int studentId);
+
 	int addCourseTaking(int courseDetailId, int studentId);
 
 	int deleteCourseTaking(int courseTakingId);
@@ -17,4 +22,8 @@ public interface CourseTakingManager {
 	int updateCourseTaking(CourseTaking courseTaking);
 
 	CourseTaking getCourseTaking(int courseTakingId);
+	
+	List<CourseTaking> listAllCourseTaking(int offset,int pageSize);
+
+	int totalCourseTakingCounts();
 }

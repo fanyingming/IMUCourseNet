@@ -26,6 +26,20 @@ public class CourseDetailManagerImpl implements CourseDetailManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+	private CourseWorkRequirementDao courseWorkRequirementDao;
+	private NewsDao newsDao;
+	private NoticeDao noticeDao;
+
+	public void setNoticeDao(NoticeDao noticeDao) {
+		this.noticeDao=noticeDao;
+	}
+	public void setNewsDao(NewsDao newsDao) {
+		this.newsDao = newsDao;
+	}
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
+	}
 
 	@Override
 	public List<CourseDetail> listAllCourseDetail() {
@@ -134,6 +148,19 @@ public class CourseDetailManagerImpl implements CourseDetailManager {
 
 	public void setPostReplyDao(PostReplyDao postReplyDao) {
 		this.postReplyDao = postReplyDao;
+	}
+	@Override
+	public int getTotalCourseDetailCounts() {
+		return courseDetailDao.getAllCourseDetailCounts();
+	}
+	@Override
+	public List<CourseDetail> listCourseDetail(int offset, int pageSize) {
+		
+		return courseDetailDao.findAll(offset, pageSize);
+	}
+	@Override
+	public List<CourseDetail> listCourseDetailByCourseId(int courseId) {
+		return courseDetailDao.findByCourseId(courseId);
 	}
 
 }

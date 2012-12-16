@@ -16,6 +16,15 @@ public class CourseNotification implements Serializable {
 
 	}
 
+	public CourseNotification(CourseDetail courseDetail, String title,
+			String content, Date editDate, int checkCounts) {
+		this.courseDetail = courseDetail;
+		this.checkCounts = checkCounts;
+		this.content = content;
+		this.editDate = editDate;
+		this.title = title;
+	}
+
 	public Integer getCourseNotificationId() {
 		return courseNotificationId;
 	}

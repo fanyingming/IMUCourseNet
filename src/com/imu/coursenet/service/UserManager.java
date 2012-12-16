@@ -41,14 +41,21 @@ public interface UserManager {
 
 	List<Admin> listAllAdmin();
 
+	List<Admin> listAllAdmin(int offset,int pageSize);
+	
 	int addAdmin(Admin admin, int departmentId);
 
 	int updateAdmin(Admin admin);
+	
+	int totalAdminCounts();
 
+	boolean isExistAdminByAccount(String userAccount);
 	/*-----------Teacher-----------------*/
 	Teacher getTeacherById(int userId);
 
 	Teacher getTeacherByAccountAndPass(String userAccount, String userPass);
+	
+	List<Teacher> listAllTeacher(int offset,int pageSize);
 
 	List<Teacher> listAllTeacher();
 
@@ -56,15 +63,21 @@ public interface UserManager {
 
 	int updateTeacher(Teacher teacher);
 
+	int totalTeacherCounts();
 	/*-----------Student-----------------*/
 	Student getStudentById(int userId);
 
 	Student getStudentByAccountAndPass(String userAccount, String userPass);
 
+	List<Student> listAllStudent(int offset,int pageSize);
+	
 	List<Student> listAllStudent();
 
-	int addStudent(Student student, int departmentId);
+	int addStudent(Integer specialtyId, Integer departmentId,
+			String userAccount, String userPass, String userName,
+			String userMail);
 
 	int updateStudent(Student student);
-
+	
+	int totalStudentCounts();
 }

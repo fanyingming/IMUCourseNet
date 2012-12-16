@@ -56,4 +56,23 @@ public class AdminDaoImpl extends YeekuHibernateDaoSupport implements AdminDao {
 				"from Admin a where a.userId = ?", userId);
 	}
 
+	@Override
+	public List<Admin> findAll(int offset, int pageSize) {
+		return this.findByPage("from Admin ", offset, pageSize);
+	}
+
+	@Override
+	public int getTotalAdminCounts() {
+		int counts=findAll().size();
+		System.out.println("total admin counts="+counts);
+		return counts;
+	}
+
+	@Override
+	public List<Admin> findByAccount(String userAccount) {
+		return (List<Admin>) getHibernateTemplate().find(
+				"from Admin a where a.userAccount = ?",
+				userAccount);
+	}
+
 }

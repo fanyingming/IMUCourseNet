@@ -1,5 +1,6 @@
 package com.imu.coursenet.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import com.imu.coursenet.dao.*;
@@ -23,6 +24,20 @@ public class LetterManagerImpl implements LetterManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+	private CourseWorkRequirementDao courseWorkRequirementDao;
+	private NewsDao newsDao;
+	private NoticeDao noticeDao;
+
+	public void setNoticeDao(NoticeDao noticeDao) {
+		this.noticeDao=noticeDao;
+	}
+	public void setNewsDao(NewsDao newsDao) {
+		this.newsDao = newsDao;
+	}
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
+	}
 
 	@Override
 	public List<Letter> listAllLetter() {
@@ -30,31 +45,36 @@ public class LetterManagerImpl implements LetterManager {
 	}
 
 	@Override
-	public int addLetter(Letter letter, int senderId, int receiverId) {
-		Teacher receiver = teacherDao.get(receiverId);
-		Student sender = studentDao.get(senderId);
-		letter.setReceiver(receiver);
-		letter.setSender(sender);
+	public List<Letter> listLetterByReceiverId(Integer userId) {
+		return letterDao.findByReceiverId(userId);
+	}
+	@Override
+	public int addLetter(Teacher teacher,Student student,String title,String content) {
+		Letter letter=new Letter();
+		letter.setReceiver(teacher);
+		letter.setSender(student);
+		letter.setContent(content);
+		letter.setTitle(title);
+		letter.setDate(new Date());
 		letterDao.save(letter);
 		return this.OP_SUCC;
 	}
 
 	@Override
 	public int deleteLetter(int letterId) {
-		// TODO Auto-generated method stub
-		return 0;
+		letterDao.delete(letterId);
+		return this.OP_SUCC;
 	}
 
 	@Override
 	public int updateLetter(Letter letter) {
-		// TODO Auto-generated method stub
-		return 0;
+		letterDao.update(letter);
+		return this.OP_SUCC;
 	}
 
 	@Override
-	public Course getLetter(int letterId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Letter getLetter(int letterId) {
+		return letterDao.get(letterId);
 	}
 
 	public void setAdminDao(AdminDao adminDao) {

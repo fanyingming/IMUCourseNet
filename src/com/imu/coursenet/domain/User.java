@@ -1,6 +1,8 @@
 package com.imu.coursenet.domain;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 public class User implements Serializable {
 	private static final long serialVersionUID = 48L;
@@ -16,6 +18,12 @@ public class User implements Serializable {
 	protected String userMail;
 
 	protected Department department;
+	
+	protected Set<Post> posts = new HashSet<Post>();
+	
+	protected Set<PostReply> postReplys = new HashSet<PostReply>();
+	
+	protected Set<Message> messages = new HashSet<Message>();
 
 	public User() {
 
@@ -28,6 +36,30 @@ public class User implements Serializable {
 		this.userName = userName;
 		this.userMail = userMail;
 		this.department = department;
+	}
+
+	public Set<Post> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(Set<Post> posts) {
+		this.posts = posts;
+	}
+
+	public Set<PostReply> getPostReplys() {
+		return postReplys;
+	}
+
+	public void setPostReplys(Set<PostReply> postReplys) {
+		this.postReplys = postReplys;
+	}
+
+	public Set<Message> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(Set<Message> messages) {
+		this.messages = messages;
 	}
 
 	public Department getDepartment() {

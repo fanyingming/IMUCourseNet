@@ -31,15 +31,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		   		<h4>欢迎您，<s:property value="#session.user.userName"/></h4>
 		</div>
 		   	<div class="head2_right">
-		   		<a href="main.jsp" target="_top">我的主页</a>
-		   		<a href="#">我的课程</a>
-		   		<a href="#">我的通知</a>
-		   		<a href="#">我的信箱</a>
-		   		<a href="#">内大课程</a>
-		   		<a href="#" target="_blank">讨论版块</a>
-		   		<a href="main.jsp" target="_blank">返回首页</a>
+		   		<a href="index.jsp" target="_top">主页</a>
+		   		<a href="building.jsp" target="mainFrame">我的信箱</a>
+		   		<a href="building.jsp" target="mainFrame">课程讨论版</a>
+		   		<a href="listMessage" target="mainFrame" >留言板</a>
+		   		<a href="exit" target="_top">退出</a>
 		   	</div>
 		   </div>
+		   <hr width=100% size=2px color="#d11b2b">
 	   </div>
   </body>
 </html>

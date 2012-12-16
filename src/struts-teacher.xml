@@ -4,41 +4,199 @@
 	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
 <!-- 指定Struts 2配置文件的根元素 -->
 <struts>
-	<package name="teacher" extends="struts-default" >
-		
-		<action name="uploadCourseware" class="com.imu.coursenet.action.teacher.UploadCoursewareAction">
+	<package name="teacher" extends="struts-default">
+		<interceptors>
+			<!-- 配置教师的权限检查拦截器 -->
+			<interceptor name="teacherAuth"	class=
+			"com.imu.coursenet.action.authority.TeacherAuthorityInterceptor"/>
+			<!-- 配置教师的默认的拦截器栈 -->
+			<interceptor-stack name="teacherStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="teacherAuth"/>
+			</interceptor-stack>
+	</interceptors>
+		<default-interceptor-ref name="teacherStack"/>
+		<!-- 定义全局Result映射 -->
+		<global-results>
+			<result name="error">/error.jsp</result>
+			<result name="login">/index.jsp</result>
+	</global-results>
+		<action name="uploadCourseware"
+			class="com.imu.coursenet.action.teacher.UploadCoursewareAction">
 			<!-- 动态设置Action的属性值 -->
 			<param name="savePath">/uploadFiles</param>
 			<!-- 配置Struts 2默认的视图页面 -->
-			<result name="success">/teacher/upload-succ.jsp</result>	
-			<result name="input">/teacher/uploadCourseware.jsp</result>	
-		</action>
-		
-		<!-- 罗列教师开设的课程 -->
-		<action name="listTeacherCourseDetail" class="com.imu.coursenet.action.teacher.ListTeacherCourseDetailsAction">
-			<result name="success">/teacher/listTeacherCourseDetails.jsp</result>
+			<result name="success">/teacher/upload-succ.jsp</result>
+			<result name="input">/teacher/uploadCourseware.jsp</result>
 		</action>
 
-		<!-- 罗列某门课程的详细信息 -->
-		<action name="showCourseDetail" class="com.imu.coursenet.action.teacher.ShowCourseDetailAction">
-			<result name="success">/teacher/showCourseDetail.jsp</result>
+		<!-- 罗列教师开设的前10门课程 -->
+		<action name="listTeacherCourseDetail"
+			class="com.imu.coursenet.action.teacher.ListTeacherCourseDetailsAction">
+			<result name="success">/teacher/teacher-main-right.jsp</result>
+		</action>
+
+		
+
+		<!--罗列教师开设的全部课程 -->
+		<action name="listAllTeacherCourseDetail"
+			class="com.imu.coursenet.action.teacher.ListAllTeacherCourseDetailAction">
+			<result name="success">/teacher/listAllTeacherCourseDetail.jsp</result>
 		</action>
 		
 		<!-- 罗列教师开设的课程 -->
-		<action name="goToCourseMainPage" class="com.imu.coursenet.action.teacher.GoToCourseMainPageAction">
+		<action name="goToTeacherCourseMainPage"
+			class="com.imu.coursenet.action.teacher.GoToCourseMainPageAction">
 			<result name="success">/teacher/course-main.jsp</result>
 		</action>
+
+		<!-- 个人信息 -->
+		<action name="teaShowInfo"
+			class="com.imu.coursenet.action.teacher.TeaShowInfoAction">
+			<result name="success">/teacher/teaShowInfo.jsp</result>
+		</action>
+
+		<!-- 修改个人信息 -->
+		<action name="TeaUpdate" class="com.imu.coursenet.action.teacher.TeaUpdateAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">teaShowInfo</param>
+			</result>
+		</action>
+		<!-- 为课程添加参考书 -->
+		<action name="editRefBook"
+			class="com.imu.coursenet.action.teacher.EditRefBookAction">
+			<result type="redirectAction">
+				<param name="actionName">showCourseDetail</param>
+			</result>
+		</action>
+		<!-- 为课程添加教学计划 -->
+		<action name="editTeachPlan"
+			class="com.imu.coursenet.action.teacher.EditTeachPlanAction">
+			<result type="redirectAction">
+				<param name="actionName">showCourseDetail</param>
+			</result>
+		</action>
+		<!-- 为课程添加课程简介 -->
+		<action name="editCourseIntroduce"
+			class="com.imu.coursenet.action.teacher.EditCourseIntroduceAction">
+			<result type="redirectAction">
+				<param name="actionName">showCourseDetail</param>
+			</result>
+		</action>
+
+		<!-- 罗列某门开设的课程的所有课件 -->
+		<action name="listUploadCourseware"
+			class="com.imu.coursenet.action.teacher.ListUploadCoursewareAction">
+			<result name="success">/teacher/listUploadCourseware.jsp</result>
+		</action>
+
+		<!-- 下载课件 -->
+		<action name="downloadCourseware"
+			class="com.imu.coursenet.action.teacher.DownloadCoursewareAction">
+			<result name="success" type="stream">
+				<!-- 指定下载文件的内容类型，text/plain是默认类型 -->
+				<param name="contentType">text/plain</param>
+				<!-- inputName默认值是inputStream，如果action中用于读取下载文件内容的属性名是inputStream，那么可以省略这个参数 -->
+				<param name="inputName">inputStream</param>
+				<!--动态获取文件名，从Action中的取得filename -->
+				<param name="contentDisposition">
+					attachment;filename="${downloadChineseFileName}"
+				</param>
+				<param name="bufferSize">2048</param>
+			</result>
+			<result name="input" type="redirectAction">
+				<param name="actionName" >listUploadCourseware</param>
+			</result>
+		</action>
 		
-		<!-- 个人信息	-->
-	<action name="teaShowInfo" class="com.imu.coursenet.action.teacher.TeaShowInfoAction">
-				<result name="success">/teacher/teaShowInfo.jsp</result>	
-	</action>
-	
-	<!-- 修改个人信息	-->
-	<action name="TeaUpdate" class="com.imu.coursenet.action.teacher.TeaUpdateAction">
+		<!-- 删除某个课件 -->
+		<action name="deleteCourseware"
+			class="com.imu.coursenet.action.teacher.DeleteCoursewareAction">
+			<result type="redirectAction">
+				<param name="actionName">listUploadCourseware</param>
+			</result>
+		</action>
+		
+		<!-- 罗列某门开设的课程的所有作业要求 -->
+		<action name="teacherListCourseWorkRequirement"
+			class="com.imu.coursenet.action.teacher.TeacherListCourseWorkRequirementAction">
+			<result name="success">/teacher/teacherListCourseWorkRequirement.jsp</result>
+		</action>
+		
+		<!-- 添加课程要求 -->
+		<action name="addCourseWorkRequirement"
+			class="com.imu.coursenet.action.teacher.AddCourseWorkRequirementAction">
+			<result type="redirectAction">
+				<param name="actionName">teacherListCourseWorkRequirement</param>
+			</result>
+		</action>
+		
+		<!-- 罗列某个作业要求的所有同学提交的作业 -->
+		<action name="listStudentCourseWork"
+			class="com.imu.coursenet.action.teacher.ListStudentCourseWorkAction">
+			<result name="success">/teacher/listStudentCourseWork.jsp</result>
+		</action>
+		
+		
+		
+		<!-- 添加课程通知 -->
+		<action name="addCourseNotification" class="com.imu.coursenet.action.teacher.AddCourseNotificationAction">
+			<result name="success" type="redirectAction">
+					<param name="actionName">listCourseNotification</param>
+				</result>
+		</action>
+		<!-- 在修改课程通知之前显示通知信息 -->
+		<action name="beforeUpdateCourseNotification" class="com.imu.coursenet.action.teacher.BeforeUpdateCourseNotificationAction">
+				<result name="success">/teacher/teacherUpdateCourseNotification.jsp</result>	
+		</action>
+		<!-- 在更新课程通知 -->
+		<action name="updateCourseNotification" class="com.imu.coursenet.action.teacher.UpdateCourseNotificationAction">
 				<result name="success" type="redirectAction">
-					<param name="actionName">teaShowInfo</param>
+					<param name="actionName">listCourseNotification</param>
 				</result>	
-	</action>
+		</action>
+		
+		
+		<!-- 点击删除后，删除选课信息 -->
+		<action name="deleteCourseNotification" class="com.imu.coursenet.action.teacher.DeleteCourseNotificationAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">listCourseNotification</param>
+				</result>					
+		</action>
+		
+		<!-- 为课程添加参考书之前显示已有的参考书信息 -->
+		<action name="showRefBookAction"
+			class="com.imu.coursenet.action.teacher.ShowRefBookAction">
+				<result name="success">/teacher/updateRefBook.jsp</result>
+		</action>
+		<!-- 为课程添加课程计划之前显示已有的课程计划信息 -->
+		<action name="showTeachPlanAction"
+			class="com.imu.coursenet.action.teacher.ShowTeachPlanAction">
+				<result name="success">/teacher/updateTeachPlan.jsp</result>
+		</action>
+		<!-- 为课程添加参考书之前显示已有的课程介绍信息 -->
+		<action name="showCourseIntroduceAction"
+			class="com.imu.coursenet.action.teacher.ShowCourseIntroduceAction">
+				<result name="success">/teacher/updateCourseIntroduce.jsp</result>
+		</action>
+		
+		
+		<!-- 查看收件箱 -->
+		<action name="listTeacherMail" class="com.imu.coursenet.action.teacher.ListTeacherMailAction">
+			<result name="success">/teacher/listTeacherMail.jsp</result>
+		</action>
+		<!-- 查看收件箱某个信件 -->
+		<action name="showMailDetail" class="com.imu.coursenet.action.teacher.ShowMailDetailAction">
+			<result name="success">/teacher/showMailDetail.jsp</result>
+		</action>
+		<!-- 删除信件 -->
+		<action name="deleteLetter" class="com.imu.coursenet.action.teacher.DeleteLetterAction">
+			<result type="redirectAction">
+					<param name="actionName">listTeacherMail</param>
+			</result>
+		</action>
+		<action name="*">
+			<result>/{1}.jsp</result>
+		</action>
 	</package>
 </struts>

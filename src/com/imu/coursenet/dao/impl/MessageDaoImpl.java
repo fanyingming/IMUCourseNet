@@ -40,7 +40,18 @@ public class MessageDaoImpl extends YeekuHibernateDaoSupport implements
 
 	@Override
 	public List<Message> findAll() {
-		return (List<Message>) getHibernateTemplate().find("from Message ");
+		return (List<Message>) getHibernateTemplate().find("from Message order by editDate desc");
+	}
+
+	@Override
+	public List<Message> findAll(int offset, int pageSize) {
+		return this.findByPage("from Message order by editDate desc", offset, pageSize);
+		
+	}
+
+	@Override
+	public int getAllMessageCounts() {
+		return this.findAll().size();
 	}
 
 }

@@ -1,25 +1,10 @@
 package com.imu.coursenet.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
-import com.imu.coursenet.dao.AdminDao;
-import com.imu.coursenet.dao.CourseDao;
-import com.imu.coursenet.dao.CourseDetailDao;
-import com.imu.coursenet.dao.CourseNotificationDao;
-import com.imu.coursenet.dao.CourseTakingDao;
-import com.imu.coursenet.dao.CourseTypeDao;
-import com.imu.coursenet.dao.CourseWorkDao;
-import com.imu.coursenet.dao.CoursewareDao;
-import com.imu.coursenet.dao.DepartmentDao;
-import com.imu.coursenet.dao.LetterDao;
-import com.imu.coursenet.dao.MessageDao;
-import com.imu.coursenet.dao.PostDao;
-import com.imu.coursenet.dao.PostReplyDao;
-import com.imu.coursenet.dao.SpecialtyDao;
-import com.imu.coursenet.dao.StudentDao;
-import com.imu.coursenet.dao.TeacherDao;
-import com.imu.coursenet.domain.Course;
-import com.imu.coursenet.domain.CourseWork;
+import com.imu.coursenet.dao.*;
+import com.imu.coursenet.domain.*;
 import com.imu.coursenet.service.*;
 
 public class CourseWorkManagerImpl implements CourseWorkManager {
@@ -39,35 +24,55 @@ public class CourseWorkManagerImpl implements CourseWorkManager {
 	private MessageDao messageDao;
 	private PostDao postDao;
 	private PostReplyDao postReplyDao;
+	private CourseWorkRequirementDao courseWorkRequirementDao;
+	private NewsDao newsDao;
+	private NoticeDao noticeDao;
 
-	@Override
-	public List<CourseWork> listAllCourseWork() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setNoticeDao(NoticeDao noticeDao) {
+		this.noticeDao=noticeDao;
+	}
+	public void setNewsDao(NewsDao newsDao) {
+		this.newsDao = newsDao;
+	}
+	public void setCourseWorkRequirementDao(
+			CourseWorkRequirementDao courseWorkRequirementDao) {
+		this.courseWorkRequirementDao = courseWorkRequirementDao;
 	}
 
 	@Override
-	public int addCourseWork(CourseWork courseWork, int courseDetailId) {
-		// TODO Auto-generated method stub
-		return 0;
+	public List<CourseWork> listAllCourseWork() {
+		return courseWorkDao.findAll();
+
+	}
+
+	@Override
+	public int addCourseWork(String saveLocation, String title,
+			Integer studentId, Integer courseWorkRequirementId) {
+		CourseWorkRequirement courseWorkRequirement = courseWorkRequirementDao
+				.get(courseWorkRequirementId);
+		Student student = studentDao.get(studentId);
+		CourseWork courseWork = new CourseWork(saveLocation, title,
+				courseWorkRequirement, student, new Date());
+		courseWorkDao.save(courseWork);
+		return this.OP_SUCC;
 	}
 
 	@Override
 	public int deleteCourseWork(int courseWorkId) {
-		// TODO Auto-generated method stub
-		return 0;
+		courseWorkDao.delete(courseWorkId);
+		return this.OP_SUCC;
 	}
 
 	@Override
 	public int updateCourseWork(CourseWork courseWork) {
-		// TODO Auto-generated method stub
-		return 0;
+		courseWorkDao.update(courseWork);
+		return this.OP_SUCC;
 	}
 
 	@Override
-	public Course getCourseWork(int courseWorkId) {
-		// TODO Auto-generated method stub
-		return null;
+	public CourseWork getCourseWork(int courseWorkId) {
+//		System.out.println("in CourseWorkManagerImpl,courseWorkId="+courseWorkId);
+		return courseWorkDao.get(courseWorkId);
 	}
 
 	public void setAdminDao(AdminDao adminDao) {
@@ -133,6 +138,29 @@ public class CourseWorkManagerImpl implements CourseWorkManager {
 
 	public void setPostReplyDao(PostReplyDao postReplyDao) {
 		this.postReplyDao = postReplyDao;
+	}
+
+	@Override
+	public List<CourseWork> listByCourseWorkRequirementId(
+			Integer courseWorkRequirementId) {
+		return courseWorkDao
+				.findByCourseWorkRequirementId(courseWorkRequirementId);
+	}
+	@Override
+	public List<CourseWork> getCourseWorkByCourseWorkRequirementIdAndUserId(
+			int courseWorkRequirementId, int userId) {
+		return courseWorkDao.findByCourseWorkRequirementIdAndUserId(courseWorkRequirementId, userId);
+	}
+	@Override
+	public List<CourseWork> getCourseWorkByUserId(Integer userId) {
+		
+		return courseWorkDao.findByUserId(userId);
+	}
+	@Override
+	public List<CourseWork> getCourseWorkByCourseWorkId(Integer courseWorkId) {
+		System.out.println("in courseWorkManager,courseWorkId="+courseWorkId);
+		
+		return courseWorkDao.findByCourseWorkId(courseWorkId);
 	}
 
 }

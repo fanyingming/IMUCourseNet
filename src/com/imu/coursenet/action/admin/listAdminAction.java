@@ -7,27 +7,61 @@ import com.imu.coursenet.domain.*;
 
 public class listAdminAction extends ManagerBaseAction {
 	private List<Admin> admins;
-	private int counts;
-
+	private int totalRecordCounts;//总记录数
+	private int totalPageCounts;//总页数
+	private int currentPage=1;
+	private int pageSize=10;
 	public List<Admin> getAdmins() {
 		return admins;
+	}
+
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
 	}
 
 	public void setAdmins(List<Admin> admins) {
 		this.admins = admins;
 	}
 
-	public int getCounts() {
-		return counts;
+	public int getTotalRecordCounts() {
+		return totalRecordCounts;
 	}
 
-	public void setCounts(int counts) {
-		this.counts = counts;
+	public void setTotalRecordCounts(int totalRecordCounts) {
+		this.totalRecordCounts = totalRecordCounts;
+	}
+
+	public int getTotalPageCounts() {
+		return totalPageCounts;
+	}
+
+	public void setTotalPageCounts(int totalPageCounts) {
+		this.totalPageCounts = totalPageCounts;
+	}
+
+	public int getCurrentPage() {
+		return currentPage;
+	}
+
+	public void setCurrentPage(int currentPage) {
+		this.currentPage = currentPage;
 	}
 
 	public String execute() throws Exception {
-		admins = userManager.listAllAdmin();
-		counts = admins.size();
+		totalRecordCounts=userManager.totalAdminCounts();
+		totalPageCounts=(totalRecordCounts+pageSize-1)/pageSize;
+		if(currentPage<=0){
+			currentPage=1;
+		}
+		if(currentPage>totalPageCounts && currentPage>0){
+			currentPage=totalPageCounts;
+		}
+		admins = userManager.listAllAdmin(pageSize*(currentPage-1),pageSize);
+		 
 		return SUCCESS;
 
 	}
