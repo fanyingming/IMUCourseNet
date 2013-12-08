@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<!-- 指定Struts 2配置文件的根元素 -->
+<struts>
+	<package name="student" extends="struts-default" >
+	<interceptors>
+			<!-- 配置学生的权限检查拦截器 -->
+			<interceptor name="studentAuth"	class=
+			"com.imu.coursenet.action.authority.StudentAuthorityInterceptor"/>
+			<!-- 配置学生的默认的拦截器栈 -->
+			<interceptor-stack name="studentStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="studentAuth"/>
+			</interceptor-stack>
+			
+	</interceptors>
+		<default-interceptor-ref name="studentStack"/>
+		<!-- 定义全局Result映射 -->
+		<global-results>
+			<result name="error">/error.jsp</result>
+			<result name="login">/index.jsp</result>
+	</global-results>
+	<!-- 获取学生选的课和通知	-->
+	<action name="showStudentMainPage" class="com.imu.coursenet.action.student.ShowStudentMainPageAction">
+				<result name="success">/student/student-main-right.jsp</result>	
+	</action>
+	<!-- 个人信息	-->
+	<action name="stuShowInfo" class="com.imu.coursenet.action.student.StuShowInfoAction">
+				<result name="success">/student/stuShowInfo.jsp</result>	
+	</action>
+	
+	<!-- 修改个人信息	-->
+	<action name="stuUpdate" class="com.imu.coursenet.action.student.StuUpdateAction">
+				<result name="success" type="redirectAction">
+					<param name="actionName">stuShowInfo</param>
+				</result>	
+	</action>
+	
+	<!-- 点击某门课程后，进入课程	-->
+	<action name="goToStudentCourseMainPage" class="com.imu.coursenet.action.student.GoToCourseMainPageAction">
+				<result name="success">/student/course-main.jsp</result>	
+	</action>
+	
+	<!-- 学生查看课程的课件	-->
+	<action name="listCourseware" class="com.imu.coursenet.action.student.ListCoursewareAction">
+				<result name="success">/student/listCourseware.jsp</result>	
+	</action>
+	<!-- 下载课件 -->
+		<action name="studentDownloadCourseware"
+			class="com.imu.coursenet.action.teacher.DownloadCoursewareAction">
+			<result name="success" type="stream">
+				<!-- 指定下载文件的内容类型，text/plain是默认类型 -->
+				<param name="contentType">text/plain</param>
+				<!-- inputName默认值是inputStream，如果action中用于读取下载文件内容的属性名是inputStream，那么可以省略这个参数 -->
+				<param name="inputName">inputStream</param>
+				<!--动态获取文件名，从Action中的取得filename -->
+				<param name="contentDisposition">
+					attachment;filename="${downloadChineseFileName}"
+				</param>
+				<param name="bufferSize">2048</param>
+			</result>
+			<result name="input" type="redirectAction">
+				<param name="actionName" >listCourseware</param>
+			</result>
+		</action>
+	<!-- 罗列所有的作业要求	-->
+	<action name="studentListCourseWorkRequirement" class="com.imu.coursenet.action.student.StudentListCourseWorkRequirementAction">
+				<result name="success">/student/studentListCourseWorkRequirement.jsp</result>	
+	</action>
+	
+	<!-- 查看具体的作业要求	-->
+	<action name="showCourseWorkRequirementDetail" class="com.imu.coursenet.action.student.ShowCourseWorkRequirementDetailAction">
+				<result name="success">/student/showCourseWorkRequirementDetail.jsp</result>	
+				
+	</action>
+	
+	<!-- 学生上传作业	-->
+	<action name="uploadCourseWork" class="com.imu.coursenet.action.student.UploadCourseWorkAction">
+			<!-- 动态设置Action的属性值 -->
+			<param name="savePath">/uploadFiles</param>
+			<result name="success">/upload-succ.jsp</result>	
+			<result name="input">/upload-fail.jsp</result>		
+	</action>
+	
+	
+		
+		
+	<!-- 显示某个学生选的所有课程 -->
+		<action name="listStudentAllCourseDetail" class="com.imu.coursenet.action.student.ListStudentAllCourseDetailAction">
+			<result name="success">/student/listStudentAllCourseDetail.jsp</result>
+		</action>
+		
+	<!-- 显示已有的参考书信息 -->
+		<action name="showRefBook"
+			class="com.imu.coursenet.action.student.ShowRefBookAction">
+				<result name="success">/student/showRefBook.jsp</result>
+		</action>
+		<!-- 显示已有的课程计划信息 -->
+		<action name="showTeachPlan"
+			class="com.imu.coursenet.action.student.ShowTeachPlanAction">
+				<result name="success">/student/showTeachPlan.jsp</result>
+		</action>
+		<!--显示已有的课程介绍信息 -->
+		<action name="showCourseIntroduce"
+			class="com.imu.coursenet.action.student.ShowCourseIntroduceAction">
+				<result name="success">/student/showCourseIntroduce.jsp</result>
+		</action>
+		
+		
+		<!-- 学生写信前获得老师名字 -->
+		<action name="studentWriteLetter" class="com.imu.coursenet.action.student.StudentWriteLetterAction">
+			<result name="success">/student/studentWriteLetter.jsp</result>
+		</action>
+		<!-- 学生写信 -->
+		<action name="sendLetter" class="com.imu.coursenet.action.student.SendLetterAction">
+			<result name="success">/student/send-succ.jsp</result>
+		</action>
+		<action name="*">
+			<result>/{1}.jsp</result>
+	</action>
+	</package>
+</struts>

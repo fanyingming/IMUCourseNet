@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Spring配置文件的Schema信息 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="daoTemplate" abstract="true" lazy-init="true"
+		p:sessionFactory-ref="sessionFactory"/>
+
+	<bean id="adminDao"
+		class="com.imu.coursenet.dao.impl.AdminDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="teacherDao"
+		class="com.imu.coursenet.dao.impl.TeacherDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="studentDao"
+		class="com.imu.coursenet.dao.impl.StudentDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="departmentDao"
+		class="com.imu.coursenet.dao.impl.DepartmentDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="specialtyDao"
+		class="com.imu.coursenet.dao.impl.SpecialtyDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="courseDao"
+		class="com.imu.coursenet.dao.impl.CourseDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="courseTypeDao"
+		class="com.imu.coursenet.dao.impl.CourseTypeDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="courseDetailDao"
+		class="com.imu.coursenet.dao.impl.CourseDetailDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="courseNotificationDao"
+		class="com.imu.coursenet.dao.impl.CourseNotificationDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="coursewareDao"
+		class="com.imu.coursenet.dao.impl.CoursewareDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="courseWorkDao"
+		class="com.imu.coursenet.dao.impl.CourseWorkDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="courseTakingDao"
+		class="com.imu.coursenet.dao.impl.CourseTakingDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="postDao"
+		class="com.imu.coursenet.dao.impl.PostDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="postReplyDao"
+		class="com.imu.coursenet.dao.impl.PostReplyDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="messageDao"
+		class="com.imu.coursenet.dao.impl.MessageDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="letterDao"
+		class="com.imu.coursenet.dao.impl.LetterDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="courseWorkRequirementDao"
+		class="com.imu.coursenet.dao.impl.CourseWorkRequirementDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="newsDao"
+		class="com.imu.coursenet.dao.impl.NewsDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="noticeDao"
+		class="com.imu.coursenet.dao.impl.NoticeDaoImpl"
+		parent="daoTemplate"/>
+</beans>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<!-- 指定Struts 2配置文件的根元素 -->
+<struts>
+	<!-- 指定全局国际化资源文件 -->
+	<constant name="struts.custom.i18n.resources" value="mess"/>
+	
+	<!-- 指定国际化编码所使用的字符集 -->	
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<constant name="struts.devMode" value="true"/>
+	<!-- 所有的Action定义都应该放在package下 -->
+	<package name="common" extends="struts-default" >
+		<interceptors>
+			<!-- 配置学生的权限检查拦截器 -->
+			<interceptor name="studentDownLoadCourseWorkAuth"	class=
+			"com.imu.coursenet.action.authority.StudentDownLoadCourseWorkAuthorityInterceptor"/>
+			<!-- 这个拦截器检查用户是否登陆 -->
+			<interceptor name="userAuth"	class=
+			"com.imu.coursenet.action.authority.UserAuthorityInterceptor"/>
+			<!-- 配置用户的默认的拦截器栈 -->
+			<interceptor-stack name="userStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="userAuth"/>
+			</interceptor-stack>
+			
+	</interceptors>
+		<!-- 定义全局Result映射 -->
+		<global-results>
+			<result name="error">/error.jsp</result>
+			<result name="login">/index.jsp</result>
+			<result name="exception">/exception.jsp</result>
+		</global-results>
+	<global-exception-mappings>
+			
+		<exception-mapping exception="java.lang.Exception" 
+				result="exception"/>
+	</global-exception-mappings>
+		<!-- 登陆 -->
+		<action name="login" class="com.imu.coursenet.action.LoginAction">
+			<result name="input">/index.jsp</result>
+			<result name="admin">/admin/admin-main.jsp</result>
+			<result name="teacher">/teacher/teacher-main.jsp</result>
+			<result name="student">/student/student-main.jsp</result>
+		</action>
+		<!-- 退出 -->
+		<action name="exit" class="com.imu.coursenet.action.ExitAction">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="*">
+			<result>/{1}.jsp</result>
+		</action>
+		<!-- 首页显示新闻 -->
+	<action name="indexPageListNews" class="com.imu.coursenet.action.admin.IndexPageListNewsAction">
+				<result name="success">/error.jsp</result>	
+	</action>
+		<!--查看帖子  -->
+		 <action name="listPost" class="com.imu.coursenet.action.ListPostAction">
+		    <result name="success">/listPost.jsp</result>
+		 </action>
+		 <!--查看帖子详细并回复  -->
+		  <action name="showPost" class="com.imu.coursenet.action.ShowPostAction">
+		    <result name="success">/showPost.jsp</result>
+		 </action>
+		 <!--回复后查看帖子  -->
+		 <action name="showPostAfterReply" class="com.imu.coursenet.action.ShowPostAfterReplyAction">
+		    <result name="success">/showPost.jsp</result>
+		 </action>
+		 <!--回复帖子  -->
+		 <action name="addPostReply" class="com.imu.coursenet.action.AddPostReplyAction">
+			<result name="success" type="chain">showPostAfterReply</result>
+	    </action>
+	    
+	    <!-- 增加帖子 -->
+		<action name="writePost" class="com.imu.coursenet.action.WritePostAction">
+			<result type="redirectAction">
+					<param name="actionName">listPost</param>
+			</result>
+	    </action>
+		<!-- 罗列某门课程的详细信息 教师与学生通用-->
+		<action name="showCourseDetail"
+			class="com.imu.coursenet.action.ShowCourseDetailAction">
+			<result name="success">/showCourseDetail.jsp</result>
+		</action>
+		<!-- 显示所有通知 教师与学生通用-->
+		<action name="listCourseNotification" class="com.imu.coursenet.action.ListCourseNotificationAction">
+			<result name="success">/listCourseNotification.jsp</result>
+		</action>
+		<!-- 显示某个通知的详细信息 教师与学生通用-->
+		<action name="showCourseNotificationDetail" class="com.imu.coursenet.action.ShowCourseNotificationDetailAction">
+			<result name="success">/showCourseNotificationDetail.jsp</result>
+		</action>
+		<!-- 查看留言或管理 -->
+		<action name="listMessage" class="com.imu.coursenet.action.ListMessageAction">
+			<result name="success">/listMessage.jsp</result>
+			<param name="pageSize">2</param>
+		</action>
+		<!-- 增加留言 -->
+		<action name="addMessage" class="com.imu.coursenet.action.AddMessageAction">
+			<result type="redirectAction">
+					<param name="actionName">listMessage</param>
+			</result>
+		</action>
+		<!-- 学生或老师下载自己提交的或发布的作业 -->
+		<action name="downloadCourseWork"
+			class="com.imu.coursenet.action.DownloadCourseWorkAction">
+			
+			<interceptor-ref name="userStack"/>
+			 
+			<result name="success" type="stream">
+				<!-- 指定下载文件的内容类型，text/plain是默认类型 -->
+				<param name="contentType">text/plain</param>
+				<!-- inputName默认值是inputStream，如果action中用于读取下载文件内容的属性名是inputStream，那么可以省略这个参数 -->
+				<param name="inputName">inputStream</param>
+				<!--动态获取文件名，从Action中的取得filename -->
+				<param name="contentDisposition">
+					attachment;filename="${downloadChineseFileName}"
+				</param>
+				<param name="bufferSize">2048</param>
+			</result>
+			<result name="input">/error.jsp</result>
+		</action>
+	</package>
+</struts>
